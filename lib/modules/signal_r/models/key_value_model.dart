@@ -1,6 +1,8 @@
 import 'dart:convert';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:simple_networking/config/constants.dart';
+import 'package:simple_networking/modules/wallet_api/models/key_value/key_value_response_model.dart';
 
 part 'key_value_model.freezed.dart';
 part 'key_value_model.g.dart';

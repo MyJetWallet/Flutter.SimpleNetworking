@@ -12,7 +12,9 @@ _$_KeyValueModel _$$_KeyValueModelFromJson(Map<String, dynamic> json) =>
           ? null
           : WatchlistModel.fromJson(json['watchlist'] as Map<String, dynamic>),
       now: (json['now'] as num).toDouble(),
-      keys: json['keys'] as List<dynamic>,
+      keys: (json['keys'] as List<dynamic>)
+          .map((e) => KeyValueResponseModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$_KeyValueModelToJson(_$_KeyValueModel instance) =>

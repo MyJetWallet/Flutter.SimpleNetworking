@@ -24,7 +24,8 @@ _$_RecurringBuysModel _$$_RecurringBuysModelFromJson(
       avgPrice: (json['avgPrice'] as num?)?.toDouble() ?? 0,
       lastToAmount: (json['lastToAmount'] as num?)?.toDouble() ?? 0,
       creationTime: json['creationTime'] as String,
-      scheduleType: json['scheduleType'],
+      scheduleType:
+          $enumDecode(_$RecurringBuysTypeEnumMap, json['scheduleType']),
       fromAsset: json['fromAsset'] as String,
       toAsset: json['toAsset'] as String,
     );
@@ -45,7 +46,7 @@ Map<String, dynamic> _$$_RecurringBuysModelToJson(
       'avgPrice': instance.avgPrice,
       'lastToAmount': instance.lastToAmount,
       'creationTime': instance.creationTime,
-      'scheduleType': instance.scheduleType,
+      'scheduleType': _$RecurringBuysTypeEnumMap[instance.scheduleType]!,
       'fromAsset': instance.fromAsset,
       'toAsset': instance.toAsset,
     };
@@ -55,4 +56,12 @@ const _$RecurringBuysStatusEnumMap = {
   RecurringBuysStatus.paused: 1,
   RecurringBuysStatus.deleted: 2,
   RecurringBuysStatus.empty: 'empty',
+};
+
+const _$RecurringBuysTypeEnumMap = {
+  RecurringBuysType.oneTimePurchase: 0,
+  RecurringBuysType.daily: 1,
+  RecurringBuysType.weekly: 2,
+  RecurringBuysType.biWeekly: 3,
+  RecurringBuysType.monthly: 4,
 };

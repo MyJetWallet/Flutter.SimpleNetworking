@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import '../../swap/model/get_quote/get_quote_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/get_quote/get_quote_request_model.dart';
 
 part 'recurring_buys_model.freezed.dart';
 part 'recurring_buys_model.g.dart';

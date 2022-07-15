@@ -6,6 +6,7 @@ import 'package:simple_networking/core/simple_networking_impl.dart';
 import 'package:simple_networking/helpers/models/refresh_token_status.dart';
 import 'package:simple_networking/modules/auth_api/repository/auth_api_repository.dart';
 import 'package:simple_networking/modules/signal_r/signal_r.dart';
+import 'package:simple_networking/modules/wallet_api/repository/wallet_api_repository.dart';
 
 SimpleNetworking initSimpleNetworking(Dio dio, [SimpleOptions? options]) =>
     SimpleNetworkingImpl(
@@ -33,6 +34,8 @@ abstract class SimpleNetworking {
   /// Api Client
   late ApiClient apiClient;
 
+  void updateDio(Dio updatedDio);
+
   /// SignalR Module
   // ignore: long-parameter-list
   SignalRModule getSignalRModule(
@@ -45,4 +48,7 @@ abstract class SimpleNetworking {
 
   /// Auth API Module
   AuthApiRepository getAuthModule();
+
+  /// Wallet API Module
+  WalletApiRepository getWalletModule();
 }

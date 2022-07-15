@@ -1,5 +1,6 @@
 import 'package:data_channel/data_channel.dart';
 import 'package:simple_networking/api_client/api_client.dart';
+import 'package:simple_networking/helpers/models/server_reject_exception.dart';
 import 'package:simple_networking/modules/auth_api/data_sources/auth_api_data_sources.dart';
 import 'package:simple_networking/modules/auth_api/models/change_password/change_password_request_model.dart';
 import 'package:simple_networking/modules/auth_api/models/forgot_password/forgot_password_request_model.dart';
@@ -11,6 +12,7 @@ import 'package:simple_networking/modules/auth_api/models/refresh/auth_refresh_r
 import 'package:simple_networking/modules/auth_api/models/refresh/auth_refresh_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/register_request_model.dart';
 import 'package:simple_networking/modules/auth_api/models/server_time/server_time_response_model.dart';
+import 'package:simple_networking/modules/auth_api/models/validate_referral_code/validate_referral_code_request_model.dart';
 
 class AuthApiRepository {
   AuthApiRepository(this._apiClient) {
@@ -32,7 +34,7 @@ class AuthApiRepository {
     );
   }
 
-  Future<DC<Exception, AuthenticationResponseModel>> postLogin(
+  Future<DC<ServerRejectException, AuthenticationResponseModel>> postLogin(
     LoginRequestModel model,
   ) async {
     return _authApiDataSource.postLoginRequest(
@@ -64,7 +66,7 @@ class AuthApiRepository {
     );
   }
 
-  Future<DC<Exception, AuthenticationResponseModel>> postRegister(
+  Future<DC<ServerRejectException, AuthenticationResponseModel>> postRegister(
     RegisterRequestModel model,
   ) async {
     return _authApiDataSource.postRegisterRequest(
@@ -76,10 +78,18 @@ class AuthApiRepository {
     return _authApiDataSource.getServerTimeRequest();
   }
 
-  Future<DC<Exception, bool>> getConfirmNewPassword(
+  Future<DC<Exception, bool>> poshConfirmNewPassword(
     ChangePasswordRequestModel model,
   ) async {
-    return _authApiDataSource.getConfirmNewPasswordRequest(
+    return _authApiDataSource.postConfirmNewPasswordRequest(
+      model,
+    );
+  }
+
+  Future<DC<Exception, bool>> postValidateReferralCode(
+    ValidateReferralCodeRequestModel model,
+  ) async {
+    return _authApiDataSource.postValidateReferralCodeRequest(
       model,
     );
   }

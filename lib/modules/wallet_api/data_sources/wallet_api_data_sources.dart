@@ -1,6 +1,7 @@
 import 'package:data_channel/data_channel.dart';
 import 'package:simple_networking/api_client/api_client.dart';
 import 'package:simple_networking/helpers/handle_api_responses.dart';
+import 'package:simple_networking/helpers/models/server_reject_exception.dart';
 import 'package:simple_networking/modules/wallet_api/models/add_card/add_card_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/all_cards/all_cards_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/card/card_request_model.dart';
@@ -16,6 +17,8 @@ import 'package:simple_networking/modules/wallet_api/models/payment_info/payment
 import 'package:simple_networking/modules/wallet_api/models/payment_info/payment_info_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/payment_preview/payment_preview_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/payment_preview/payment_preview_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/profile_info/profile_info_reponse_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/session_info/session_info_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/validate_address/validate_address_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/validate_address/validate_address_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/wallet_history/wallet_history_request_model.dart';
@@ -285,7 +288,7 @@ class WalletApiDataSources {
       try {
         final responseData = response.data as Map<String, dynamic>;
 
-        final data = handleFullResponse(
+        final data = handleFullResponse<Map>(
           responseData,
         );
 
@@ -308,7 +311,7 @@ class WalletApiDataSources {
       try {
         final responseData = response.data as Map<String, dynamic>;
 
-        final data = handleFullResponse(
+        final data = handleFullResponse<Map>(
           responseData,
         );
 
@@ -332,7 +335,7 @@ class WalletApiDataSources {
       try {
         final responseData = response.data as Map<String, dynamic>;
 
-        final data = handleFullResponse(
+        final data = handleFullResponse<Map>(
           responseData,
         );
 
@@ -357,7 +360,7 @@ class WalletApiDataSources {
       try {
         final responseData = response.data as Map<String, dynamic>;
 
-        final data = handleFullResponse(
+        final data = handleFullResponse<Map>(
           responseData,
         );
 
@@ -380,11 +383,57 @@ class WalletApiDataSources {
       try {
         final responseData = response.data as Map<String, dynamic>;
 
-        final data = handleFullResponse(
+        final data = handleFullResponse<Map>(
           responseData,
         );
 
         return DC.data(WireCountriesResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on Exception catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, SessionInfoResponseModel>>
+      getSessionInfoRequest() async {
+    try {
+      final response = await _apiClient.get(
+        '${_apiClient.options.walletApi}/info/session-info',
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+
+        final data = handleFullResponse<Map>(
+          responseData,
+        );
+
+        return DC.data(SessionInfoResponseModel.fromJson(data));
+      } on ServerRejectException catch (error) {
+        return DC.error(error);
+      }
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<DC<Exception, ProfileInfoResponseModel>>
+      getProfileInfoRequest() async {
+    try {
+      final response = await _apiClient.get(
+        '${_apiClient.options.walletApi}/profile/info',
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+
+        final data = handleFullResponse<Map>(
+          responseData,
+        );
+
+        return DC.data(ProfileInfoResponseModel.fromJson(data));
       } catch (e) {
         rethrow;
       }

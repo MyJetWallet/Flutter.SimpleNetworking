@@ -1,5 +1,6 @@
 import 'package:data_channel/data_channel.dart';
 import 'package:simple_networking/api_client/api_client.dart';
+import 'package:simple_networking/helpers/models/server_reject_exception.dart';
 import 'package:simple_networking/modules/wallet_api/data_sources/wallet_api_data_sources.dart';
 import 'package:simple_networking/modules/wallet_api/models/add_card/add_card_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/all_cards/all_cards_response_model.dart';
@@ -16,6 +17,8 @@ import 'package:simple_networking/modules/wallet_api/models/payment_info/payment
 import 'package:simple_networking/modules/wallet_api/models/payment_info/payment_info_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/payment_preview/payment_preview_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/payment_preview/payment_preview_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/profile_info/profile_info_reponse_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/session_info/session_info_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/validate_address/validate_address_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/validate_address/validate_address_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/wire_countries/wire_countries_response_model.dart';
@@ -134,5 +137,14 @@ class WalletApiRepository {
 
   Future<DC<Exception, WireCountriesResponseModel>> getWireCountries() async {
     return _walletApiDataSources.getWireCountriesRequest();
+  }
+
+  Future<DC<ServerRejectException, SessionInfoResponseModel>>
+      getSessionInfo() async {
+    return _walletApiDataSources.getSessionInfoRequest();
+  }
+
+  Future<DC<Exception, ProfileInfoResponseModel>> getProfileInfo() async {
+    return _walletApiDataSources.getProfileInfoRequest();
   }
 }

@@ -6,6 +6,7 @@ import 'package:simple_networking/core/simple_networking.dart';
 import 'package:simple_networking/helpers/models/refresh_token_status.dart';
 import 'package:simple_networking/modules/auth_api/repository/auth_api_repository.dart';
 import 'package:simple_networking/modules/signal_r/signal_r.dart';
+import 'package:simple_networking/modules/wallet_api/repository/wallet_api_repository.dart';
 
 class SimpleNetworkingImpl implements SimpleNetworking {
   SimpleNetworkingImpl(this.dio, [SimpleOptions? options]) {
@@ -24,6 +25,15 @@ class SimpleNetworkingImpl implements SimpleNetworking {
 
   @override
   late SimpleOptions options;
+
+  @override
+  void updateDio(Dio updatedDio) {
+    updatedDio = dio;
+    apiClient = ApiClient(
+      dio,
+      options,
+    );
+  }
 
   @override
   // ignore: long-parameter-list
@@ -47,5 +57,10 @@ class SimpleNetworkingImpl implements SimpleNetworking {
   @override
   AuthApiRepository getAuthModule() {
     return AuthApiRepository(apiClient);
+  }
+
+  @override
+  WalletApiRepository getWalletModule() {
+    return WalletApiRepository(apiClient);
   }
 }

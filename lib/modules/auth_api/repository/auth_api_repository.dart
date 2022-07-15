@@ -58,7 +58,7 @@ class AuthApiRepository {
     );
   }
 
-  Future<DC<Exception, AuthRefreshResponseModel>> postRefresh(
+  Future<DC<ServerRejectException, AuthRefreshResponseModel>> postRefresh(
     AuthRefreshRequestModel model,
   ) async {
     return _authApiDataSource.postRefreshRequest(

@@ -22,8 +22,8 @@ class ApiClient {
       throw InternalServerException();
     } on UnauthorizedApiError {
       throw UnauthenticatedException();
-    } on DioError {
-      throw ApiException();
+    } catch (e) {
+      rethrow;
     }
   }
 
@@ -39,8 +39,8 @@ class ApiClient {
       throw InternalServerException();
     } on UnauthorizedApiError {
       throw UnauthenticatedException();
-    } on DioError {
-      throw ApiException();
+    } catch (e) {
+      rethrow;
     }
   }
 
@@ -53,8 +53,8 @@ class ApiClient {
       throw InternalServerException();
     } on UnauthorizedApiError {
       throw UnauthenticatedException();
-    } on DioError {
-      throw ApiException();
+    } catch (e) {
+      rethrow;
     }
   }
 
@@ -73,8 +73,8 @@ class ApiClient {
       throw InternalServerException();
     } on UnauthorizedApiError {
       throw UnauthenticatedException();
-    } on DioError {
-      throw ApiException();
+    } catch (e) {
+      rethrow;
     }
   }
 }

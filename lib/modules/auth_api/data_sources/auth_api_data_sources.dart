@@ -121,7 +121,8 @@ class AuthApiDataSources {
     }
   }
 
-  Future<DC<Exception, AuthRefreshResponseModel>> postRefreshRequest(
+  Future<DC<ServerRejectException, AuthRefreshResponseModel>>
+      postRefreshRequest(
     AuthRefreshRequestModel model,
   ) async {
     try {
@@ -136,11 +137,11 @@ class AuthApiDataSources {
         final data = handleFullResponse<Map>(responseData);
 
         return DC.data(AuthRefreshResponseModel.fromJson(data));
-      } catch (e) {
-        rethrow;
+      } on ServerRejectException catch (error) {
+        return DC.error(error);
       }
-    } on Exception catch (e) {
-      return DC.error(e);
+    } catch (e) {
+      rethrow;
     }
   }
 

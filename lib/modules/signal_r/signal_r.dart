@@ -4,15 +4,19 @@ import 'package:logging/logging.dart';
 import 'package:signalr_core/signalr_core.dart';
 import 'package:simple_networking/api_client/api_client.dart';
 import 'package:simple_networking/config/constants.dart';
+import 'package:simple_networking/config/options.dart';
 import 'package:simple_networking/helpers/device_type.dart';
 import 'package:simple_networking/helpers/models/refresh_token_status.dart';
 import 'package:simple_networking/modules/signal_r/http_client.dart';
 import 'package:simple_networking/modules/signal_r/models/asset_model.dart';
 import 'package:simple_networking/modules/signal_r/models/asset_payment_methods.dart';
+import 'package:simple_networking/modules/signal_r/models/asset_withdrawal_fee_model.dart';
 import 'package:simple_networking/modules/signal_r/models/balance_model.dart';
 import 'package:simple_networking/modules/signal_r/models/base_prices_model.dart';
 import 'package:simple_networking/modules/signal_r/models/blockchains_model.dart';
 import 'package:simple_networking/modules/signal_r/models/campaign_response_model.dart';
+import 'package:simple_networking/modules/signal_r/models/card_limits_model.dart';
+import 'package:simple_networking/modules/signal_r/models/cards_model.dart';
 import 'package:simple_networking/modules/signal_r/models/client_detail_model.dart';
 import 'package:simple_networking/modules/signal_r/models/earn_offers_model.dart';
 import 'package:simple_networking/modules/signal_r/models/earn_profile_model.dart';
@@ -31,7 +35,7 @@ import 'package:http/http.dart' as http;
 
 class SignalRModule {
   SignalRModule({
-    required this.apiClient,
+    required this.options,
     required this.refreshToken,
     required this.signalRClient,
     required this.token,
@@ -39,7 +43,7 @@ class SignalRModule {
     required this.deviceUid,
   });
 
-  final ApiClient apiClient;
+  final SimpleOptions options;
   final Future<RefreshTokenStatus> Function() refreshToken;
   final http.BaseClient signalRClient;
   final String token;
@@ -69,6 +73,8 @@ class SignalRModule {
   final _basePricesController = StreamController<BasePricesModel>();
   final _periodPricesController = StreamController<PeriodPricesModel>();
   final _clientDetailController = StreamController<ClientDetailModel>();
+  final _assetWithdrawalFeeController =
+      StreamController<AssetWithdrawalFeeModel>();
   final _keyValueController = StreamController<KeyValueModel>();
   final _campaignsBannersController = StreamController<CampaignResponseModel>();
   final _referralStatsController =
@@ -85,6 +91,8 @@ class SignalRModule {
       StreamController<RecurringBuysResponseModel>();
   final _earnOfferController = StreamController<List<EarnOfferModel>>();
   final _earnProfileController = StreamController<EarnProfileModel>();
+  final _cardLimitsController = StreamController<CardLimitsModel>();
+  final _cardsController = StreamController<CardsModel>();
 
   final _inifFinishedController = StreamController<bool>();
 
@@ -102,10 +110,19 @@ class SignalRModule {
 
     _connection = HubConnectionBuilder()
         .withUrl(
-          apiClient.options.walletApiSignalR!,
+          options.walletApiSignalR!,
           HttpConnectionOptions(client: signalRClient),
         )
         .build();
+
+    _connection?.on(cardsMessage, (data) {
+      try {
+        final cardsList = CardsModel.fromJson(_json(data));
+        _cardsController.add(cardsList);
+      } catch (e) {
+        _logger.log(contract, cardsMessage, e);
+      }
+    });
 
     _connection?.on(initFinished, (data) {
       try {
@@ -115,12 +132,12 @@ class SignalRModule {
       }
     });
 
-    _connection?.on(earnProfileMessage, (data) {
+    _connection?.on(cardLimitsMessage, (data) {
       try {
-        final earnProfileInfo = EarnProfileModel.fromJson(_json(data));
-        _earnProfileController.add(earnProfileInfo);
+        final cardLimits = CardLimitsModel.fromJson(_json(data));
+        _cardLimitsController.add(cardLimits);
       } catch (e) {
-        _logger.log(contract, earnProfileMessage, e);
+        _logger.log(contract, cardLimitsMessage, e);
       }
     });
 
@@ -285,6 +302,15 @@ class SignalRModule {
       }
     });
 
+    _connection?.on(assetWithdrawalFeeMessage, (data) {
+      try {
+        final assetFees = AssetWithdrawalFeeModel.fromJson(_json(data));
+        _assetWithdrawalFeeController.add(assetFees);
+      } catch (e) {
+        _logger.log(contract, assetWithdrawalFeeMessage, e);
+      }
+    });
+
     _connection?.on(keyValueMessage, (data) {
       try {
         final keyValue = KeyValueModel.parsed(
@@ -368,6 +394,9 @@ class SignalRModule {
 
   Stream<ClientDetailModel> clientDetail() => _clientDetailController.stream;
 
+  Stream<AssetWithdrawalFeeModel> assetWithdrawalFee() =>
+      _assetWithdrawalFeeController.stream;
+
   Stream<KeyValueModel> keyValue() => _keyValueController.stream;
 
   Stream<CampaignResponseModel> marketCampaigns() =>
@@ -398,9 +427,13 @@ class SignalRModule {
 
   Stream<List<EarnOfferModel>> earnOffers() => _earnOfferController.stream;
 
+  Stream<CardLimitsModel> cardLimits() => _cardLimitsController.stream;
+
   Stream<EarnProfileModel> earnProfile() => _earnProfileController.stream;
 
   Stream<bool> isAppLoaded() => _inifFinishedController.stream;
+
+  Stream<CardsModel> cards() => _cardsController.stream;
 
   void _startPing() {
     _pingTimer = Timer.periodic(

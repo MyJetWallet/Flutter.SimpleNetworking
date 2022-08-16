@@ -1,6 +1,6 @@
+// SignalR messages
 import 'package:logging/logging.dart';
 
-// SignalR messages
 const initMessage = 'Init';
 const pingMessage = 'ping';
 const pongMessage = 'pong';
@@ -12,6 +12,7 @@ const marketReferenceMessage = 'market-reference';
 const periodPricesMessage = 'base-prices';
 const basePricesMessage = 'prices-base-currency';
 const clientDetailMessage = 'client-detail';
+const assetWithdrawalFeeMessage = 'asset-withdrawal-fees';
 const keyValueMessage = 'key-values';
 const campaignsBannersMessage = 'campaigns-banners';
 const referralStatsMessage = 'referrer-stats';
@@ -24,11 +25,14 @@ const blockchainsMessage = 'blockchains';
 const referralInfoMessage = 'referral-info';
 const recurringBuyMessage = 'recurring-buys';
 const earnOffersMessage = 'high-yield-profile';
-const earnProfileMessage = 'EarnProfile';
 const initFinished = 'init-finished';
+const cardsMessage = 'cards';
+const cardLimitsMessage = 'cards-limits';
 
 // KeyValue
 const watchlistKey = 'watchlist';
+const cardsKey = 'cards';
+const lastUsedPaymentMethod = 'lastUsedPaymentMethod';
 
 // Logging levels
 const transport = Level('🚚Transport', 1);

@@ -44,9 +44,12 @@ class ApiClient {
     }
   }
 
-  Future<Response> delete(String path) async {
+  Future<Response> delete(
+    String path, {
+    dynamic data,
+  }) async {
     try {
-      return await dio.delete(path);
+      return await dio.delete(path, data: data);
     } on BadNetworkApiError {
       throw BadNetworkException();
     } on InternalServerApiError {

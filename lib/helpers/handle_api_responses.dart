@@ -27,6 +27,16 @@ void handleResultResponse(
   _validateResultResponse(result);
 }
 
+void validateRejectResponse(
+  Map<String, dynamic> json,
+) {
+  final result = (json['data'] as Map<String, dynamic>)['rejectCode'] == null
+      ? 'null'
+      : (json['data'] as Map<String, dynamic>)['rejectCode'] as String;
+
+  _validateRejectResponse(result);
+}
+
 void _validateFullResponse(
   String result,
   Map<String, dynamic> json,
@@ -64,8 +74,14 @@ void _validateFullResponse(
 
 void _validateResultResponse(String result) {
   if (result != 'OK') {
+    throw ServerRejectException(errorCodesDescriptionEn[result] ?? result);
+  }
+}
+
+void _validateRejectResponse(String rejectCode) {
+  if (rejectCode != 'OK' && rejectCode != 'null') {
     throw ServerRejectException(
-      errorCodesDescriptionEn[result] ?? result,
+      errorCodesDescriptionEn[rejectCode] ?? rejectCode,
     );
   }
 }

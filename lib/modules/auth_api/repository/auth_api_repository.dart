@@ -3,6 +3,8 @@ import 'package:simple_networking/api_client/api_client.dart';
 import 'package:simple_networking/helpers/models/server_reject_exception.dart';
 import 'package:simple_networking/modules/auth_api/data_sources/auth_api_data_sources.dart';
 import 'package:simple_networking/modules/auth_api/models/change_password/change_password_request_model.dart';
+import 'package:simple_networking/modules/auth_api/models/change_pin/change_pin_response_model.dart';
+import 'package:simple_networking/modules/auth_api/models/check_pin/check_pin_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/forgot_password/forgot_password_request_model.dart';
 import 'package:simple_networking/modules/auth_api/models/login/authentication_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/login_request_model.dart';
@@ -12,7 +14,11 @@ import 'package:simple_networking/modules/auth_api/models/refresh/auth_refresh_r
 import 'package:simple_networking/modules/auth_api/models/refresh/auth_refresh_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/register_request_model.dart';
 import 'package:simple_networking/modules/auth_api/models/server_time/server_time_response_model.dart';
+import 'package:simple_networking/modules/auth_api/models/session_chek/session_check_response_model.dart';
+import 'package:simple_networking/modules/auth_api/models/setup_pin/setup_pin_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/validate_referral_code/validate_referral_code_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/kyc_profile/apply_user_data_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/kyc_profile/country_list_response_model.dart';
 
 class AuthApiRepository {
   AuthApiRepository(this._apiClient) {
@@ -22,11 +28,11 @@ class AuthApiRepository {
   final ApiClient _apiClient;
   late final AuthApiDataSources _authApiDataSource;
 
-  Future<DC<Exception, String>> postTestRequest() async {
+  Future<DC<ServerRejectException, String>> postTestRequest() async {
     return _authApiDataSource.postTestRequest();
   }
 
-  Future<DC<Exception, bool>> postForgotPassword(
+  Future<DC<ServerRejectException, bool>> postForgotPassword(
     ForgotPasswordRequestModel model,
   ) async {
     return _authApiDataSource.postForgotPasswordRequest(
@@ -42,7 +48,7 @@ class AuthApiRepository {
     );
   }
 
-  Future<DC<Exception, bool>> postLogout(
+  Future<DC<ServerRejectException, bool>> postLogout(
     LogoutRequestModel model,
   ) async {
     return _authApiDataSource.postLogoutRequest(
@@ -50,7 +56,7 @@ class AuthApiRepository {
     );
   }
 
-  Future<DC<Exception, bool>> postRecoverPassword(
+  Future<DC<ServerRejectException, bool>> postRecoverPassword(
     PasswordRecoveryRequestModel model,
   ) async {
     return _authApiDataSource.postRecoverPasswordRequest(
@@ -74,11 +80,12 @@ class AuthApiRepository {
     );
   }
 
-  Future<DC<Exception, ServerTimeResponseModel>> getServerTime() async {
+  Future<DC<ServerRejectException, ServerTimeResponseModel>>
+      getServerTime() async {
     return _authApiDataSource.getServerTimeRequest();
   }
 
-  Future<DC<Exception, bool>> poshConfirmNewPassword(
+  Future<DC<ServerRejectException, bool>> poshConfirmNewPassword(
     ChangePasswordRequestModel model,
   ) async {
     return _authApiDataSource.postConfirmNewPasswordRequest(
@@ -86,11 +93,55 @@ class AuthApiRepository {
     );
   }
 
-  Future<DC<Exception, bool>> postValidateReferralCode(
+  Future<DC<ServerRejectException, bool>> postValidateReferralCode(
     ValidateReferralCodeRequestModel model,
   ) async {
     return _authApiDataSource.postValidateReferralCodeRequest(
       model,
     );
+  }
+
+  Future<DC<ServerRejectException, void>> postApplyUsedData(
+    ApplyUseDataRequestModel model,
+  ) async {
+    return _authApiDataSource.postApplyUsedDataRequest(
+      model,
+    );
+  }
+
+  Future<DC<ServerRejectException, CountryListResponseModel>>
+      getCountryList() async {
+    return _authApiDataSource.getCountryListRequest();
+  }
+
+  Future<DC<ServerRejectException, ChangePinResponseModel>> postChangePin(
+    String oldPin,
+    String newPin,
+  ) async {
+    return _authApiDataSource.postChangePinRequest(
+      oldPin,
+      newPin,
+    );
+  }
+
+  Future<DC<ServerRejectException, CheckPinResponseModel>> postCheckPin(
+    String pin,
+  ) async {
+    return _authApiDataSource.postCheckPinRequest(
+      pin,
+    );
+  }
+
+  Future<DC<ServerRejectException, SetupPinResponseModel>> postSetupPin(
+    String pin,
+  ) async {
+    return _authApiDataSource.postSetupPinRequest(
+      pin,
+    );
+  }
+
+  Future<DC<ServerRejectException, SessionCheckResponseModel>>
+      postSessionCheck() async {
+    return _authApiDataSource.postSessionCheckRequest();
   }
 }

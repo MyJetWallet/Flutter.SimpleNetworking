@@ -3,6 +3,10 @@ import 'package:simple_networking/api_client/api_client.dart';
 import 'package:simple_networking/helpers/handle_api_responses.dart';
 import 'package:simple_networking/helpers/models/server_reject_exception.dart';
 import 'package:simple_networking/modules/auth_api/models/change_password/change_password_request_model.dart';
+import 'package:simple_networking/modules/auth_api/models/change_pin/change_pin_request_model.dart';
+import 'package:simple_networking/modules/auth_api/models/change_pin/change_pin_response_model.dart';
+import 'package:simple_networking/modules/auth_api/models/check_pin/check_pin_request_model.dart';
+import 'package:simple_networking/modules/auth_api/models/check_pin/check_pin_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/forgot_password/forgot_password_request_model.dart';
 import 'package:simple_networking/modules/auth_api/models/login/authentication_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/login_request_model.dart';
@@ -12,14 +16,20 @@ import 'package:simple_networking/modules/auth_api/models/refresh/auth_refresh_r
 import 'package:simple_networking/modules/auth_api/models/refresh/auth_refresh_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/register_request_model.dart';
 import 'package:simple_networking/modules/auth_api/models/server_time/server_time_response_model.dart';
+import 'package:simple_networking/modules/auth_api/models/session_chek/session_check_request_model.dart';
+import 'package:simple_networking/modules/auth_api/models/session_chek/session_check_response_model.dart';
+import 'package:simple_networking/modules/auth_api/models/setup_pin/setup_pin_request_model.dart';
+import 'package:simple_networking/modules/auth_api/models/setup_pin/setup_pin_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/validate_referral_code/validate_referral_code_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/kyc_profile/apply_user_data_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/kyc_profile/country_list_response_model.dart';
 
 class AuthApiDataSources {
   final ApiClient _apiClient;
 
   AuthApiDataSources(this._apiClient);
 
-  Future<DC<Exception, String>> postTestRequest() async {
+  Future<DC<ServerRejectException, String>> postTestRequest() async {
     try {
       print('SEND REQUEST ${_apiClient.options.authApi}');
       /*final response = await _apiClient.post(
@@ -37,7 +47,7 @@ class AuthApiDataSources {
     }
   }
 
-  Future<DC<Exception, bool>> postForgotPasswordRequest(
+  Future<DC<ServerRejectException, bool>> postForgotPasswordRequest(
     ForgotPasswordRequestModel model,
   ) async {
     try {
@@ -83,7 +93,7 @@ class AuthApiDataSources {
     }
   }
 
-  Future<DC<Exception, bool>> postLogoutRequest(
+  Future<DC<ServerRejectException, bool>> postLogoutRequest(
     LogoutRequestModel model,
   ) async {
     try {
@@ -93,12 +103,12 @@ class AuthApiDataSources {
       );
 
       return DC.data(true);
-    } on Exception catch (e) {
+    } on ServerRejectException catch (e) {
       return DC.error(e);
     }
   }
 
-  Future<DC<Exception, bool>> postRecoverPasswordRequest(
+  Future<DC<ServerRejectException, bool>> postRecoverPasswordRequest(
     PasswordRecoveryRequestModel model,
   ) async {
     try {
@@ -116,7 +126,7 @@ class AuthApiDataSources {
       } catch (e) {
         rethrow;
       }
-    } on Exception catch (e) {
+    } on ServerRejectException catch (e) {
       return DC.error(e);
     }
   }
@@ -171,7 +181,8 @@ class AuthApiDataSources {
     }
   }
 
-  Future<DC<Exception, ServerTimeResponseModel>> getServerTimeRequest() async {
+  Future<DC<ServerRejectException, ServerTimeResponseModel>>
+      getServerTimeRequest() async {
     try {
       final response = await _apiClient.get(
         '${_apiClient.options.authApi}/common/server-time',
@@ -186,12 +197,12 @@ class AuthApiDataSources {
       } catch (e) {
         rethrow;
       }
-    } on Exception catch (e) {
+    } on ServerRejectException catch (e) {
       return DC.error(e);
     }
   }
 
-  Future<DC<Exception, bool>> postConfirmNewPasswordRequest(
+  Future<DC<ServerRejectException, bool>> postConfirmNewPasswordRequest(
     ChangePasswordRequestModel model,
   ) async {
     try {
@@ -209,12 +220,12 @@ class AuthApiDataSources {
       } catch (e) {
         rethrow;
       }
-    } on Exception catch (e) {
+    } on ServerRejectException catch (e) {
       return DC.error(e);
     }
   }
 
-  Future<DC<Exception, bool>> postValidateReferralCodeRequest(
+  Future<DC<ServerRejectException, bool>> postValidateReferralCodeRequest(
     ValidateReferralCodeRequestModel model,
   ) async {
     try {
@@ -232,7 +243,142 @@ class AuthApiDataSources {
       } catch (e) {
         rethrow;
       }
-    } on Exception catch (e) {
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, void>> postApplyUsedDataRequest(
+    ApplyUseDataRequestModel model,
+  ) async {
+    try {
+      final response = await _apiClient.post(
+        '${_apiClient.options.authApi}/kycprofile/Apply',
+        data: model.toJson(),
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+        handleResultResponse(responseData);
+
+        return DC.data(null);
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, CountryListResponseModel>>
+      getCountryListRequest() async {
+    try {
+      final response = await _apiClient.get(
+        '${_apiClient.options.authApi}/kycprofile/CountryList',
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+        final data = handleFullResponse<Map>(responseData);
+
+        return DC.data(CountryListResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, ChangePinResponseModel>>
+      postChangePinRequest(
+    String oldPin,
+    String newPin,
+  ) async {
+    try {
+      final response = await _apiClient.post(
+        '${_apiClient.options.authApi}/pin/ChangePin',
+        data: ChangePinRequestModel(oldPin: oldPin, newPin: newPin),
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+        final data = handleFullResponse<String>(responseData);
+
+        return DC.data(ChangePinResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, CheckPinResponseModel>> postCheckPinRequest(
+    String pin,
+  ) async {
+    try {
+      final model = CheckPinRequestModel(pin: pin);
+
+      final response = await _apiClient.post(
+        '${_apiClient.options.authApi}/pin/CheckPin',
+        data: model.toJson(),
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+        final data = handleFullResponse<String>(responseData);
+
+        return DC.data(CheckPinResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, SetupPinResponseModel>> postSetupPinRequest(
+    String pin,
+  ) async {
+    try {
+      final model = SetupPinRequestModel(pin: pin);
+
+      final response = await _apiClient.post(
+        '${_apiClient.options.authApi}/pin/SetupPin',
+        data: model.toJson(),
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+        final data = handleFullResponse<String>(responseData);
+
+        return DC.data(SetupPinResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, SessionCheckResponseModel>>
+      postSessionCheckRequest() async {
+    try {
+      final response = await _apiClient.post(
+        '${_apiClient.options.authApi}/session/Check',
+        data: const SessionCheckRequestModel(),
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+        final data = handleFullResponse<Map>(responseData);
+
+        return DC.data(SessionCheckResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
       return DC.error(e);
     }
   }

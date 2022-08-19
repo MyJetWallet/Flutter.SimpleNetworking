@@ -45,7 +45,7 @@ class SimpleNetworkingImpl implements SimpleNetworking {
     String deviceUid,
   ) {
     return SignalRModule(
-      apiClient: apiClient,
+      options: apiClient.options,
       refreshToken: refreshToken,
       signalRClient: signalRClient,
       token: token,

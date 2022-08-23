@@ -25,6 +25,8 @@ import 'package:simple_networking/modules/wallet_api/models/disclaimer/disclaime
 import 'package:simple_networking/modules/wallet_api/models/earn_offer_deposit/earn_offer_deposit_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/earn_offer_withdrawal/earn_offer_withdrawal_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/encryption_key/encryption_key_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/get_quote/get_quote_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/get_quote/get_quote_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/key_value/key_value_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/kyc/check_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/market_info/market_info_request_model.dart';
@@ -47,8 +49,6 @@ import 'package:simple_networking/modules/wallet_api/models/simplex/simplex_paym
 import 'package:simple_networking/modules/wallet_api/models/simplex/simplex_payment_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/swap_execute_quote/execute_quote_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/swap_execute_quote/execute_quote_response_model.dart';
-import 'package:simple_networking/modules/wallet_api/models/swap_get_quote/get_quote_request_model.dart';
-import 'package:simple_networking/modules/wallet_api/models/swap_get_quote/get_quote_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/tranfer_by_phone/transfer_by_phone_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/tranfer_by_phone/transfer_by_phone_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/transfer_cancel/transfer_cancel_request_model.dart';
@@ -58,6 +58,8 @@ import 'package:simple_networking/modules/wallet_api/models/transfer_info/transf
 import 'package:simple_networking/modules/wallet_api/models/transfer_resend_request_model/transfer_resend_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/validate_address/validate_address_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/validate_address/validate_address_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/wallet_history/wallet_history_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/wallet_history/wallet_history_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/wire_countries/wire_countries_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/withdraw/withdraw_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/withdraw/withdraw_response_model.dart';
@@ -116,6 +118,15 @@ class WalletApiRepository {
     );
   }
 
+  Future<DC<ServerRejectException, WalletHistoryResponseModel>>
+      getWalletHistory(
+    WalletHistoryRequestModel model,
+  ) async {
+    return _walletApiDataSources.getWalletHistoryRequest(
+      model,
+    );
+  }
+
   /// Circle API
   Future<DC<ServerRejectException, CircleCard>> postAddCard(
     AddCardRequestModel model,
@@ -125,9 +136,7 @@ class WalletApiRepository {
     );
   }
 
-  Future<DC<ServerRejectException, AllCardsResponseModel>> getAllCards(
-    AddCardRequestModel model,
-  ) async {
+  Future<DC<ServerRejectException, AllCardsResponseModel>> getAllCards() async {
     return _walletApiDataSources.getAllCardsRequest();
   }
 

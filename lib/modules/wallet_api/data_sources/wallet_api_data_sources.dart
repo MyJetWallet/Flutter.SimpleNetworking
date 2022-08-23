@@ -25,6 +25,8 @@ import 'package:simple_networking/modules/wallet_api/models/disclaimer/disclaime
 import 'package:simple_networking/modules/wallet_api/models/earn_offer_deposit/earn_offer_deposit_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/earn_offer_withdrawal/earn_offer_withdrawal_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/encryption_key/encryption_key_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/get_quote/get_quote_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/get_quote/get_quote_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/key_value/key_value_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/kyc/check_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/kyc_profile/apply_user_data_request_model.dart';
@@ -49,8 +51,6 @@ import 'package:simple_networking/modules/wallet_api/models/session_info/session
 import 'package:simple_networking/modules/wallet_api/models/simplex/simplex_payment_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/swap_execute_quote/execute_quote_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/swap_execute_quote/execute_quote_response_model.dart';
-import 'package:simple_networking/modules/wallet_api/models/swap_get_quote/get_quote_request_model.dart';
-import 'package:simple_networking/modules/wallet_api/models/swap_get_quote/get_quote_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/tranfer_by_phone/transfer_by_phone_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/tranfer_by_phone/transfer_by_phone_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/transfer_cancel/transfer_cancel_request_model.dart';

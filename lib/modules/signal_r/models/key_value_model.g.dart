@@ -11,6 +11,10 @@ _$_KeyValueModel _$$_KeyValueModelFromJson(Map<String, dynamic> json) =>
       watchlist: json['watchlist'] == null
           ? null
           : WatchlistModel.fromJson(json['watchlist'] as Map<String, dynamic>),
+      cards: json['cards'] == null
+          ? null
+          : WatchlistModel.fromJson(json['cards'] as Map<String, dynamic>),
+      lastUsedPaymentMethod: json['lastUsedPaymentMethod'] as String?,
       now: (json['now'] as num).toDouble(),
       keys: (json['keys'] as List<dynamic>)
           .map((e) => KeyValueResponseModel.fromJson(e as Map<String, dynamic>))
@@ -20,6 +24,8 @@ _$_KeyValueModel _$$_KeyValueModelFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$_KeyValueModelToJson(_$_KeyValueModel instance) =>
     <String, dynamic>{
       'watchlist': instance.watchlist,
+      'cards': instance.cards,
+      'lastUsedPaymentMethod': instance.lastUsedPaymentMethod,
       'now': instance.now,
       'keys': instance.keys,
     };

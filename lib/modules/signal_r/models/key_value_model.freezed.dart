@@ -21,6 +21,8 @@ KeyValueModel _$KeyValueModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$KeyValueModel {
   WatchlistModel? get watchlist => throw _privateConstructorUsedError;
+  WatchlistModel? get cards => throw _privateConstructorUsedError;
+  String? get lastUsedPaymentMethod => throw _privateConstructorUsedError;
   double get now => throw _privateConstructorUsedError;
   List<KeyValueResponseModel> get keys => throw _privateConstructorUsedError;
 
@@ -37,10 +39,13 @@ abstract class $KeyValueModelCopyWith<$Res> {
       _$KeyValueModelCopyWithImpl<$Res>;
   $Res call(
       {WatchlistModel? watchlist,
+      WatchlistModel? cards,
+      String? lastUsedPaymentMethod,
       double now,
       List<KeyValueResponseModel> keys});
 
   $WatchlistModelCopyWith<$Res>? get watchlist;
+  $WatchlistModelCopyWith<$Res>? get cards;
 }
 
 /// @nodoc
@@ -55,6 +60,8 @@ class _$KeyValueModelCopyWithImpl<$Res>
   @override
   $Res call({
     Object? watchlist = freezed,
+    Object? cards = freezed,
+    Object? lastUsedPaymentMethod = freezed,
     Object? now = freezed,
     Object? keys = freezed,
   }) {
@@ -63,6 +70,14 @@ class _$KeyValueModelCopyWithImpl<$Res>
           ? _value.watchlist
           : watchlist // ignore: cast_nullable_to_non_nullable
               as WatchlistModel?,
+      cards: cards == freezed
+          ? _value.cards
+          : cards // ignore: cast_nullable_to_non_nullable
+              as WatchlistModel?,
+      lastUsedPaymentMethod: lastUsedPaymentMethod == freezed
+          ? _value.lastUsedPaymentMethod
+          : lastUsedPaymentMethod // ignore: cast_nullable_to_non_nullable
+              as String?,
       now: now == freezed
           ? _value.now
           : now // ignore: cast_nullable_to_non_nullable
@@ -84,6 +99,17 @@ class _$KeyValueModelCopyWithImpl<$Res>
       return _then(_value.copyWith(watchlist: value));
     });
   }
+
+  @override
+  $WatchlistModelCopyWith<$Res>? get cards {
+    if (_value.cards == null) {
+      return null;
+    }
+
+    return $WatchlistModelCopyWith<$Res>(_value.cards!, (value) {
+      return _then(_value.copyWith(cards: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -95,11 +121,15 @@ abstract class _$$_KeyValueModelCopyWith<$Res>
   @override
   $Res call(
       {WatchlistModel? watchlist,
+      WatchlistModel? cards,
+      String? lastUsedPaymentMethod,
       double now,
       List<KeyValueResponseModel> keys});
 
   @override
   $WatchlistModelCopyWith<$Res>? get watchlist;
+  @override
+  $WatchlistModelCopyWith<$Res>? get cards;
 }
 
 /// @nodoc
@@ -116,6 +146,8 @@ class __$$_KeyValueModelCopyWithImpl<$Res>
   @override
   $Res call({
     Object? watchlist = freezed,
+    Object? cards = freezed,
+    Object? lastUsedPaymentMethod = freezed,
     Object? now = freezed,
     Object? keys = freezed,
   }) {
@@ -124,6 +156,14 @@ class __$$_KeyValueModelCopyWithImpl<$Res>
           ? _value.watchlist
           : watchlist // ignore: cast_nullable_to_non_nullable
               as WatchlistModel?,
+      cards: cards == freezed
+          ? _value.cards
+          : cards // ignore: cast_nullable_to_non_nullable
+              as WatchlistModel?,
+      lastUsedPaymentMethod: lastUsedPaymentMethod == freezed
+          ? _value.lastUsedPaymentMethod
+          : lastUsedPaymentMethod // ignore: cast_nullable_to_non_nullable
+              as String?,
       now: now == freezed
           ? _value.now
           : now // ignore: cast_nullable_to_non_nullable
@@ -141,6 +181,8 @@ class __$$_KeyValueModelCopyWithImpl<$Res>
 class _$_KeyValueModel implements _KeyValueModel {
   const _$_KeyValueModel(
       {this.watchlist,
+      this.cards,
+      this.lastUsedPaymentMethod,
       required this.now,
       required final List<KeyValueResponseModel> keys})
       : _keys = keys;
@@ -150,6 +192,10 @@ class _$_KeyValueModel implements _KeyValueModel {
 
   @override
   final WatchlistModel? watchlist;
+  @override
+  final WatchlistModel? cards;
+  @override
+  final String? lastUsedPaymentMethod;
   @override
   final double now;
   final List<KeyValueResponseModel> _keys;
@@ -161,7 +207,7 @@ class _$_KeyValueModel implements _KeyValueModel {
 
   @override
   String toString() {
-    return 'KeyValueModel(watchlist: $watchlist, now: $now, keys: $keys)';
+    return 'KeyValueModel(watchlist: $watchlist, cards: $cards, lastUsedPaymentMethod: $lastUsedPaymentMethod, now: $now, keys: $keys)';
   }
 
   @override
@@ -170,6 +216,9 @@ class _$_KeyValueModel implements _KeyValueModel {
         (other.runtimeType == runtimeType &&
             other is _$_KeyValueModel &&
             const DeepCollectionEquality().equals(other.watchlist, watchlist) &&
+            const DeepCollectionEquality().equals(other.cards, cards) &&
+            const DeepCollectionEquality()
+                .equals(other.lastUsedPaymentMethod, lastUsedPaymentMethod) &&
             const DeepCollectionEquality().equals(other.now, now) &&
             const DeepCollectionEquality().equals(other._keys, _keys));
   }
@@ -179,6 +228,8 @@ class _$_KeyValueModel implements _KeyValueModel {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(watchlist),
+      const DeepCollectionEquality().hash(cards),
+      const DeepCollectionEquality().hash(lastUsedPaymentMethod),
       const DeepCollectionEquality().hash(now),
       const DeepCollectionEquality().hash(_keys));
 
@@ -196,6 +247,8 @@ class _$_KeyValueModel implements _KeyValueModel {
 abstract class _KeyValueModel implements KeyValueModel {
   const factory _KeyValueModel(
       {final WatchlistModel? watchlist,
+      final WatchlistModel? cards,
+      final String? lastUsedPaymentMethod,
       required final double now,
       required final List<KeyValueResponseModel> keys}) = _$_KeyValueModel;
 
@@ -204,6 +257,10 @@ abstract class _KeyValueModel implements KeyValueModel {
 
   @override
   WatchlistModel? get watchlist;
+  @override
+  WatchlistModel? get cards;
+  @override
+  String? get lastUsedPaymentMethod;
   @override
   double get now;
   @override

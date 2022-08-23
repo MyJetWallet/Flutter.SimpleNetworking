@@ -5,7 +5,9 @@ import 'package:simple_networking/config/options.dart';
 import 'package:simple_networking/core/simple_networking_impl.dart';
 import 'package:simple_networking/helpers/models/refresh_token_status.dart';
 import 'package:simple_networking/modules/auth_api/repository/auth_api_repository.dart';
+import 'package:simple_networking/modules/candles_api/repository/candles_api_repository.dart';
 import 'package:simple_networking/modules/signal_r/signal_r.dart';
+import 'package:simple_networking/modules/validation_api/repository/validation_api_repository.dart';
 import 'package:simple_networking/modules/wallet_api/repository/wallet_api_repository.dart';
 
 SimpleNetworking initSimpleNetworking(Dio dio, [SimpleOptions? options]) =>
@@ -51,4 +53,10 @@ abstract class SimpleNetworking {
 
   /// Wallet API Module
   WalletApiRepository getWalletModule();
+
+  /// Validation API Module
+  ValidationApiRepository getValidationModule();
+
+  /// Candles API Module
+  CandlesApiRepository getCandlesModule();
 }

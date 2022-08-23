@@ -6,10 +6,10 @@ part 'market_news_request_model.g.dart';
 @freezed
 class MarketNewsRequestModel with _$MarketNewsRequestModel {
   const factory MarketNewsRequestModel({
-    required String assetId,
-    required String lastSeen,
+    String? assetId,
+    @JsonKey(name: 'lastSeen') String? lastDate,
+    @JsonKey(name: 'take') int? batchSize,
     @JsonKey(name: 'lang') required String language,
-    @JsonKey(name: 'take') required int amount,
   }) = _MarketNewsRequestModel;
 
   factory MarketNewsRequestModel.fromJson(Map<String, dynamic> json) =>

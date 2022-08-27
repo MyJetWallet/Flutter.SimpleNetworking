@@ -311,7 +311,7 @@ class ValidationApiDataSources {
 
   Future<DC<ServerRejectException, void>>
       postVerifyTransferVerificationCodeRequest(
-    VerifyEmailVerificationCodeRequestModel model,
+    VerifyWithdrawalVerificationCodeRequestModel model,
   ) async {
     try {
       final response = await _apiClient.post(

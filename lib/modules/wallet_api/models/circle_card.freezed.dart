@@ -26,6 +26,7 @@ mixin _$CircleCard {
   int get expMonth => throw _privateConstructorUsedError;
   int get expYear => throw _privateConstructorUsedError;
   CircleCardStatus get status => throw _privateConstructorUsedError;
+  IntegrationType? get integration => throw _privateConstructorUsedError;
   bool get lastUsed => throw _privateConstructorUsedError;
   CircleCardInfoPayment get paymentDetails =>
       throw _privateConstructorUsedError;
@@ -48,6 +49,7 @@ abstract class $CircleCardCopyWith<$Res> {
       int expMonth,
       int expYear,
       CircleCardStatus status,
+      IntegrationType? integration,
       bool lastUsed,
       CircleCardInfoPayment paymentDetails});
 
@@ -70,6 +72,7 @@ class _$CircleCardCopyWithImpl<$Res> implements $CircleCardCopyWith<$Res> {
     Object? expMonth = freezed,
     Object? expYear = freezed,
     Object? status = freezed,
+    Object? integration = freezed,
     Object? lastUsed = freezed,
     Object? paymentDetails = freezed,
   }) {
@@ -98,6 +101,10 @@ class _$CircleCardCopyWithImpl<$Res> implements $CircleCardCopyWith<$Res> {
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as CircleCardStatus,
+      integration: integration == freezed
+          ? _value.integration
+          : integration // ignore: cast_nullable_to_non_nullable
+              as IntegrationType?,
       lastUsed: lastUsed == freezed
           ? _value.lastUsed
           : lastUsed // ignore: cast_nullable_to_non_nullable
@@ -131,6 +138,7 @@ abstract class _$$_CircleCardCopyWith<$Res>
       int expMonth,
       int expYear,
       CircleCardStatus status,
+      IntegrationType? integration,
       bool lastUsed,
       CircleCardInfoPayment paymentDetails});
 
@@ -156,6 +164,7 @@ class __$$_CircleCardCopyWithImpl<$Res> extends _$CircleCardCopyWithImpl<$Res>
     Object? expMonth = freezed,
     Object? expYear = freezed,
     Object? status = freezed,
+    Object? integration = freezed,
     Object? lastUsed = freezed,
     Object? paymentDetails = freezed,
   }) {
@@ -184,6 +193,10 @@ class __$$_CircleCardCopyWithImpl<$Res> extends _$CircleCardCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as CircleCardStatus,
+      integration: integration == freezed
+          ? _value.integration
+          : integration // ignore: cast_nullable_to_non_nullable
+              as IntegrationType?,
       lastUsed: lastUsed == freezed
           ? _value.lastUsed
           : lastUsed // ignore: cast_nullable_to_non_nullable
@@ -206,6 +219,7 @@ class _$_CircleCard implements _CircleCard {
       required this.expMonth,
       required this.expYear,
       required this.status,
+      this.integration,
       required this.lastUsed,
       required this.paymentDetails});
 
@@ -225,13 +239,15 @@ class _$_CircleCard implements _CircleCard {
   @override
   final CircleCardStatus status;
   @override
+  final IntegrationType? integration;
+  @override
   final bool lastUsed;
   @override
   final CircleCardInfoPayment paymentDetails;
 
   @override
   String toString() {
-    return 'CircleCard(id: $id, last4: $last4, network: $network, expMonth: $expMonth, expYear: $expYear, status: $status, lastUsed: $lastUsed, paymentDetails: $paymentDetails)';
+    return 'CircleCard(id: $id, last4: $last4, network: $network, expMonth: $expMonth, expYear: $expYear, status: $status, integration: $integration, lastUsed: $lastUsed, paymentDetails: $paymentDetails)';
   }
 
   @override
@@ -245,6 +261,8 @@ class _$_CircleCard implements _CircleCard {
             const DeepCollectionEquality().equals(other.expMonth, expMonth) &&
             const DeepCollectionEquality().equals(other.expYear, expYear) &&
             const DeepCollectionEquality().equals(other.status, status) &&
+            const DeepCollectionEquality()
+                .equals(other.integration, integration) &&
             const DeepCollectionEquality().equals(other.lastUsed, lastUsed) &&
             const DeepCollectionEquality()
                 .equals(other.paymentDetails, paymentDetails));
@@ -260,6 +278,7 @@ class _$_CircleCard implements _CircleCard {
       const DeepCollectionEquality().hash(expMonth),
       const DeepCollectionEquality().hash(expYear),
       const DeepCollectionEquality().hash(status),
+      const DeepCollectionEquality().hash(integration),
       const DeepCollectionEquality().hash(lastUsed),
       const DeepCollectionEquality().hash(paymentDetails));
 
@@ -282,6 +301,7 @@ abstract class _CircleCard implements CircleCard {
       required final int expMonth,
       required final int expYear,
       required final CircleCardStatus status,
+      final IntegrationType? integration,
       required final bool lastUsed,
       required final CircleCardInfoPayment paymentDetails}) = _$_CircleCard;
 
@@ -301,6 +321,8 @@ abstract class _CircleCard implements CircleCard {
   @override
   CircleCardStatus get status;
   @override
+  IntegrationType? get integration;
+  @override
   bool get lastUsed;
   @override
   CircleCardInfoPayment get paymentDetails;
@@ -317,11 +339,12 @@ CircleCardInfoPayment _$CircleCardInfoPaymentFromJson(
 
 /// @nodoc
 mixin _$CircleCardInfoPayment {
-  double get feePercentage => throw _privateConstructorUsedError;
   @DecimalSerialiser()
   Decimal get minAmount => throw _privateConstructorUsedError;
   @DecimalSerialiser()
   Decimal get maxAmount => throw _privateConstructorUsedError;
+  @DecimalSerialiser()
+  Decimal get feePercentage => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -335,9 +358,9 @@ abstract class $CircleCardInfoPaymentCopyWith<$Res> {
           $Res Function(CircleCardInfoPayment) then) =
       _$CircleCardInfoPaymentCopyWithImpl<$Res>;
   $Res call(
-      {double feePercentage,
-      @DecimalSerialiser() Decimal minAmount,
-      @DecimalSerialiser() Decimal maxAmount});
+      {@DecimalSerialiser() Decimal minAmount,
+      @DecimalSerialiser() Decimal maxAmount,
+      @DecimalSerialiser() Decimal feePercentage});
 }
 
 /// @nodoc
@@ -351,15 +374,11 @@ class _$CircleCardInfoPaymentCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? feePercentage = freezed,
     Object? minAmount = freezed,
     Object? maxAmount = freezed,
+    Object? feePercentage = freezed,
   }) {
     return _then(_value.copyWith(
-      feePercentage: feePercentage == freezed
-          ? _value.feePercentage
-          : feePercentage // ignore: cast_nullable_to_non_nullable
-              as double,
       minAmount: minAmount == freezed
           ? _value.minAmount
           : minAmount // ignore: cast_nullable_to_non_nullable
@@ -367,6 +386,10 @@ class _$CircleCardInfoPaymentCopyWithImpl<$Res>
       maxAmount: maxAmount == freezed
           ? _value.maxAmount
           : maxAmount // ignore: cast_nullable_to_non_nullable
+              as Decimal,
+      feePercentage: feePercentage == freezed
+          ? _value.feePercentage
+          : feePercentage // ignore: cast_nullable_to_non_nullable
               as Decimal,
     ));
   }
@@ -380,9 +403,9 @@ abstract class _$$_CircleCardInfoPaymentCopyWith<$Res>
       __$$_CircleCardInfoPaymentCopyWithImpl<$Res>;
   @override
   $Res call(
-      {double feePercentage,
-      @DecimalSerialiser() Decimal minAmount,
-      @DecimalSerialiser() Decimal maxAmount});
+      {@DecimalSerialiser() Decimal minAmount,
+      @DecimalSerialiser() Decimal maxAmount,
+      @DecimalSerialiser() Decimal feePercentage});
 }
 
 /// @nodoc
@@ -399,15 +422,11 @@ class __$$_CircleCardInfoPaymentCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? feePercentage = freezed,
     Object? minAmount = freezed,
     Object? maxAmount = freezed,
+    Object? feePercentage = freezed,
   }) {
     return _then(_$_CircleCardInfoPayment(
-      feePercentage: feePercentage == freezed
-          ? _value.feePercentage
-          : feePercentage // ignore: cast_nullable_to_non_nullable
-              as double,
       minAmount: minAmount == freezed
           ? _value.minAmount
           : minAmount // ignore: cast_nullable_to_non_nullable
@@ -415,6 +434,10 @@ class __$$_CircleCardInfoPaymentCopyWithImpl<$Res>
       maxAmount: maxAmount == freezed
           ? _value.maxAmount
           : maxAmount // ignore: cast_nullable_to_non_nullable
+              as Decimal,
+      feePercentage: feePercentage == freezed
+          ? _value.feePercentage
+          : feePercentage // ignore: cast_nullable_to_non_nullable
               as Decimal,
     ));
   }
@@ -424,25 +447,26 @@ class __$$_CircleCardInfoPaymentCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_CircleCardInfoPayment implements _CircleCardInfoPayment {
   const _$_CircleCardInfoPayment(
-      {required this.feePercentage,
-      @DecimalSerialiser() required this.minAmount,
-      @DecimalSerialiser() required this.maxAmount});
+      {@DecimalSerialiser() required this.minAmount,
+      @DecimalSerialiser() required this.maxAmount,
+      @DecimalSerialiser() required this.feePercentage});
 
   factory _$_CircleCardInfoPayment.fromJson(Map<String, dynamic> json) =>
       _$$_CircleCardInfoPaymentFromJson(json);
 
-  @override
-  final double feePercentage;
   @override
   @DecimalSerialiser()
   final Decimal minAmount;
   @override
   @DecimalSerialiser()
   final Decimal maxAmount;
+  @override
+  @DecimalSerialiser()
+  final Decimal feePercentage;
 
   @override
   String toString() {
-    return 'CircleCardInfoPayment(feePercentage: $feePercentage, minAmount: $minAmount, maxAmount: $maxAmount)';
+    return 'CircleCardInfoPayment(minAmount: $minAmount, maxAmount: $maxAmount, feePercentage: $feePercentage)';
   }
 
   @override
@@ -450,19 +474,19 @@ class _$_CircleCardInfoPayment implements _CircleCardInfoPayment {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_CircleCardInfoPayment &&
-            const DeepCollectionEquality()
-                .equals(other.feePercentage, feePercentage) &&
             const DeepCollectionEquality().equals(other.minAmount, minAmount) &&
-            const DeepCollectionEquality().equals(other.maxAmount, maxAmount));
+            const DeepCollectionEquality().equals(other.maxAmount, maxAmount) &&
+            const DeepCollectionEquality()
+                .equals(other.feePercentage, feePercentage));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(feePercentage),
       const DeepCollectionEquality().hash(minAmount),
-      const DeepCollectionEquality().hash(maxAmount));
+      const DeepCollectionEquality().hash(maxAmount),
+      const DeepCollectionEquality().hash(feePercentage));
 
   @JsonKey(ignore: true)
   @override
@@ -478,22 +502,23 @@ class _$_CircleCardInfoPayment implements _CircleCardInfoPayment {
 
 abstract class _CircleCardInfoPayment implements CircleCardInfoPayment {
   const factory _CircleCardInfoPayment(
-          {required final double feePercentage,
-          @DecimalSerialiser() required final Decimal minAmount,
-          @DecimalSerialiser() required final Decimal maxAmount}) =
+          {@DecimalSerialiser() required final Decimal minAmount,
+          @DecimalSerialiser() required final Decimal maxAmount,
+          @DecimalSerialiser() required final Decimal feePercentage}) =
       _$_CircleCardInfoPayment;
 
   factory _CircleCardInfoPayment.fromJson(Map<String, dynamic> json) =
       _$_CircleCardInfoPayment.fromJson;
 
   @override
-  double get feePercentage;
-  @override
   @DecimalSerialiser()
   Decimal get minAmount;
   @override
   @DecimalSerialiser()
   Decimal get maxAmount;
+  @override
+  @DecimalSerialiser()
+  Decimal get feePercentage;
   @override
   @JsonKey(ignore: true)
   _$$_CircleCardInfoPaymentCopyWith<_$_CircleCardInfoPayment> get copyWith =>

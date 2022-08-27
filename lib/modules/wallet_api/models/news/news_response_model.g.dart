@@ -1,0 +1,49 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'news_response_model.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_$_NewsResponseModel _$$_NewsResponseModelFromJson(Map<String, dynamic> json) =>
+    _$_NewsResponseModel(
+      news: (json['news'] as List<dynamic>)
+          .map((e) => NewsModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$_NewsResponseModelToJson(
+        _$_NewsResponseModel instance) =>
+    <String, dynamic>{
+      'news': instance.news,
+    };
+
+_$_NewsModel _$$_NewsModelFromJson(Map<String, dynamic> json) => _$_NewsModel(
+      source: json['source'] as String,
+      topic: json['topic'] as String,
+      lang: json['lang'] as String,
+      timestamp: json['timestamp'] as String,
+      urlAddress: json['urlAddress'] as String,
+      sentiment: $enumDecode(_$SentimentEnumMap, json['sentiment']),
+      associatedAssets: (json['associatedAssets'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
+    );
+
+Map<String, dynamic> _$$_NewsModelToJson(_$_NewsModel instance) =>
+    <String, dynamic>{
+      'source': instance.source,
+      'topic': instance.topic,
+      'lang': instance.lang,
+      'timestamp': instance.timestamp,
+      'urlAddress': instance.urlAddress,
+      'sentiment': _$SentimentEnumMap[instance.sentiment]!,
+      'associatedAssets': instance.associatedAssets,
+    };
+
+const _$SentimentEnumMap = {
+  Sentiment.neutral: 'Neutral',
+  Sentiment.positive: 'Positive',
+  Sentiment.negative: 'Negative',
+};

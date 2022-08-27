@@ -21,13 +21,12 @@ MarketNewsRequestModel _$MarketNewsRequestModelFromJson(
 
 /// @nodoc
 mixin _$MarketNewsRequestModel {
-  String? get assetId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'lastSeen')
-  String? get lastDate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'take')
-  int? get batchSize => throw _privateConstructorUsedError;
+  String get assetId => throw _privateConstructorUsedError;
+  String get lastSeen => throw _privateConstructorUsedError;
   @JsonKey(name: 'lang')
   String get language => throw _privateConstructorUsedError;
+  @JsonKey(name: 'take')
+  int get amount => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,10 +40,10 @@ abstract class $MarketNewsRequestModelCopyWith<$Res> {
           $Res Function(MarketNewsRequestModel) then) =
       _$MarketNewsRequestModelCopyWithImpl<$Res>;
   $Res call(
-      {String? assetId,
-      @JsonKey(name: 'lastSeen') String? lastDate,
-      @JsonKey(name: 'take') int? batchSize,
-      @JsonKey(name: 'lang') String language});
+      {String assetId,
+      String lastSeen,
+      @JsonKey(name: 'lang') String language,
+      @JsonKey(name: 'take') int amount});
 }
 
 /// @nodoc
@@ -59,27 +58,27 @@ class _$MarketNewsRequestModelCopyWithImpl<$Res>
   @override
   $Res call({
     Object? assetId = freezed,
-    Object? lastDate = freezed,
-    Object? batchSize = freezed,
+    Object? lastSeen = freezed,
     Object? language = freezed,
+    Object? amount = freezed,
   }) {
     return _then(_value.copyWith(
       assetId: assetId == freezed
           ? _value.assetId
           : assetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lastDate: lastDate == freezed
-          ? _value.lastDate
-          : lastDate // ignore: cast_nullable_to_non_nullable
-              as String?,
-      batchSize: batchSize == freezed
-          ? _value.batchSize
-          : batchSize // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String,
+      lastSeen: lastSeen == freezed
+          ? _value.lastSeen
+          : lastSeen // ignore: cast_nullable_to_non_nullable
+              as String,
       language: language == freezed
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as String,
+      amount: amount == freezed
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -92,10 +91,10 @@ abstract class _$$_MarketNewsRequestModelCopyWith<$Res>
       __$$_MarketNewsRequestModelCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String? assetId,
-      @JsonKey(name: 'lastSeen') String? lastDate,
-      @JsonKey(name: 'take') int? batchSize,
-      @JsonKey(name: 'lang') String language});
+      {String assetId,
+      String lastSeen,
+      @JsonKey(name: 'lang') String language,
+      @JsonKey(name: 'take') int amount});
 }
 
 /// @nodoc
@@ -113,27 +112,27 @@ class __$$_MarketNewsRequestModelCopyWithImpl<$Res>
   @override
   $Res call({
     Object? assetId = freezed,
-    Object? lastDate = freezed,
-    Object? batchSize = freezed,
+    Object? lastSeen = freezed,
     Object? language = freezed,
+    Object? amount = freezed,
   }) {
     return _then(_$_MarketNewsRequestModel(
       assetId: assetId == freezed
           ? _value.assetId
           : assetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lastDate: lastDate == freezed
-          ? _value.lastDate
-          : lastDate // ignore: cast_nullable_to_non_nullable
-              as String?,
-      batchSize: batchSize == freezed
-          ? _value.batchSize
-          : batchSize // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String,
+      lastSeen: lastSeen == freezed
+          ? _value.lastSeen
+          : lastSeen // ignore: cast_nullable_to_non_nullable
+              as String,
       language: language == freezed
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as String,
+      amount: amount == freezed
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -142,29 +141,28 @@ class __$$_MarketNewsRequestModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_MarketNewsRequestModel implements _MarketNewsRequestModel {
   const _$_MarketNewsRequestModel(
-      {this.assetId,
-      @JsonKey(name: 'lastSeen') this.lastDate,
-      @JsonKey(name: 'take') this.batchSize,
-      @JsonKey(name: 'lang') required this.language});
+      {required this.assetId,
+      required this.lastSeen,
+      @JsonKey(name: 'lang') required this.language,
+      @JsonKey(name: 'take') required this.amount});
 
   factory _$_MarketNewsRequestModel.fromJson(Map<String, dynamic> json) =>
       _$$_MarketNewsRequestModelFromJson(json);
 
   @override
-  final String? assetId;
+  final String assetId;
   @override
-  @JsonKey(name: 'lastSeen')
-  final String? lastDate;
-  @override
-  @JsonKey(name: 'take')
-  final int? batchSize;
+  final String lastSeen;
   @override
   @JsonKey(name: 'lang')
   final String language;
+  @override
+  @JsonKey(name: 'take')
+  final int amount;
 
   @override
   String toString() {
-    return 'MarketNewsRequestModel(assetId: $assetId, lastDate: $lastDate, batchSize: $batchSize, language: $language)';
+    return 'MarketNewsRequestModel(assetId: $assetId, lastSeen: $lastSeen, language: $language, amount: $amount)';
   }
 
   @override
@@ -173,9 +171,9 @@ class _$_MarketNewsRequestModel implements _MarketNewsRequestModel {
         (other.runtimeType == runtimeType &&
             other is _$_MarketNewsRequestModel &&
             const DeepCollectionEquality().equals(other.assetId, assetId) &&
-            const DeepCollectionEquality().equals(other.lastDate, lastDate) &&
-            const DeepCollectionEquality().equals(other.batchSize, batchSize) &&
-            const DeepCollectionEquality().equals(other.language, language));
+            const DeepCollectionEquality().equals(other.lastSeen, lastSeen) &&
+            const DeepCollectionEquality().equals(other.language, language) &&
+            const DeepCollectionEquality().equals(other.amount, amount));
   }
 
   @JsonKey(ignore: true)
@@ -183,9 +181,9 @@ class _$_MarketNewsRequestModel implements _MarketNewsRequestModel {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(assetId),
-      const DeepCollectionEquality().hash(lastDate),
-      const DeepCollectionEquality().hash(batchSize),
-      const DeepCollectionEquality().hash(language));
+      const DeepCollectionEquality().hash(lastSeen),
+      const DeepCollectionEquality().hash(language),
+      const DeepCollectionEquality().hash(amount));
 
   @JsonKey(ignore: true)
   @override
@@ -201,26 +199,25 @@ class _$_MarketNewsRequestModel implements _MarketNewsRequestModel {
 
 abstract class _MarketNewsRequestModel implements MarketNewsRequestModel {
   const factory _MarketNewsRequestModel(
-          {final String? assetId,
-          @JsonKey(name: 'lastSeen') final String? lastDate,
-          @JsonKey(name: 'take') final int? batchSize,
-          @JsonKey(name: 'lang') required final String language}) =
+          {required final String assetId,
+          required final String lastSeen,
+          @JsonKey(name: 'lang') required final String language,
+          @JsonKey(name: 'take') required final int amount}) =
       _$_MarketNewsRequestModel;
 
   factory _MarketNewsRequestModel.fromJson(Map<String, dynamic> json) =
       _$_MarketNewsRequestModel.fromJson;
 
   @override
-  String? get assetId;
+  String get assetId;
   @override
-  @JsonKey(name: 'lastSeen')
-  String? get lastDate;
-  @override
-  @JsonKey(name: 'take')
-  int? get batchSize;
+  String get lastSeen;
   @override
   @JsonKey(name: 'lang')
   String get language;
+  @override
+  @JsonKey(name: 'take')
+  int get amount;
   @override
   @JsonKey(ignore: true)
   _$$_MarketNewsRequestModelCopyWith<_$_MarketNewsRequestModel> get copyWith =>

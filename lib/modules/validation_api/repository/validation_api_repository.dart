@@ -129,7 +129,7 @@ class ValidationApiRepository {
   }
 
   Future<DC<ServerRejectException, void>> postVerifyTransferVerificationCode(
-    VerifyEmailVerificationCodeRequestModel model,
+    VerifyWithdrawalVerificationCodeRequestModel model,
   ) async {
     return _validationApiDataSources.postVerifyTransferVerificationCodeRequest(
       model,

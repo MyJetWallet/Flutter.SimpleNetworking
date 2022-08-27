@@ -34,6 +34,8 @@ import 'package:simple_networking/modules/wallet_api/models/market_info/market_i
 import 'package:simple_networking/modules/wallet_api/models/market_info/market_info_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/market_news/market_news_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/market_news/market_news_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/news/news_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/news/news_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/notification/register_token_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/operation_history/operation_history_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/operation_history/operation_history_response_model.dart';
@@ -58,6 +60,10 @@ import 'package:simple_networking/modules/wallet_api/models/transfer_cancel/tran
 import 'package:simple_networking/modules/wallet_api/models/transfer_info/transfer_info_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/transfer_info/transfer_info_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/transfer_resend_request_model/transfer_resend_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/unlimint/add_unlimint_card_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/unlimint/add_unlimint_card_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/unlimint/delete_unlimint_card_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/unlimint/delete_unlimint_card_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/validate_address/validate_address_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/validate_address/validate_address_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/wallet/conversion_price_model.dart';
@@ -856,6 +862,28 @@ class WalletApiDataSources {
     }
   }
 
+  Future<DC<ServerRejectException, NewsResponseModel>> postNewsRequest(
+    NewsRequestModel model,
+  ) async {
+    try {
+      final response = await _apiClient.post(
+        '${_apiClient.options.walletApi}/market/news',
+        data: model.toJson(),
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+        final data = handleFullResponse<Map>(responseData);
+
+        return DC.data(NewsResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
   Future<DC<ServerRejectException, void>> postRegisterTokenRequest(
     RegisterTokenRequestModel model,
   ) async {
@@ -1173,6 +1201,54 @@ class WalletApiDataSources {
         final data = handleFullResponse<Map>(responseData);
 
         return DC.data(ConversionPriceModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, AddUnlimintCardResponseModel>>
+      postAddUnlimintCardRequest(
+    AddUnlimintCardRequestModel model,
+  ) async {
+    try {
+      final response = await _apiClient.post(
+        '${_apiClient.options.walletApi}/unlimint-card/save',
+        data: model.toJson(),
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+
+        final data = handleFullResponse<Map>(responseData);
+
+        return DC.data(AddUnlimintCardResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, DeleteUnlimintCardResponseModel>>
+      postDeleteUnlimintCardRequest(
+    DeleteUnlimintCardRequestModel model,
+  ) async {
+    try {
+      final response = await _apiClient.post(
+        '${_apiClient.options.walletApi}/unlimint-card/remove',
+        data: model.toJson(),
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+
+        final data = handleFullResponse<Map>(responseData);
+
+        return DC.data(DeleteUnlimintCardResponseModel.fromJson(data));
       } catch (e) {
         rethrow;
       }

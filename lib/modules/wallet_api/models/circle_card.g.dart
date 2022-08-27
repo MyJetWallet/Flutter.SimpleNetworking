@@ -14,6 +14,8 @@ _$_CircleCard _$$_CircleCardFromJson(Map<String, dynamic> json) =>
       expMonth: json['expMonth'] as int,
       expYear: json['expYear'] as int,
       status: $enumDecode(_$CircleCardStatusEnumMap, json['status']),
+      integration:
+          $enumDecodeNullable(_$IntegrationTypeEnumMap, json['integration']),
       lastUsed: json['lastUsed'] as bool,
       paymentDetails: CircleCardInfoPayment.fromJson(
           json['paymentDetails'] as Map<String, dynamic>),
@@ -27,6 +29,7 @@ Map<String, dynamic> _$$_CircleCardToJson(_$_CircleCard instance) =>
       'expMonth': instance.expMonth,
       'expYear': instance.expYear,
       'status': _$CircleCardStatusEnumMap[instance.status]!,
+      'integration': _$IntegrationTypeEnumMap[instance.integration],
       'lastUsed': instance.lastUsed,
       'paymentDetails': instance.paymentDetails,
     };
@@ -37,18 +40,23 @@ const _$CircleCardStatusEnumMap = {
   CircleCardStatus.failed: 2,
 };
 
+const _$IntegrationTypeEnumMap = {
+  IntegrationType.circle: 0,
+  IntegrationType.unlimint: 1,
+};
+
 _$_CircleCardInfoPayment _$$_CircleCardInfoPaymentFromJson(
         Map<String, dynamic> json) =>
     _$_CircleCardInfoPayment(
-      feePercentage: (json['feePercentage'] as num).toDouble(),
       minAmount: const DecimalSerialiser().fromJson(json['minAmount']),
       maxAmount: const DecimalSerialiser().fromJson(json['maxAmount']),
+      feePercentage: const DecimalSerialiser().fromJson(json['feePercentage']),
     );
 
 Map<String, dynamic> _$$_CircleCardInfoPaymentToJson(
         _$_CircleCardInfoPayment instance) =>
     <String, dynamic>{
-      'feePercentage': instance.feePercentage,
       'minAmount': const DecimalSerialiser().toJson(instance.minAmount),
       'maxAmount': const DecimalSerialiser().toJson(instance.maxAmount),
+      'feePercentage': const DecimalSerialiser().toJson(instance.feePercentage),
     };

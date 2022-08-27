@@ -262,6 +262,10 @@ class SignalRModule {
     _connection?.on(marketReferenceMessage, (data) {
       try {
         final marketReferences = MarketReferencesModel.fromJson(_json(data));
+
+        print('marketReferenceMessage');
+        print(marketReferences);
+
         _marketReferencesController.add(marketReferences);
       } catch (e) {
         _logger.log(contract, marketReferenceMessage, e);
@@ -373,6 +377,7 @@ class SignalRModule {
         args: [token, localeName, deviceUid, deviceType],
       );
     } catch (e) {
+      print(e);
       rethrow;
     }
 

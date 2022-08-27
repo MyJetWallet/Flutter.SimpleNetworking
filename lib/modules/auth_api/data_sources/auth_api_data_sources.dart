@@ -7,6 +7,9 @@ import 'package:simple_networking/modules/auth_api/models/change_pin/change_pin_
 import 'package:simple_networking/modules/auth_api/models/change_pin/change_pin_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/check_pin/check_pin_request_model.dart';
 import 'package:simple_networking/modules/auth_api/models/check_pin/check_pin_response_model.dart';
+import 'package:simple_networking/modules/auth_api/models/confirm_email_login/confirm_email_login_request_model.dart';
+import 'package:simple_networking/modules/auth_api/models/confirm_email_login/confirm_email_login_response_model.dart';
+import 'package:simple_networking/modules/auth_api/models/country/country_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/forgot_password/forgot_password_request_model.dart';
 import 'package:simple_networking/modules/auth_api/models/login/authentication_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/login_request_model.dart';
@@ -20,6 +23,8 @@ import 'package:simple_networking/modules/auth_api/models/session_chek/session_c
 import 'package:simple_networking/modules/auth_api/models/session_chek/session_check_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/setup_pin/setup_pin_request_model.dart';
 import 'package:simple_networking/modules/auth_api/models/setup_pin/setup_pin_response_model.dart';
+import 'package:simple_networking/modules/auth_api/models/start_email_login/start_email_login_request_model.dart';
+import 'package:simple_networking/modules/auth_api/models/start_email_login/start_email_login_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/validate_referral_code/validate_referral_code_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/kyc_profile/apply_user_data_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/kyc_profile/country_list_response_model.dart';
@@ -375,6 +380,72 @@ class AuthApiDataSources {
         final data = handleFullResponse<Map>(responseData);
 
         return DC.data(SessionCheckResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, StartEmailLoginResponseModel>>
+      postStartEmailLoginRequest(
+    StartEmailLoginRequestModel model,
+  ) async {
+    try {
+      final response = await _apiClient.post(
+        '${_apiClient.options.authApi}/signin/StartEmailLogin',
+        data: const SessionCheckRequestModel(),
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+        final data = handleFullResponse<Map>(responseData);
+
+        return DC.data(StartEmailLoginResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, ConfirmEmailLoginResponseModel>>
+      postConfirmEmailLoginRequest(
+    ConfirmEmailLoginRequestModel model,
+  ) async {
+    try {
+      final response = await _apiClient.post(
+        '${_apiClient.options.authApi}/signin/ConfirmEmailLogin',
+        data: const SessionCheckRequestModel(),
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+        final data = handleFullResponse<Map>(responseData);
+
+        return DC.data(ConfirmEmailLoginResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, CountryResponseModel>>
+      getUserCountryRequest() async {
+    try {
+      final response = await _apiClient.get(
+        '${_apiClient.options.authApi}/common/ip-country',
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+        final data = handleFullResponse<Map>(responseData);
+
+        return DC.data(CountryResponseModel.fromJson(data));
       } catch (e) {
         rethrow;
       }

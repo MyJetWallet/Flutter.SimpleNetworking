@@ -33,6 +33,8 @@ import 'package:simple_networking/modules/wallet_api/models/market_info/market_i
 import 'package:simple_networking/modules/wallet_api/models/market_info/market_info_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/market_news/market_news_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/market_news/market_news_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/news/news_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/news/news_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/notification/register_token_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/operation_history/operation_history_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/operation_history/operation_history_response_model.dart';
@@ -56,8 +58,13 @@ import 'package:simple_networking/modules/wallet_api/models/transfer_cancel/tran
 import 'package:simple_networking/modules/wallet_api/models/transfer_info/transfer_info_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/transfer_info/transfer_info_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/transfer_resend_request_model/transfer_resend_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/unlimint/add_unlimint_card_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/unlimint/add_unlimint_card_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/unlimint/delete_unlimint_card_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/unlimint/delete_unlimint_card_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/validate_address/validate_address_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/validate_address/validate_address_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/wallet/conversion_price_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/wallet_history/wallet_history_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/wallet_history/wallet_history_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/wire_countries/wire_countries_response_model.dart';
@@ -310,6 +317,12 @@ class WalletApiRepository {
     return _walletApiDataSources.postMarketNewsRequest(model);
   }
 
+  Future<DC<ServerRejectException, NewsResponseModel>> postNews(
+    NewsRequestModel model,
+  ) async {
+    return _walletApiDataSources.postNewsRequest(model);
+  }
+
   Future<DC<ServerRejectException, void>> postRegisterToken(
     RegisterTokenRequestModel model,
   ) async {
@@ -415,13 +428,31 @@ class WalletApiRepository {
     );
   }
 
-  Future<DC<ServerRejectException, void>> getConversionPrice(
+  Future<DC<ServerRejectException, ConversionPriceModel>> getConversionPrice(
     String baseAssetSymbol,
     String quotedAssetSymbol,
   ) async {
     return _walletApiDataSources.getConversionPriceRequest(
       baseAssetSymbol,
       quotedAssetSymbol,
+    );
+  }
+
+  Future<DC<ServerRejectException, AddUnlimintCardResponseModel>>
+      postAddUnlimintCard(
+    AddUnlimintCardRequestModel model,
+  ) async {
+    return _walletApiDataSources.postAddUnlimintCardRequest(
+      model,
+    );
+  }
+
+  Future<DC<ServerRejectException, DeleteUnlimintCardResponseModel>>
+      postDeleteUnlimintCard(
+    DeleteUnlimintCardRequestModel model,
+  ) async {
+    return _walletApiDataSources.postDeleteUnlimintCardRequest(
+      model,
     );
   }
 }

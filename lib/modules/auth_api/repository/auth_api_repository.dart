@@ -5,6 +5,9 @@ import 'package:simple_networking/modules/auth_api/data_sources/auth_api_data_so
 import 'package:simple_networking/modules/auth_api/models/change_password/change_password_request_model.dart';
 import 'package:simple_networking/modules/auth_api/models/change_pin/change_pin_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/check_pin/check_pin_response_model.dart';
+import 'package:simple_networking/modules/auth_api/models/confirm_email_login/confirm_email_login_request_model.dart';
+import 'package:simple_networking/modules/auth_api/models/confirm_email_login/confirm_email_login_response_model.dart';
+import 'package:simple_networking/modules/auth_api/models/country/country_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/forgot_password/forgot_password_request_model.dart';
 import 'package:simple_networking/modules/auth_api/models/login/authentication_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/login_request_model.dart';
@@ -16,6 +19,8 @@ import 'package:simple_networking/modules/auth_api/models/register_request_model
 import 'package:simple_networking/modules/auth_api/models/server_time/server_time_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/session_chek/session_check_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/setup_pin/setup_pin_response_model.dart';
+import 'package:simple_networking/modules/auth_api/models/start_email_login/start_email_login_request_model.dart';
+import 'package:simple_networking/modules/auth_api/models/start_email_login/start_email_login_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/validate_referral_code/validate_referral_code_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/kyc_profile/apply_user_data_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/kyc_profile/country_list_response_model.dart';
@@ -143,5 +148,29 @@ class AuthApiRepository {
   Future<DC<ServerRejectException, SessionCheckResponseModel>>
       postSessionCheck() async {
     return _authApiDataSource.postSessionCheckRequest();
+  }
+
+  Future<DC<ServerRejectException, StartEmailLoginResponseModel>>
+      postStartEmailLogin(
+    StartEmailLoginRequestModel model,
+  ) async {
+    return _authApiDataSource.postStartEmailLoginRequest(
+      model,
+    );
+  }
+
+  Future<DC<ServerRejectException, ConfirmEmailLoginResponseModel>>
+      postConfirmEmailLogin(
+    ConfirmEmailLoginRequestModel model,
+  ) async {
+    return _authApiDataSource.postConfirmEmailLoginRequest(
+      model,
+    );
+  }
+
+  Future<DC<ServerRejectException, CountryResponseModel>> getUserCountry(
+    ConfirmEmailLoginRequestModel model,
+  ) async {
+    return _authApiDataSource.getUserCountryRequest();
   }
 }

@@ -10,7 +10,7 @@ _$_CardsModel _$$_CardsModelFromJson(Map<String, dynamic> json) =>
     _$_CardsModel(
       now: (json['now'] as num).toDouble(),
       cardInfos: (json['cardInfos'] as List<dynamic>)
-          .map((e) => CardModel.fromJson(e as Map<String, dynamic>))
+          .map((e) => CircleCard.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

@@ -21,7 +21,7 @@ CardsModel _$CardsModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$CardsModel {
   double get now => throw _privateConstructorUsedError;
-  List<CardModel> get cardInfos => throw _privateConstructorUsedError;
+  List<CircleCard> get cardInfos => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +34,7 @@ abstract class $CardsModelCopyWith<$Res> {
   factory $CardsModelCopyWith(
           CardsModel value, $Res Function(CardsModel) then) =
       _$CardsModelCopyWithImpl<$Res>;
-  $Res call({double now, List<CardModel> cardInfos});
+  $Res call({double now, List<CircleCard> cardInfos});
 }
 
 /// @nodoc
@@ -58,7 +58,7 @@ class _$CardsModelCopyWithImpl<$Res> implements $CardsModelCopyWith<$Res> {
       cardInfos: cardInfos == freezed
           ? _value.cardInfos
           : cardInfos // ignore: cast_nullable_to_non_nullable
-              as List<CardModel>,
+              as List<CircleCard>,
     ));
   }
 }
@@ -70,7 +70,7 @@ abstract class _$$_CardsModelCopyWith<$Res>
           _$_CardsModel value, $Res Function(_$_CardsModel) then) =
       __$$_CardsModelCopyWithImpl<$Res>;
   @override
-  $Res call({double now, List<CardModel> cardInfos});
+  $Res call({double now, List<CircleCard> cardInfos});
 }
 
 /// @nodoc
@@ -96,7 +96,7 @@ class __$$_CardsModelCopyWithImpl<$Res> extends _$CardsModelCopyWithImpl<$Res>
       cardInfos: cardInfos == freezed
           ? _value._cardInfos
           : cardInfos // ignore: cast_nullable_to_non_nullable
-              as List<CardModel>,
+              as List<CircleCard>,
     ));
   }
 }
@@ -105,7 +105,7 @@ class __$$_CardsModelCopyWithImpl<$Res> extends _$CardsModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_CardsModel implements _CardsModel {
   const _$_CardsModel(
-      {required this.now, required final List<CardModel> cardInfos})
+      {required this.now, required final List<CircleCard> cardInfos})
       : _cardInfos = cardInfos;
 
   factory _$_CardsModel.fromJson(Map<String, dynamic> json) =>
@@ -113,9 +113,9 @@ class _$_CardsModel implements _CardsModel {
 
   @override
   final double now;
-  final List<CardModel> _cardInfos;
+  final List<CircleCard> _cardInfos;
   @override
-  List<CardModel> get cardInfos {
+  List<CircleCard> get cardInfos {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_cardInfos);
   }
@@ -156,7 +156,7 @@ class _$_CardsModel implements _CardsModel {
 abstract class _CardsModel implements CardsModel {
   const factory _CardsModel(
       {required final double now,
-      required final List<CardModel> cardInfos}) = _$_CardsModel;
+      required final List<CircleCard> cardInfos}) = _$_CardsModel;
 
   factory _CardsModel.fromJson(Map<String, dynamic> json) =
       _$_CardsModel.fromJson;
@@ -164,7 +164,7 @@ abstract class _CardsModel implements CardsModel {
   @override
   double get now;
   @override
-  List<CardModel> get cardInfos;
+  List<CircleCard> get cardInfos;
   @override
   @JsonKey(ignore: true)
   _$$_CardsModelCopyWith<_$_CardsModel> get copyWith =>

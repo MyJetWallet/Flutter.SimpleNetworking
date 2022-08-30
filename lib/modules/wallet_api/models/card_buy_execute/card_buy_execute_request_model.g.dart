@@ -16,6 +16,10 @@ _$_CardBuyExecuteRequestModel _$$_CardBuyExecuteRequestModelFromJson(
           ? null
           : CirclePaymentDataExecuteModel.fromJson(
               json['circlePaymentData'] as Map<String, dynamic>),
+      unlimintPaymentData: json['unlimintPaymentData'] == null
+          ? null
+          : UnlimintPaymentDataExecuteModel.fromJson(
+              json['unlimintPaymentData'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_CardBuyExecuteRequestModelToJson(
@@ -24,6 +28,7 @@ Map<String, dynamic> _$$_CardBuyExecuteRequestModelToJson(
       'paymentId': instance.paymentId,
       'paymentMethod': _$CirclePaymentMethodEnumMap[instance.paymentMethod]!,
       'circlePaymentData': instance.circlePaymentData,
+      'unlimintPaymentData': instance.unlimintPaymentData,
     };
 
 const _$CirclePaymentMethodEnumMap = {
@@ -45,4 +50,16 @@ Map<String, dynamic> _$$_CirclePaymentDataExecuteModelToJson(
       'cardId': instance.cardId,
       'keyId': instance.keyId,
       'encryptedData': instance.encryptedData,
+    };
+
+_$_UnlimintPaymentDataExecuteModel _$$_UnlimintPaymentDataExecuteModelFromJson(
+        Map<String, dynamic> json) =>
+    _$_UnlimintPaymentDataExecuteModel(
+      cardId: json['cardId'] as String?,
+    );
+
+Map<String, dynamic> _$$_UnlimintPaymentDataExecuteModelToJson(
+        _$_UnlimintPaymentDataExecuteModel instance) =>
+    <String, dynamic>{
+      'cardId': instance.cardId,
     };

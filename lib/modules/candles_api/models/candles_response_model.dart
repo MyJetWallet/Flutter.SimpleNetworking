@@ -47,6 +47,7 @@ class CandleModel {
     data['high'] = high;
     data['low'] = low;
     data['date'] = date;
+
     return data;
   }
 

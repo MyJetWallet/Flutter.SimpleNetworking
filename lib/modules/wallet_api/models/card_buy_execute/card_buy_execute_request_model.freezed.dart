@@ -25,6 +25,8 @@ mixin _$CardBuyExecuteRequestModel {
   CirclePaymentMethod get paymentMethod => throw _privateConstructorUsedError;
   CirclePaymentDataExecuteModel? get circlePaymentData =>
       throw _privateConstructorUsedError;
+  UnlimintPaymentDataExecuteModel? get unlimintPaymentData =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,9 +42,11 @@ abstract class $CardBuyExecuteRequestModelCopyWith<$Res> {
   $Res call(
       {String? paymentId,
       CirclePaymentMethod paymentMethod,
-      CirclePaymentDataExecuteModel? circlePaymentData});
+      CirclePaymentDataExecuteModel? circlePaymentData,
+      UnlimintPaymentDataExecuteModel? unlimintPaymentData});
 
   $CirclePaymentDataExecuteModelCopyWith<$Res>? get circlePaymentData;
+  $UnlimintPaymentDataExecuteModelCopyWith<$Res>? get unlimintPaymentData;
 }
 
 /// @nodoc
@@ -59,6 +63,7 @@ class _$CardBuyExecuteRequestModelCopyWithImpl<$Res>
     Object? paymentId = freezed,
     Object? paymentMethod = freezed,
     Object? circlePaymentData = freezed,
+    Object? unlimintPaymentData = freezed,
   }) {
     return _then(_value.copyWith(
       paymentId: paymentId == freezed
@@ -73,6 +78,10 @@ class _$CardBuyExecuteRequestModelCopyWithImpl<$Res>
           ? _value.circlePaymentData
           : circlePaymentData // ignore: cast_nullable_to_non_nullable
               as CirclePaymentDataExecuteModel?,
+      unlimintPaymentData: unlimintPaymentData == freezed
+          ? _value.unlimintPaymentData
+          : unlimintPaymentData // ignore: cast_nullable_to_non_nullable
+              as UnlimintPaymentDataExecuteModel?,
     ));
   }
 
@@ -85,6 +94,18 @@ class _$CardBuyExecuteRequestModelCopyWithImpl<$Res>
     return $CirclePaymentDataExecuteModelCopyWith<$Res>(
         _value.circlePaymentData!, (value) {
       return _then(_value.copyWith(circlePaymentData: value));
+    });
+  }
+
+  @override
+  $UnlimintPaymentDataExecuteModelCopyWith<$Res>? get unlimintPaymentData {
+    if (_value.unlimintPaymentData == null) {
+      return null;
+    }
+
+    return $UnlimintPaymentDataExecuteModelCopyWith<$Res>(
+        _value.unlimintPaymentData!, (value) {
+      return _then(_value.copyWith(unlimintPaymentData: value));
     });
   }
 }
@@ -100,10 +121,13 @@ abstract class _$$_CardBuyExecuteRequestModelCopyWith<$Res>
   $Res call(
       {String? paymentId,
       CirclePaymentMethod paymentMethod,
-      CirclePaymentDataExecuteModel? circlePaymentData});
+      CirclePaymentDataExecuteModel? circlePaymentData,
+      UnlimintPaymentDataExecuteModel? unlimintPaymentData});
 
   @override
   $CirclePaymentDataExecuteModelCopyWith<$Res>? get circlePaymentData;
+  @override
+  $UnlimintPaymentDataExecuteModelCopyWith<$Res>? get unlimintPaymentData;
 }
 
 /// @nodoc
@@ -124,6 +148,7 @@ class __$$_CardBuyExecuteRequestModelCopyWithImpl<$Res>
     Object? paymentId = freezed,
     Object? paymentMethod = freezed,
     Object? circlePaymentData = freezed,
+    Object? unlimintPaymentData = freezed,
   }) {
     return _then(_$_CardBuyExecuteRequestModel(
       paymentId: paymentId == freezed
@@ -138,6 +163,10 @@ class __$$_CardBuyExecuteRequestModelCopyWithImpl<$Res>
           ? _value.circlePaymentData
           : circlePaymentData // ignore: cast_nullable_to_non_nullable
               as CirclePaymentDataExecuteModel?,
+      unlimintPaymentData: unlimintPaymentData == freezed
+          ? _value.unlimintPaymentData
+          : unlimintPaymentData // ignore: cast_nullable_to_non_nullable
+              as UnlimintPaymentDataExecuteModel?,
     ));
   }
 }
@@ -146,7 +175,10 @@ class __$$_CardBuyExecuteRequestModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_CardBuyExecuteRequestModel implements _CardBuyExecuteRequestModel {
   const _$_CardBuyExecuteRequestModel(
-      {this.paymentId, required this.paymentMethod, this.circlePaymentData});
+      {this.paymentId,
+      required this.paymentMethod,
+      this.circlePaymentData,
+      this.unlimintPaymentData});
 
   factory _$_CardBuyExecuteRequestModel.fromJson(Map<String, dynamic> json) =>
       _$$_CardBuyExecuteRequestModelFromJson(json);
@@ -157,10 +189,12 @@ class _$_CardBuyExecuteRequestModel implements _CardBuyExecuteRequestModel {
   final CirclePaymentMethod paymentMethod;
   @override
   final CirclePaymentDataExecuteModel? circlePaymentData;
+  @override
+  final UnlimintPaymentDataExecuteModel? unlimintPaymentData;
 
   @override
   String toString() {
-    return 'CardBuyExecuteRequestModel(paymentId: $paymentId, paymentMethod: $paymentMethod, circlePaymentData: $circlePaymentData)';
+    return 'CardBuyExecuteRequestModel(paymentId: $paymentId, paymentMethod: $paymentMethod, circlePaymentData: $circlePaymentData, unlimintPaymentData: $unlimintPaymentData)';
   }
 
   @override
@@ -172,7 +206,9 @@ class _$_CardBuyExecuteRequestModel implements _CardBuyExecuteRequestModel {
             const DeepCollectionEquality()
                 .equals(other.paymentMethod, paymentMethod) &&
             const DeepCollectionEquality()
-                .equals(other.circlePaymentData, circlePaymentData));
+                .equals(other.circlePaymentData, circlePaymentData) &&
+            const DeepCollectionEquality()
+                .equals(other.unlimintPaymentData, unlimintPaymentData));
   }
 
   @JsonKey(ignore: true)
@@ -181,7 +217,8 @@ class _$_CardBuyExecuteRequestModel implements _CardBuyExecuteRequestModel {
       runtimeType,
       const DeepCollectionEquality().hash(paymentId),
       const DeepCollectionEquality().hash(paymentMethod),
-      const DeepCollectionEquality().hash(circlePaymentData));
+      const DeepCollectionEquality().hash(circlePaymentData),
+      const DeepCollectionEquality().hash(unlimintPaymentData));
 
   @JsonKey(ignore: true)
   @override
@@ -200,7 +237,8 @@ abstract class _CardBuyExecuteRequestModel
   const factory _CardBuyExecuteRequestModel(
           {final String? paymentId,
           required final CirclePaymentMethod paymentMethod,
-          final CirclePaymentDataExecuteModel? circlePaymentData}) =
+          final CirclePaymentDataExecuteModel? circlePaymentData,
+          final UnlimintPaymentDataExecuteModel? unlimintPaymentData}) =
       _$_CardBuyExecuteRequestModel;
 
   factory _CardBuyExecuteRequestModel.fromJson(Map<String, dynamic> json) =
@@ -212,6 +250,8 @@ abstract class _CardBuyExecuteRequestModel
   CirclePaymentMethod get paymentMethod;
   @override
   CirclePaymentDataExecuteModel? get circlePaymentData;
+  @override
+  UnlimintPaymentDataExecuteModel? get unlimintPaymentData;
   @override
   @JsonKey(ignore: true)
   _$$_CardBuyExecuteRequestModelCopyWith<_$_CardBuyExecuteRequestModel>
@@ -396,5 +436,149 @@ abstract class _CirclePaymentDataExecuteModel
   @override
   @JsonKey(ignore: true)
   _$$_CirclePaymentDataExecuteModelCopyWith<_$_CirclePaymentDataExecuteModel>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+UnlimintPaymentDataExecuteModel _$UnlimintPaymentDataExecuteModelFromJson(
+    Map<String, dynamic> json) {
+  return _UnlimintPaymentDataExecuteModel.fromJson(json);
+}
+
+/// @nodoc
+mixin _$UnlimintPaymentDataExecuteModel {
+  String? get cardId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UnlimintPaymentDataExecuteModelCopyWith<UnlimintPaymentDataExecuteModel>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UnlimintPaymentDataExecuteModelCopyWith<$Res> {
+  factory $UnlimintPaymentDataExecuteModelCopyWith(
+          UnlimintPaymentDataExecuteModel value,
+          $Res Function(UnlimintPaymentDataExecuteModel) then) =
+      _$UnlimintPaymentDataExecuteModelCopyWithImpl<$Res>;
+  $Res call({String? cardId});
+}
+
+/// @nodoc
+class _$UnlimintPaymentDataExecuteModelCopyWithImpl<$Res>
+    implements $UnlimintPaymentDataExecuteModelCopyWith<$Res> {
+  _$UnlimintPaymentDataExecuteModelCopyWithImpl(this._value, this._then);
+
+  final UnlimintPaymentDataExecuteModel _value;
+  // ignore: unused_field
+  final $Res Function(UnlimintPaymentDataExecuteModel) _then;
+
+  @override
+  $Res call({
+    Object? cardId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      cardId: cardId == freezed
+          ? _value.cardId
+          : cardId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$$_UnlimintPaymentDataExecuteModelCopyWith<$Res>
+    implements $UnlimintPaymentDataExecuteModelCopyWith<$Res> {
+  factory _$$_UnlimintPaymentDataExecuteModelCopyWith(
+          _$_UnlimintPaymentDataExecuteModel value,
+          $Res Function(_$_UnlimintPaymentDataExecuteModel) then) =
+      __$$_UnlimintPaymentDataExecuteModelCopyWithImpl<$Res>;
+  @override
+  $Res call({String? cardId});
+}
+
+/// @nodoc
+class __$$_UnlimintPaymentDataExecuteModelCopyWithImpl<$Res>
+    extends _$UnlimintPaymentDataExecuteModelCopyWithImpl<$Res>
+    implements _$$_UnlimintPaymentDataExecuteModelCopyWith<$Res> {
+  __$$_UnlimintPaymentDataExecuteModelCopyWithImpl(
+      _$_UnlimintPaymentDataExecuteModel _value,
+      $Res Function(_$_UnlimintPaymentDataExecuteModel) _then)
+      : super(_value, (v) => _then(v as _$_UnlimintPaymentDataExecuteModel));
+
+  @override
+  _$_UnlimintPaymentDataExecuteModel get _value =>
+      super._value as _$_UnlimintPaymentDataExecuteModel;
+
+  @override
+  $Res call({
+    Object? cardId = freezed,
+  }) {
+    return _then(_$_UnlimintPaymentDataExecuteModel(
+      cardId: cardId == freezed
+          ? _value.cardId
+          : cardId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_UnlimintPaymentDataExecuteModel
+    implements _UnlimintPaymentDataExecuteModel {
+  const _$_UnlimintPaymentDataExecuteModel({this.cardId});
+
+  factory _$_UnlimintPaymentDataExecuteModel.fromJson(
+          Map<String, dynamic> json) =>
+      _$$_UnlimintPaymentDataExecuteModelFromJson(json);
+
+  @override
+  final String? cardId;
+
+  @override
+  String toString() {
+    return 'UnlimintPaymentDataExecuteModel(cardId: $cardId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_UnlimintPaymentDataExecuteModel &&
+            const DeepCollectionEquality().equals(other.cardId, cardId));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(cardId));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_UnlimintPaymentDataExecuteModelCopyWith<
+          _$_UnlimintPaymentDataExecuteModel>
+      get copyWith => __$$_UnlimintPaymentDataExecuteModelCopyWithImpl<
+          _$_UnlimintPaymentDataExecuteModel>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_UnlimintPaymentDataExecuteModelToJson(this);
+  }
+}
+
+abstract class _UnlimintPaymentDataExecuteModel
+    implements UnlimintPaymentDataExecuteModel {
+  const factory _UnlimintPaymentDataExecuteModel({final String? cardId}) =
+      _$_UnlimintPaymentDataExecuteModel;
+
+  factory _UnlimintPaymentDataExecuteModel.fromJson(Map<String, dynamic> json) =
+      _$_UnlimintPaymentDataExecuteModel.fromJson;
+
+  @override
+  String? get cardId;
+  @override
+  @JsonKey(ignore: true)
+  _$$_UnlimintPaymentDataExecuteModelCopyWith<
+          _$_UnlimintPaymentDataExecuteModel>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -18,6 +18,8 @@ import 'package:simple_networking/modules/auth_api/models/password_recovery_requ
 import 'package:simple_networking/modules/auth_api/models/refresh/auth_refresh_request_model.dart';
 import 'package:simple_networking/modules/auth_api/models/refresh/auth_refresh_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/register_request_model.dart';
+import 'package:simple_networking/modules/auth_api/models/reset_pin/reset_pin_request_model.dart';
+import 'package:simple_networking/modules/auth_api/models/reset_pin/reset_pin_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/server_time/server_time_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/session_chek/session_check_request_model.dart';
 import 'package:simple_networking/modules/auth_api/models/session_chek/session_check_response_model.dart';
@@ -36,7 +38,6 @@ class AuthApiDataSources {
 
   Future<DC<ServerRejectException, String>> postTestRequest() async {
     try {
-      print('SEND REQUEST ${_apiClient.options.authApi}');
       /*final response = await _apiClient.post(
         '/trader/ForgotPasswordCode',
         '',
@@ -367,6 +368,28 @@ class AuthApiDataSources {
     }
   }
 
+  Future<DC<ServerRejectException, ResetPinResponseModel>>
+      postResetPinRequest() async {
+    try {
+      const model = ResetPinRequestModel();
+      final response = await _apiClient.post(
+        '${_apiClient.options.authApi}/pin/ResetPin',
+        data: model.toJson(),
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+        final data = handleFullResponse<String>(responseData);
+
+        return DC.data(ResetPinResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
   Future<DC<ServerRejectException, SessionCheckResponseModel>>
       postSessionCheckRequest() async {
     try {
@@ -395,7 +418,7 @@ class AuthApiDataSources {
     try {
       final response = await _apiClient.post(
         '${_apiClient.options.authApi}/signin/StartEmailLogin',
-        data: const SessionCheckRequestModel(),
+        data: model.toJson(),
       );
 
       try {
@@ -418,7 +441,7 @@ class AuthApiDataSources {
     try {
       final response = await _apiClient.post(
         '${_apiClient.options.authApi}/signin/ConfirmEmailLogin',
-        data: const SessionCheckRequestModel(),
+        data: model.toJson(),
       );
 
       try {

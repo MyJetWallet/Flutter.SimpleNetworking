@@ -10,6 +10,7 @@ class CardBuyExecuteRequestModel with _$CardBuyExecuteRequestModel {
     String? paymentId,
     required CirclePaymentMethod paymentMethod,
     CirclePaymentDataExecuteModel? circlePaymentData,
+    UnlimintPaymentDataExecuteModel? unlimintPaymentData,
   }) = _CardBuyExecuteRequestModel;
 
   factory CardBuyExecuteRequestModel.fromJson(Map<String, dynamic> json) =>
@@ -26,4 +27,14 @@ class CirclePaymentDataExecuteModel with _$CirclePaymentDataExecuteModel {
 
   factory CirclePaymentDataExecuteModel.fromJson(Map<String, dynamic> json) =>
       _$CirclePaymentDataExecuteModelFromJson(json);
+}
+
+@freezed
+class UnlimintPaymentDataExecuteModel with _$UnlimintPaymentDataExecuteModel {
+  const factory UnlimintPaymentDataExecuteModel({
+    String? cardId,
+  }) = _UnlimintPaymentDataExecuteModel;
+
+  factory UnlimintPaymentDataExecuteModel.fromJson(Map<String, dynamic> json) =>
+      _$UnlimintPaymentDataExecuteModelFromJson(json);
 }

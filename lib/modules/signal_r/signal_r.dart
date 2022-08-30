@@ -2,12 +2,10 @@ import 'dart:async';
 
 import 'package:logging/logging.dart';
 import 'package:signalr_core/signalr_core.dart';
-import 'package:simple_networking/api_client/api_client.dart';
 import 'package:simple_networking/config/constants.dart';
 import 'package:simple_networking/config/options.dart';
 import 'package:simple_networking/helpers/device_type.dart';
 import 'package:simple_networking/helpers/models/refresh_token_status.dart';
-import 'package:simple_networking/modules/signal_r/http_client.dart';
 import 'package:simple_networking/modules/signal_r/models/asset_model.dart';
 import 'package:simple_networking/modules/signal_r/models/asset_payment_methods.dart';
 import 'package:simple_networking/modules/signal_r/models/asset_withdrawal_fee_model.dart';
@@ -111,7 +109,10 @@ class SignalRModule {
     _connection = HubConnectionBuilder()
         .withUrl(
           options.walletApiSignalR!,
-          HttpConnectionOptions(client: signalRClient),
+          HttpConnectionOptions(
+            client: signalRClient,
+            //logging: (level, message) => print(message),
+          ),
         )
         .build();
 
@@ -263,9 +264,6 @@ class SignalRModule {
       try {
         final marketReferences = MarketReferencesModel.fromJson(_json(data));
 
-        print('marketReferenceMessage');
-        print(marketReferences);
-
         _marketReferencesController.add(marketReferences);
       } catch (e) {
         _logger.log(contract, marketReferenceMessage, e);
@@ -367,11 +365,15 @@ class SignalRModule {
     try {
       await _connection?.start();
     } catch (e) {
+      print('SIGNALR => Failed to start connection');
+
       _logger.log(signalR, 'Failed to start connection', e);
       rethrow;
     }
 
     try {
+      print('SIGNALR => invoke');
+
       await _connection?.invoke(
         initMessage,
         args: [token, localeName, deviceUid, deviceType],
@@ -466,6 +468,8 @@ class SignalRModule {
   }
 
   void _startReconnect() {
+    print('SIGNALR STARTRECONNECT');
+
     if (_reconnectTimer == null || !_reconnectTimer!.isActive) {
       _reconnectTimer = Timer.periodic(
         const Duration(seconds: _reconnectTime),
@@ -479,6 +483,8 @@ class SignalRModule {
   /// There are probably some problems with the library
   Future<void> _reconnect() async {
     try {
+      print('SIGNALR RECONNECT');
+
       await _connection?.stop();
 
       _pingTimer?.cancel();

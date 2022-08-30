@@ -16,6 +16,7 @@ import 'package:simple_networking/modules/auth_api/models/password_recovery_requ
 import 'package:simple_networking/modules/auth_api/models/refresh/auth_refresh_request_model.dart';
 import 'package:simple_networking/modules/auth_api/models/refresh/auth_refresh_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/register_request_model.dart';
+import 'package:simple_networking/modules/auth_api/models/reset_pin/reset_pin_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/server_time/server_time_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/session_chek/session_check_response_model.dart';
 import 'package:simple_networking/modules/auth_api/models/setup_pin/setup_pin_response_model.dart';
@@ -145,6 +146,11 @@ class AuthApiRepository {
     );
   }
 
+  Future<DC<ServerRejectException, ResetPinResponseModel>>
+      postResetPin() async {
+    return _authApiDataSource.postResetPinRequest();
+  }
+
   Future<DC<ServerRejectException, SessionCheckResponseModel>>
       postSessionCheck() async {
     return _authApiDataSource.postSessionCheckRequest();
@@ -168,9 +174,8 @@ class AuthApiRepository {
     );
   }
 
-  Future<DC<ServerRejectException, CountryResponseModel>> getUserCountry(
-    ConfirmEmailLoginRequestModel model,
-  ) async {
+  Future<DC<ServerRejectException, CountryResponseModel>>
+      getUserCountry() async {
     return _authApiDataSource.getUserCountryRequest();
   }
 }

@@ -29,7 +29,6 @@ import 'package:simple_networking/modules/wallet_api/models/get_quote/get_quote_
 import 'package:simple_networking/modules/wallet_api/models/get_quote/get_quote_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/key_value/key_value_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/kyc/check_response_model.dart';
-import 'package:simple_networking/modules/wallet_api/models/kyc_profile/apply_user_data_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/market_info/market_info_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/market_info/market_info_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/market_news/market_news_request_model.dart';

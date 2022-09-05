@@ -95,7 +95,7 @@ class WalletApiDataSources {
       try {
         final responseData = response.data as Map<String, dynamic>;
 
-        final data = handleFullResponse(
+        final data = handleFullResponse<Map>(
           responseData,
         );
 
@@ -121,7 +121,7 @@ class WalletApiDataSources {
       try {
         final responseData = response.data as Map<String, dynamic>;
 
-        final data = handleFullResponse(responseData);
+        final data = handleFullResponse<Map>(responseData);
 
         return DC.data(ValidateAddressResponseModel.fromJson(data));
       } catch (e) {
@@ -144,7 +144,7 @@ class WalletApiDataSources {
       try {
         final responseData = response.data as Map<String, dynamic>;
 
-        final data = handleFullResponse(responseData);
+        final data = handleFullResponse<Map>(responseData);
 
         return DC.data(WithdrawResponseModel.fromJson(data));
       } catch (e) {
@@ -168,7 +168,7 @@ class WalletApiDataSources {
       try {
         final responseData = response.data as Map<String, dynamic>;
 
-        final data = handleFullResponse(
+        final data = handleFullResponse<Map>(
           responseData,
         );
 
@@ -217,7 +217,7 @@ class WalletApiDataSources {
       try {
         final responseData = response.data as Map<String, dynamic>;
 
-        final data = handleFullResponse(
+        final data = handleFullResponse<Map>(
           responseData,
         );
 
@@ -243,7 +243,7 @@ class WalletApiDataSources {
       try {
         final responseData = response.data as Map<String, dynamic>;
 
-        final data = handleFullResponse(
+        final data = handleFullResponse<Map>(
           responseData,
         );
 

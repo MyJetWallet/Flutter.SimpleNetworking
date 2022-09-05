@@ -27,13 +27,24 @@ class BasePricesModel with _$BasePricesModel {
         for (final oldPrice in oldPrices.prices) {
           if (oldPrice.assetSymbol == newPrice.assetSymbol) {
             final index = oldPrices.prices.indexOf(oldPrice);
+            var pricesList = oldPrices.prices.toList();
+            pricesList[index] = oldPrice.copyWith(
+              time: newPrice.time,
+              currentPrice: newPrice.currentPrice,
+              dayPriceChange: newPrice.dayPriceChange,
+              dayPercentChange: newPrice.dayPercentChange,
+            );
 
+            oldPrices.copyWith(prices: pricesList);
+
+            /*
             oldPrices.prices[index] = oldPrice.copyWith(
               time: newPrice.time,
               currentPrice: newPrice.currentPrice,
               dayPriceChange: newPrice.dayPriceChange,
               dayPercentChange: newPrice.dayPercentChange,
             );
+            */
           }
         }
       }

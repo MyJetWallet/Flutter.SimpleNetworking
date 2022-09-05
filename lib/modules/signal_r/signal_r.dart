@@ -231,7 +231,11 @@ class SignalRModule {
       try {
         final balances = BalancesModel.fromJson(_json(data));
         _balancesController.add(balances);
+
+        print(balances);
       } catch (e) {
+        print('balancesMessage');
+        print('ERROR => $e');
         _logger.log(contract, balancesMessage, e);
       }
     });
@@ -278,6 +282,8 @@ class SignalRModule {
         );
         _basePricesController.add(_oldBasePrices);
       } catch (e) {
+        print(e);
+
         _logger.log(contract, basePricesMessage, e);
       }
     });
@@ -320,6 +326,8 @@ class SignalRModule {
         );
         _keyValueController.add(keyValue);
       } catch (e) {
+        print('keyValueMessage');
+        print('ERROR => $e');
         _logger.log(contract, keyValueMessage, e);
       }
     });
@@ -373,6 +381,8 @@ class SignalRModule {
 
     try {
       print('SIGNALR => invoke');
+      print(token);
+      print('$localeName $deviceUid $deviceType');
 
       await _connection?.invoke(
         initMessage,

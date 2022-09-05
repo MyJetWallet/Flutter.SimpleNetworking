@@ -14,70 +14,30 @@ class ApiClient {
     String path, {
     dynamic data,
   }) async {
-    try {
-      return await dio.post(path, data: data);
-    } on BadNetworkApiError {
-      throw BadNetworkException();
-    } on InternalServerApiError {
-      throw InternalServerException();
-    } on UnauthorizedApiError {
-      throw UnauthenticatedException();
-    } catch (e) {
-      rethrow;
-    }
+    return await dio.post(path, data: data);
   }
 
   Future<Response> put(
     String path, {
     dynamic data,
   }) async {
-    try {
-      return await dio.put(path, data: data);
-    } on BadNetworkApiError {
-      throw BadNetworkException();
-    } on InternalServerApiError {
-      throw InternalServerException();
-    } on UnauthorizedApiError {
-      throw UnauthenticatedException();
-    } catch (e) {
-      rethrow;
-    }
+    return await dio.put(path, data: data);
   }
 
   Future<Response> delete(
     String path, {
     dynamic data,
   }) async {
-    try {
-      return await dio.delete(path, data: data);
-    } on BadNetworkApiError {
-      throw BadNetworkException();
-    } on InternalServerApiError {
-      throw InternalServerException();
-    } on UnauthorizedApiError {
-      throw UnauthenticatedException();
-    } catch (e) {
-      rethrow;
-    }
+    return await dio.delete(path, data: data);
   }
 
   Future<Response> get(
     String path, {
     Map<String, dynamic>? queryParameters,
   }) async {
-    try {
-      return await dio.get(
-        path,
-        queryParameters: queryParameters,
-      );
-    } on BadNetworkApiError {
-      throw BadNetworkException();
-    } on InternalServerApiError {
-      throw InternalServerException();
-    } on UnauthorizedApiError {
-      throw UnauthenticatedException();
-    } catch (e) {
-      rethrow;
-    }
+    return await dio.get(
+      path,
+      queryParameters: queryParameters,
+    );
   }
 }

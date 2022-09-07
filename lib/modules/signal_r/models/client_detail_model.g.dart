@@ -63,4 +63,5 @@ const _$BlockingTypeEnumMap = {
   BlockingType.trade: 2,
   BlockingType.login: 3,
   BlockingType.phoneNumberUpdate: 4,
+  BlockingType.deposit: 5,
 };

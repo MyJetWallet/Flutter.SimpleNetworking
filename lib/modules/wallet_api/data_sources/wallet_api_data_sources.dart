@@ -741,6 +741,7 @@ class WalletApiDataSources {
     try {
       final _ = await _apiClient.post(
         '${_apiClient.options.walletApi}/key-value/set',
+        data: model,
       );
 
       try {

@@ -64,35 +64,54 @@ class SignalRModule {
   /// restart it - you need to create a new connection.
   HubConnection? _connection;
 
-  final _assetsController = StreamController<AssetsModel>();
-  final _balancesController = StreamController<BalancesModel>();
-  final _instrumentsController = StreamController<InstrumentsModel>();
-  final _marketReferencesController = StreamController<MarketReferencesModel>();
-  final _basePricesController = StreamController<BasePricesModel>();
-  final _periodPricesController = StreamController<PeriodPricesModel>();
-  final _clientDetailController = StreamController<ClientDetailModel>();
-  final _assetWithdrawalFeeController =
+  StreamController<AssetsModel> _assetsController =
+      StreamController<AssetsModel>();
+  StreamController<BalancesModel> _balancesController =
+      StreamController<BalancesModel>();
+  StreamController<InstrumentsModel> _instrumentsController =
+      StreamController<InstrumentsModel>();
+  StreamController<MarketReferencesModel> _marketReferencesController =
+      StreamController<MarketReferencesModel>();
+  StreamController<BasePricesModel> _basePricesController =
+      StreamController<BasePricesModel>();
+  StreamController<PeriodPricesModel> _periodPricesController =
+      StreamController<PeriodPricesModel>();
+  StreamController<ClientDetailModel> _clientDetailController =
+      StreamController<ClientDetailModel>();
+  StreamController<AssetWithdrawalFeeModel> _assetWithdrawalFeeController =
       StreamController<AssetWithdrawalFeeModel>();
-  final _keyValueController = StreamController<KeyValueModel>();
-  final _campaignsBannersController = StreamController<CampaignResponseModel>();
-  final _referralStatsController =
+  StreamController<KeyValueModel> _keyValueController =
+      StreamController<KeyValueModel>();
+  StreamController<CampaignResponseModel> _campaignsBannersController =
+      StreamController<CampaignResponseModel>();
+  StreamController<ReferralStatsResponseModel> _referralStatsController =
       StreamController<ReferralStatsResponseModel>();
-  final _indicesController = StreamController<IndicesModel>();
-  final _kycCountriesController = StreamController<KycCountriesResponseModel>();
-  final _priceAccuraciesController = StreamController<PriceAccuracies>();
-  final _marketInfoController = StreamController<TotalMarketInfoModel>();
-  final _assetPaymentMethodsController =
+  StreamController<IndicesModel> _indicesController =
+      StreamController<IndicesModel>();
+  StreamController<KycCountriesResponseModel> _kycCountriesController =
+      StreamController<KycCountriesResponseModel>();
+  StreamController<PriceAccuracies> _priceAccuraciesController =
+      StreamController<PriceAccuracies>();
+  StreamController<TotalMarketInfoModel> _marketInfoController =
+      StreamController<TotalMarketInfoModel>();
+  StreamController<AssetPaymentMethods> _assetPaymentMethodsController =
       StreamController<AssetPaymentMethods>();
-  final _blockchainsController = StreamController<BlockchainsModel>();
-  final _referralInfoController = StreamController<ReferralInfoModel>();
-  final _recurringBuyController =
+  StreamController<BlockchainsModel> _blockchainsController =
+      StreamController<BlockchainsModel>();
+  StreamController<ReferralInfoModel> _referralInfoController =
+      StreamController<ReferralInfoModel>();
+  StreamController<RecurringBuysResponseModel> _recurringBuyController =
       StreamController<RecurringBuysResponseModel>();
-  final _earnOfferController = StreamController<List<EarnOfferModel>>();
-  final _earnProfileController = StreamController<EarnProfileModel>();
-  final _cardLimitsController = StreamController<CardLimitsModel>();
-  final _cardsController = StreamController<CardsModel>();
+  StreamController<List<EarnOfferModel>> _earnOfferController =
+      StreamController<List<EarnOfferModel>>();
+  StreamController<EarnProfileModel> _earnProfileController =
+      StreamController<EarnProfileModel>();
+  StreamController<CardLimitsModel> _cardLimitsController =
+      StreamController<CardLimitsModel>();
+  StreamController<CardsModel> _cardsController =
+      StreamController<CardsModel>();
 
-  final _inifFinishedController = StreamController<bool>();
+  StreamController<bool> _inifFinishedController = StreamController<bool>();
 
   /// This variable is created to track previous snapshot of base prices.
   /// This needed because when signlaR gets update from basePrices it
@@ -102,8 +121,71 @@ class SignalRModule {
     prices: [],
   );
 
+  Future<void> recreateSignalR() async {
+    _assetsController = StreamController<AssetsModel>();
+    _balancesController = StreamController<BalancesModel>();
+    _instrumentsController = StreamController<InstrumentsModel>();
+    _marketReferencesController = StreamController<MarketReferencesModel>();
+    _basePricesController = StreamController<BasePricesModel>();
+    _periodPricesController = StreamController<PeriodPricesModel>();
+    _clientDetailController = StreamController<ClientDetailModel>();
+    _assetWithdrawalFeeController = StreamController<AssetWithdrawalFeeModel>();
+    _keyValueController = StreamController<KeyValueModel>();
+    _campaignsBannersController = StreamController<CampaignResponseModel>();
+    _referralStatsController = StreamController<ReferralStatsResponseModel>();
+    _indicesController = StreamController<IndicesModel>();
+    _kycCountriesController = StreamController<KycCountriesResponseModel>();
+    _priceAccuraciesController = StreamController<PriceAccuracies>();
+    _marketInfoController = StreamController<TotalMarketInfoModel>();
+    _assetPaymentMethodsController = StreamController<AssetPaymentMethods>();
+    _blockchainsController = StreamController<BlockchainsModel>();
+    _referralInfoController = StreamController<ReferralInfoModel>();
+    _recurringBuyController = StreamController<RecurringBuysResponseModel>();
+    _earnOfferController = StreamController<List<EarnOfferModel>>();
+    _earnProfileController = StreamController<EarnProfileModel>();
+    _cardLimitsController = StreamController<CardLimitsModel>();
+    _cardsController = StreamController<CardsModel>();
+
+    _inifFinishedController = StreamController<bool>();
+  }
+
+  Future<void> clearSignalR() async {
+    _oldBasePrices = const BasePricesModel(
+      prices: [],
+    );
+
+    /*
+    _assetsController.close();
+    _balancesController.close();
+    _instrumentsController.close();
+    _marketReferencesController.close();
+    _basePricesController.close();
+    _periodPricesController.close();
+    _clientDetailController.close();
+    _assetWithdrawalFeeController.close();
+    _keyValueController.close();
+    _campaignsBannersController.close();
+    _referralStatsController.close();
+    _indicesController.close();
+    _kycCountriesController.close();
+    _priceAccuraciesController.close();
+    _marketInfoController.close();
+    _assetPaymentMethodsController.close();
+    _blockchainsController.close();
+    _referralInfoController.close();
+    _recurringBuyController.close();
+    _earnOfferController.close();
+    _earnProfileController.close();
+    _cardLimitsController.close();
+    _cardsController.close();
+    _inifFinishedController.close();
+    */
+  }
+
   // ignore: long-method
   Future<void> init() async {
+    await recreateSignalR();
+
     isDisconnecting = false;
 
     _connection = HubConnectionBuilder()
@@ -525,6 +607,8 @@ class SignalRModule {
     _pongTimer?.cancel();
     _reconnectTimer?.cancel();
     await _connection?.stop();
+
+    clearSignalR();
   }
 
   /// Type cast response data from the SignalR

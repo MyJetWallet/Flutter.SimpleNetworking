@@ -142,7 +142,9 @@ class _$_KycCountriesResponseModel implements _KycCountriesResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_KycCountriesResponseModelToJson(this);
+    return _$$_KycCountriesResponseModelToJson(
+      this,
+    );
   }
 }
 
@@ -349,7 +351,9 @@ class _$_KycCountryResponseModel implements _KycCountryResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_KycCountryResponseModelToJson(this);
+    return _$$_KycCountryResponseModelToJson(
+      this,
+    );
   }
 }
 

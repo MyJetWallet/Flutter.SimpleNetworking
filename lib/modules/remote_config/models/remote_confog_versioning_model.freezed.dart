@@ -153,7 +153,9 @@ class _$_RemoteConfogVersioningModel implements _RemoteConfogVersioningModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RemoteConfogVersioningModelToJson(this);
+    return _$$_RemoteConfogVersioningModelToJson(
+      this,
+    );
   }
 }
 

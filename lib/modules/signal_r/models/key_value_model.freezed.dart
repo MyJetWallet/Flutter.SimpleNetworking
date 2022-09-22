@@ -240,7 +240,9 @@ class _$_KeyValueModel implements _KeyValueModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_KeyValueModelToJson(this);
+    return _$$_KeyValueModelToJson(
+      this,
+    );
   }
 }
 
@@ -407,7 +409,9 @@ class _$_WatchlistModel implements _WatchlistModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WatchlistModelToJson(this);
+    return _$$_WatchlistModelToJson(
+      this,
+    );
   }
 }
 

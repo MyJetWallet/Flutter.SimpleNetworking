@@ -33,6 +33,8 @@ Map<String, dynamic> _$$_CardBuyCreateRequestModelToJson(
 const _$CirclePaymentMethodEnumMap = {
   CirclePaymentMethod.circle: 0,
   CirclePaymentMethod.unlimint: 1,
+  CirclePaymentMethod.unlimintAlr: 2,
+  CirclePaymentMethod.bankCard: 3,
 };
 
 _$_CirclePaymentDataModel _$$_CirclePaymentDataModelFromJson(

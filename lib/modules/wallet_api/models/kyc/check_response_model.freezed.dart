@@ -187,7 +187,9 @@ class _$_CheckResponseModel implements _CheckResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CheckResponseModelToJson(this);
+    return _$$_CheckResponseModelToJson(
+      this,
+    );
   }
 }
 

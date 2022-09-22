@@ -128,7 +128,9 @@ class _$_CardRequestModel implements _CardRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CardRequestModelToJson(this);
+    return _$$_CardRequestModelToJson(
+      this,
+    );
   }
 }
 

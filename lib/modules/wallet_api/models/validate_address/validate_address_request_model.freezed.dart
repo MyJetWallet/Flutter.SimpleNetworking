@@ -194,7 +194,9 @@ class _$_ValidateAddressRequestModel implements _ValidateAddressRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ValidateAddressRequestModelToJson(this);
+    return _$$_ValidateAddressRequestModelToJson(
+      this,
+    );
   }
 }
 

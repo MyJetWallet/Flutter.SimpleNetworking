@@ -132,7 +132,9 @@ class _$_WithdrawResponseModel implements _WithdrawResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WithdrawResponseModelToJson(this);
+    return _$$_WithdrawResponseModelToJson(
+      this,
+    );
   }
 }
 

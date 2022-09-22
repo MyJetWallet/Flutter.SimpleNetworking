@@ -149,7 +149,9 @@ class _$_CardsModel implements _CardsModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CardsModelToJson(this);
+    return _$$_CardsModelToJson(
+      this,
+    );
   }
 }
 
@@ -426,7 +428,9 @@ class _$_CardModel implements _CardModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CardModelToJson(this);
+    return _$$_CardModelToJson(
+      this,
+    );
   }
 }
 
@@ -649,7 +653,9 @@ class _$_CardPaymentDetailModel implements _CardPaymentDetailModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CardPaymentDetailModelToJson(this);
+    return _$$_CardPaymentDetailModelToJson(
+      this,
+    );
   }
 }
 

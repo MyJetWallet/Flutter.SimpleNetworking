@@ -133,7 +133,9 @@ class _$_RemoteConfigAnalyticsModel implements _RemoteConfigAnalyticsModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RemoteConfigAnalyticsModelToJson(this);
+    return _$$_RemoteConfigAnalyticsModelToJson(
+      this,
+    );
   }
 }
 

@@ -151,7 +151,9 @@ class _$_ForgotPasswordRequestModel implements _ForgotPasswordRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ForgotPasswordRequestModelToJson(this);
+    return _$$_ForgotPasswordRequestModelToJson(
+      this,
+    );
   }
 }
 

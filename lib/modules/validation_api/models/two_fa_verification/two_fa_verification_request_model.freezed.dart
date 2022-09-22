@@ -154,7 +154,9 @@ class _$_TwoFaVerificationRequestModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TwoFaVerificationRequestModelToJson(this);
+    return _$$_TwoFaVerificationRequestModelToJson(
+      this,
+    );
   }
 }
 

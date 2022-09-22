@@ -135,7 +135,9 @@ class _$_SimplexPaymentResponseModel implements _SimplexPaymentResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SimplexPaymentResponseModelToJson(this);
+    return _$$_SimplexPaymentResponseModelToJson(
+      this,
+    );
   }
 }
 

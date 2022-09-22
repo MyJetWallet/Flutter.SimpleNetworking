@@ -84,7 +84,9 @@ class _$_ResetPinRequestModel implements _ResetPinRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ResetPinRequestModelToJson(this);
+    return _$$_ResetPinRequestModelToJson(
+      this,
+    );
   }
 }
 

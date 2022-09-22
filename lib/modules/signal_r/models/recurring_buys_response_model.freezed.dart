@@ -141,7 +141,9 @@ class _$_RecurringBuysResponseModel implements _RecurringBuysResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RecurringBuysResponseModelToJson(this);
+    return _$$_RecurringBuysResponseModelToJson(
+      this,
+    );
   }
 }
 

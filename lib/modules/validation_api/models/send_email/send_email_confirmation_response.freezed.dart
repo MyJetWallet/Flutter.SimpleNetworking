@@ -153,7 +153,9 @@ class _$_SendEmailConfirmationResponse
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SendEmailConfirmationResponseToJson(this);
+    return _$$_SendEmailConfirmationResponseToJson(
+      this,
+    );
   }
 }
 

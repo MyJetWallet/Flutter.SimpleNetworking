@@ -196,7 +196,9 @@ class _$_AuthRefreshRequestModel implements _AuthRefreshRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AuthRefreshRequestModelToJson(this);
+    return _$$_AuthRefreshRequestModelToJson(
+      this,
+    );
   }
 }
 

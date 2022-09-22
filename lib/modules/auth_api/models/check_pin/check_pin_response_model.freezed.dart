@@ -131,7 +131,9 @@ class _$_CheckPinResponseModel implements _CheckPinResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CheckPinResponseModelToJson(this);
+    return _$$_CheckPinResponseModelToJson(
+      this,
+    );
   }
 }
 

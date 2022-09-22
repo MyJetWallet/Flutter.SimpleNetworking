@@ -209,7 +209,9 @@ class _$_ConversionPriceModel implements _ConversionPriceModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ConversionPriceModelToJson(this);
+    return _$$_ConversionPriceModelToJson(
+      this,
+    );
   }
 }
 

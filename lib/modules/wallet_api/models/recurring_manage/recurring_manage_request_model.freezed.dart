@@ -152,7 +152,9 @@ class _$_RecurringManageRequestModel implements _RecurringManageRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RecurringManageRequestModelToJson(this);
+    return _$$_RecurringManageRequestModelToJson(
+      this,
+    );
   }
 }
 

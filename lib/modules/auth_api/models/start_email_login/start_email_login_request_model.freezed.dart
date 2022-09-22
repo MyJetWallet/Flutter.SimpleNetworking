@@ -230,7 +230,9 @@ class _$_StartEmailLoginRequestModel implements _StartEmailLoginRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StartEmailLoginRequestModelToJson(this);
+    return _$$_StartEmailLoginRequestModelToJson(
+      this,
+    );
   }
 }
 

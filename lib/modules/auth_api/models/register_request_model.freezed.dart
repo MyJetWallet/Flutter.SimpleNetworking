@@ -320,7 +320,9 @@ class _$_RegisterRequestModel implements _RegisterRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RegisterRequestModelToJson(this);
+    return _$$_RegisterRequestModelToJson(
+      this,
+    );
   }
 }
 

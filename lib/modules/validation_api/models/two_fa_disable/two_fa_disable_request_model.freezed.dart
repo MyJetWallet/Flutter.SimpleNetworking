@@ -132,7 +132,9 @@ class _$_TwoFaDisableRequestModel implements _TwoFaDisableRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TwoFaDisableRequestModelToJson(this);
+    return _$$_TwoFaDisableRequestModelToJson(
+      this,
+    );
   }
 }
 

@@ -192,7 +192,9 @@ class _$_NewsRequestModel implements _NewsRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NewsRequestModelToJson(this);
+    return _$$_NewsRequestModelToJson(
+      this,
+    );
   }
 }
 

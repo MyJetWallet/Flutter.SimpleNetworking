@@ -178,7 +178,9 @@ class _$_PaymentPreviewRequestModel implements _PaymentPreviewRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PaymentPreviewRequestModelToJson(this);
+    return _$$_PaymentPreviewRequestModelToJson(
+      this,
+    );
   }
 }
 

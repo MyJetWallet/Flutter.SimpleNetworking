@@ -152,7 +152,9 @@ class _$_DepositAddressRequestModel implements _DepositAddressRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DepositAddressRequestModelToJson(this);
+    return _$$_DepositAddressRequestModelToJson(
+      this,
+    );
   }
 }
 

@@ -151,7 +151,9 @@ class _$_EncryptionKeyResponseModel implements _EncryptionKeyResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EncryptionKeyResponseModelToJson(this);
+    return _$$_EncryptionKeyResponseModelToJson(
+      this,
+    );
   }
 }
 

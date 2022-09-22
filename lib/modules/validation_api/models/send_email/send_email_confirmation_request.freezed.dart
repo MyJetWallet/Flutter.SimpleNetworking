@@ -185,7 +185,9 @@ class _$_SendEmailConfirmationRequest implements _SendEmailConfirmationRequest {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SendEmailConfirmationRequestToJson(this);
+    return _$$_SendEmailConfirmationRequestToJson(
+      this,
+    );
   }
 }
 

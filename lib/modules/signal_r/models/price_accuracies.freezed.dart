@@ -138,7 +138,9 @@ class _$_PriceAccuracies implements _PriceAccuracies {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PriceAccuraciesToJson(this);
+    return _$$_PriceAccuraciesToJson(
+      this,
+    );
   }
 }
 
@@ -311,7 +313,9 @@ class _$_PriceAccuracy implements _PriceAccuracy {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PriceAccuracyToJson(this);
+    return _$$_PriceAccuracyToJson(
+      this,
+    );
   }
 }
 

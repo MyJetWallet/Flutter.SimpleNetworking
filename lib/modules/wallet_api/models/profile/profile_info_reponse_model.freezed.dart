@@ -491,7 +491,9 @@ class _$_ProfileInfoResponseModel implements _ProfileInfoResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ProfileInfoResponseModelToJson(this);
+    return _$$_ProfileInfoResponseModelToJson(
+      this,
+    );
   }
 }
 

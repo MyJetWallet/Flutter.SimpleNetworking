@@ -134,7 +134,9 @@ class _$_BlockchainsModel implements _BlockchainsModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BlockchainsModelToJson(this);
+    return _$$_BlockchainsModelToJson(
+      this,
+    );
   }
 }
 
@@ -303,7 +305,9 @@ class _$_BlockchainModel implements _BlockchainModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BlockchainModelToJson(this);
+    return _$$_BlockchainModelToJson(
+      this,
+    );
   }
 }
 

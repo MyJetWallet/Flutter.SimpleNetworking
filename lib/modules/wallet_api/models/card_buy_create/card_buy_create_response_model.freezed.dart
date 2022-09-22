@@ -315,7 +315,9 @@ class _$_CardBuyCreateResponseModel implements _CardBuyCreateResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CardBuyCreateResponseModelToJson(this);
+    return _$$_CardBuyCreateResponseModelToJson(
+      this,
+    );
   }
 }
 

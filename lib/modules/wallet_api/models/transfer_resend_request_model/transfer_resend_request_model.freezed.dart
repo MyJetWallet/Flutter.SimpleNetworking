@@ -137,7 +137,9 @@ class _$_TransferResendRequestModel implements _TransferResendRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TransferResendRequestModelToJson(this);
+    return _$$_TransferResendRequestModelToJson(
+      this,
+    );
   }
 }
 

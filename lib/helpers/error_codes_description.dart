@@ -102,8 +102,22 @@ final errorCodesDescriptionRu = {
 const emailPasswordIncorrectEn =
     'The email or password you entered is incorrect';
 
+const pinIncorrectFinalEn =
+    'Wrong PIN. Too many attempts. Try again later';
+
+const pinIncorrectEn =
+    'The PIN you entered is incorrect,';
+
 //const emailPasswordIncorrectRu =
 //'Электронная почта или пароль, которые вы ввели, неверны';
 
 const attemptsRemainingEn = 'attempts remaining';
 //const attemptsRemainingRu = 'осталось попыток';
+
+const timeRemainingHoursEn = 'hours';
+
+const timeRemainingHourEn = 'hour';
+
+const timeRemainingMinutesEn = 'minutes';
+
+const timeRemainingMinuteEn = 'minute';

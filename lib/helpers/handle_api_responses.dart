@@ -45,30 +45,45 @@ void _validateFullResponse(
     final data = json['data'] as Map<String, dynamic>;
     final blocker = data['blocker'] as Map<String, dynamic>;
     final expired = blocker['expired'] as String;
-
-    throw ServerRejectException(
-      _blockerMessage(timespanToDuration(expired)),
-    );
+    throw ServerRejectException(_blockerMessage(timespanToDuration(expired)));
   } else if (result == 'InvalidUserNameOrPassword') {
     final data = json['data'] as Map<String, dynamic>;
     final attempts = data['attempts'] as Map<String, dynamic>?;
-
     if (attempts == null) {
-      throw const ServerRejectException(
-        '$emailPasswordIncorrectEn.',
-      );
+      throw const ServerRejectException('$emailPasswordIncorrectEn.');
     } else {
       final left = attempts['left'] as int;
-
-      throw ServerRejectException(
-        '$emailPasswordIncorrectEn, '
-        '$left $attemptsRemainingEn.',
-      );
+      throw ServerRejectException('$emailPasswordIncorrectEn, $left $attemptsRemainingEn.',);
+    }
+  } else if (result == 'InvalidCode') {
+    final data = json['rejectDetail'] as Map<String, dynamic>;
+    final attempts = data['attempts'] as Map<String, dynamic>?;
+    if (attempts == null) {
+      final blocker = data['blocker'] as Map<String, dynamic>?;
+      if (blocker == null) {
+        throw const ServerRejectException('$pinIncorrectFinalEn.');
+      } else {
+        final blockerTimes = blocker.toString().split(':');
+        final hours = int.parse(blockerTimes[1]);
+        final minutes = int.parse(blockerTimes[2]);
+        var blockerTimesText = '';
+        if (hours > 0) {
+          blockerTimesText = hours == 1 ? '1 $timeRemainingHourEn' : '$hours $timeRemainingHoursEn';
+        } else if (minutes > 1) {
+          blockerTimesText = '$minutes $timeRemainingMinutesEn';
+        } else {
+          blockerTimesText = '1 $timeRemainingMinuteEn';
+        }
+        throw ServerRejectException(
+          '$pinIncorrectFinalEn, $blockerTimesText.',
+        );
+      }
+    } else {
+      final left = attempts['left'] as int;
+      throw ServerRejectException('$pinIncorrectEn $left $attemptsRemainingEn.');
     }
   } else if (result != 'OK') {
-    throw ServerRejectException(
-      errorCodesDescriptionEn[result] ?? result,
-    );
+    throw ServerRejectException(errorCodesDescriptionEn[result] ?? result);
   }
 }
 

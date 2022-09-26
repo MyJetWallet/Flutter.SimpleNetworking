@@ -129,7 +129,9 @@ class _$_CheckPinRequestModel implements _CheckPinRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CheckPinRequestModelToJson(this);
+    return _$$_CheckPinRequestModelToJson(
+      this,
+    );
   }
 }
 

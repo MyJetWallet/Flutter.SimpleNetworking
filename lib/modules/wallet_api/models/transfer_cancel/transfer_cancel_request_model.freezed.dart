@@ -137,7 +137,9 @@ class _$_TransferCancelRequestModel implements _TransferCancelRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TransferCancelRequestModelToJson(this);
+    return _$$_TransferCancelRequestModelToJson(
+      this,
+    );
   }
 }
 

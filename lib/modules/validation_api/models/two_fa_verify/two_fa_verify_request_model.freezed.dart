@@ -132,7 +132,9 @@ class _$_TwoFaVerifyRequestModel implements _TwoFaVerifyRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TwoFaVerifyRequestModelToJson(this);
+    return _$$_TwoFaVerifyRequestModelToJson(
+      this,
+    );
   }
 }
 

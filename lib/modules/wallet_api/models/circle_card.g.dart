@@ -43,6 +43,7 @@ const _$CircleCardStatusEnumMap = {
 const _$IntegrationTypeEnumMap = {
   IntegrationType.circle: 0,
   IntegrationType.unlimint: 1,
+  IntegrationType.unlimintAlt: 2,
 };
 
 _$_CircleCardInfoPayment _$$_CircleCardInfoPaymentFromJson(

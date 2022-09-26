@@ -157,7 +157,9 @@ class _$_DisclaimersRequestModel implements _DisclaimersRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DisclaimersRequestModelToJson(this);
+    return _$$_DisclaimersRequestModelToJson(
+      this,
+    );
   }
 }
 
@@ -351,7 +353,9 @@ class _$_DisclaimerAnswersModel implements _DisclaimerAnswersModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DisclaimerAnswersModelToJson(this);
+    return _$$_DisclaimerAnswersModelToJson(
+      this,
+    );
   }
 }
 

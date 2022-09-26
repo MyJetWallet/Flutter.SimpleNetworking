@@ -131,7 +131,9 @@ class _$_ResetPinResponseModel implements _ResetPinResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ResetPinResponseModelToJson(this);
+    return _$$_ResetPinResponseModelToJson(
+      this,
+    );
   }
 }
 

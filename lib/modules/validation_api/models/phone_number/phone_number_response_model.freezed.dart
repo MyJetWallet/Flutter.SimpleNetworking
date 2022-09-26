@@ -135,7 +135,9 @@ class _$_PhoneNumberResponseModel implements _PhoneNumberResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PhoneNumberResponseModelToJson(this);
+    return _$$_PhoneNumberResponseModelToJson(
+      this,
+    );
   }
 }
 

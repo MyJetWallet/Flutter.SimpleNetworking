@@ -150,7 +150,9 @@ class _$_AuthRefreshResponseModel implements _AuthRefreshResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AuthRefreshResponseModelToJson(this);
+    return _$$_AuthRefreshResponseModelToJson(
+      this,
+    );
   }
 }
 

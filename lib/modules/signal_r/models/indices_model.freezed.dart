@@ -154,7 +154,9 @@ class _$_IndicesModel implements _IndicesModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_IndicesModelToJson(this);
+    return _$$_IndicesModelToJson(
+      this,
+    );
   }
 }
 
@@ -314,7 +316,9 @@ class _$_IndexModel implements _IndexModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_IndexModelToJson(this);
+    return _$$_IndexModelToJson(
+      this,
+    );
   }
 }
 
@@ -533,7 +537,9 @@ class _$_BasketAssetModel implements _BasketAssetModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BasketAssetModelToJson(this);
+    return _$$_BasketAssetModelToJson(
+      this,
+    );
   }
 }
 

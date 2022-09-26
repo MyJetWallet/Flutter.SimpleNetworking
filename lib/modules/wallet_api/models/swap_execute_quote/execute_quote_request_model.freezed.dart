@@ -323,7 +323,9 @@ class _$_ExecuteQuoteRequestModel implements _ExecuteQuoteRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ExecuteQuoteRequestModelToJson(this);
+    return _$$_ExecuteQuoteRequestModelToJson(
+      this,
+    );
   }
 }
 

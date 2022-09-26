@@ -211,7 +211,9 @@ class _$_TransferInfoResponseModel implements _TransferInfoResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TransferInfoResponseModelToJson(this);
+    return _$$_TransferInfoResponseModelToJson(
+      this,
+    );
   }
 }
 

@@ -136,7 +136,9 @@ class _$_TransferInfoRequestModel implements _TransferInfoRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TransferInfoRequestModelToJson(this);
+    return _$$_TransferInfoRequestModelToJson(
+      this,
+    );
   }
 }
 

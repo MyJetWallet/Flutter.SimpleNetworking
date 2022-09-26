@@ -312,7 +312,9 @@ class _$_ClientDetailModel implements _ClientDetailModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ClientDetailModelToJson(this);
+    return _$$_ClientDetailModelToJson(
+      this,
+    );
   }
 }
 
@@ -499,7 +501,9 @@ class _$_ClientBlockerInfoModel implements _ClientBlockerInfoModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ClientBlockerInfoModelToJson(this);
+    return _$$_ClientBlockerInfoModelToJson(
+      this,
+    );
   }
 }
 

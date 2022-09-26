@@ -234,7 +234,9 @@ class _$_RemoteConfigConnectionFlavorModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RemoteConfigConnectionFlavorModelToJson(this);
+    return _$$_RemoteConfigConnectionFlavorModelToJson(
+      this,
+    );
   }
 }
 

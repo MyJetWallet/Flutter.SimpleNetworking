@@ -88,7 +88,9 @@ class _$_SessionCheckRequestModel implements _SessionCheckRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SessionCheckRequestModelToJson(this);
+    return _$$_SessionCheckRequestModelToJson(
+      this,
+    );
   }
 }
 

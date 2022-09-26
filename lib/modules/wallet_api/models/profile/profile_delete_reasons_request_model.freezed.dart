@@ -140,7 +140,9 @@ class _$_ProfileDeleteReasonsRequestModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ProfileDeleteReasonsRequestModelToJson(this);
+    return _$$_ProfileDeleteReasonsRequestModelToJson(
+      this,
+    );
   }
 }
 

@@ -20,6 +20,15 @@ _$_CardBuyExecuteRequestModel _$$_CardBuyExecuteRequestModelFromJson(
           ? null
           : UnlimintPaymentDataExecuteModel.fromJson(
               json['unlimintPaymentData'] as Map<String, dynamic>),
+      unlimintAlternativePaymentData: json['unlimintAlternativePaymentData'] ==
+              null
+          ? null
+          : UnlimintAltPaymentDataExecuteModel.fromJson(
+              json['unlimintAlternativePaymentData'] as Map<String, dynamic>),
+      cardPaymentData: json['cardPaymentData'] == null
+          ? null
+          : BankCardPaymentDataExecuteModel.fromJson(
+              json['cardPaymentData'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_CardBuyExecuteRequestModelToJson(
@@ -29,11 +38,15 @@ Map<String, dynamic> _$$_CardBuyExecuteRequestModelToJson(
       'paymentMethod': _$CirclePaymentMethodEnumMap[instance.paymentMethod]!,
       'circlePaymentData': instance.circlePaymentData,
       'unlimintPaymentData': instance.unlimintPaymentData,
+      'unlimintAlternativePaymentData': instance.unlimintAlternativePaymentData,
+      'cardPaymentData': instance.cardPaymentData,
     };
 
 const _$CirclePaymentMethodEnumMap = {
   CirclePaymentMethod.circle: 0,
   CirclePaymentMethod.unlimint: 1,
+  CirclePaymentMethod.unlimintAlr: 2,
+  CirclePaymentMethod.bankCard: 3,
 };
 
 _$_CirclePaymentDataExecuteModel _$$_CirclePaymentDataExecuteModelFromJson(
@@ -62,4 +75,38 @@ Map<String, dynamic> _$$_UnlimintPaymentDataExecuteModelToJson(
         _$_UnlimintPaymentDataExecuteModel instance) =>
     <String, dynamic>{
       'cardId': instance.cardId,
+    };
+
+_$_UnlimintAltPaymentDataExecuteModel
+    _$$_UnlimintAltPaymentDataExecuteModelFromJson(Map<String, dynamic> json) =>
+        _$_UnlimintAltPaymentDataExecuteModel(
+          locale: json['locale'] as String?,
+        );
+
+Map<String, dynamic> _$$_UnlimintAltPaymentDataExecuteModelToJson(
+        _$_UnlimintAltPaymentDataExecuteModel instance) =>
+    <String, dynamic>{
+      'locale': instance.locale,
+    };
+
+_$_BankCardPaymentDataExecuteModel _$$_BankCardPaymentDataExecuteModelFromJson(
+        Map<String, dynamic> json) =>
+    _$_BankCardPaymentDataExecuteModel(
+      cardId: json['cardId'] as String?,
+      encKeyId: json['encKeyId'] as String?,
+      encData: json['encData'] as String?,
+      expMonth: json['expMonth'] as int?,
+      expYear: json['expYear'] as int?,
+      isActive: json['isActive'] as bool?,
+    );
+
+Map<String, dynamic> _$$_BankCardPaymentDataExecuteModelToJson(
+        _$_BankCardPaymentDataExecuteModel instance) =>
+    <String, dynamic>{
+      'cardId': instance.cardId,
+      'encKeyId': instance.encKeyId,
+      'encData': instance.encData,
+      'expMonth': instance.expMonth,
+      'expYear': instance.expYear,
+      'isActive': instance.isActive,
     };

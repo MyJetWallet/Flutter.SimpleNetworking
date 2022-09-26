@@ -149,7 +149,9 @@ class _$_PaymentInfoResponseModel implements _PaymentInfoResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PaymentInfoResponseModelToJson(this);
+    return _$$_PaymentInfoResponseModelToJson(
+      this,
+    );
   }
 }
 

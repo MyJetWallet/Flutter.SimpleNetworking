@@ -137,7 +137,9 @@ class _$_MarketNewsResponseModel implements _MarketNewsResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MarketNewsResponseModelToJson(this);
+    return _$$_MarketNewsResponseModelToJson(
+      this,
+    );
   }
 }
 
@@ -389,7 +391,9 @@ class _$_MarketNewsModel implements _MarketNewsModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MarketNewsModelToJson(this);
+    return _$$_MarketNewsModelToJson(
+      this,
+    );
   }
 }
 

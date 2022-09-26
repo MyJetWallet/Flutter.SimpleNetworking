@@ -150,7 +150,9 @@ class _$_ProfileDeleteReasonsModel implements _ProfileDeleteReasonsModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ProfileDeleteReasonsModelToJson(this);
+    return _$$_ProfileDeleteReasonsModelToJson(
+      this,
+    );
   }
 }
 

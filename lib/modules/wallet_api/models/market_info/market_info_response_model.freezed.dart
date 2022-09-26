@@ -284,7 +284,9 @@ class _$_MarketInfoResponseModel implements _MarketInfoResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MarketInfoResponseModelToJson(this);
+    return _$$_MarketInfoResponseModelToJson(
+      this,
+    );
   }
 }
 
@@ -455,7 +457,9 @@ class _$_Fees implements _Fees {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FeesToJson(this);
+    return _$$_FeesToJson(
+      this,
+    );
   }
 }
 
@@ -621,7 +625,9 @@ class _$_WithdrawalFee implements _WithdrawalFee {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WithdrawalFeeToJson(this);
+    return _$$_WithdrawalFeeToJson(
+      this,
+    );
   }
 }
 

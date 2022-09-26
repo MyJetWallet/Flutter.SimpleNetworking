@@ -8,11 +8,16 @@ import 'package:simple_networking/modules/wallet_api/models/all_cards/all_cards_
 import 'package:simple_networking/modules/wallet_api/models/calculate_earn_offer_apy/calculate_earn_offer_apy_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/calculate_earn_offer_apy/calculate_earn_offer_apy_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/card/card_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/card_add/card_add_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/card_add/card_add_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/card_buy_create/card_buy_create_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/card_buy_create/card_buy_create_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/card_buy_execute/card_buy_execute_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/card_buy_info/card_buy_info_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/card_buy_info/card_buy_info_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/card_encription_key/card_encription_key_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/card_remove/card_remove_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/card_remove/card_remove_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/circle_card.dart';
 import 'package:simple_networking/modules/wallet_api/models/create_payment/create_payment_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/create_payment/create_payment_response_model.dart';
@@ -454,5 +459,28 @@ class WalletApiRepository {
     return _walletApiDataSources.postDeleteUnlimintCardRequest(
       model,
     );
+  }
+
+  Future<DC<ServerRejectException, CardRemoveResponseModel>>
+    cardRemove(
+    CardRemoveRequestModel model,
+  ) async {
+    return _walletApiDataSources.cardRemove(
+      model,
+    );
+  }
+
+  Future<DC<ServerRejectException, CardAddResponseModel>>
+      cardAdd(
+    CardAddRequestModel model,
+  ) async {
+    return _walletApiDataSources.cardAdd(
+      model,
+    );
+  }
+
+  Future<DC<ServerRejectException, EncryptionKeyCardResponseModel>>
+    encryptionKey() async {
+    return _walletApiDataSources.encryptionKey();
   }
 }

@@ -8,11 +8,16 @@ import 'package:simple_networking/modules/wallet_api/models/all_cards/all_cards_
 import 'package:simple_networking/modules/wallet_api/models/calculate_earn_offer_apy/calculate_earn_offer_apy_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/calculate_earn_offer_apy/calculate_earn_offer_apy_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/card/card_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/card_add/card_add_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/card_add/card_add_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/card_buy_create/card_buy_create_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/card_buy_create/card_buy_create_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/card_buy_execute/card_buy_execute_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/card_buy_info/card_buy_info_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/card_buy_info/card_buy_info_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/card_encription_key/card_encription_key_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/card_remove/card_remove_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/card_remove/card_remove_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/circle_card.dart';
 import 'package:simple_networking/modules/wallet_api/models/create_payment/create_payment_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/create_payment/create_payment_response_model.dart';
@@ -302,6 +307,77 @@ class WalletApiDataSources {
     }
   }
 
+  Future<DC<ServerRejectException, CardAddResponseModel>> cardAdd(
+    CardAddRequestModel model,
+  ) async {
+    try {
+      final response = await _apiClient.post(
+        '${_apiClient.options.walletApi}/trading/buy/add-card',
+        data: model.toJson(),
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+
+        handleResultResponse(responseData);
+
+        return DC.data(const CardAddResponseModel(rejectDetail: 'OK'));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, CardRemoveResponseModel>> cardRemove(
+    CardRemoveRequestModel model,
+  ) async {
+    try {
+      final response = await _apiClient.post(
+        '${_apiClient.options.walletApi}/trading/buy/delete-card',
+        data: model.toJson(),
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+
+        final data = handleFullResponse(
+          responseData,
+        );
+
+        return DC.data(CardRemoveResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, EncryptionKeyCardResponseModel>>
+  encryptionKey() async {
+    try {
+      final response = await _apiClient.get(
+        '${_apiClient.options.walletApi}/trading/buy/get-encryption-key'
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+
+        final data = handleFullResponse(
+          responseData,
+        );
+
+        return DC.data(EncryptionKeyCardResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
   Future<DC<ServerRejectException, CreatePaymentResponseModel>>
       postCreatePaymentRequest(
     CreatePaymentRequestModel model,
@@ -526,10 +602,27 @@ class WalletApiDataSources {
   Future<DC<ServerRejectException, bool>> postCardBuyExecuteRequest(
     CardBuyExecuteRequestModel model,
   ) async {
+    final jsonModel = model.toJson();
+    if (model.cardPaymentData != null) {
+      final jsonCardModel = model.cardPaymentData!.toJson();
+      jsonModel.remove('cardPaymentData');
+      if (model.cardPaymentData!.expMonth == null) {
+        jsonCardModel.remove('expMonth');
+      }
+      if (model.cardPaymentData!.expYear == null) {
+        jsonCardModel.remove('expYear');
+      }
+      if (model.cardPaymentData!.isActive == null) {
+        jsonCardModel.remove('isActive');
+      }
+      jsonModel.addAll({
+        'cardPaymentData': jsonCardModel,
+      });
+    }
     try {
       final response = await _apiClient.post(
         '${_apiClient.options.walletApi}/trading/buy/execute',
-        data: model.toJson(),
+        data: jsonModel,
       );
 
       try {

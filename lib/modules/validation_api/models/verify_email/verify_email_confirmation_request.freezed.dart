@@ -169,7 +169,9 @@ class _$_VerifyEmailConfirmationRequest
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_VerifyEmailConfirmationRequestToJson(this);
+    return _$$_VerifyEmailConfirmationRequestToJson(
+      this,
+    );
   }
 }
 

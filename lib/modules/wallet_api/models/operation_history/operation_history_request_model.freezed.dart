@@ -166,7 +166,9 @@ class _$_OperationHistoryRequestModel implements _OperationHistoryRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OperationHistoryRequestModelToJson(this);
+    return _$$_OperationHistoryRequestModelToJson(
+      this,
+    );
   }
 }
 

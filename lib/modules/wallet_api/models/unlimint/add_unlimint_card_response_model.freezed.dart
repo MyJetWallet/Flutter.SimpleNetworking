@@ -134,7 +134,9 @@ class _$_AddUnlimintCardResponseModel implements _AddUnlimintCardResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AddUnlimintCardResponseModelToJson(this);
+    return _$$_AddUnlimintCardResponseModelToJson(
+      this,
+    );
   }
 }
 

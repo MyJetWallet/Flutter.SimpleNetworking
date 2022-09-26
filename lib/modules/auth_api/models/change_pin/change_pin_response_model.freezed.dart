@@ -131,7 +131,9 @@ class _$_ChangePinResponseModel implements _ChangePinResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ChangePinResponseModelToJson(this);
+    return _$$_ChangePinResponseModelToJson(
+      this,
+    );
   }
 }
 

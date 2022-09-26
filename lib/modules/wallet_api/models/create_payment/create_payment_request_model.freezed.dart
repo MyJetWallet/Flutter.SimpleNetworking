@@ -234,7 +234,9 @@ class _$_CreatePaymentRequestModel implements _CreatePaymentRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CreatePaymentRequestModelToJson(this);
+    return _$$_CreatePaymentRequestModelToJson(
+      this,
+    );
   }
 }
 

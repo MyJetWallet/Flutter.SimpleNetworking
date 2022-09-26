@@ -145,7 +145,9 @@ class _$_WireCountriesResponseModel implements _WireCountriesResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WireCountriesResponseModelToJson(this);
+    return _$$_WireCountriesResponseModelToJson(
+      this,
+    );
   }
 }
 
@@ -362,7 +364,9 @@ class _$_CircleCountry implements _CircleCountry {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CircleCountryToJson(this);
+    return _$$_CircleCountryToJson(
+      this,
+    );
   }
 }
 

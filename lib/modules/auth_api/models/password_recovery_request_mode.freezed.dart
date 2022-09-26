@@ -166,7 +166,9 @@ class _$_PasswordRecoveryRequestModel implements _PasswordRecoveryRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PasswordRecoveryRequestModelToJson(this);
+    return _$$_PasswordRecoveryRequestModelToJson(
+      this,
+    );
   }
 }
 

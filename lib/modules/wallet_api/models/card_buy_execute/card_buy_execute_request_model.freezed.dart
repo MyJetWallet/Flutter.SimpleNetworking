@@ -27,6 +27,10 @@ mixin _$CardBuyExecuteRequestModel {
       throw _privateConstructorUsedError;
   UnlimintPaymentDataExecuteModel? get unlimintPaymentData =>
       throw _privateConstructorUsedError;
+  UnlimintAltPaymentDataExecuteModel? get unlimintAlternativePaymentData =>
+      throw _privateConstructorUsedError;
+  BankCardPaymentDataExecuteModel? get cardPaymentData =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -43,10 +47,15 @@ abstract class $CardBuyExecuteRequestModelCopyWith<$Res> {
       {String? paymentId,
       CirclePaymentMethod paymentMethod,
       CirclePaymentDataExecuteModel? circlePaymentData,
-      UnlimintPaymentDataExecuteModel? unlimintPaymentData});
+      UnlimintPaymentDataExecuteModel? unlimintPaymentData,
+      UnlimintAltPaymentDataExecuteModel? unlimintAlternativePaymentData,
+      BankCardPaymentDataExecuteModel? cardPaymentData});
 
   $CirclePaymentDataExecuteModelCopyWith<$Res>? get circlePaymentData;
   $UnlimintPaymentDataExecuteModelCopyWith<$Res>? get unlimintPaymentData;
+  $UnlimintAltPaymentDataExecuteModelCopyWith<$Res>?
+      get unlimintAlternativePaymentData;
+  $BankCardPaymentDataExecuteModelCopyWith<$Res>? get cardPaymentData;
 }
 
 /// @nodoc
@@ -64,6 +73,8 @@ class _$CardBuyExecuteRequestModelCopyWithImpl<$Res>
     Object? paymentMethod = freezed,
     Object? circlePaymentData = freezed,
     Object? unlimintPaymentData = freezed,
+    Object? unlimintAlternativePaymentData = freezed,
+    Object? cardPaymentData = freezed,
   }) {
     return _then(_value.copyWith(
       paymentId: paymentId == freezed
@@ -82,6 +93,14 @@ class _$CardBuyExecuteRequestModelCopyWithImpl<$Res>
           ? _value.unlimintPaymentData
           : unlimintPaymentData // ignore: cast_nullable_to_non_nullable
               as UnlimintPaymentDataExecuteModel?,
+      unlimintAlternativePaymentData: unlimintAlternativePaymentData == freezed
+          ? _value.unlimintAlternativePaymentData
+          : unlimintAlternativePaymentData // ignore: cast_nullable_to_non_nullable
+              as UnlimintAltPaymentDataExecuteModel?,
+      cardPaymentData: cardPaymentData == freezed
+          ? _value.cardPaymentData
+          : cardPaymentData // ignore: cast_nullable_to_non_nullable
+              as BankCardPaymentDataExecuteModel?,
     ));
   }
 
@@ -108,6 +127,31 @@ class _$CardBuyExecuteRequestModelCopyWithImpl<$Res>
       return _then(_value.copyWith(unlimintPaymentData: value));
     });
   }
+
+  @override
+  $UnlimintAltPaymentDataExecuteModelCopyWith<$Res>?
+      get unlimintAlternativePaymentData {
+    if (_value.unlimintAlternativePaymentData == null) {
+      return null;
+    }
+
+    return $UnlimintAltPaymentDataExecuteModelCopyWith<$Res>(
+        _value.unlimintAlternativePaymentData!, (value) {
+      return _then(_value.copyWith(unlimintAlternativePaymentData: value));
+    });
+  }
+
+  @override
+  $BankCardPaymentDataExecuteModelCopyWith<$Res>? get cardPaymentData {
+    if (_value.cardPaymentData == null) {
+      return null;
+    }
+
+    return $BankCardPaymentDataExecuteModelCopyWith<$Res>(
+        _value.cardPaymentData!, (value) {
+      return _then(_value.copyWith(cardPaymentData: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -122,12 +166,19 @@ abstract class _$$_CardBuyExecuteRequestModelCopyWith<$Res>
       {String? paymentId,
       CirclePaymentMethod paymentMethod,
       CirclePaymentDataExecuteModel? circlePaymentData,
-      UnlimintPaymentDataExecuteModel? unlimintPaymentData});
+      UnlimintPaymentDataExecuteModel? unlimintPaymentData,
+      UnlimintAltPaymentDataExecuteModel? unlimintAlternativePaymentData,
+      BankCardPaymentDataExecuteModel? cardPaymentData});
 
   @override
   $CirclePaymentDataExecuteModelCopyWith<$Res>? get circlePaymentData;
   @override
   $UnlimintPaymentDataExecuteModelCopyWith<$Res>? get unlimintPaymentData;
+  @override
+  $UnlimintAltPaymentDataExecuteModelCopyWith<$Res>?
+      get unlimintAlternativePaymentData;
+  @override
+  $BankCardPaymentDataExecuteModelCopyWith<$Res>? get cardPaymentData;
 }
 
 /// @nodoc
@@ -149,6 +200,8 @@ class __$$_CardBuyExecuteRequestModelCopyWithImpl<$Res>
     Object? paymentMethod = freezed,
     Object? circlePaymentData = freezed,
     Object? unlimintPaymentData = freezed,
+    Object? unlimintAlternativePaymentData = freezed,
+    Object? cardPaymentData = freezed,
   }) {
     return _then(_$_CardBuyExecuteRequestModel(
       paymentId: paymentId == freezed
@@ -167,6 +220,14 @@ class __$$_CardBuyExecuteRequestModelCopyWithImpl<$Res>
           ? _value.unlimintPaymentData
           : unlimintPaymentData // ignore: cast_nullable_to_non_nullable
               as UnlimintPaymentDataExecuteModel?,
+      unlimintAlternativePaymentData: unlimintAlternativePaymentData == freezed
+          ? _value.unlimintAlternativePaymentData
+          : unlimintAlternativePaymentData // ignore: cast_nullable_to_non_nullable
+              as UnlimintAltPaymentDataExecuteModel?,
+      cardPaymentData: cardPaymentData == freezed
+          ? _value.cardPaymentData
+          : cardPaymentData // ignore: cast_nullable_to_non_nullable
+              as BankCardPaymentDataExecuteModel?,
     ));
   }
 }
@@ -178,7 +239,9 @@ class _$_CardBuyExecuteRequestModel implements _CardBuyExecuteRequestModel {
       {this.paymentId,
       required this.paymentMethod,
       this.circlePaymentData,
-      this.unlimintPaymentData});
+      this.unlimintPaymentData,
+      this.unlimintAlternativePaymentData,
+      this.cardPaymentData});
 
   factory _$_CardBuyExecuteRequestModel.fromJson(Map<String, dynamic> json) =>
       _$$_CardBuyExecuteRequestModelFromJson(json);
@@ -191,10 +254,14 @@ class _$_CardBuyExecuteRequestModel implements _CardBuyExecuteRequestModel {
   final CirclePaymentDataExecuteModel? circlePaymentData;
   @override
   final UnlimintPaymentDataExecuteModel? unlimintPaymentData;
+  @override
+  final UnlimintAltPaymentDataExecuteModel? unlimintAlternativePaymentData;
+  @override
+  final BankCardPaymentDataExecuteModel? cardPaymentData;
 
   @override
   String toString() {
-    return 'CardBuyExecuteRequestModel(paymentId: $paymentId, paymentMethod: $paymentMethod, circlePaymentData: $circlePaymentData, unlimintPaymentData: $unlimintPaymentData)';
+    return 'CardBuyExecuteRequestModel(paymentId: $paymentId, paymentMethod: $paymentMethod, circlePaymentData: $circlePaymentData, unlimintPaymentData: $unlimintPaymentData, unlimintAlternativePaymentData: $unlimintAlternativePaymentData, cardPaymentData: $cardPaymentData)';
   }
 
   @override
@@ -208,7 +275,12 @@ class _$_CardBuyExecuteRequestModel implements _CardBuyExecuteRequestModel {
             const DeepCollectionEquality()
                 .equals(other.circlePaymentData, circlePaymentData) &&
             const DeepCollectionEquality()
-                .equals(other.unlimintPaymentData, unlimintPaymentData));
+                .equals(other.unlimintPaymentData, unlimintPaymentData) &&
+            const DeepCollectionEquality().equals(
+                other.unlimintAlternativePaymentData,
+                unlimintAlternativePaymentData) &&
+            const DeepCollectionEquality()
+                .equals(other.cardPaymentData, cardPaymentData));
   }
 
   @JsonKey(ignore: true)
@@ -218,7 +290,9 @@ class _$_CardBuyExecuteRequestModel implements _CardBuyExecuteRequestModel {
       const DeepCollectionEquality().hash(paymentId),
       const DeepCollectionEquality().hash(paymentMethod),
       const DeepCollectionEquality().hash(circlePaymentData),
-      const DeepCollectionEquality().hash(unlimintPaymentData));
+      const DeepCollectionEquality().hash(unlimintPaymentData),
+      const DeepCollectionEquality().hash(unlimintAlternativePaymentData),
+      const DeepCollectionEquality().hash(cardPaymentData));
 
   @JsonKey(ignore: true)
   @override
@@ -228,18 +302,22 @@ class _$_CardBuyExecuteRequestModel implements _CardBuyExecuteRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CardBuyExecuteRequestModelToJson(this);
+    return _$$_CardBuyExecuteRequestModelToJson(
+      this,
+    );
   }
 }
 
 abstract class _CardBuyExecuteRequestModel
     implements CardBuyExecuteRequestModel {
   const factory _CardBuyExecuteRequestModel(
-          {final String? paymentId,
-          required final CirclePaymentMethod paymentMethod,
-          final CirclePaymentDataExecuteModel? circlePaymentData,
-          final UnlimintPaymentDataExecuteModel? unlimintPaymentData}) =
-      _$_CardBuyExecuteRequestModel;
+      {final String? paymentId,
+      required final CirclePaymentMethod paymentMethod,
+      final CirclePaymentDataExecuteModel? circlePaymentData,
+      final UnlimintPaymentDataExecuteModel? unlimintPaymentData,
+      final UnlimintAltPaymentDataExecuteModel? unlimintAlternativePaymentData,
+      final BankCardPaymentDataExecuteModel?
+          cardPaymentData}) = _$_CardBuyExecuteRequestModel;
 
   factory _CardBuyExecuteRequestModel.fromJson(Map<String, dynamic> json) =
       _$_CardBuyExecuteRequestModel.fromJson;
@@ -252,6 +330,10 @@ abstract class _CardBuyExecuteRequestModel
   CirclePaymentDataExecuteModel? get circlePaymentData;
   @override
   UnlimintPaymentDataExecuteModel? get unlimintPaymentData;
+  @override
+  UnlimintAltPaymentDataExecuteModel? get unlimintAlternativePaymentData;
+  @override
+  BankCardPaymentDataExecuteModel? get cardPaymentData;
   @override
   @JsonKey(ignore: true)
   _$$_CardBuyExecuteRequestModelCopyWith<_$_CardBuyExecuteRequestModel>
@@ -413,7 +495,9 @@ class _$_CirclePaymentDataExecuteModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CirclePaymentDataExecuteModelToJson(this);
+    return _$$_CirclePaymentDataExecuteModelToJson(
+      this,
+    );
   }
 }
 
@@ -562,7 +646,9 @@ class _$_UnlimintPaymentDataExecuteModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UnlimintPaymentDataExecuteModelToJson(this);
+    return _$$_UnlimintPaymentDataExecuteModelToJson(
+      this,
+    );
   }
 }
 
@@ -580,5 +666,408 @@ abstract class _UnlimintPaymentDataExecuteModel
   @JsonKey(ignore: true)
   _$$_UnlimintPaymentDataExecuteModelCopyWith<
           _$_UnlimintPaymentDataExecuteModel>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+UnlimintAltPaymentDataExecuteModel _$UnlimintAltPaymentDataExecuteModelFromJson(
+    Map<String, dynamic> json) {
+  return _UnlimintAltPaymentDataExecuteModel.fromJson(json);
+}
+
+/// @nodoc
+mixin _$UnlimintAltPaymentDataExecuteModel {
+  String? get locale => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UnlimintAltPaymentDataExecuteModelCopyWith<
+          UnlimintAltPaymentDataExecuteModel>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UnlimintAltPaymentDataExecuteModelCopyWith<$Res> {
+  factory $UnlimintAltPaymentDataExecuteModelCopyWith(
+          UnlimintAltPaymentDataExecuteModel value,
+          $Res Function(UnlimintAltPaymentDataExecuteModel) then) =
+      _$UnlimintAltPaymentDataExecuteModelCopyWithImpl<$Res>;
+  $Res call({String? locale});
+}
+
+/// @nodoc
+class _$UnlimintAltPaymentDataExecuteModelCopyWithImpl<$Res>
+    implements $UnlimintAltPaymentDataExecuteModelCopyWith<$Res> {
+  _$UnlimintAltPaymentDataExecuteModelCopyWithImpl(this._value, this._then);
+
+  final UnlimintAltPaymentDataExecuteModel _value;
+  // ignore: unused_field
+  final $Res Function(UnlimintAltPaymentDataExecuteModel) _then;
+
+  @override
+  $Res call({
+    Object? locale = freezed,
+  }) {
+    return _then(_value.copyWith(
+      locale: locale == freezed
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$$_UnlimintAltPaymentDataExecuteModelCopyWith<$Res>
+    implements $UnlimintAltPaymentDataExecuteModelCopyWith<$Res> {
+  factory _$$_UnlimintAltPaymentDataExecuteModelCopyWith(
+          _$_UnlimintAltPaymentDataExecuteModel value,
+          $Res Function(_$_UnlimintAltPaymentDataExecuteModel) then) =
+      __$$_UnlimintAltPaymentDataExecuteModelCopyWithImpl<$Res>;
+  @override
+  $Res call({String? locale});
+}
+
+/// @nodoc
+class __$$_UnlimintAltPaymentDataExecuteModelCopyWithImpl<$Res>
+    extends _$UnlimintAltPaymentDataExecuteModelCopyWithImpl<$Res>
+    implements _$$_UnlimintAltPaymentDataExecuteModelCopyWith<$Res> {
+  __$$_UnlimintAltPaymentDataExecuteModelCopyWithImpl(
+      _$_UnlimintAltPaymentDataExecuteModel _value,
+      $Res Function(_$_UnlimintAltPaymentDataExecuteModel) _then)
+      : super(_value, (v) => _then(v as _$_UnlimintAltPaymentDataExecuteModel));
+
+  @override
+  _$_UnlimintAltPaymentDataExecuteModel get _value =>
+      super._value as _$_UnlimintAltPaymentDataExecuteModel;
+
+  @override
+  $Res call({
+    Object? locale = freezed,
+  }) {
+    return _then(_$_UnlimintAltPaymentDataExecuteModel(
+      locale: locale == freezed
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_UnlimintAltPaymentDataExecuteModel
+    implements _UnlimintAltPaymentDataExecuteModel {
+  const _$_UnlimintAltPaymentDataExecuteModel({this.locale});
+
+  factory _$_UnlimintAltPaymentDataExecuteModel.fromJson(
+          Map<String, dynamic> json) =>
+      _$$_UnlimintAltPaymentDataExecuteModelFromJson(json);
+
+  @override
+  final String? locale;
+
+  @override
+  String toString() {
+    return 'UnlimintAltPaymentDataExecuteModel(locale: $locale)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_UnlimintAltPaymentDataExecuteModel &&
+            const DeepCollectionEquality().equals(other.locale, locale));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(locale));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_UnlimintAltPaymentDataExecuteModelCopyWith<
+          _$_UnlimintAltPaymentDataExecuteModel>
+      get copyWith => __$$_UnlimintAltPaymentDataExecuteModelCopyWithImpl<
+          _$_UnlimintAltPaymentDataExecuteModel>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_UnlimintAltPaymentDataExecuteModelToJson(
+      this,
+    );
+  }
+}
+
+abstract class _UnlimintAltPaymentDataExecuteModel
+    implements UnlimintAltPaymentDataExecuteModel {
+  const factory _UnlimintAltPaymentDataExecuteModel({final String? locale}) =
+      _$_UnlimintAltPaymentDataExecuteModel;
+
+  factory _UnlimintAltPaymentDataExecuteModel.fromJson(
+          Map<String, dynamic> json) =
+      _$_UnlimintAltPaymentDataExecuteModel.fromJson;
+
+  @override
+  String? get locale;
+  @override
+  @JsonKey(ignore: true)
+  _$$_UnlimintAltPaymentDataExecuteModelCopyWith<
+          _$_UnlimintAltPaymentDataExecuteModel>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+BankCardPaymentDataExecuteModel _$BankCardPaymentDataExecuteModelFromJson(
+    Map<String, dynamic> json) {
+  return _BankCardPaymentDataExecuteModel.fromJson(json);
+}
+
+/// @nodoc
+mixin _$BankCardPaymentDataExecuteModel {
+  String? get cardId => throw _privateConstructorUsedError;
+  String? get encKeyId => throw _privateConstructorUsedError;
+  String? get encData => throw _privateConstructorUsedError;
+  int? get expMonth => throw _privateConstructorUsedError;
+  int? get expYear => throw _privateConstructorUsedError;
+  bool? get isActive => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $BankCardPaymentDataExecuteModelCopyWith<BankCardPaymentDataExecuteModel>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BankCardPaymentDataExecuteModelCopyWith<$Res> {
+  factory $BankCardPaymentDataExecuteModelCopyWith(
+          BankCardPaymentDataExecuteModel value,
+          $Res Function(BankCardPaymentDataExecuteModel) then) =
+      _$BankCardPaymentDataExecuteModelCopyWithImpl<$Res>;
+  $Res call(
+      {String? cardId,
+      String? encKeyId,
+      String? encData,
+      int? expMonth,
+      int? expYear,
+      bool? isActive});
+}
+
+/// @nodoc
+class _$BankCardPaymentDataExecuteModelCopyWithImpl<$Res>
+    implements $BankCardPaymentDataExecuteModelCopyWith<$Res> {
+  _$BankCardPaymentDataExecuteModelCopyWithImpl(this._value, this._then);
+
+  final BankCardPaymentDataExecuteModel _value;
+  // ignore: unused_field
+  final $Res Function(BankCardPaymentDataExecuteModel) _then;
+
+  @override
+  $Res call({
+    Object? cardId = freezed,
+    Object? encKeyId = freezed,
+    Object? encData = freezed,
+    Object? expMonth = freezed,
+    Object? expYear = freezed,
+    Object? isActive = freezed,
+  }) {
+    return _then(_value.copyWith(
+      cardId: cardId == freezed
+          ? _value.cardId
+          : cardId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      encKeyId: encKeyId == freezed
+          ? _value.encKeyId
+          : encKeyId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      encData: encData == freezed
+          ? _value.encData
+          : encData // ignore: cast_nullable_to_non_nullable
+              as String?,
+      expMonth: expMonth == freezed
+          ? _value.expMonth
+          : expMonth // ignore: cast_nullable_to_non_nullable
+              as int?,
+      expYear: expYear == freezed
+          ? _value.expYear
+          : expYear // ignore: cast_nullable_to_non_nullable
+              as int?,
+      isActive: isActive == freezed
+          ? _value.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$$_BankCardPaymentDataExecuteModelCopyWith<$Res>
+    implements $BankCardPaymentDataExecuteModelCopyWith<$Res> {
+  factory _$$_BankCardPaymentDataExecuteModelCopyWith(
+          _$_BankCardPaymentDataExecuteModel value,
+          $Res Function(_$_BankCardPaymentDataExecuteModel) then) =
+      __$$_BankCardPaymentDataExecuteModelCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String? cardId,
+      String? encKeyId,
+      String? encData,
+      int? expMonth,
+      int? expYear,
+      bool? isActive});
+}
+
+/// @nodoc
+class __$$_BankCardPaymentDataExecuteModelCopyWithImpl<$Res>
+    extends _$BankCardPaymentDataExecuteModelCopyWithImpl<$Res>
+    implements _$$_BankCardPaymentDataExecuteModelCopyWith<$Res> {
+  __$$_BankCardPaymentDataExecuteModelCopyWithImpl(
+      _$_BankCardPaymentDataExecuteModel _value,
+      $Res Function(_$_BankCardPaymentDataExecuteModel) _then)
+      : super(_value, (v) => _then(v as _$_BankCardPaymentDataExecuteModel));
+
+  @override
+  _$_BankCardPaymentDataExecuteModel get _value =>
+      super._value as _$_BankCardPaymentDataExecuteModel;
+
+  @override
+  $Res call({
+    Object? cardId = freezed,
+    Object? encKeyId = freezed,
+    Object? encData = freezed,
+    Object? expMonth = freezed,
+    Object? expYear = freezed,
+    Object? isActive = freezed,
+  }) {
+    return _then(_$_BankCardPaymentDataExecuteModel(
+      cardId: cardId == freezed
+          ? _value.cardId
+          : cardId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      encKeyId: encKeyId == freezed
+          ? _value.encKeyId
+          : encKeyId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      encData: encData == freezed
+          ? _value.encData
+          : encData // ignore: cast_nullable_to_non_nullable
+              as String?,
+      expMonth: expMonth == freezed
+          ? _value.expMonth
+          : expMonth // ignore: cast_nullable_to_non_nullable
+              as int?,
+      expYear: expYear == freezed
+          ? _value.expYear
+          : expYear // ignore: cast_nullable_to_non_nullable
+              as int?,
+      isActive: isActive == freezed
+          ? _value.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_BankCardPaymentDataExecuteModel
+    implements _BankCardPaymentDataExecuteModel {
+  const _$_BankCardPaymentDataExecuteModel(
+      {this.cardId,
+      this.encKeyId,
+      this.encData,
+      this.expMonth,
+      this.expYear,
+      this.isActive});
+
+  factory _$_BankCardPaymentDataExecuteModel.fromJson(
+          Map<String, dynamic> json) =>
+      _$$_BankCardPaymentDataExecuteModelFromJson(json);
+
+  @override
+  final String? cardId;
+  @override
+  final String? encKeyId;
+  @override
+  final String? encData;
+  @override
+  final int? expMonth;
+  @override
+  final int? expYear;
+  @override
+  final bool? isActive;
+
+  @override
+  String toString() {
+    return 'BankCardPaymentDataExecuteModel(cardId: $cardId, encKeyId: $encKeyId, encData: $encData, expMonth: $expMonth, expYear: $expYear, isActive: $isActive)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_BankCardPaymentDataExecuteModel &&
+            const DeepCollectionEquality().equals(other.cardId, cardId) &&
+            const DeepCollectionEquality().equals(other.encKeyId, encKeyId) &&
+            const DeepCollectionEquality().equals(other.encData, encData) &&
+            const DeepCollectionEquality().equals(other.expMonth, expMonth) &&
+            const DeepCollectionEquality().equals(other.expYear, expYear) &&
+            const DeepCollectionEquality().equals(other.isActive, isActive));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(cardId),
+      const DeepCollectionEquality().hash(encKeyId),
+      const DeepCollectionEquality().hash(encData),
+      const DeepCollectionEquality().hash(expMonth),
+      const DeepCollectionEquality().hash(expYear),
+      const DeepCollectionEquality().hash(isActive));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_BankCardPaymentDataExecuteModelCopyWith<
+          _$_BankCardPaymentDataExecuteModel>
+      get copyWith => __$$_BankCardPaymentDataExecuteModelCopyWithImpl<
+          _$_BankCardPaymentDataExecuteModel>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_BankCardPaymentDataExecuteModelToJson(
+      this,
+    );
+  }
+}
+
+abstract class _BankCardPaymentDataExecuteModel
+    implements BankCardPaymentDataExecuteModel {
+  const factory _BankCardPaymentDataExecuteModel(
+      {final String? cardId,
+      final String? encKeyId,
+      final String? encData,
+      final int? expMonth,
+      final int? expYear,
+      final bool? isActive}) = _$_BankCardPaymentDataExecuteModel;
+
+  factory _BankCardPaymentDataExecuteModel.fromJson(Map<String, dynamic> json) =
+      _$_BankCardPaymentDataExecuteModel.fromJson;
+
+  @override
+  String? get cardId;
+  @override
+  String? get encKeyId;
+  @override
+  String? get encData;
+  @override
+  int? get expMonth;
+  @override
+  int? get expYear;
+  @override
+  bool? get isActive;
+  @override
+  @JsonKey(ignore: true)
+  _$$_BankCardPaymentDataExecuteModelCopyWith<
+          _$_BankCardPaymentDataExecuteModel>
       get copyWith => throw _privateConstructorUsedError;
 }

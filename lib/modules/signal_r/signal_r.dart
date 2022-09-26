@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:logger/logger.dart' as logPrint;
 import 'package:logging/logging.dart';
 import 'package:signalr_core/signalr_core.dart';
 import 'package:simple_networking/config/constants.dart';
@@ -39,6 +40,7 @@ class SignalRModule {
     required this.token,
     required this.localeName,
     required this.deviceUid,
+    this.isDebug = false,
   });
 
   final SimpleOptions options;
@@ -48,7 +50,11 @@ class SignalRModule {
   final String localeName;
   final String deviceUid;
 
+  final bool isDebug;
+
   static final _logger = Logger('SignalRService');
+
+  final log = logPrint.Logger();
 
   static const _pingTime = 3;
   static const _reconnectTime = 5;
@@ -182,6 +188,12 @@ class SignalRModule {
     */
   }
 
+  showEror(String message) {
+    if (isDebug) {
+      log.e(message);
+    }
+  }
+
   // ignore: long-method
   Future<void> init() async {
     await recreateSignalR();
@@ -193,7 +205,7 @@ class SignalRModule {
           options.walletApiSignalR!,
           HttpConnectionOptions(
             client: signalRClient,
-            //logging: (level, message) => print(message),
+            //logging: (level, message) => log.d(message),
           ),
         )
         .build();
@@ -204,6 +216,8 @@ class SignalRModule {
         _cardsController.add(cardsList);
       } catch (e) {
         _logger.log(contract, cardsMessage, e);
+
+        showEror(e.toString());
       }
     });
 
@@ -212,6 +226,8 @@ class SignalRModule {
         _inifFinishedController.add(true);
       } catch (e) {
         _logger.log(contract, initFinished, e);
+
+        showEror(e.toString());
       }
     });
 
@@ -221,6 +237,8 @@ class SignalRModule {
         _cardLimitsController.add(cardLimits);
       } catch (e) {
         _logger.log(contract, cardLimitsMessage, e);
+
+        showEror(e.toString());
       }
     });
 
@@ -235,6 +253,8 @@ class SignalRModule {
           }
         } catch (e) {
           _logger.log(contract, earnOffersMessage, e);
+
+          showEror(e.toString());
         }
       }
     });
@@ -250,6 +270,8 @@ class SignalRModule {
           _recurringBuyController.add(recurringBuys);
         } catch (e) {
           _logger.log(contract, recurringBuyMessage, e);
+
+          showEror(e.toString());
         }
       }
     });
@@ -260,6 +282,8 @@ class SignalRModule {
         _kycCountriesController.add(countries);
       } catch (e) {
         _logger.log(contract, kycCountriesMessage, e);
+
+        showEror(e.toString());
       }
     });
 
@@ -270,6 +294,8 @@ class SignalRModule {
         _marketInfoController.add(info);
       } catch (e) {
         _logger.log(contract, kycCountriesMessage, e);
+
+        showEror(e.toString());
       }
     });
 
@@ -280,6 +306,8 @@ class SignalRModule {
         _campaignsBannersController.add(campaigns);
       } catch (e) {
         _logger.log(contract, campaignsBannersMessage, e);
+
+        showEror(e.toString());
       }
     });
 
@@ -297,15 +325,22 @@ class SignalRModule {
         _referralStatsController.add(referrerStats);
       } catch (e) {
         _logger.log(contract, referralStatsMessage, e);
+
+        showEror(e.toString());
       }
     });
 
     _connection?.on(assetsMessage, (data) {
       try {
         final assets = AssetsModel.fromJson(_json(data));
+
+        log.w(assets);
+
         _assetsController.add(assets);
       } catch (e) {
         _logger.log(contract, assetsMessage, e);
+
+        showEror(e.toString());
       }
     });
 
@@ -316,9 +351,9 @@ class SignalRModule {
 
         print(balances);
       } catch (e) {
-        print('balancesMessage');
-        print('ERROR => $e');
         _logger.log(contract, balancesMessage, e);
+
+        showEror(e.toString());
       }
     });
 
@@ -328,6 +363,8 @@ class SignalRModule {
         _instrumentsController.add(instruments);
       } catch (e) {
         _logger.log(contract, instrumentsMessage, e);
+
+        showEror(e.toString());
       }
     });
 
@@ -337,6 +374,8 @@ class SignalRModule {
         _blockchainsController.add(blockchains);
       } catch (e) {
         _logger.log(contract, blockchainsMessage, e);
+
+        showEror(e.toString());
       }
     });
 
@@ -350,9 +389,13 @@ class SignalRModule {
       try {
         final marketReferences = MarketReferencesModel.fromJson(_json(data));
 
+        log.d(marketReferences);
+
         _marketReferencesController.add(marketReferences);
       } catch (e) {
         _logger.log(contract, marketReferenceMessage, e);
+
+        showEror(e.toString());
       }
     });
 
@@ -362,11 +405,20 @@ class SignalRModule {
           json: _json(data),
           oldPrices: _oldBasePrices,
         );
+
+        log.d(
+          BasePricesModel.fromJson(_json(data))
+              .prices
+              .where((element) => element.assetSymbol == 'ETH'),
+        );
+
         _basePricesController.add(_oldBasePrices);
       } catch (e) {
         print(e);
 
         _logger.log(contract, basePricesMessage, e);
+
+        showEror(e.toString());
       }
     });
 
@@ -376,6 +428,8 @@ class SignalRModule {
         _periodPricesController.add(basePrices);
       } catch (e) {
         _logger.log(contract, periodPricesMessage, e);
+
+        showEror(e.toString());
       }
     });
 
@@ -389,6 +443,8 @@ class SignalRModule {
         _clientDetailController.add(clientDetail);
       } catch (e) {
         _logger.log(contract, clientDetailMessage, e);
+
+        showEror(e.toString());
       }
     });
 
@@ -398,6 +454,8 @@ class SignalRModule {
         _assetWithdrawalFeeController.add(assetFees);
       } catch (e) {
         _logger.log(contract, assetWithdrawalFeeMessage, e);
+
+        showEror(e.toString());
       }
     });
 
@@ -408,9 +466,9 @@ class SignalRModule {
         );
         _keyValueController.add(keyValue);
       } catch (e) {
-        print('keyValueMessage');
-        print('ERROR => $e');
         _logger.log(contract, keyValueMessage, e);
+
+        showEror(e.toString());
       }
     });
 
@@ -420,6 +478,8 @@ class SignalRModule {
         _indicesController.add(indices);
       } catch (e) {
         _logger.log(contract, indicesMessage, e);
+
+        showEror(e.toString());
       }
     });
 
@@ -429,6 +489,8 @@ class SignalRModule {
         _priceAccuraciesController.add(settings);
       } catch (e) {
         _logger.log(contract, convertPriceSettingsMessage, e);
+
+        showEror(e.toString());
       }
     });
 
@@ -439,6 +501,8 @@ class SignalRModule {
         _assetPaymentMethodsController.add(info);
       } catch (e) {
         _logger.log(contract, paymentMethodsMessage, e);
+
+        showEror(e.toString());
       }
     });
 
@@ -449,15 +513,17 @@ class SignalRModule {
         _referralInfoController.add(info);
       } catch (e) {
         _logger.log(contract, referralInfoMessage, e);
+
+        showEror(e.toString());
       }
     });
 
     try {
       await _connection?.start();
     } catch (e) {
-      print('SIGNALR => Failed to start connection');
-
       _logger.log(signalR, 'Failed to start connection', e);
+
+      showEror('Failed to start connection');
       rethrow;
     }
 
@@ -471,7 +537,7 @@ class SignalRModule {
         args: [token, localeName, deviceUid, deviceType],
       );
     } catch (e) {
-      print(e);
+      showEror(e.toString());
       rethrow;
     }
 

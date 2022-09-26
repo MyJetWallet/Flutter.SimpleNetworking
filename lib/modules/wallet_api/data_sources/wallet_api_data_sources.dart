@@ -536,7 +536,7 @@ class WalletApiDataSources {
         final responseData = response.data as Map<String, dynamic>;
 
         handleResultResponse(responseData);
-        
+
         return DC.data(true);
       } catch (e) {
         rethrow;

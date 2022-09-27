@@ -389,8 +389,6 @@ class SignalRModule {
       try {
         final marketReferences = MarketReferencesModel.fromJson(_json(data));
 
-        log.d(marketReferences);
-
         _marketReferencesController.add(marketReferences);
       } catch (e) {
         _logger.log(contract, marketReferenceMessage, e);
@@ -404,12 +402,6 @@ class SignalRModule {
         _oldBasePrices = BasePricesModel.fromNewPrices(
           json: _json(data),
           oldPrices: _oldBasePrices,
-        );
-
-        log.d(
-          BasePricesModel.fromJson(_json(data))
-              .prices
-              .where((element) => element.assetSymbol == 'ETH'),
         );
 
         _basePricesController.add(_oldBasePrices);

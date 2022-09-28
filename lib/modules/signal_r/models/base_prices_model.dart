@@ -5,7 +5,7 @@ import 'package:simple_networking/helpers/decimal_serialiser.dart';
 part 'base_prices_model.freezed.dart';
 part 'base_prices_model.g.dart';
 
-@freezed
+@Freezed(makeCollectionsUnmodifiable: false)
 class BasePricesModel with _$BasePricesModel {
   const factory BasePricesModel({
     @JsonKey(name: 'P') required List<BasePriceModel> prices,
@@ -27,24 +27,13 @@ class BasePricesModel with _$BasePricesModel {
         for (final oldPrice in oldPrices.prices) {
           if (oldPrice.assetSymbol == newPrice.assetSymbol) {
             final index = oldPrices.prices.indexOf(oldPrice);
-            var pricesList = oldPrices.prices.toList();
-            pricesList[index] = oldPrice.copyWith(
-              time: newPrice.time,
-              currentPrice: newPrice.currentPrice,
-              dayPriceChange: newPrice.dayPriceChange,
-              dayPercentChange: newPrice.dayPercentChange,
-            );
 
-            oldPrices.copyWith(prices: pricesList);
-
-            /*
             oldPrices.prices[index] = oldPrice.copyWith(
               time: newPrice.time,
               currentPrice: newPrice.currentPrice,
               dayPriceChange: newPrice.dayPriceChange,
               dayPercentChange: newPrice.dayPercentChange,
             );
-            */
           }
         }
       }

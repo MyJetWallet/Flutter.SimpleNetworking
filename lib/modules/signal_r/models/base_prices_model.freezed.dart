@@ -86,7 +86,7 @@ class __$$_BasePricesModelCopyWithImpl<$Res>
   }) {
     return _then(_$_BasePricesModel(
       prices: prices == freezed
-          ? _value._prices
+          ? _value.prices
           : prices // ignore: cast_nullable_to_non_nullable
               as List<BasePriceModel>,
     ));
@@ -96,20 +96,14 @@ class __$$_BasePricesModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_BasePricesModel implements _BasePricesModel {
-  const _$_BasePricesModel(
-      {@JsonKey(name: 'P') required final List<BasePriceModel> prices})
-      : _prices = prices;
+  const _$_BasePricesModel({@JsonKey(name: 'P') required this.prices});
 
   factory _$_BasePricesModel.fromJson(Map<String, dynamic> json) =>
       _$$_BasePricesModelFromJson(json);
 
-  final List<BasePriceModel> _prices;
   @override
   @JsonKey(name: 'P')
-  List<BasePriceModel> get prices {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_prices);
-  }
+  final List<BasePriceModel> prices;
 
   @override
   String toString() {
@@ -121,13 +115,13 @@ class _$_BasePricesModel implements _BasePricesModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_BasePricesModel &&
-            const DeepCollectionEquality().equals(other._prices, _prices));
+            const DeepCollectionEquality().equals(other.prices, prices));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_prices));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(prices));
 
   @JsonKey(ignore: true)
   @override

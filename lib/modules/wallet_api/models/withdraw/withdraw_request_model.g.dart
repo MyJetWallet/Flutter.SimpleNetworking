@@ -13,6 +13,7 @@ _$_WithdrawRequestModel _$$_WithdrawRequestModelFromJson(
       assetSymbol: json['assetSymbol'] as String,
       amount: const DecimalSerialiser().fromJson(json['amount']),
       toAddress: json['toAddress'] as String,
+      toTag: json['toTag'] as String?,
       blockchain: json['blockchain'] as String,
     );
 
@@ -23,5 +24,6 @@ Map<String, dynamic> _$$_WithdrawRequestModelToJson(
       'assetSymbol': instance.assetSymbol,
       'amount': const DecimalSerialiser().toJson(instance.amount),
       'toAddress': instance.toAddress,
+      'toTag': instance.toTag,
       'blockchain': instance.blockchain,
     };

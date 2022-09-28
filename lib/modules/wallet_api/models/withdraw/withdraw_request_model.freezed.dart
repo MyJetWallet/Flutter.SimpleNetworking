@@ -25,6 +25,7 @@ mixin _$WithdrawRequestModel {
   @DecimalSerialiser()
   Decimal get amount => throw _privateConstructorUsedError;
   String get toAddress => throw _privateConstructorUsedError;
+  String? get toTag => throw _privateConstructorUsedError;
   String get blockchain => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -43,6 +44,7 @@ abstract class $WithdrawRequestModelCopyWith<$Res> {
       String assetSymbol,
       @DecimalSerialiser() Decimal amount,
       String toAddress,
+      String? toTag,
       String blockchain});
 }
 
@@ -61,6 +63,7 @@ class _$WithdrawRequestModelCopyWithImpl<$Res>
     Object? assetSymbol = freezed,
     Object? amount = freezed,
     Object? toAddress = freezed,
+    Object? toTag = freezed,
     Object? blockchain = freezed,
   }) {
     return _then(_value.copyWith(
@@ -80,6 +83,10 @@ class _$WithdrawRequestModelCopyWithImpl<$Res>
           ? _value.toAddress
           : toAddress // ignore: cast_nullable_to_non_nullable
               as String,
+      toTag: toTag == freezed
+          ? _value.toTag
+          : toTag // ignore: cast_nullable_to_non_nullable
+              as String?,
       blockchain: blockchain == freezed
           ? _value.blockchain
           : blockchain // ignore: cast_nullable_to_non_nullable
@@ -100,6 +107,7 @@ abstract class _$$_WithdrawRequestModelCopyWith<$Res>
       String assetSymbol,
       @DecimalSerialiser() Decimal amount,
       String toAddress,
+      String? toTag,
       String blockchain});
 }
 
@@ -120,6 +128,7 @@ class __$$_WithdrawRequestModelCopyWithImpl<$Res>
     Object? assetSymbol = freezed,
     Object? amount = freezed,
     Object? toAddress = freezed,
+    Object? toTag = freezed,
     Object? blockchain = freezed,
   }) {
     return _then(_$_WithdrawRequestModel(
@@ -139,6 +148,10 @@ class __$$_WithdrawRequestModelCopyWithImpl<$Res>
           ? _value.toAddress
           : toAddress // ignore: cast_nullable_to_non_nullable
               as String,
+      toTag: toTag == freezed
+          ? _value.toTag
+          : toTag // ignore: cast_nullable_to_non_nullable
+              as String?,
       blockchain: blockchain == freezed
           ? _value.blockchain
           : blockchain // ignore: cast_nullable_to_non_nullable
@@ -155,6 +168,7 @@ class _$_WithdrawRequestModel implements _WithdrawRequestModel {
       required this.assetSymbol,
       @DecimalSerialiser() required this.amount,
       required this.toAddress,
+      this.toTag,
       required this.blockchain});
 
   factory _$_WithdrawRequestModel.fromJson(Map<String, dynamic> json) =>
@@ -170,11 +184,13 @@ class _$_WithdrawRequestModel implements _WithdrawRequestModel {
   @override
   final String toAddress;
   @override
+  final String? toTag;
+  @override
   final String blockchain;
 
   @override
   String toString() {
-    return 'WithdrawRequestModel(requestId: $requestId, assetSymbol: $assetSymbol, amount: $amount, toAddress: $toAddress, blockchain: $blockchain)';
+    return 'WithdrawRequestModel(requestId: $requestId, assetSymbol: $assetSymbol, amount: $amount, toAddress: $toAddress, toTag: $toTag, blockchain: $blockchain)';
   }
 
   @override
@@ -187,6 +203,7 @@ class _$_WithdrawRequestModel implements _WithdrawRequestModel {
                 .equals(other.assetSymbol, assetSymbol) &&
             const DeepCollectionEquality().equals(other.amount, amount) &&
             const DeepCollectionEquality().equals(other.toAddress, toAddress) &&
+            const DeepCollectionEquality().equals(other.toTag, toTag) &&
             const DeepCollectionEquality()
                 .equals(other.blockchain, blockchain));
   }
@@ -199,6 +216,7 @@ class _$_WithdrawRequestModel implements _WithdrawRequestModel {
       const DeepCollectionEquality().hash(assetSymbol),
       const DeepCollectionEquality().hash(amount),
       const DeepCollectionEquality().hash(toAddress),
+      const DeepCollectionEquality().hash(toTag),
       const DeepCollectionEquality().hash(blockchain));
 
   @JsonKey(ignore: true)
@@ -221,6 +239,7 @@ abstract class _WithdrawRequestModel implements WithdrawRequestModel {
       required final String assetSymbol,
       @DecimalSerialiser() required final Decimal amount,
       required final String toAddress,
+      final String? toTag,
       required final String blockchain}) = _$_WithdrawRequestModel;
 
   factory _WithdrawRequestModel.fromJson(Map<String, dynamic> json) =
@@ -235,6 +254,8 @@ abstract class _WithdrawRequestModel implements WithdrawRequestModel {
   Decimal get amount;
   @override
   String get toAddress;
+  @override
+  String? get toTag;
   @override
   String get blockchain;
   @override

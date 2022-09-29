@@ -25,6 +25,7 @@ mixin _$CardAddRequestModel {
   String get encData => throw _privateConstructorUsedError;
   int get expMonth => throw _privateConstructorUsedError;
   int get expYear => throw _privateConstructorUsedError;
+  bool get isActive => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,7 +43,8 @@ abstract class $CardAddRequestModelCopyWith<$Res> {
       String requestGuid,
       String encData,
       int expMonth,
-      int expYear});
+      int expYear,
+      bool isActive});
 }
 
 /// @nodoc
@@ -61,6 +63,7 @@ class _$CardAddRequestModelCopyWithImpl<$Res>
     Object? encData = freezed,
     Object? expMonth = freezed,
     Object? expYear = freezed,
+    Object? isActive = freezed,
   }) {
     return _then(_value.copyWith(
       encKeyId: encKeyId == freezed
@@ -83,6 +86,10 @@ class _$CardAddRequestModelCopyWithImpl<$Res>
           ? _value.expYear
           : expYear // ignore: cast_nullable_to_non_nullable
               as int,
+      isActive: isActive == freezed
+          ? _value.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -99,7 +106,8 @@ abstract class _$$_CardAddRequestModelCopyWith<$Res>
       String requestGuid,
       String encData,
       int expMonth,
-      int expYear});
+      int expYear,
+      bool isActive});
 }
 
 /// @nodoc
@@ -120,6 +128,7 @@ class __$$_CardAddRequestModelCopyWithImpl<$Res>
     Object? encData = freezed,
     Object? expMonth = freezed,
     Object? expYear = freezed,
+    Object? isActive = freezed,
   }) {
     return _then(_$_CardAddRequestModel(
       encKeyId: encKeyId == freezed
@@ -142,6 +151,10 @@ class __$$_CardAddRequestModelCopyWithImpl<$Res>
           ? _value.expYear
           : expYear // ignore: cast_nullable_to_non_nullable
               as int,
+      isActive: isActive == freezed
+          ? _value.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -154,7 +167,8 @@ class _$_CardAddRequestModel implements _CardAddRequestModel {
       required this.requestGuid,
       required this.encData,
       required this.expMonth,
-      required this.expYear});
+      required this.expYear,
+      required this.isActive});
 
   factory _$_CardAddRequestModel.fromJson(Map<String, dynamic> json) =>
       _$$_CardAddRequestModelFromJson(json);
@@ -169,10 +183,12 @@ class _$_CardAddRequestModel implements _CardAddRequestModel {
   final int expMonth;
   @override
   final int expYear;
+  @override
+  final bool isActive;
 
   @override
   String toString() {
-    return 'CardAddRequestModel(encKeyId: $encKeyId, requestGuid: $requestGuid, encData: $encData, expMonth: $expMonth, expYear: $expYear)';
+    return 'CardAddRequestModel(encKeyId: $encKeyId, requestGuid: $requestGuid, encData: $encData, expMonth: $expMonth, expYear: $expYear, isActive: $isActive)';
   }
 
   @override
@@ -185,7 +201,8 @@ class _$_CardAddRequestModel implements _CardAddRequestModel {
                 .equals(other.requestGuid, requestGuid) &&
             const DeepCollectionEquality().equals(other.encData, encData) &&
             const DeepCollectionEquality().equals(other.expMonth, expMonth) &&
-            const DeepCollectionEquality().equals(other.expYear, expYear));
+            const DeepCollectionEquality().equals(other.expYear, expYear) &&
+            const DeepCollectionEquality().equals(other.isActive, isActive));
   }
 
   @JsonKey(ignore: true)
@@ -196,7 +213,8 @@ class _$_CardAddRequestModel implements _CardAddRequestModel {
       const DeepCollectionEquality().hash(requestGuid),
       const DeepCollectionEquality().hash(encData),
       const DeepCollectionEquality().hash(expMonth),
-      const DeepCollectionEquality().hash(expYear));
+      const DeepCollectionEquality().hash(expYear),
+      const DeepCollectionEquality().hash(isActive));
 
   @JsonKey(ignore: true)
   @override
@@ -218,7 +236,8 @@ abstract class _CardAddRequestModel implements CardAddRequestModel {
       required final String requestGuid,
       required final String encData,
       required final int expMonth,
-      required final int expYear}) = _$_CardAddRequestModel;
+      required final int expYear,
+      required final bool isActive}) = _$_CardAddRequestModel;
 
   factory _CardAddRequestModel.fromJson(Map<String, dynamic> json) =
       _$_CardAddRequestModel.fromJson;
@@ -233,6 +252,8 @@ abstract class _CardAddRequestModel implements CardAddRequestModel {
   int get expMonth;
   @override
   int get expYear;
+  @override
+  bool get isActive;
   @override
   @JsonKey(ignore: true)
   _$$_CardAddRequestModelCopyWith<_$_CardAddRequestModel> get copyWith =>

@@ -14,6 +14,7 @@ _$_CardAddRequestModel _$$_CardAddRequestModelFromJson(
       encData: json['encData'] as String,
       expMonth: json['expMonth'] as int,
       expYear: json['expYear'] as int,
+      isActive: json['isActive'] as bool,
     );
 
 Map<String, dynamic> _$$_CardAddRequestModelToJson(
@@ -24,4 +25,5 @@ Map<String, dynamic> _$$_CardAddRequestModelToJson(
       'encData': instance.encData,
       'expMonth': instance.expMonth,
       'expYear': instance.expYear,
+      'isActive': instance.isActive,
     };

@@ -827,9 +827,6 @@ mixin _$BankCardPaymentDataExecuteModel {
   String? get cardId => throw _privateConstructorUsedError;
   String? get encKeyId => throw _privateConstructorUsedError;
   String? get encData => throw _privateConstructorUsedError;
-  int? get expMonth => throw _privateConstructorUsedError;
-  int? get expYear => throw _privateConstructorUsedError;
-  bool? get isActive => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -843,13 +840,7 @@ abstract class $BankCardPaymentDataExecuteModelCopyWith<$Res> {
           BankCardPaymentDataExecuteModel value,
           $Res Function(BankCardPaymentDataExecuteModel) then) =
       _$BankCardPaymentDataExecuteModelCopyWithImpl<$Res>;
-  $Res call(
-      {String? cardId,
-      String? encKeyId,
-      String? encData,
-      int? expMonth,
-      int? expYear,
-      bool? isActive});
+  $Res call({String? cardId, String? encKeyId, String? encData});
 }
 
 /// @nodoc
@@ -866,9 +857,6 @@ class _$BankCardPaymentDataExecuteModelCopyWithImpl<$Res>
     Object? cardId = freezed,
     Object? encKeyId = freezed,
     Object? encData = freezed,
-    Object? expMonth = freezed,
-    Object? expYear = freezed,
-    Object? isActive = freezed,
   }) {
     return _then(_value.copyWith(
       cardId: cardId == freezed
@@ -883,18 +871,6 @@ class _$BankCardPaymentDataExecuteModelCopyWithImpl<$Res>
           ? _value.encData
           : encData // ignore: cast_nullable_to_non_nullable
               as String?,
-      expMonth: expMonth == freezed
-          ? _value.expMonth
-          : expMonth // ignore: cast_nullable_to_non_nullable
-              as int?,
-      expYear: expYear == freezed
-          ? _value.expYear
-          : expYear // ignore: cast_nullable_to_non_nullable
-              as int?,
-      isActive: isActive == freezed
-          ? _value.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ));
   }
 }
@@ -907,13 +883,7 @@ abstract class _$$_BankCardPaymentDataExecuteModelCopyWith<$Res>
           $Res Function(_$_BankCardPaymentDataExecuteModel) then) =
       __$$_BankCardPaymentDataExecuteModelCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String? cardId,
-      String? encKeyId,
-      String? encData,
-      int? expMonth,
-      int? expYear,
-      bool? isActive});
+  $Res call({String? cardId, String? encKeyId, String? encData});
 }
 
 /// @nodoc
@@ -934,9 +904,6 @@ class __$$_BankCardPaymentDataExecuteModelCopyWithImpl<$Res>
     Object? cardId = freezed,
     Object? encKeyId = freezed,
     Object? encData = freezed,
-    Object? expMonth = freezed,
-    Object? expYear = freezed,
-    Object? isActive = freezed,
   }) {
     return _then(_$_BankCardPaymentDataExecuteModel(
       cardId: cardId == freezed
@@ -951,18 +918,6 @@ class __$$_BankCardPaymentDataExecuteModelCopyWithImpl<$Res>
           ? _value.encData
           : encData // ignore: cast_nullable_to_non_nullable
               as String?,
-      expMonth: expMonth == freezed
-          ? _value.expMonth
-          : expMonth // ignore: cast_nullable_to_non_nullable
-              as int?,
-      expYear: expYear == freezed
-          ? _value.expYear
-          : expYear // ignore: cast_nullable_to_non_nullable
-              as int?,
-      isActive: isActive == freezed
-          ? _value.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ));
   }
 }
@@ -972,12 +927,7 @@ class __$$_BankCardPaymentDataExecuteModelCopyWithImpl<$Res>
 class _$_BankCardPaymentDataExecuteModel
     implements _BankCardPaymentDataExecuteModel {
   const _$_BankCardPaymentDataExecuteModel(
-      {this.cardId,
-      this.encKeyId,
-      this.encData,
-      this.expMonth,
-      this.expYear,
-      this.isActive});
+      {this.cardId, this.encKeyId, this.encData});
 
   factory _$_BankCardPaymentDataExecuteModel.fromJson(
           Map<String, dynamic> json) =>
@@ -989,16 +939,10 @@ class _$_BankCardPaymentDataExecuteModel
   final String? encKeyId;
   @override
   final String? encData;
-  @override
-  final int? expMonth;
-  @override
-  final int? expYear;
-  @override
-  final bool? isActive;
 
   @override
   String toString() {
-    return 'BankCardPaymentDataExecuteModel(cardId: $cardId, encKeyId: $encKeyId, encData: $encData, expMonth: $expMonth, expYear: $expYear, isActive: $isActive)';
+    return 'BankCardPaymentDataExecuteModel(cardId: $cardId, encKeyId: $encKeyId, encData: $encData)';
   }
 
   @override
@@ -1008,10 +952,7 @@ class _$_BankCardPaymentDataExecuteModel
             other is _$_BankCardPaymentDataExecuteModel &&
             const DeepCollectionEquality().equals(other.cardId, cardId) &&
             const DeepCollectionEquality().equals(other.encKeyId, encKeyId) &&
-            const DeepCollectionEquality().equals(other.encData, encData) &&
-            const DeepCollectionEquality().equals(other.expMonth, expMonth) &&
-            const DeepCollectionEquality().equals(other.expYear, expYear) &&
-            const DeepCollectionEquality().equals(other.isActive, isActive));
+            const DeepCollectionEquality().equals(other.encData, encData));
   }
 
   @JsonKey(ignore: true)
@@ -1020,10 +961,7 @@ class _$_BankCardPaymentDataExecuteModel
       runtimeType,
       const DeepCollectionEquality().hash(cardId),
       const DeepCollectionEquality().hash(encKeyId),
-      const DeepCollectionEquality().hash(encData),
-      const DeepCollectionEquality().hash(expMonth),
-      const DeepCollectionEquality().hash(expYear),
-      const DeepCollectionEquality().hash(isActive));
+      const DeepCollectionEquality().hash(encData));
 
   @JsonKey(ignore: true)
   @override
@@ -1045,10 +983,7 @@ abstract class _BankCardPaymentDataExecuteModel
   const factory _BankCardPaymentDataExecuteModel(
       {final String? cardId,
       final String? encKeyId,
-      final String? encData,
-      final int? expMonth,
-      final int? expYear,
-      final bool? isActive}) = _$_BankCardPaymentDataExecuteModel;
+      final String? encData}) = _$_BankCardPaymentDataExecuteModel;
 
   factory _BankCardPaymentDataExecuteModel.fromJson(Map<String, dynamic> json) =
       _$_BankCardPaymentDataExecuteModel.fromJson;
@@ -1059,12 +994,6 @@ abstract class _BankCardPaymentDataExecuteModel
   String? get encKeyId;
   @override
   String? get encData;
-  @override
-  int? get expMonth;
-  @override
-  int? get expYear;
-  @override
-  bool? get isActive;
   @override
   @JsonKey(ignore: true)
   _$$_BankCardPaymentDataExecuteModelCopyWith<

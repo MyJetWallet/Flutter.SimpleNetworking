@@ -95,9 +95,6 @@ _$_BankCardPaymentDataExecuteModel _$$_BankCardPaymentDataExecuteModelFromJson(
       cardId: json['cardId'] as String?,
       encKeyId: json['encKeyId'] as String?,
       encData: json['encData'] as String?,
-      expMonth: json['expMonth'] as int?,
-      expYear: json['expYear'] as int?,
-      isActive: json['isActive'] as bool?,
     );
 
 Map<String, dynamic> _$$_BankCardPaymentDataExecuteModelToJson(
@@ -106,7 +103,4 @@ Map<String, dynamic> _$$_BankCardPaymentDataExecuteModelToJson(
       'cardId': instance.cardId,
       'encKeyId': instance.encKeyId,
       'encData': instance.encData,
-      'expMonth': instance.expMonth,
-      'expYear': instance.expYear,
-      'isActive': instance.isActive,
     };

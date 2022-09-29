@@ -28,6 +28,8 @@ mixin _$CardBuyCreateRequestModel {
   CirclePaymentMethod get paymentMethod => throw _privateConstructorUsedError;
   CirclePaymentDataModel? get circlePaymentData =>
       throw _privateConstructorUsedError;
+  CirclePaymentDataModel? get cardPaymentData =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,9 +47,11 @@ abstract class $CardBuyCreateRequestModelCopyWith<$Res> {
       String? paymentAsset,
       String? buyAsset,
       CirclePaymentMethod paymentMethod,
-      CirclePaymentDataModel? circlePaymentData});
+      CirclePaymentDataModel? circlePaymentData,
+      CirclePaymentDataModel? cardPaymentData});
 
   $CirclePaymentDataModelCopyWith<$Res>? get circlePaymentData;
+  $CirclePaymentDataModelCopyWith<$Res>? get cardPaymentData;
 }
 
 /// @nodoc
@@ -66,6 +70,7 @@ class _$CardBuyCreateRequestModelCopyWithImpl<$Res>
     Object? buyAsset = freezed,
     Object? paymentMethod = freezed,
     Object? circlePaymentData = freezed,
+    Object? cardPaymentData = freezed,
   }) {
     return _then(_value.copyWith(
       paymentAmount: paymentAmount == freezed
@@ -88,6 +93,10 @@ class _$CardBuyCreateRequestModelCopyWithImpl<$Res>
           ? _value.circlePaymentData
           : circlePaymentData // ignore: cast_nullable_to_non_nullable
               as CirclePaymentDataModel?,
+      cardPaymentData: cardPaymentData == freezed
+          ? _value.cardPaymentData
+          : cardPaymentData // ignore: cast_nullable_to_non_nullable
+              as CirclePaymentDataModel?,
     ));
   }
 
@@ -100,6 +109,18 @@ class _$CardBuyCreateRequestModelCopyWithImpl<$Res>
     return $CirclePaymentDataModelCopyWith<$Res>(_value.circlePaymentData!,
         (value) {
       return _then(_value.copyWith(circlePaymentData: value));
+    });
+  }
+
+  @override
+  $CirclePaymentDataModelCopyWith<$Res>? get cardPaymentData {
+    if (_value.cardPaymentData == null) {
+      return null;
+    }
+
+    return $CirclePaymentDataModelCopyWith<$Res>(_value.cardPaymentData!,
+        (value) {
+      return _then(_value.copyWith(cardPaymentData: value));
     });
   }
 }
@@ -117,10 +138,13 @@ abstract class _$$_CardBuyCreateRequestModelCopyWith<$Res>
       String? paymentAsset,
       String? buyAsset,
       CirclePaymentMethod paymentMethod,
-      CirclePaymentDataModel? circlePaymentData});
+      CirclePaymentDataModel? circlePaymentData,
+      CirclePaymentDataModel? cardPaymentData});
 
   @override
   $CirclePaymentDataModelCopyWith<$Res>? get circlePaymentData;
+  @override
+  $CirclePaymentDataModelCopyWith<$Res>? get cardPaymentData;
 }
 
 /// @nodoc
@@ -143,6 +167,7 @@ class __$$_CardBuyCreateRequestModelCopyWithImpl<$Res>
     Object? buyAsset = freezed,
     Object? paymentMethod = freezed,
     Object? circlePaymentData = freezed,
+    Object? cardPaymentData = freezed,
   }) {
     return _then(_$_CardBuyCreateRequestModel(
       paymentAmount: paymentAmount == freezed
@@ -165,6 +190,10 @@ class __$$_CardBuyCreateRequestModelCopyWithImpl<$Res>
           ? _value.circlePaymentData
           : circlePaymentData // ignore: cast_nullable_to_non_nullable
               as CirclePaymentDataModel?,
+      cardPaymentData: cardPaymentData == freezed
+          ? _value.cardPaymentData
+          : cardPaymentData // ignore: cast_nullable_to_non_nullable
+              as CirclePaymentDataModel?,
     ));
   }
 }
@@ -177,7 +206,8 @@ class _$_CardBuyCreateRequestModel implements _CardBuyCreateRequestModel {
       this.paymentAsset,
       this.buyAsset,
       required this.paymentMethod,
-      this.circlePaymentData});
+      this.circlePaymentData,
+      this.cardPaymentData});
 
   factory _$_CardBuyCreateRequestModel.fromJson(Map<String, dynamic> json) =>
       _$$_CardBuyCreateRequestModelFromJson(json);
@@ -193,10 +223,12 @@ class _$_CardBuyCreateRequestModel implements _CardBuyCreateRequestModel {
   final CirclePaymentMethod paymentMethod;
   @override
   final CirclePaymentDataModel? circlePaymentData;
+  @override
+  final CirclePaymentDataModel? cardPaymentData;
 
   @override
   String toString() {
-    return 'CardBuyCreateRequestModel(paymentAmount: $paymentAmount, paymentAsset: $paymentAsset, buyAsset: $buyAsset, paymentMethod: $paymentMethod, circlePaymentData: $circlePaymentData)';
+    return 'CardBuyCreateRequestModel(paymentAmount: $paymentAmount, paymentAsset: $paymentAsset, buyAsset: $buyAsset, paymentMethod: $paymentMethod, circlePaymentData: $circlePaymentData, cardPaymentData: $cardPaymentData)';
   }
 
   @override
@@ -212,7 +244,9 @@ class _$_CardBuyCreateRequestModel implements _CardBuyCreateRequestModel {
             const DeepCollectionEquality()
                 .equals(other.paymentMethod, paymentMethod) &&
             const DeepCollectionEquality()
-                .equals(other.circlePaymentData, circlePaymentData));
+                .equals(other.circlePaymentData, circlePaymentData) &&
+            const DeepCollectionEquality()
+                .equals(other.cardPaymentData, cardPaymentData));
   }
 
   @JsonKey(ignore: true)
@@ -223,7 +257,8 @@ class _$_CardBuyCreateRequestModel implements _CardBuyCreateRequestModel {
       const DeepCollectionEquality().hash(paymentAsset),
       const DeepCollectionEquality().hash(buyAsset),
       const DeepCollectionEquality().hash(paymentMethod),
-      const DeepCollectionEquality().hash(circlePaymentData));
+      const DeepCollectionEquality().hash(circlePaymentData),
+      const DeepCollectionEquality().hash(cardPaymentData));
 
   @JsonKey(ignore: true)
   @override
@@ -245,7 +280,8 @@ abstract class _CardBuyCreateRequestModel implements CardBuyCreateRequestModel {
           final String? paymentAsset,
           final String? buyAsset,
           required final CirclePaymentMethod paymentMethod,
-          final CirclePaymentDataModel? circlePaymentData}) =
+          final CirclePaymentDataModel? circlePaymentData,
+          final CirclePaymentDataModel? cardPaymentData}) =
       _$_CardBuyCreateRequestModel;
 
   factory _CardBuyCreateRequestModel.fromJson(Map<String, dynamic> json) =
@@ -262,6 +298,8 @@ abstract class _CardBuyCreateRequestModel implements CardBuyCreateRequestModel {
   CirclePaymentMethod get paymentMethod;
   @override
   CirclePaymentDataModel? get circlePaymentData;
+  @override
+  CirclePaymentDataModel? get cardPaymentData;
   @override
   @JsonKey(ignore: true)
   _$$_CardBuyCreateRequestModelCopyWith<_$_CardBuyCreateRequestModel>

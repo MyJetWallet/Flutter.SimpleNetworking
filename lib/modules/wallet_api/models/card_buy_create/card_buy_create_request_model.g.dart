@@ -18,6 +18,10 @@ _$_CardBuyCreateRequestModel _$$_CardBuyCreateRequestModelFromJson(
           ? null
           : CirclePaymentDataModel.fromJson(
               json['circlePaymentData'] as Map<String, dynamic>),
+      cardPaymentData: json['cardPaymentData'] == null
+          ? null
+          : CirclePaymentDataModel.fromJson(
+              json['cardPaymentData'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_CardBuyCreateRequestModelToJson(
@@ -28,6 +32,7 @@ Map<String, dynamic> _$$_CardBuyCreateRequestModelToJson(
       'buyAsset': instance.buyAsset,
       'paymentMethod': _$CirclePaymentMethodEnumMap[instance.paymentMethod]!,
       'circlePaymentData': instance.circlePaymentData,
+      'cardPaymentData': instance.cardPaymentData,
     };
 
 const _$CirclePaymentMethodEnumMap = {

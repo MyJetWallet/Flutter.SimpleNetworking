@@ -319,9 +319,11 @@ class WalletApiDataSources {
       try {
         final responseData = response.data as Map<String, dynamic>;
 
-        handleResultResponse(responseData);
+        final data = handleFullResponse(
+          responseData,
+        );
 
-        return DC.data(const CardAddResponseModel(rejectDetail: 'OK'));
+        return DC.data(CardAddResponseModel.fromJson(data));
       } catch (e) {
         rethrow;
       }
@@ -359,7 +361,7 @@ class WalletApiDataSources {
   encryptionKey() async {
     try {
       final response = await _apiClient.get(
-        '${_apiClient.options.walletApi}/trading/buy/get-encryption-key'
+        '${_apiClient.options.walletApi}/trading/buy/get-encryption-key',
       );
 
       try {
@@ -606,15 +608,6 @@ class WalletApiDataSources {
     if (model.cardPaymentData != null) {
       final jsonCardModel = model.cardPaymentData!.toJson();
       jsonModel.remove('cardPaymentData');
-      if (model.cardPaymentData!.expMonth == null) {
-        jsonCardModel.remove('expMonth');
-      }
-      if (model.cardPaymentData!.expYear == null) {
-        jsonCardModel.remove('expYear');
-      }
-      if (model.cardPaymentData!.isActive == null) {
-        jsonCardModel.remove('isActive');
-      }
       jsonModel.addAll({
         'cardPaymentData': jsonCardModel,
       });

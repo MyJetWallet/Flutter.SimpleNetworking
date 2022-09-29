@@ -60,9 +60,6 @@ class BankCardPaymentDataExecuteModel
     String? cardId,
     String? encKeyId,
     String? encData,
-    int? expMonth,
-    int? expYear,
-    bool? isActive,
   }) = _BankCardPaymentDataExecuteModel;
 
   factory BankCardPaymentDataExecuteModel

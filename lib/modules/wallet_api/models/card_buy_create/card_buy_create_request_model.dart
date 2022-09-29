@@ -13,6 +13,7 @@ class CardBuyCreateRequestModel with _$CardBuyCreateRequestModel {
     String? buyAsset,
     required CirclePaymentMethod paymentMethod,
     CirclePaymentDataModel? circlePaymentData,
+    CirclePaymentDataModel? cardPaymentData,
   }) = _CardBuyCreateRequestModel;
 
   factory CardBuyCreateRequestModel.fromJson(Map<String, dynamic> json) =>

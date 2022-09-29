@@ -33,6 +33,12 @@ mixin _$CardBuyCreateResponseModel {
   String? get depositFeeAsset => throw _privateConstructorUsedError;
   @DecimalSerialiser()
   Decimal get tradeFeeAmount => throw _privateConstructorUsedError;
+  @DecimalSerialiser()
+  Decimal? get depositFeeAmountMax => throw _privateConstructorUsedError;
+  @DecimalSerialiser()
+  Decimal? get depositFeePerc => throw _privateConstructorUsedError;
+  @DecimalSerialiser()
+  Decimal? get depositFeePercMax => throw _privateConstructorUsedError;
   String? get tradeFeeAsset => throw _privateConstructorUsedError;
   @DecimalSerialiser()
   Decimal get rate => throw _privateConstructorUsedError;
@@ -57,6 +63,9 @@ abstract class $CardBuyCreateResponseModelCopyWith<$Res> {
       @DecimalSerialiser() Decimal depositFeeAmount,
       String? depositFeeAsset,
       @DecimalSerialiser() Decimal tradeFeeAmount,
+      @DecimalSerialiser() Decimal? depositFeeAmountMax,
+      @DecimalSerialiser() Decimal? depositFeePerc,
+      @DecimalSerialiser() Decimal? depositFeePercMax,
       String? tradeFeeAsset,
       @DecimalSerialiser() Decimal rate});
 }
@@ -80,6 +89,9 @@ class _$CardBuyCreateResponseModelCopyWithImpl<$Res>
     Object? depositFeeAmount = freezed,
     Object? depositFeeAsset = freezed,
     Object? tradeFeeAmount = freezed,
+    Object? depositFeeAmountMax = freezed,
+    Object? depositFeePerc = freezed,
+    Object? depositFeePercMax = freezed,
     Object? tradeFeeAsset = freezed,
     Object? rate = freezed,
   }) {
@@ -116,6 +128,18 @@ class _$CardBuyCreateResponseModelCopyWithImpl<$Res>
           ? _value.tradeFeeAmount
           : tradeFeeAmount // ignore: cast_nullable_to_non_nullable
               as Decimal,
+      depositFeeAmountMax: depositFeeAmountMax == freezed
+          ? _value.depositFeeAmountMax
+          : depositFeeAmountMax // ignore: cast_nullable_to_non_nullable
+              as Decimal?,
+      depositFeePerc: depositFeePerc == freezed
+          ? _value.depositFeePerc
+          : depositFeePerc // ignore: cast_nullable_to_non_nullable
+              as Decimal?,
+      depositFeePercMax: depositFeePercMax == freezed
+          ? _value.depositFeePercMax
+          : depositFeePercMax // ignore: cast_nullable_to_non_nullable
+              as Decimal?,
       tradeFeeAsset: tradeFeeAsset == freezed
           ? _value.tradeFeeAsset
           : tradeFeeAsset // ignore: cast_nullable_to_non_nullable
@@ -145,6 +169,9 @@ abstract class _$$_CardBuyCreateResponseModelCopyWith<$Res>
       @DecimalSerialiser() Decimal depositFeeAmount,
       String? depositFeeAsset,
       @DecimalSerialiser() Decimal tradeFeeAmount,
+      @DecimalSerialiser() Decimal? depositFeeAmountMax,
+      @DecimalSerialiser() Decimal? depositFeePerc,
+      @DecimalSerialiser() Decimal? depositFeePercMax,
       String? tradeFeeAsset,
       @DecimalSerialiser() Decimal rate});
 }
@@ -172,6 +199,9 @@ class __$$_CardBuyCreateResponseModelCopyWithImpl<$Res>
     Object? depositFeeAmount = freezed,
     Object? depositFeeAsset = freezed,
     Object? tradeFeeAmount = freezed,
+    Object? depositFeeAmountMax = freezed,
+    Object? depositFeePerc = freezed,
+    Object? depositFeePercMax = freezed,
     Object? tradeFeeAsset = freezed,
     Object? rate = freezed,
   }) {
@@ -208,6 +238,18 @@ class __$$_CardBuyCreateResponseModelCopyWithImpl<$Res>
           ? _value.tradeFeeAmount
           : tradeFeeAmount // ignore: cast_nullable_to_non_nullable
               as Decimal,
+      depositFeeAmountMax: depositFeeAmountMax == freezed
+          ? _value.depositFeeAmountMax
+          : depositFeeAmountMax // ignore: cast_nullable_to_non_nullable
+              as Decimal?,
+      depositFeePerc: depositFeePerc == freezed
+          ? _value.depositFeePerc
+          : depositFeePerc // ignore: cast_nullable_to_non_nullable
+              as Decimal?,
+      depositFeePercMax: depositFeePercMax == freezed
+          ? _value.depositFeePercMax
+          : depositFeePercMax // ignore: cast_nullable_to_non_nullable
+              as Decimal?,
       tradeFeeAsset: tradeFeeAsset == freezed
           ? _value.tradeFeeAsset
           : tradeFeeAsset // ignore: cast_nullable_to_non_nullable
@@ -232,6 +274,9 @@ class _$_CardBuyCreateResponseModel implements _CardBuyCreateResponseModel {
       @DecimalSerialiser() required this.depositFeeAmount,
       this.depositFeeAsset,
       @DecimalSerialiser() required this.tradeFeeAmount,
+      @DecimalSerialiser() this.depositFeeAmountMax,
+      @DecimalSerialiser() this.depositFeePerc,
+      @DecimalSerialiser() this.depositFeePercMax,
       this.tradeFeeAsset,
       @DecimalSerialiser() required this.rate});
 
@@ -259,6 +304,15 @@ class _$_CardBuyCreateResponseModel implements _CardBuyCreateResponseModel {
   @DecimalSerialiser()
   final Decimal tradeFeeAmount;
   @override
+  @DecimalSerialiser()
+  final Decimal? depositFeeAmountMax;
+  @override
+  @DecimalSerialiser()
+  final Decimal? depositFeePerc;
+  @override
+  @DecimalSerialiser()
+  final Decimal? depositFeePercMax;
+  @override
   final String? tradeFeeAsset;
   @override
   @DecimalSerialiser()
@@ -266,7 +320,7 @@ class _$_CardBuyCreateResponseModel implements _CardBuyCreateResponseModel {
 
   @override
   String toString() {
-    return 'CardBuyCreateResponseModel(paymentId: $paymentId, paymentAmount: $paymentAmount, paymentAsset: $paymentAsset, buyAmount: $buyAmount, buyAsset: $buyAsset, depositFeeAmount: $depositFeeAmount, depositFeeAsset: $depositFeeAsset, tradeFeeAmount: $tradeFeeAmount, tradeFeeAsset: $tradeFeeAsset, rate: $rate)';
+    return 'CardBuyCreateResponseModel(paymentId: $paymentId, paymentAmount: $paymentAmount, paymentAsset: $paymentAsset, buyAmount: $buyAmount, buyAsset: $buyAsset, depositFeeAmount: $depositFeeAmount, depositFeeAsset: $depositFeeAsset, tradeFeeAmount: $tradeFeeAmount, depositFeeAmountMax: $depositFeeAmountMax, depositFeePerc: $depositFeePerc, depositFeePercMax: $depositFeePercMax, tradeFeeAsset: $tradeFeeAsset, rate: $rate)';
   }
 
   @override
@@ -288,6 +342,12 @@ class _$_CardBuyCreateResponseModel implements _CardBuyCreateResponseModel {
             const DeepCollectionEquality()
                 .equals(other.tradeFeeAmount, tradeFeeAmount) &&
             const DeepCollectionEquality()
+                .equals(other.depositFeeAmountMax, depositFeeAmountMax) &&
+            const DeepCollectionEquality()
+                .equals(other.depositFeePerc, depositFeePerc) &&
+            const DeepCollectionEquality()
+                .equals(other.depositFeePercMax, depositFeePercMax) &&
+            const DeepCollectionEquality()
                 .equals(other.tradeFeeAsset, tradeFeeAsset) &&
             const DeepCollectionEquality().equals(other.rate, rate));
   }
@@ -304,6 +364,9 @@ class _$_CardBuyCreateResponseModel implements _CardBuyCreateResponseModel {
       const DeepCollectionEquality().hash(depositFeeAmount),
       const DeepCollectionEquality().hash(depositFeeAsset),
       const DeepCollectionEquality().hash(tradeFeeAmount),
+      const DeepCollectionEquality().hash(depositFeeAmountMax),
+      const DeepCollectionEquality().hash(depositFeePerc),
+      const DeepCollectionEquality().hash(depositFeePercMax),
       const DeepCollectionEquality().hash(tradeFeeAsset),
       const DeepCollectionEquality().hash(rate));
 
@@ -332,6 +395,9 @@ abstract class _CardBuyCreateResponseModel
           @DecimalSerialiser() required final Decimal depositFeeAmount,
           final String? depositFeeAsset,
           @DecimalSerialiser() required final Decimal tradeFeeAmount,
+          @DecimalSerialiser() final Decimal? depositFeeAmountMax,
+          @DecimalSerialiser() final Decimal? depositFeePerc,
+          @DecimalSerialiser() final Decimal? depositFeePercMax,
           final String? tradeFeeAsset,
           @DecimalSerialiser() required final Decimal rate}) =
       _$_CardBuyCreateResponseModel;
@@ -359,6 +425,15 @@ abstract class _CardBuyCreateResponseModel
   @override
   @DecimalSerialiser()
   Decimal get tradeFeeAmount;
+  @override
+  @DecimalSerialiser()
+  Decimal? get depositFeeAmountMax;
+  @override
+  @DecimalSerialiser()
+  Decimal? get depositFeePerc;
+  @override
+  @DecimalSerialiser()
+  Decimal? get depositFeePercMax;
   @override
   String? get tradeFeeAsset;
   @override

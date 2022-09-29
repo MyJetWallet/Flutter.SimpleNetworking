@@ -19,6 +19,12 @@ _$_CardBuyCreateResponseModel _$$_CardBuyCreateResponseModelFromJson(
       depositFeeAsset: json['depositFeeAsset'] as String?,
       tradeFeeAmount:
           const DecimalSerialiser().fromJson(json['tradeFeeAmount']),
+      depositFeeAmountMax:
+          const DecimalSerialiser().fromJson(json['depositFeeAmountMax']),
+      depositFeePerc:
+          const DecimalSerialiser().fromJson(json['depositFeePerc']),
+      depositFeePercMax:
+          const DecimalSerialiser().fromJson(json['depositFeePercMax']),
       tradeFeeAsset: json['tradeFeeAsset'] as String?,
       rate: const DecimalSerialiser().fromJson(json['rate']),
     );
@@ -36,6 +42,18 @@ Map<String, dynamic> _$$_CardBuyCreateResponseModelToJson(
       'depositFeeAsset': instance.depositFeeAsset,
       'tradeFeeAmount':
           const DecimalSerialiser().toJson(instance.tradeFeeAmount),
+      'depositFeeAmountMax': _$JsonConverterToJson<dynamic, Decimal>(
+          instance.depositFeeAmountMax, const DecimalSerialiser().toJson),
+      'depositFeePerc': _$JsonConverterToJson<dynamic, Decimal>(
+          instance.depositFeePerc, const DecimalSerialiser().toJson),
+      'depositFeePercMax': _$JsonConverterToJson<dynamic, Decimal>(
+          instance.depositFeePercMax, const DecimalSerialiser().toJson),
       'tradeFeeAsset': instance.tradeFeeAsset,
       'rate': const DecimalSerialiser().toJson(instance.rate),
     };
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);

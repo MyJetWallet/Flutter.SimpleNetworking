@@ -15,6 +15,9 @@ _$_StartEmailLoginRequestModel _$$_StartEmailLoginRequestModelFromJson(
       deviceUid: json['deviceUid'] as String?,
       lang: json['lang'] as String?,
       appsflyerId: json['appsflyerId'] as String?,
+      adid: json['adid'] as String?,
+      idfv: json['idfv'] as String?,
+      idfa: json['idfa'] as String?,
     );
 
 Map<String, dynamic> _$$_StartEmailLoginRequestModelToJson(
@@ -26,4 +29,7 @@ Map<String, dynamic> _$$_StartEmailLoginRequestModelToJson(
       'deviceUid': instance.deviceUid,
       'lang': instance.lang,
       'appsflyerId': instance.appsflyerId,
+      'adid': instance.adid,
+      'idfv': instance.idfv,
+      'idfa': instance.idfa,
     };

@@ -12,6 +12,9 @@ class StartEmailLoginRequestModel with _$StartEmailLoginRequestModel {
     String? deviceUid,
     String? lang,
     String? appsflyerId,
+    String? adid,
+    String? idfv,
+    String? idfa,
   }) = _StartEmailLoginRequestModel;
   factory StartEmailLoginRequestModel.fromJson(Map<String, dynamic> json) =>
       _$StartEmailLoginRequestModelFromJson(json);

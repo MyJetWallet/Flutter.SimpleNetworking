@@ -27,6 +27,9 @@ mixin _$StartEmailLoginRequestModel {
   String? get deviceUid => throw _privateConstructorUsedError;
   String? get lang => throw _privateConstructorUsedError;
   String? get appsflyerId => throw _privateConstructorUsedError;
+  String? get adid => throw _privateConstructorUsedError;
+  String? get idfv => throw _privateConstructorUsedError;
+  String? get idfa => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -46,7 +49,10 @@ abstract class $StartEmailLoginRequestModelCopyWith<$Res> {
       int platform,
       String? deviceUid,
       String? lang,
-      String? appsflyerId});
+      String? appsflyerId,
+      String? adid,
+      String? idfv,
+      String? idfa});
 }
 
 /// @nodoc
@@ -66,6 +72,9 @@ class _$StartEmailLoginRequestModelCopyWithImpl<$Res>
     Object? deviceUid = freezed,
     Object? lang = freezed,
     Object? appsflyerId = freezed,
+    Object? adid = freezed,
+    Object? idfv = freezed,
+    Object? idfa = freezed,
   }) {
     return _then(_value.copyWith(
       email: email == freezed
@@ -92,6 +101,18 @@ class _$StartEmailLoginRequestModelCopyWithImpl<$Res>
           ? _value.appsflyerId
           : appsflyerId // ignore: cast_nullable_to_non_nullable
               as String?,
+      adid: adid == freezed
+          ? _value.adid
+          : adid // ignore: cast_nullable_to_non_nullable
+              as String?,
+      idfv: idfv == freezed
+          ? _value.idfv
+          : idfv // ignore: cast_nullable_to_non_nullable
+              as String?,
+      idfa: idfa == freezed
+          ? _value.idfa
+          : idfa // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -110,7 +131,10 @@ abstract class _$$_StartEmailLoginRequestModelCopyWith<$Res>
       int platform,
       String? deviceUid,
       String? lang,
-      String? appsflyerId});
+      String? appsflyerId,
+      String? adid,
+      String? idfv,
+      String? idfa});
 }
 
 /// @nodoc
@@ -134,6 +158,9 @@ class __$$_StartEmailLoginRequestModelCopyWithImpl<$Res>
     Object? deviceUid = freezed,
     Object? lang = freezed,
     Object? appsflyerId = freezed,
+    Object? adid = freezed,
+    Object? idfv = freezed,
+    Object? idfa = freezed,
   }) {
     return _then(_$_StartEmailLoginRequestModel(
       email: email == freezed
@@ -160,6 +187,18 @@ class __$$_StartEmailLoginRequestModelCopyWithImpl<$Res>
           ? _value.appsflyerId
           : appsflyerId // ignore: cast_nullable_to_non_nullable
               as String?,
+      adid: adid == freezed
+          ? _value.adid
+          : adid // ignore: cast_nullable_to_non_nullable
+              as String?,
+      idfv: idfv == freezed
+          ? _value.idfv
+          : idfv // ignore: cast_nullable_to_non_nullable
+              as String?,
+      idfa: idfa == freezed
+          ? _value.idfa
+          : idfa // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -173,7 +212,10 @@ class _$_StartEmailLoginRequestModel implements _StartEmailLoginRequestModel {
       required this.platform,
       this.deviceUid,
       this.lang,
-      this.appsflyerId});
+      this.appsflyerId,
+      this.adid,
+      this.idfv,
+      this.idfa});
 
   factory _$_StartEmailLoginRequestModel.fromJson(Map<String, dynamic> json) =>
       _$$_StartEmailLoginRequestModelFromJson(json);
@@ -190,10 +232,16 @@ class _$_StartEmailLoginRequestModel implements _StartEmailLoginRequestModel {
   final String? lang;
   @override
   final String? appsflyerId;
+  @override
+  final String? adid;
+  @override
+  final String? idfv;
+  @override
+  final String? idfa;
 
   @override
   String toString() {
-    return 'StartEmailLoginRequestModel(email: $email, application: $application, platform: $platform, deviceUid: $deviceUid, lang: $lang, appsflyerId: $appsflyerId)';
+    return 'StartEmailLoginRequestModel(email: $email, application: $application, platform: $platform, deviceUid: $deviceUid, lang: $lang, appsflyerId: $appsflyerId, adid: $adid, idfv: $idfv, idfa: $idfa)';
   }
 
   @override
@@ -208,7 +256,10 @@ class _$_StartEmailLoginRequestModel implements _StartEmailLoginRequestModel {
             const DeepCollectionEquality().equals(other.deviceUid, deviceUid) &&
             const DeepCollectionEquality().equals(other.lang, lang) &&
             const DeepCollectionEquality()
-                .equals(other.appsflyerId, appsflyerId));
+                .equals(other.appsflyerId, appsflyerId) &&
+            const DeepCollectionEquality().equals(other.adid, adid) &&
+            const DeepCollectionEquality().equals(other.idfv, idfv) &&
+            const DeepCollectionEquality().equals(other.idfa, idfa));
   }
 
   @JsonKey(ignore: true)
@@ -220,7 +271,10 @@ class _$_StartEmailLoginRequestModel implements _StartEmailLoginRequestModel {
       const DeepCollectionEquality().hash(platform),
       const DeepCollectionEquality().hash(deviceUid),
       const DeepCollectionEquality().hash(lang),
-      const DeepCollectionEquality().hash(appsflyerId));
+      const DeepCollectionEquality().hash(appsflyerId),
+      const DeepCollectionEquality().hash(adid),
+      const DeepCollectionEquality().hash(idfv),
+      const DeepCollectionEquality().hash(idfa));
 
   @JsonKey(ignore: true)
   @override
@@ -230,9 +284,7 @@ class _$_StartEmailLoginRequestModel implements _StartEmailLoginRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StartEmailLoginRequestModelToJson(
-      this,
-    );
+    return _$$_StartEmailLoginRequestModelToJson(this);
   }
 }
 
@@ -244,7 +296,10 @@ abstract class _StartEmailLoginRequestModel
       required final int platform,
       final String? deviceUid,
       final String? lang,
-      final String? appsflyerId}) = _$_StartEmailLoginRequestModel;
+      final String? appsflyerId,
+      final String? adid,
+      final String? idfv,
+      final String? idfa}) = _$_StartEmailLoginRequestModel;
 
   factory _StartEmailLoginRequestModel.fromJson(Map<String, dynamic> json) =
       _$_StartEmailLoginRequestModel.fromJson;
@@ -261,6 +316,12 @@ abstract class _StartEmailLoginRequestModel
   String? get lang;
   @override
   String? get appsflyerId;
+  @override
+  String? get adid;
+  @override
+  String? get idfv;
+  @override
+  String? get idfa;
   @override
   @JsonKey(ignore: true)
   _$$_StartEmailLoginRequestModelCopyWith<_$_StartEmailLoginRequestModel>

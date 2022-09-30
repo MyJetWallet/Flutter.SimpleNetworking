@@ -155,9 +155,7 @@ class _$_AssetPaymentMethods implements _AssetPaymentMethods {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AssetPaymentMethodsToJson(
-      this,
-    );
+    return _$$_AssetPaymentMethodsToJson(this);
   }
 }
 
@@ -372,9 +370,7 @@ class _$_AssetPaymentInfo implements _AssetPaymentInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AssetPaymentInfoToJson(
-      this,
-    );
+    return _$$_AssetPaymentInfoToJson(this);
   }
 }
 
@@ -580,9 +576,7 @@ class _$_PaymentMethod implements _PaymentMethod {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PaymentMethodToJson(
-      this,
-    );
+    return _$$_PaymentMethodToJson(this);
   }
 }
 

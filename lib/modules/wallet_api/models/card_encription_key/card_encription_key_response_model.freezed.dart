@@ -150,9 +150,7 @@ class _$_EncryptionKeyCardResponseModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EncryptionKeyCardResponseModelToJson(
-      this,
-    );
+    return _$$_EncryptionKeyCardResponseModelToJson(this);
   }
 }
 
@@ -314,9 +312,7 @@ class _$_EncryptionKeyCardResponseDataModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EncryptionKeyCardResponseDataModelToJson(
-      this,
-    );
+    return _$$_EncryptionKeyCardResponseDataModelToJson(this);
   }
 }
 

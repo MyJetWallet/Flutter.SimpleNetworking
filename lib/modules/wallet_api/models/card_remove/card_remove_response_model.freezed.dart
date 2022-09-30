@@ -133,9 +133,7 @@ class _$_CardRemoveResponseModel implements _CardRemoveResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CardRemoveResponseModelToJson(
-      this,
-    );
+    return _$$_CardRemoveResponseModelToJson(this);
   }
 }
 

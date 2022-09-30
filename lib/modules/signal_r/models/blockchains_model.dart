@@ -5,7 +5,7 @@ import 'asset_model.dart';
 part 'blockchains_model.freezed.dart';
 part 'blockchains_model.g.dart';
 
-@freezed
+@Freezed(makeCollectionsUnmodifiable: false)
 class BlockchainsModel with _$BlockchainsModel {
   const factory BlockchainsModel({
     required List<BlockchainModel> blockchains,

@@ -164,9 +164,7 @@ class _$_CheckPinResponseModel implements _CheckPinResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CheckPinResponseModelToJson(
-      this,
-    );
+    return _$$_CheckPinResponseModelToJson(this);
   }
 }
 
@@ -366,9 +364,7 @@ class _$_RejectDetailData implements _RejectDetailData {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RejectDetailDataToJson(
-      this,
-    );
+    return _$$_RejectDetailDataToJson(this);
   }
 }
 
@@ -507,9 +503,7 @@ class _$_AttemptsModel implements _AttemptsModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AttemptsModelToJson(
-      this,
-    );
+    return _$$_AttemptsModelToJson(this);
   }
 }
 
@@ -640,9 +634,7 @@ class _$_BlockerModel implements _BlockerModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BlockerModelToJson(
-      this,
-    );
+    return _$$_BlockerModelToJson(this);
   }
 }
 

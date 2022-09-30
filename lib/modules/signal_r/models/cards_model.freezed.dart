@@ -94,7 +94,7 @@ class __$$_CardsModelCopyWithImpl<$Res> extends _$CardsModelCopyWithImpl<$Res>
           : now // ignore: cast_nullable_to_non_nullable
               as double,
       cardInfos: cardInfos == freezed
-          ? _value._cardInfos
+          ? _value.cardInfos
           : cardInfos // ignore: cast_nullable_to_non_nullable
               as List<CircleCard>,
     ));
@@ -104,21 +104,15 @@ class __$$_CardsModelCopyWithImpl<$Res> extends _$CardsModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_CardsModel implements _CardsModel {
-  const _$_CardsModel(
-      {required this.now, required final List<CircleCard> cardInfos})
-      : _cardInfos = cardInfos;
+  const _$_CardsModel({required this.now, required this.cardInfos});
 
   factory _$_CardsModel.fromJson(Map<String, dynamic> json) =>
       _$$_CardsModelFromJson(json);
 
   @override
   final double now;
-  final List<CircleCard> _cardInfos;
   @override
-  List<CircleCard> get cardInfos {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_cardInfos);
-  }
+  final List<CircleCard> cardInfos;
 
   @override
   String toString() {
@@ -131,8 +125,7 @@ class _$_CardsModel implements _CardsModel {
         (other.runtimeType == runtimeType &&
             other is _$_CardsModel &&
             const DeepCollectionEquality().equals(other.now, now) &&
-            const DeepCollectionEquality()
-                .equals(other._cardInfos, _cardInfos));
+            const DeepCollectionEquality().equals(other.cardInfos, cardInfos));
   }
 
   @JsonKey(ignore: true)
@@ -140,7 +133,7 @@ class _$_CardsModel implements _CardsModel {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(now),
-      const DeepCollectionEquality().hash(_cardInfos));
+      const DeepCollectionEquality().hash(cardInfos));
 
   @JsonKey(ignore: true)
   @override
@@ -149,9 +142,7 @@ class _$_CardsModel implements _CardsModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CardsModelToJson(
-      this,
-    );
+    return _$$_CardsModelToJson(this);
   }
 }
 
@@ -428,9 +419,7 @@ class _$_CardModel implements _CardModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CardModelToJson(
-      this,
-    );
+    return _$$_CardModelToJson(this);
   }
 }
 
@@ -653,9 +642,7 @@ class _$_CardPaymentDetailModel implements _CardPaymentDetailModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CardPaymentDetailModelToJson(
-      this,
-    );
+    return _$$_CardPaymentDetailModelToJson(this);
   }
 }
 

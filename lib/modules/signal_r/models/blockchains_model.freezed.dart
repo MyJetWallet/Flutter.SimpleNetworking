@@ -85,7 +85,7 @@ class __$$_BlockchainsModelCopyWithImpl<$Res>
   }) {
     return _then(_$_BlockchainsModel(
       blockchains: blockchains == freezed
-          ? _value._blockchains
+          ? _value.blockchains
           : blockchains // ignore: cast_nullable_to_non_nullable
               as List<BlockchainModel>,
     ));
@@ -95,18 +95,13 @@ class __$$_BlockchainsModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_BlockchainsModel implements _BlockchainsModel {
-  const _$_BlockchainsModel({required final List<BlockchainModel> blockchains})
-      : _blockchains = blockchains;
+  const _$_BlockchainsModel({required this.blockchains});
 
   factory _$_BlockchainsModel.fromJson(Map<String, dynamic> json) =>
       _$$_BlockchainsModelFromJson(json);
 
-  final List<BlockchainModel> _blockchains;
   @override
-  List<BlockchainModel> get blockchains {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_blockchains);
-  }
+  final List<BlockchainModel> blockchains;
 
   @override
   String toString() {
@@ -119,13 +114,13 @@ class _$_BlockchainsModel implements _BlockchainsModel {
         (other.runtimeType == runtimeType &&
             other is _$_BlockchainsModel &&
             const DeepCollectionEquality()
-                .equals(other._blockchains, _blockchains));
+                .equals(other.blockchains, blockchains));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_blockchains));
+      runtimeType, const DeepCollectionEquality().hash(blockchains));
 
   @JsonKey(ignore: true)
   @override
@@ -134,9 +129,7 @@ class _$_BlockchainsModel implements _BlockchainsModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BlockchainsModelToJson(
-      this,
-    );
+    return _$$_BlockchainsModelToJson(this);
   }
 }
 
@@ -305,9 +298,7 @@ class _$_BlockchainModel implements _BlockchainModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BlockchainModelToJson(
-      this,
-    );
+    return _$$_BlockchainModelToJson(this);
   }
 }
 

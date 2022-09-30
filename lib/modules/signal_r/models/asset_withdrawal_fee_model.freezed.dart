@@ -87,7 +87,7 @@ class __$$_AssetWithdrawalFeeModelCopyWithImpl<$Res>
   }) {
     return _then(_$_AssetWithdrawalFeeModel(
       assetFees: assetFees == freezed
-          ? _value._assetFees
+          ? _value.assetFees
           : assetFees // ignore: cast_nullable_to_non_nullable
               as List<AssetFeeModel>,
     ));
@@ -97,19 +97,13 @@ class __$$_AssetWithdrawalFeeModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_AssetWithdrawalFeeModel implements _AssetWithdrawalFeeModel {
-  const _$_AssetWithdrawalFeeModel(
-      {required final List<AssetFeeModel> assetFees})
-      : _assetFees = assetFees;
+  const _$_AssetWithdrawalFeeModel({required this.assetFees});
 
   factory _$_AssetWithdrawalFeeModel.fromJson(Map<String, dynamic> json) =>
       _$$_AssetWithdrawalFeeModelFromJson(json);
 
-  final List<AssetFeeModel> _assetFees;
   @override
-  List<AssetFeeModel> get assetFees {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_assetFees);
-  }
+  final List<AssetFeeModel> assetFees;
 
   @override
   String toString() {
@@ -121,14 +115,13 @@ class _$_AssetWithdrawalFeeModel implements _AssetWithdrawalFeeModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AssetWithdrawalFeeModel &&
-            const DeepCollectionEquality()
-                .equals(other._assetFees, _assetFees));
+            const DeepCollectionEquality().equals(other.assetFees, assetFees));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_assetFees));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(assetFees));
 
   @JsonKey(ignore: true)
   @override
@@ -139,9 +132,7 @@ class _$_AssetWithdrawalFeeModel implements _AssetWithdrawalFeeModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AssetWithdrawalFeeModelToJson(
-      this,
-    );
+    return _$$_AssetWithdrawalFeeModelToJson(this);
   }
 }
 
@@ -335,9 +326,7 @@ class _$_AssetFeeModel implements _AssetFeeModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AssetFeeModelToJson(
-      this,
-    );
+    return _$$_AssetFeeModelToJson(this);
   }
 }
 

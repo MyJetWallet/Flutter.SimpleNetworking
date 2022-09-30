@@ -5,7 +5,7 @@ import 'package:simple_networking/helpers/decimal_serialiser.dart';
 part 'campaign_response_model.freezed.dart';
 part 'campaign_response_model.g.dart';
 
-@freezed
+@Freezed(makeCollectionsUnmodifiable: false)
 class CampaignResponseModel with _$CampaignResponseModel {
   const factory CampaignResponseModel({
     required List<CampaignModel> campaigns,

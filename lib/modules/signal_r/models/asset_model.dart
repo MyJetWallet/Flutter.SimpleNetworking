@@ -5,7 +5,7 @@ import 'package:simple_networking/helpers/decimal_serialiser.dart';
 part 'asset_model.freezed.dart';
 part 'asset_model.g.dart';
 
-@freezed
+@Freezed(makeCollectionsUnmodifiable: false)
 class AssetsModel with _$AssetsModel {
   const factory AssetsModel({
     required double now,

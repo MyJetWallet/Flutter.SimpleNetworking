@@ -5,7 +5,7 @@ import 'package:simple_networking/helpers/decimal_serialiser.dart';
 part 'card_limits_model.freezed.dart';
 part 'card_limits_model.g.dart';
 
-@freezed
+@Freezed(makeCollectionsUnmodifiable: false)
 class CardLimitsModel with _$CardLimitsModel {
   const factory CardLimitsModel({
     @DecimalSerialiser() required Decimal minAmount,

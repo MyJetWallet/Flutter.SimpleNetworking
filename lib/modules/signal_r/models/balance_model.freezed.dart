@@ -85,7 +85,7 @@ class __$$_BalancesModelCopyWithImpl<$Res>
   }) {
     return _then(_$_BalancesModel(
       balances: balances == freezed
-          ? _value._balances
+          ? _value.balances
           : balances // ignore: cast_nullable_to_non_nullable
               as List<BalanceModel>,
     ));
@@ -95,18 +95,13 @@ class __$$_BalancesModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_BalancesModel implements _BalancesModel {
-  const _$_BalancesModel({required final List<BalanceModel> balances})
-      : _balances = balances;
+  const _$_BalancesModel({required this.balances});
 
   factory _$_BalancesModel.fromJson(Map<String, dynamic> json) =>
       _$$_BalancesModelFromJson(json);
 
-  final List<BalanceModel> _balances;
   @override
-  List<BalanceModel> get balances {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_balances);
-  }
+  final List<BalanceModel> balances;
 
   @override
   String toString() {
@@ -118,13 +113,13 @@ class _$_BalancesModel implements _BalancesModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_BalancesModel &&
-            const DeepCollectionEquality().equals(other._balances, _balances));
+            const DeepCollectionEquality().equals(other.balances, balances));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_balances));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(balances));
 
   @JsonKey(ignore: true)
   @override
@@ -133,9 +128,7 @@ class _$_BalancesModel implements _BalancesModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BalancesModelToJson(
-      this,
-    );
+    return _$$_BalancesModelToJson(this);
   }
 }
 
@@ -573,9 +566,7 @@ class _$_BalanceModel implements _BalanceModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BalanceModelToJson(
-      this,
-    );
+    return _$$_BalanceModelToJson(this);
   }
 }
 

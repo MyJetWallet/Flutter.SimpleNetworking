@@ -5,7 +5,7 @@ import 'package:simple_networking/helpers/decimal_serialiser.dart';
 part 'asset_withdrawal_fee_model.freezed.dart';
 part 'asset_withdrawal_fee_model.g.dart';
 
-@freezed
+@Freezed(makeCollectionsUnmodifiable: false)
 class AssetWithdrawalFeeModel with _$AssetWithdrawalFeeModel {
   const factory AssetWithdrawalFeeModel({
     required List<AssetFeeModel> assetFees,

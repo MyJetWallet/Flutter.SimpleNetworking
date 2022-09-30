@@ -6,7 +6,7 @@ import 'package:simple_networking/modules/wallet_api/models/circle_card.dart';
 part 'cards_model.freezed.dart';
 part 'cards_model.g.dart';
 
-@freezed
+@Freezed(makeCollectionsUnmodifiable: false)
 class CardsModel with _$CardsModel {
   const factory CardsModel({
     required double now,

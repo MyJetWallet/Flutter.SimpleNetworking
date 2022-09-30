@@ -5,7 +5,7 @@ import 'package:simple_networking/helpers/decimal_serialiser.dart';
 part 'balance_model.freezed.dart';
 part 'balance_model.g.dart';
 
-@freezed
+@Freezed(makeCollectionsUnmodifiable: false)
 class BalancesModel with _$BalancesModel {
   const factory BalancesModel({
     required List<BalanceModel> balances,

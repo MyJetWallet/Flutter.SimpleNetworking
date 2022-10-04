@@ -42,10 +42,12 @@ void _validateFullResponse(
   Map<String, dynamic> json,
 ) {
   if (result == 'OperationBlocked') {
-    final data = json['data'] as Map<String, dynamic>;
-    final blocker = data['blocker'] as Map<String, dynamic>;
-    final expired = blocker['expired'] as String;
-    throw ServerRejectException(_blockerMessage(timespanToDuration(expired)));
+    final rejectDetail = json['rejectDetail'] as Map<String, dynamic>?;
+    if (rejectDetail != null) {
+      final blocker = rejectDetail['blocker'] as Map<String, dynamic>;
+      final expired = blocker['expired'] as String;
+      throw ServerRejectException(_blockerMessage(timespanToDuration(expired)));
+    }
   } else if (result == 'InvalidUserNameOrPassword') {
     final data = json['data'] as Map<String, dynamic>;
     final attempts = data['attempts'] as Map<String, dynamic>?;

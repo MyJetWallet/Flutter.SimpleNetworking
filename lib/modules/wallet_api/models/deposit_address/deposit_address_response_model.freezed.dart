@@ -150,9 +150,7 @@ class _$_DepositAddressResponseModel implements _DepositAddressResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DepositAddressResponseModelToJson(
-      this,
-    );
+    return _$$_DepositAddressResponseModelToJson(this);
   }
 }
 

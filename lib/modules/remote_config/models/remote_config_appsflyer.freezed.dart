@@ -147,9 +147,7 @@ class _$_RemoteConfigAppsflyer implements _RemoteConfigAppsflyer {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RemoteConfigAppsflyerToJson(
-      this,
-    );
+    return _$$_RemoteConfigAppsflyerToJson(this);
   }
 }
 

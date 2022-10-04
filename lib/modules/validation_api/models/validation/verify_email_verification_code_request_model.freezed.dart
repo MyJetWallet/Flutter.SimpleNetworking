@@ -141,9 +141,7 @@ class _$_VerifyEmailVerificationCodeRequestModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_VerifyEmailVerificationCodeRequestModelToJson(
-      this,
-    );
+    return _$$_VerifyEmailVerificationCodeRequestModelToJson(this);
   }
 }
 

@@ -198,9 +198,7 @@ class _$_EarnOfferWithdrawalRequestModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EarnOfferWithdrawalRequestModelToJson(
-      this,
-    );
+    return _$$_EarnOfferWithdrawalRequestModelToJson(this);
   }
 }
 

@@ -176,9 +176,7 @@ class _$_VerifyWithdrawalVerificationCodeRequestModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_VerifyWithdrawalVerificationCodeRequestModelToJson(
-      this,
-    );
+    return _$$_VerifyWithdrawalVerificationCodeRequestModelToJson(this);
   }
 }
 

@@ -150,9 +150,7 @@ class _$_RemoteConfigSupportModel implements _RemoteConfigSupportModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RemoteConfigSupportModelToJson(
-      this,
-    );
+    return _$$_RemoteConfigSupportModelToJson(this);
   }
 }
 

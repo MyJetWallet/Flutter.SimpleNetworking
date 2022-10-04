@@ -211,9 +211,7 @@ class _$_ApplyUseDataRequestModel implements _ApplyUseDataRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ApplyUseDataRequestModelToJson(
-      this,
-    );
+    return _$$_ApplyUseDataRequestModelToJson(this);
   }
 }
 

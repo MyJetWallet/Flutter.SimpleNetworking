@@ -245,9 +245,7 @@ class _$_LoginRequestModel implements _LoginRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_LoginRequestModelToJson(
-      this,
-    );
+    return _$$_LoginRequestModelToJson(this);
   }
 }
 

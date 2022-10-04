@@ -261,9 +261,7 @@ class _$_SessionInfoResponseModel implements _SessionInfoResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SessionInfoResponseModelToJson(
-      this,
-    );
+    return _$$_SessionInfoResponseModelToJson(this);
   }
 }
 

@@ -152,9 +152,7 @@ class _$_RegisterTokenRequestModel implements _RegisterTokenRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RegisterTokenRequestModelToJson(
-      this,
-    );
+    return _$$_RegisterTokenRequestModelToJson(this);
   }
 }
 

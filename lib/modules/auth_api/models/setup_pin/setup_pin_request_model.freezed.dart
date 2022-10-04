@@ -129,9 +129,7 @@ class _$_SetupPinRequestModel implements _SetupPinRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SetupPinRequestModelToJson(
-      this,
-    );
+    return _$$_SetupPinRequestModelToJson(this);
   }
 }
 

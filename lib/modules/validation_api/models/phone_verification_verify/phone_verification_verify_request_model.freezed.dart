@@ -189,9 +189,7 @@ class _$_PhoneVerificationVerifyRequestModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PhoneVerificationVerifyRequestModelToJson(
-      this,
-    );
+    return _$$_PhoneVerificationVerifyRequestModelToJson(this);
   }
 }
 

@@ -25,6 +25,8 @@ import 'package:simple_networking/modules/signal_r/models/key_value_model.dart';
 import 'package:simple_networking/modules/signal_r/models/kyc_countries_response_model.dart';
 import 'package:simple_networking/modules/signal_r/models/market_info_model.dart';
 import 'package:simple_networking/modules/signal_r/models/market_references_model.dart';
+import 'package:simple_networking/modules/signal_r/models/nft_collections.dart';
+import 'package:simple_networking/modules/signal_r/models/nft_market.dart';
 import 'package:simple_networking/modules/signal_r/models/period_prices_model.dart';
 import 'package:simple_networking/modules/signal_r/models/price_accuracies.dart';
 import 'package:simple_networking/modules/signal_r/models/recurring_buys_response_model.dart';
@@ -119,6 +121,11 @@ class SignalRModule {
 
   StreamController<bool> _inifFinishedController = StreamController<bool>();
 
+  StreamController<NftCollections> _nftCollectionController =
+      StreamController<NftCollections>();
+  StreamController<NFTMarkets> _nftMarketController =
+      StreamController<NFTMarkets>();
+
   /// This variable is created to track previous snapshot of base prices.
   /// This needed because when signlaR gets update from basePrices it
   /// recevies only prices that changed, this results in overriding prices
@@ -153,6 +160,9 @@ class SignalRModule {
     _cardsController = StreamController<CardsModel>();
 
     _inifFinishedController = StreamController<bool>();
+
+    _nftCollectionController = StreamController<NftCollections>();
+    _nftMarketController = StreamController<NFTMarkets>();
   }
 
   Future<void> clearSignalR() async {
@@ -510,6 +520,36 @@ class SignalRModule {
       }
     });
 
+    _connection?.on(nftCollectionsMessage, (data) {
+      try {
+        log.d(data);
+
+        final collection = NftCollections.fromJson(_json(data));
+
+        _nftCollectionController.add(collection);
+      } catch (e) {
+        _logger.log(contract, nftCollectionsMessage, e);
+
+        showEror(e.toString());
+
+        log.e(e.toString());
+      }
+    });
+
+    _connection?.on(nftMarketMessage, (data) {
+      try {
+        final market = NFTMarkets.fromJson(_json(data));
+
+        log.d(market);
+
+        _nftMarketController.add(market);
+      } catch (e) {
+        _logger.log(contract, nftMarketMessage, e);
+
+        showEror(e.toString());
+      }
+    });
+
     try {
       await _connection?.start();
     } catch (e) {
@@ -591,6 +631,10 @@ class SignalRModule {
   Stream<bool> isAppLoaded() => _inifFinishedController.stream;
 
   Stream<CardsModel> cards() => _cardsController.stream;
+
+  Stream<NftCollections> nftCollections() => _nftCollectionController.stream;
+
+  Stream<NFTMarkets> nftMarket() => _nftMarketController.stream;
 
   void _startPing() {
     _pingTimer = Timer.periodic(

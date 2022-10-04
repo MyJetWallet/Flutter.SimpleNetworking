@@ -132,9 +132,7 @@ class _$_RemoteConfogSimplexModel implements _RemoteConfogSimplexModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RemoteConfogSimplexModelToJson(
-      this,
-    );
+    return _$$_RemoteConfogSimplexModelToJson(this);
   }
 }
 

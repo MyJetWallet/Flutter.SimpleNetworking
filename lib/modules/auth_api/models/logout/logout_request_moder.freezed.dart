@@ -129,9 +129,7 @@ class _$_LogoutRequestModel implements _LogoutRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_LogoutRequestModelToJson(
-      this,
-    );
+    return _$$_LogoutRequestModelToJson(this);
   }
 }
 

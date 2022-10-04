@@ -150,9 +150,7 @@ class _$_MarketInfoRequestModel implements _MarketInfoRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MarketInfoRequestModelToJson(
-      this,
-    );
+    return _$$_MarketInfoRequestModelToJson(this);
   }
 }
 

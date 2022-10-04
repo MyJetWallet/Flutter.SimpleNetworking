@@ -242,9 +242,7 @@ class _$_PaymentPreviewResponseModel implements _PaymentPreviewResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PaymentPreviewResponseModelToJson(
-      this,
-    );
+    return _$$_PaymentPreviewResponseModelToJson(this);
   }
 }
 

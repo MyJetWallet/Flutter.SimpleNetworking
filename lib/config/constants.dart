@@ -28,6 +28,8 @@ const earnOffersMessage = 'high-yield-profile';
 const initFinished = 'init-finished';
 const cardsMessage = 'cards';
 const cardLimitsMessage = 'cards-limits';
+const nftCollectionsMessage = 'nft-collections';
+const nftMarketMessage = 'nft-market';
 
 // KeyValue
 const watchlistKey = 'watchlist';

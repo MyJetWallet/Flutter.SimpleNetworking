@@ -40,6 +40,12 @@ import 'package:simple_networking/modules/wallet_api/models/market_news/market_n
 import 'package:simple_networking/modules/wallet_api/models/market_news/market_news_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/news/news_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/news/news_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/nft_market/nft_market_buy_order_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/nft_market/nft_market_cancel_sell_order_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/nft_market/nft_market_info_response.dart';
+import 'package:simple_networking/modules/wallet_api/models/nft_market/nft_market_is_valid_promo_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/nft_market/nft_market_make_sell_order_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/nft_market/nft_market_preview_buy_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/notification/register_token_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/operation_history/operation_history_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/operation_history/operation_history_response_model.dart';
@@ -358,7 +364,7 @@ class WalletApiDataSources {
   }
 
   Future<DC<ServerRejectException, EncryptionKeyCardResponseModel>>
-  encryptionKey() async {
+      encryptionKey() async {
     try {
       final response = await _apiClient.get(
         '${_apiClient.options.walletApi}/trading/buy/get-encryption-key',
@@ -1333,6 +1339,141 @@ class WalletApiDataSources {
         final data = handleFullResponse<Map>(responseData);
 
         return DC.data(DeleteUnlimintCardResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, NftMarketInfoResponseModel>>
+      getNFTMarketInfoRequest(
+    String symbol,
+  ) async {
+    try {
+      final response = await _apiClient.get(
+        '${_apiClient.options.walletApi}/trading/nft-market/info/$symbol',
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+
+        final data = handleFullResponse<Map>(responseData);
+
+        return DC.data(NftMarketInfoResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, NftMarketIsValidPromoResponseModel>>
+      getNFTMarketIsValidPromoRequest(
+    String promocode,
+  ) async {
+    try {
+      final response = await _apiClient.get(
+        '${_apiClient.options.walletApi}/trading/nft-market/is-valid-promo/$promocode',
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+
+        final data = handleFullResponse<Map>(responseData);
+
+        return DC.data(NftMarketIsValidPromoResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, NftMarketPreviewBuyResponseModel>>
+      getNFTMarketPreviewBuyRequest(
+    String symbol,
+  ) async {
+    try {
+      final response = await _apiClient.get(
+        '${_apiClient.options.walletApi}/trading/nft-market/preview-buy/$symbol',
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+
+        final data = handleFullResponse<Map>(responseData);
+
+        return DC.data(NftMarketPreviewBuyResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, bool>> postNFTMarketMakeSellOrderRequest(
+    NftMarketMakeSellOrderRequestModel model,
+  ) async {
+    try {
+      final _ = await _apiClient.post(
+        '${_apiClient.options.walletApi}/trading/nft-market/make-sell-order',
+        data: model.toJson(),
+      );
+
+      try {
+        //final responseData = response.data as Map<String, dynamic>;
+        //final data = handleFullResponse<Map>(responseData);
+
+        return DC.data(true);
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, bool>> postNFTMarketCancelSellOrderRequest(
+    NftMarketCancelSellOrderRequestModel model,
+  ) async {
+    try {
+      final _ = await _apiClient.post(
+        '${_apiClient.options.walletApi}/trading/nft-market/cancel-sell-order',
+        data: model.toJson(),
+      );
+
+      try {
+        //final responseData = response.data as Map<String, dynamic>;
+        //final data = handleFullResponse<Map>(responseData);
+
+        return DC.data(true);
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, bool>> postNFTMarketBuyOrderRequest(
+    NftMarketBuyOrderRequestModel model,
+  ) async {
+    try {
+      final _ = await _apiClient.post(
+        '${_apiClient.options.walletApi}/trading/nft-market/buy-order',
+        data: model.toJson(),
+      );
+
+      try {
+        //final responseData = response.data as Map<String, dynamic>;
+        //final data = handleFullResponse<Map>(responseData);
+
+        return DC.data(true);
       } catch (e) {
         rethrow;
       }

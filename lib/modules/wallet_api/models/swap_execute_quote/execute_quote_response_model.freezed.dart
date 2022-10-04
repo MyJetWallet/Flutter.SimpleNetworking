@@ -329,9 +329,7 @@ class _$_ExecuteQuoteResponseModel implements _ExecuteQuoteResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ExecuteQuoteResponseModelToJson(
-      this,
-    );
+    return _$$_ExecuteQuoteResponseModelToJson(this);
   }
 }
 

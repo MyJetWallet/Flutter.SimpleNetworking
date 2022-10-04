@@ -157,9 +157,7 @@ class _$_ProfileDeleteAccountRequest implements _ProfileDeleteAccountRequest {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ProfileDeleteAccountRequestToJson(
-      this,
-    );
+    return _$$_ProfileDeleteAccountRequestToJson(this);
   }
 }
 

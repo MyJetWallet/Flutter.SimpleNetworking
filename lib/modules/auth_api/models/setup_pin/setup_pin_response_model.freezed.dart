@@ -131,9 +131,7 @@ class _$_SetupPinResponseModel implements _SetupPinResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SetupPinResponseModelToJson(
-      this,
-    );
+    return _$$_SetupPinResponseModelToJson(this);
   }
 }
 

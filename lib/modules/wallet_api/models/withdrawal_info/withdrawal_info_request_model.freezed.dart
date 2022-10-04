@@ -137,9 +137,7 @@ class _$_WithdrawalInfoRequestModel implements _WithdrawalInfoRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WithdrawalInfoRequestModelToJson(
-      this,
-    );
+    return _$$_WithdrawalInfoRequestModelToJson(this);
   }
 }
 

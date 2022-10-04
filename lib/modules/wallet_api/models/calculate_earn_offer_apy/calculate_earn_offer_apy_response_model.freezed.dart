@@ -374,9 +374,7 @@ class _$_CalculateEarnOfferApyResponseModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CalculateEarnOfferApyResponseModelToJson(
-      this,
-    );
+    return _$$_CalculateEarnOfferApyResponseModelToJson(this);
   }
 }
 
@@ -654,9 +652,7 @@ class _$_TierModel implements _TierModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TierModelToJson(
-      this,
-    );
+    return _$$_TierModelToJson(this);
   }
 }
 

@@ -280,9 +280,7 @@ class _$_WithdrawalInfoResponseModel implements _WithdrawalInfoResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WithdrawalInfoResponseModelToJson(
-      this,
-    );
+    return _$$_WithdrawalInfoResponseModelToJson(this);
   }
 }
 

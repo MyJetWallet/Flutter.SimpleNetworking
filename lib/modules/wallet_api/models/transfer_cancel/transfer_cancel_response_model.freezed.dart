@@ -170,9 +170,7 @@ class _$_TransferCancelResponseModel implements _TransferCancelResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TransferCancelResponseModelToJson(
-      this,
-    );
+    return _$$_TransferCancelResponseModelToJson(this);
   }
 }
 

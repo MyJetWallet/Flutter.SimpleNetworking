@@ -147,9 +147,7 @@ class _$_KeyValueResponseModel implements _KeyValueResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_KeyValueResponseModelToJson(
-      this,
-    );
+    return _$$_KeyValueResponseModelToJson(this);
   }
 }
 

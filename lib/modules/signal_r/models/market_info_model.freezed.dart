@@ -142,9 +142,7 @@ class _$_MarketInfoModel implements _MarketInfoModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MarketInfoModelToJson(
-      this,
-    );
+    return _$$_MarketInfoModelToJson(this);
   }
 }
 
@@ -307,9 +305,7 @@ class _$_TotalMarketInfoModel implements _TotalMarketInfoModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TotalMarketInfoModelToJson(
-      this,
-    );
+    return _$$_TotalMarketInfoModelToJson(this);
   }
 }
 

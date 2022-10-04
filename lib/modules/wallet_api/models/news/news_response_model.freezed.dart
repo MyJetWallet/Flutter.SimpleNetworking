@@ -134,9 +134,7 @@ class _$_NewsResponseModel implements _NewsResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NewsResponseModelToJson(
-      this,
-    );
+    return _$$_NewsResponseModelToJson(this);
   }
 }
 
@@ -384,9 +382,7 @@ class _$_NewsModel implements _NewsModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NewsModelToJson(
-      this,
-    );
+    return _$$_NewsModelToJson(this);
   }
 }
 

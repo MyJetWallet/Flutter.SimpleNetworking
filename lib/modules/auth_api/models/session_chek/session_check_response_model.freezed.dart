@@ -213,9 +213,7 @@ class _$_SessionCheckResponseModel implements _SessionCheckResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SessionCheckResponseModelToJson(
-      this,
-    );
+    return _$$_SessionCheckResponseModelToJson(this);
   }
 }
 

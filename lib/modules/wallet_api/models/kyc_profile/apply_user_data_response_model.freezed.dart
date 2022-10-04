@@ -133,9 +133,7 @@ class _$_ApplyUseDataResponseModel implements _ApplyUseDataResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ApplyUseDataResponseModelToJson(
-      this,
-    );
+    return _$$_ApplyUseDataResponseModelToJson(this);
   }
 }
 

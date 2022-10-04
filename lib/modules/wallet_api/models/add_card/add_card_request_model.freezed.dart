@@ -340,9 +340,7 @@ class _$_AddCardRequestModel implements _AddCardRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AddCardRequestModelToJson(
-      this,
-    );
+    return _$$_AddCardRequestModelToJson(this);
   }
 }
 

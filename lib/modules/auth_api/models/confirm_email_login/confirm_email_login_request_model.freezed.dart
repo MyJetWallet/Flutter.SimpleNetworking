@@ -196,9 +196,7 @@ class _$_ConfirmEmailLoginRequestModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ConfirmEmailLoginRequestModelToJson(
-      this,
-    );
+    return _$$_ConfirmEmailLoginRequestModelToJson(this);
   }
 }
 

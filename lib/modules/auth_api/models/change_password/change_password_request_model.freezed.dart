@@ -152,9 +152,7 @@ class _$_ChangePasswordRequestModel implements _ChangePasswordRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ChangePasswordRequestModelToJson(
-      this,
-    );
+    return _$$_ChangePasswordRequestModelToJson(this);
   }
 }
 

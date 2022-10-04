@@ -103,7 +103,7 @@ const emailPasswordIncorrectEn =
     'The email or password you entered is incorrect';
 
 const pinIncorrectFinalEn =
-    'Wrong PIN. Too many attempts. Try again later';
+    'Wrong code. Too many attempts. Try again later';
 
 const pinIncorrectEn =
     'The code you entered is incorrect,';

@@ -135,9 +135,7 @@ class _$_ServerTimeResponseModel implements _ServerTimeResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ServerTimeResponseModelToJson(
-      this,
-    );
+    return _$$_ServerTimeResponseModelToJson(this);
   }
 }
 

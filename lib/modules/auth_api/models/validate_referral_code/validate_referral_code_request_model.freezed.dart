@@ -141,9 +141,7 @@ class _$_ValidateReferralCodeRequestModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ValidateReferralCodeRequestModelToJson(
-      this,
-    );
+    return _$$_ValidateReferralCodeRequestModelToJson(this);
   }
 }
 

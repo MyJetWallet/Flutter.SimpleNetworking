@@ -130,9 +130,7 @@ class _$_RemoteConfigCircle implements _RemoteConfigCircle {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RemoteConfigCircleToJson(
-      this,
-    );
+    return _$$_RemoteConfigCircleToJson(this);
   }
 }
 

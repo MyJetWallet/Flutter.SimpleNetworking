@@ -142,9 +142,7 @@ class _$_WalletHistoryResponseModel implements _WalletHistoryResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WalletHistoryResponseModelToJson(
-      this,
-    );
+    return _$$_WalletHistoryResponseModelToJson(this);
   }
 }
 

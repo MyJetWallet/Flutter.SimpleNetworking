@@ -238,9 +238,7 @@ class _$_EarnProfileModel implements _EarnProfileModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EarnProfileModelToJson(
-      this,
-    );
+    return _$$_EarnProfileModelToJson(this);
   }
 }
 

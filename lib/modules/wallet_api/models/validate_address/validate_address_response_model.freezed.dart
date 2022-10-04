@@ -156,9 +156,7 @@ class _$_ValidateAddressResponseModel implements _ValidateAddressResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ValidateAddressResponseModelToJson(
-      this,
-    );
+    return _$$_ValidateAddressResponseModelToJson(this);
   }
 }
 

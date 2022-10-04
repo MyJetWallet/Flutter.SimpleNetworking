@@ -135,9 +135,7 @@ class _$_KeyValueRequestModel implements _KeyValueRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_KeyValueRequestModelToJson(
-      this,
-    );
+    return _$$_KeyValueRequestModelToJson(this);
   }
 }
 

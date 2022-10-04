@@ -137,9 +137,7 @@ class _$_DeleteUnlimintCardResponseModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DeleteUnlimintCardResponseModelToJson(
-      this,
-    );
+    return _$$_DeleteUnlimintCardResponseModelToJson(this);
   }
 }
 

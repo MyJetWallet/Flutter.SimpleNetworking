@@ -415,9 +415,7 @@ class _$_GetQuoteResponseModel implements _GetQuoteResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GetQuoteResponseModelToJson(
-      this,
-    );
+    return _$$_GetQuoteResponseModelToJson(this);
   }
 }
 
@@ -627,9 +625,7 @@ class _$_RecurringBuyInfoModel implements _RecurringBuyInfoModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RecurringBuyInfoModelToJson(
-      this,
-    );
+    return _$$_RecurringBuyInfoModelToJson(this);
   }
 }
 

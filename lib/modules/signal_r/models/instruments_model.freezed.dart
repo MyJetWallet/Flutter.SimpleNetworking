@@ -159,9 +159,7 @@ class _$_InstrumentsModel implements _InstrumentsModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_InstrumentsModelToJson(
-      this,
-    );
+    return _$$_InstrumentsModelToJson(this);
   }
 }
 
@@ -420,9 +418,7 @@ class _$_InstrumentModel implements _InstrumentModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_InstrumentModelToJson(
-      this,
-    );
+    return _$$_InstrumentModelToJson(this);
   }
 }
 

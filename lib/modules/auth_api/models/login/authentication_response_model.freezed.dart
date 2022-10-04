@@ -149,9 +149,7 @@ class _$_AuthenticationModel implements _AuthenticationModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AuthenticationModelToJson(
-      this,
-    );
+    return _$$_AuthenticationModelToJson(this);
   }
 }
 

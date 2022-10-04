@@ -153,9 +153,7 @@ class _$_StartEmailLoginResponseModel implements _StartEmailLoginResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StartEmailLoginResponseModelToJson(
-      this,
-    );
+    return _$$_StartEmailLoginResponseModelToJson(this);
   }
 }
 

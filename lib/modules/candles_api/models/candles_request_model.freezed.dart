@@ -228,9 +228,7 @@ class _$_CandlesRequestModel implements _CandlesRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CandlesRequestModelToJson(
-      this,
-    );
+    return _$$_CandlesRequestModelToJson(this);
   }
 }
 

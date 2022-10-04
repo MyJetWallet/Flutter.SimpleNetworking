@@ -135,9 +135,7 @@ class _$_RecurringDeleteRequestModel implements _RecurringDeleteRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RecurringDeleteRequestModelToJson(
-      this,
-    );
+    return _$$_RecurringDeleteRequestModelToJson(this);
   }
 }
 

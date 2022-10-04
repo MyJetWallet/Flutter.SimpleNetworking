@@ -138,9 +138,7 @@ class _$_PeriodPricesModel implements _PeriodPricesModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PeriodPricesModelToJson(
-      this,
-    );
+    return _$$_PeriodPricesModelToJson(this);
   }
 }
 
@@ -404,9 +402,7 @@ class _$_PeriodPriceModel implements _PeriodPriceModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PeriodPriceModelToJson(
-      this,
-    );
+    return _$$_PeriodPriceModelToJson(this);
   }
 }
 
@@ -580,9 +576,7 @@ class _$_PeriodModel implements _PeriodModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PeriodModelToJson(
-      this,
-    );
+    return _$$_PeriodModelToJson(this);
   }
 }
 

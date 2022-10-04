@@ -151,9 +151,7 @@ class _$_WalletHistoryRequestModel implements _WalletHistoryRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WalletHistoryRequestModelToJson(
-      this,
-    );
+    return _$$_WalletHistoryRequestModelToJson(this);
   }
 }
 

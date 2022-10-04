@@ -131,9 +131,7 @@ class _$_DeleteCardRequestModel implements _DeleteCardRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DeleteCardRequestModelToJson(
-      this,
-    );
+    return _$$_DeleteCardRequestModelToJson(this);
   }
 }
 

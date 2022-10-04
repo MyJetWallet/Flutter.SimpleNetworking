@@ -169,9 +169,7 @@ class _$_EarnFullModel implements _EarnFullModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EarnFullModelToJson(
-      this,
-    );
+    return _$$_EarnFullModelToJson(this);
   }
 }
 
@@ -583,9 +581,7 @@ class _$_EarnOfferModel implements _EarnOfferModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EarnOfferModelToJson(
-      this,
-    );
+    return _$$_EarnOfferModelToJson(this);
   }
 }
 
@@ -872,9 +868,7 @@ class _$_TierApySettingsModel implements _TierApySettingsModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TierApySettingsModelToJson(
-      this,
-    );
+    return _$$_TierApySettingsModelToJson(this);
   }
 }
 

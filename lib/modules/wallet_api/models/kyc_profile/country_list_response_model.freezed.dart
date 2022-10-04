@@ -138,9 +138,7 @@ class _$_CountryListResponseModel implements _CountryListResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CountryListResponseModelToJson(
-      this,
-    );
+    return _$$_CountryListResponseModelToJson(this);
   }
 }
 
@@ -304,9 +302,7 @@ class _$_Country implements _Country {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CountryToJson(
-      this,
-    );
+    return _$$_CountryToJson(this);
   }
 }
 

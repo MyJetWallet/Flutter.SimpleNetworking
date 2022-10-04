@@ -180,9 +180,7 @@ class _$_CalculateEarnOfferApyRequestModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CalculateEarnOfferApyRequestModelToJson(
-      this,
-    );
+    return _$$_CalculateEarnOfferApyRequestModelToJson(this);
   }
 }
 

@@ -254,9 +254,7 @@ class _$_TransferByPhoneRequestModel implements _TransferByPhoneRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TransferByPhoneRequestModelToJson(
-      this,
-    );
+    return _$$_TransferByPhoneRequestModelToJson(this);
   }
 }
 

@@ -155,9 +155,7 @@ class _$_MarketReferencesModel implements _MarketReferencesModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MarketReferencesModelToJson(
-      this,
-    );
+    return _$$_MarketReferencesModelToJson(this);
   }
 }
 
@@ -483,9 +481,7 @@ class _$_MarketReferenceModel implements _MarketReferenceModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MarketReferenceModelToJson(
-      this,
-    );
+    return _$$_MarketReferenceModelToJson(this);
   }
 }
 

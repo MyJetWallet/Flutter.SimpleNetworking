@@ -40,6 +40,12 @@ import 'package:simple_networking/modules/wallet_api/models/market_news/market_n
 import 'package:simple_networking/modules/wallet_api/models/market_news/market_news_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/news/news_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/news/news_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/nft_market/nft_market_buy_order_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/nft_market/nft_market_cancel_sell_order_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/nft_market/nft_market_info_response.dart';
+import 'package:simple_networking/modules/wallet_api/models/nft_market/nft_market_is_valid_promo_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/nft_market/nft_market_make_sell_order_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/nft_market/nft_market_preview_buy_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/notification/register_token_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/operation_history/operation_history_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/operation_history/operation_history_response_model.dart';
@@ -461,8 +467,7 @@ class WalletApiRepository {
     );
   }
 
-  Future<DC<ServerRejectException, CardRemoveResponseModel>>
-    cardRemove(
+  Future<DC<ServerRejectException, CardRemoveResponseModel>> cardRemove(
     CardRemoveRequestModel model,
   ) async {
     return _walletApiDataSources.cardRemove(
@@ -470,8 +475,7 @@ class WalletApiRepository {
     );
   }
 
-  Future<DC<ServerRejectException, CardAddResponseModel>>
-      cardAdd(
+  Future<DC<ServerRejectException, CardAddResponseModel>> cardAdd(
     CardAddRequestModel model,
   ) async {
     return _walletApiDataSources.cardAdd(
@@ -480,7 +484,42 @@ class WalletApiRepository {
   }
 
   Future<DC<ServerRejectException, EncryptionKeyCardResponseModel>>
-    encryptionKey() async {
+      encryptionKey() async {
     return _walletApiDataSources.encryptionKey();
+  }
+
+  /// NFT
+
+  Future<DC<ServerRejectException, NftMarketInfoResponseModel>>
+      getNFTMarketInfo(String symbol) async {
+    return _walletApiDataSources.getNFTMarketInfoRequest(symbol);
+  }
+
+  Future<DC<ServerRejectException, NftMarketIsValidPromoResponseModel>>
+      getNFTMarketIsValidPromo(String promocode) async {
+    return _walletApiDataSources.getNFTMarketIsValidPromoRequest(promocode);
+  }
+
+  Future<DC<ServerRejectException, NftMarketPreviewBuyResponseModel>>
+      getNFTMarketPreviewBuy(String symbol) async {
+    return _walletApiDataSources.getNFTMarketPreviewBuyRequest(symbol);
+  }
+
+  Future<DC<ServerRejectException, bool>> postNFTMarketMakeSellOrder(
+    NftMarketMakeSellOrderRequestModel model,
+  ) async {
+    return _walletApiDataSources.postNFTMarketMakeSellOrderRequest(model);
+  }
+
+  Future<DC<ServerRejectException, bool>> postNFTMarketCancelSellOrder(
+    NftMarketCancelSellOrderRequestModel model,
+  ) async {
+    return _walletApiDataSources.postNFTMarketCancelSellOrderRequest(model);
+  }
+
+  Future<DC<ServerRejectException, bool>> postNFTMarketBuyOrder(
+    NftMarketBuyOrderRequestModel model,
+  ) async {
+    return _walletApiDataSources.postNFTMarketBuyOrderRequest(model);
   }
 }

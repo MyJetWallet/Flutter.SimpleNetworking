@@ -15,7 +15,15 @@ Map<String, dynamic> handleFullResponse<T>(
 
   final data = json['data'];
 
-  return T == Map ? data as Map<String, dynamic> : json;
+  if (T == Map) {
+    try {
+      return data as Map<String, dynamic>;
+    } catch (e) {
+      return json;
+    }
+  } else {
+    return json;
+  }
 }
 
 /// Handles common response with just [result] from the API

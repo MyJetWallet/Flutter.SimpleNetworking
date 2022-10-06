@@ -389,7 +389,9 @@ class _$_CardLimitsModel implements _CardLimitsModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CardLimitsModelToJson(this);
+    return _$$_CardLimitsModelToJson(
+      this,
+    );
   }
 }
 

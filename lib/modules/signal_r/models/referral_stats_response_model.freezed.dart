@@ -382,7 +382,9 @@ class _$_ReferralStatsModel implements _ReferralStatsModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ReferralStatsModelToJson(this);
+    return _$$_ReferralStatsModelToJson(
+      this,
+    );
   }
 }
 

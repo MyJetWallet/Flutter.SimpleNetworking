@@ -28,8 +28,9 @@ class NftMarket with _$NftMarket {
     final String? collectionId,
     final double? buyPrice,
     final String? buyAsset,
-    final String? imageName,
     final DateTime? ownerChangedAt,
+    final String? sImage,
+    final String? fImage,
   }) = _NftMarket;
 
   factory NftMarket.fromJson(Map<String, dynamic> json) =>

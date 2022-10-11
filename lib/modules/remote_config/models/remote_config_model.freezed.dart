@@ -20,6 +20,8 @@ RemoteConfigModel _$RemoteConfigModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$RemoteConfigModel {
+  @JsonKey(name: 'NFT')
+  RemoteConfigNftModel get nft => throw _privateConstructorUsedError;
   @JsonKey(name: 'Analytics')
   RemoteConfigAnalyticsModel get analytics =>
       throw _privateConstructorUsedError;
@@ -53,7 +55,9 @@ abstract class $RemoteConfigModelCopyWith<$Res> {
           RemoteConfigModel value, $Res Function(RemoteConfigModel) then) =
       _$RemoteConfigModelCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'Analytics')
+      {@JsonKey(name: 'NFT')
+          RemoteConfigNftModel nft,
+      @JsonKey(name: 'Analytics')
           RemoteConfigAnalyticsModel analytics,
       @JsonKey(name: 'AppConfig')
           RemoteConfigAppconfigModel appConfig,
@@ -70,6 +74,7 @@ abstract class $RemoteConfigModelCopyWith<$Res> {
       @JsonKey(name: 'Versioning')
           RemoteConfogVersioningModel versioning});
 
+  $RemoteConfigNftModelCopyWith<$Res> get nft;
   $RemoteConfigAnalyticsModelCopyWith<$Res> get analytics;
   $RemoteConfigAppconfigModelCopyWith<$Res> get appConfig;
   $RemoteConfigAppsflyerCopyWith<$Res> get appsFlyer;
@@ -90,6 +95,7 @@ class _$RemoteConfigModelCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? nft = freezed,
     Object? analytics = freezed,
     Object? appConfig = freezed,
     Object? appsFlyer = freezed,
@@ -100,6 +106,10 @@ class _$RemoteConfigModelCopyWithImpl<$Res>
     Object? versioning = freezed,
   }) {
     return _then(_value.copyWith(
+      nft: nft == freezed
+          ? _value.nft
+          : nft // ignore: cast_nullable_to_non_nullable
+              as RemoteConfigNftModel,
       analytics: analytics == freezed
           ? _value.analytics
           : analytics // ignore: cast_nullable_to_non_nullable
@@ -133,6 +143,13 @@ class _$RemoteConfigModelCopyWithImpl<$Res>
           : versioning // ignore: cast_nullable_to_non_nullable
               as RemoteConfogVersioningModel,
     ));
+  }
+
+  @override
+  $RemoteConfigNftModelCopyWith<$Res> get nft {
+    return $RemoteConfigNftModelCopyWith<$Res>(_value.nft, (value) {
+      return _then(_value.copyWith(nft: value));
+    });
   }
 
   @override
@@ -194,7 +211,9 @@ abstract class _$$_RemoteConfigModelCopyWith<$Res>
       __$$_RemoteConfigModelCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'Analytics')
+      {@JsonKey(name: 'NFT')
+          RemoteConfigNftModel nft,
+      @JsonKey(name: 'Analytics')
           RemoteConfigAnalyticsModel analytics,
       @JsonKey(name: 'AppConfig')
           RemoteConfigAppconfigModel appConfig,
@@ -211,6 +230,8 @@ abstract class _$$_RemoteConfigModelCopyWith<$Res>
       @JsonKey(name: 'Versioning')
           RemoteConfogVersioningModel versioning});
 
+  @override
+  $RemoteConfigNftModelCopyWith<$Res> get nft;
   @override
   $RemoteConfigAnalyticsModelCopyWith<$Res> get analytics;
   @override
@@ -240,6 +261,7 @@ class __$$_RemoteConfigModelCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? nft = freezed,
     Object? analytics = freezed,
     Object? appConfig = freezed,
     Object? appsFlyer = freezed,
@@ -250,6 +272,10 @@ class __$$_RemoteConfigModelCopyWithImpl<$Res>
     Object? versioning = freezed,
   }) {
     return _then(_$_RemoteConfigModel(
+      nft: nft == freezed
+          ? _value.nft
+          : nft // ignore: cast_nullable_to_non_nullable
+              as RemoteConfigNftModel,
       analytics: analytics == freezed
           ? _value.analytics
           : analytics // ignore: cast_nullable_to_non_nullable
@@ -290,7 +316,9 @@ class __$$_RemoteConfigModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_RemoteConfigModel implements _RemoteConfigModel {
   _$_RemoteConfigModel(
-      {@JsonKey(name: 'Analytics')
+      {@JsonKey(name: 'NFT')
+          required this.nft,
+      @JsonKey(name: 'Analytics')
           required this.analytics,
       @JsonKey(name: 'AppConfig')
           required this.appConfig,
@@ -312,6 +340,9 @@ class _$_RemoteConfigModel implements _RemoteConfigModel {
   factory _$_RemoteConfigModel.fromJson(Map<String, dynamic> json) =>
       _$$_RemoteConfigModelFromJson(json);
 
+  @override
+  @JsonKey(name: 'NFT')
+  final RemoteConfigNftModel nft;
   @override
   @JsonKey(name: 'Analytics')
   final RemoteConfigAnalyticsModel analytics;
@@ -344,7 +375,7 @@ class _$_RemoteConfigModel implements _RemoteConfigModel {
 
   @override
   String toString() {
-    return 'RemoteConfigModel(analytics: $analytics, appConfig: $appConfig, appsFlyer: $appsFlyer, circle: $circle, connectionFlavors: $connectionFlavors, simplex: $simplex, support: $support, versioning: $versioning)';
+    return 'RemoteConfigModel(nft: $nft, analytics: $analytics, appConfig: $appConfig, appsFlyer: $appsFlyer, circle: $circle, connectionFlavors: $connectionFlavors, simplex: $simplex, support: $support, versioning: $versioning)';
   }
 
   @override
@@ -352,6 +383,7 @@ class _$_RemoteConfigModel implements _RemoteConfigModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_RemoteConfigModel &&
+            const DeepCollectionEquality().equals(other.nft, nft) &&
             const DeepCollectionEquality().equals(other.analytics, analytics) &&
             const DeepCollectionEquality().equals(other.appConfig, appConfig) &&
             const DeepCollectionEquality().equals(other.appsFlyer, appsFlyer) &&
@@ -368,6 +400,7 @@ class _$_RemoteConfigModel implements _RemoteConfigModel {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(nft),
       const DeepCollectionEquality().hash(analytics),
       const DeepCollectionEquality().hash(appConfig),
       const DeepCollectionEquality().hash(appsFlyer),
@@ -391,7 +424,9 @@ class _$_RemoteConfigModel implements _RemoteConfigModel {
 
 abstract class _RemoteConfigModel implements RemoteConfigModel {
   factory _RemoteConfigModel(
-          {@JsonKey(name: 'Analytics')
+          {@JsonKey(name: 'NFT')
+              required final RemoteConfigNftModel nft,
+          @JsonKey(name: 'Analytics')
               required final RemoteConfigAnalyticsModel analytics,
           @JsonKey(name: 'AppConfig')
               required final RemoteConfigAppconfigModel appConfig,
@@ -413,6 +448,9 @@ abstract class _RemoteConfigModel implements RemoteConfigModel {
   factory _RemoteConfigModel.fromJson(Map<String, dynamic> json) =
       _$_RemoteConfigModel.fromJson;
 
+  @override
+  @JsonKey(name: 'NFT')
+  RemoteConfigNftModel get nft;
   @override
   @JsonKey(name: 'Analytics')
   RemoteConfigAnalyticsModel get analytics;

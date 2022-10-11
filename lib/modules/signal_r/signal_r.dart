@@ -344,8 +344,6 @@ class SignalRModule {
       try {
         final assets = AssetsModel.fromJson(_json(data));
 
-        log.w(assets);
-
         _assetsController.add(assets);
       } catch (e) {
         _logger.log(contract, assetsMessage, e);
@@ -358,8 +356,6 @@ class SignalRModule {
       try {
         final balances = BalancesModel.fromJson(_json(data));
         _balancesController.add(balances);
-
-        print(balances);
       } catch (e) {
         _logger.log(contract, balancesMessage, e);
 
@@ -538,6 +534,8 @@ class SignalRModule {
 
     _connection?.on(nftMarketMessage, (data) {
       try {
+        log.d(data);
+
         final market = NFTMarkets.fromJson(_json(data));
 
         log.d(market);

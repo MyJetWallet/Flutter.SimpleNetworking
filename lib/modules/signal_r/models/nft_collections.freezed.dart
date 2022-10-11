@@ -178,6 +178,8 @@ mixin _$NftCollection {
   String? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
+  String? get sImage => throw _privateConstructorUsedError;
+  String? get fImage => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -195,7 +197,9 @@ abstract class $NftCollectionCopyWith<$Res> {
       int? category,
       String? id,
       String? name,
-      String? description});
+      String? description,
+      String? sImage,
+      String? fImage});
 }
 
 /// @nodoc
@@ -214,6 +218,8 @@ class _$NftCollectionCopyWithImpl<$Res>
     Object? id = freezed,
     Object? name = freezed,
     Object? description = freezed,
+    Object? sImage = freezed,
+    Object? fImage = freezed,
   }) {
     return _then(_value.copyWith(
       tags: tags == freezed
@@ -236,6 +242,14 @@ class _$NftCollectionCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      sImage: sImage == freezed
+          ? _value.sImage
+          : sImage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fImage: fImage == freezed
+          ? _value.fImage
+          : fImage // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -252,7 +266,9 @@ abstract class _$$_NftCollectionCopyWith<$Res>
       int? category,
       String? id,
       String? name,
-      String? description});
+      String? description,
+      String? sImage,
+      String? fImage});
 }
 
 /// @nodoc
@@ -273,6 +289,8 @@ class __$$_NftCollectionCopyWithImpl<$Res>
     Object? id = freezed,
     Object? name = freezed,
     Object? description = freezed,
+    Object? sImage = freezed,
+    Object? fImage = freezed,
   }) {
     return _then(_$_NftCollection(
       tags: tags == freezed
@@ -295,6 +313,14 @@ class __$$_NftCollectionCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      sImage: sImage == freezed
+          ? _value.sImage
+          : sImage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fImage: fImage == freezed
+          ? _value.fImage
+          : fImage // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -307,7 +333,9 @@ class _$_NftCollection implements _NftCollection {
       this.category,
       this.id,
       this.name,
-      this.description})
+      this.description,
+      this.sImage,
+      this.fImage})
       : _tags = tags;
 
   factory _$_NftCollection.fromJson(Map<String, dynamic> json) =>
@@ -330,10 +358,14 @@ class _$_NftCollection implements _NftCollection {
   final String? name;
   @override
   final String? description;
+  @override
+  final String? sImage;
+  @override
+  final String? fImage;
 
   @override
   String toString() {
-    return 'NftCollection(tags: $tags, category: $category, id: $id, name: $name, description: $description)';
+    return 'NftCollection(tags: $tags, category: $category, id: $id, name: $name, description: $description, sImage: $sImage, fImage: $fImage)';
   }
 
   @override
@@ -346,7 +378,9 @@ class _$_NftCollection implements _NftCollection {
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality()
-                .equals(other.description, description));
+                .equals(other.description, description) &&
+            const DeepCollectionEquality().equals(other.sImage, sImage) &&
+            const DeepCollectionEquality().equals(other.fImage, fImage));
   }
 
   @JsonKey(ignore: true)
@@ -357,7 +391,9 @@ class _$_NftCollection implements _NftCollection {
       const DeepCollectionEquality().hash(category),
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(description));
+      const DeepCollectionEquality().hash(description),
+      const DeepCollectionEquality().hash(sImage),
+      const DeepCollectionEquality().hash(fImage));
 
   @JsonKey(ignore: true)
   @override
@@ -376,7 +412,9 @@ abstract class _NftCollection implements NftCollection {
       final int? category,
       final String? id,
       final String? name,
-      final String? description}) = _$_NftCollection;
+      final String? description,
+      final String? sImage,
+      final String? fImage}) = _$_NftCollection;
 
   factory _NftCollection.fromJson(Map<String, dynamic> json) =
       _$_NftCollection.fromJson;
@@ -391,6 +429,10 @@ abstract class _NftCollection implements NftCollection {
   String? get name;
   @override
   String? get description;
+  @override
+  String? get sImage;
+  @override
+  String? get fImage;
   @override
   @JsonKey(ignore: true)
   _$$_NftCollectionCopyWith<_$_NftCollection> get copyWith =>

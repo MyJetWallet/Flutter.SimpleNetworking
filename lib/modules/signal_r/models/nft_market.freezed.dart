@@ -181,8 +181,9 @@ mixin _$NftMarket {
   String? get collectionId => throw _privateConstructorUsedError;
   double? get buyPrice => throw _privateConstructorUsedError;
   String? get buyAsset => throw _privateConstructorUsedError;
-  String? get imageName => throw _privateConstructorUsedError;
   DateTime? get ownerChangedAt => throw _privateConstructorUsedError;
+  String? get sImage => throw _privateConstructorUsedError;
+  String? get fImage => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -206,8 +207,9 @@ abstract class $NftMarketCopyWith<$Res> {
       String? collectionId,
       double? buyPrice,
       String? buyAsset,
-      String? imageName,
-      DateTime? ownerChangedAt});
+      DateTime? ownerChangedAt,
+      String? sImage,
+      String? fImage});
 }
 
 /// @nodoc
@@ -231,8 +233,9 @@ class _$NftMarketCopyWithImpl<$Res> implements $NftMarketCopyWith<$Res> {
     Object? collectionId = freezed,
     Object? buyPrice = freezed,
     Object? buyAsset = freezed,
-    Object? imageName = freezed,
     Object? ownerChangedAt = freezed,
+    Object? sImage = freezed,
+    Object? fImage = freezed,
   }) {
     return _then(_value.copyWith(
       clientId: clientId == freezed
@@ -279,14 +282,18 @@ class _$NftMarketCopyWithImpl<$Res> implements $NftMarketCopyWith<$Res> {
           ? _value.buyAsset
           : buyAsset // ignore: cast_nullable_to_non_nullable
               as String?,
-      imageName: imageName == freezed
-          ? _value.imageName
-          : imageName // ignore: cast_nullable_to_non_nullable
-              as String?,
       ownerChangedAt: ownerChangedAt == freezed
           ? _value.ownerChangedAt
           : ownerChangedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      sImage: sImage == freezed
+          ? _value.sImage
+          : sImage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fImage: fImage == freezed
+          ? _value.fImage
+          : fImage // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -309,8 +316,9 @@ abstract class _$$_NftMarketCopyWith<$Res> implements $NftMarketCopyWith<$Res> {
       String? collectionId,
       double? buyPrice,
       String? buyAsset,
-      String? imageName,
-      DateTime? ownerChangedAt});
+      DateTime? ownerChangedAt,
+      String? sImage,
+      String? fImage});
 }
 
 /// @nodoc
@@ -336,8 +344,9 @@ class __$$_NftMarketCopyWithImpl<$Res> extends _$NftMarketCopyWithImpl<$Res>
     Object? collectionId = freezed,
     Object? buyPrice = freezed,
     Object? buyAsset = freezed,
-    Object? imageName = freezed,
     Object? ownerChangedAt = freezed,
+    Object? sImage = freezed,
+    Object? fImage = freezed,
   }) {
     return _then(_$_NftMarket(
       clientId: clientId == freezed
@@ -384,14 +393,18 @@ class __$$_NftMarketCopyWithImpl<$Res> extends _$NftMarketCopyWithImpl<$Res>
           ? _value.buyAsset
           : buyAsset // ignore: cast_nullable_to_non_nullable
               as String?,
-      imageName: imageName == freezed
-          ? _value.imageName
-          : imageName // ignore: cast_nullable_to_non_nullable
-              as String?,
       ownerChangedAt: ownerChangedAt == freezed
           ? _value.ownerChangedAt
           : ownerChangedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      sImage: sImage == freezed
+          ? _value.sImage
+          : sImage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fImage: fImage == freezed
+          ? _value.fImage
+          : fImage // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -411,8 +424,9 @@ class _$_NftMarket implements _NftMarket {
       this.collectionId,
       this.buyPrice,
       this.buyAsset,
-      this.imageName,
-      this.ownerChangedAt});
+      this.ownerChangedAt,
+      this.sImage,
+      this.fImage});
 
   factory _$_NftMarket.fromJson(Map<String, dynamic> json) =>
       _$$_NftMarketFromJson(json);
@@ -440,13 +454,15 @@ class _$_NftMarket implements _NftMarket {
   @override
   final String? buyAsset;
   @override
-  final String? imageName;
-  @override
   final DateTime? ownerChangedAt;
+  @override
+  final String? sImage;
+  @override
+  final String? fImage;
 
   @override
   String toString() {
-    return 'NftMarket(clientId: $clientId, contractAddress: $contractAddress, id: $id, name: $name, sellAsset: $sellAsset, sellPrice: $sellPrice, symbol: $symbol, tokenId: $tokenId, collectionId: $collectionId, buyPrice: $buyPrice, buyAsset: $buyAsset, imageName: $imageName, ownerChangedAt: $ownerChangedAt)';
+    return 'NftMarket(clientId: $clientId, contractAddress: $contractAddress, id: $id, name: $name, sellAsset: $sellAsset, sellPrice: $sellPrice, symbol: $symbol, tokenId: $tokenId, collectionId: $collectionId, buyPrice: $buyPrice, buyAsset: $buyAsset, ownerChangedAt: $ownerChangedAt, sImage: $sImage, fImage: $fImage)';
   }
 
   @override
@@ -467,9 +483,10 @@ class _$_NftMarket implements _NftMarket {
                 .equals(other.collectionId, collectionId) &&
             const DeepCollectionEquality().equals(other.buyPrice, buyPrice) &&
             const DeepCollectionEquality().equals(other.buyAsset, buyAsset) &&
-            const DeepCollectionEquality().equals(other.imageName, imageName) &&
             const DeepCollectionEquality()
-                .equals(other.ownerChangedAt, ownerChangedAt));
+                .equals(other.ownerChangedAt, ownerChangedAt) &&
+            const DeepCollectionEquality().equals(other.sImage, sImage) &&
+            const DeepCollectionEquality().equals(other.fImage, fImage));
   }
 
   @JsonKey(ignore: true)
@@ -487,8 +504,9 @@ class _$_NftMarket implements _NftMarket {
       const DeepCollectionEquality().hash(collectionId),
       const DeepCollectionEquality().hash(buyPrice),
       const DeepCollectionEquality().hash(buyAsset),
-      const DeepCollectionEquality().hash(imageName),
-      const DeepCollectionEquality().hash(ownerChangedAt));
+      const DeepCollectionEquality().hash(ownerChangedAt),
+      const DeepCollectionEquality().hash(sImage),
+      const DeepCollectionEquality().hash(fImage));
 
   @JsonKey(ignore: true)
   @override
@@ -514,8 +532,9 @@ abstract class _NftMarket implements NftMarket {
       final String? collectionId,
       final double? buyPrice,
       final String? buyAsset,
-      final String? imageName,
-      final DateTime? ownerChangedAt}) = _$_NftMarket;
+      final DateTime? ownerChangedAt,
+      final String? sImage,
+      final String? fImage}) = _$_NftMarket;
 
   factory _NftMarket.fromJson(Map<String, dynamic> json) =
       _$_NftMarket.fromJson;
@@ -543,9 +562,11 @@ abstract class _NftMarket implements NftMarket {
   @override
   String? get buyAsset;
   @override
-  String? get imageName;
-  @override
   DateTime? get ownerChangedAt;
+  @override
+  String? get sImage;
+  @override
+  String? get fImage;
   @override
   @JsonKey(ignore: true)
   _$$_NftMarketCopyWith<_$_NftMarket> get copyWith =>

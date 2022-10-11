@@ -22,6 +22,8 @@ class NftCollection with _$NftCollection {
     final String? id,
     final String? name,
     final String? description,
+    final String? sImage,
+    final String? fImage,
   }) = _NftCollection;
 
   factory NftCollection.fromJson(Map<String, dynamic> json) =>

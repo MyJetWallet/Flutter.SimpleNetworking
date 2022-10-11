@@ -27,6 +27,8 @@ _$_NftCollection _$$_NftCollectionFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String?,
       name: json['name'] as String?,
       description: json['description'] as String?,
+      sImage: json['sImage'] as String?,
+      fImage: json['fImage'] as String?,
     );
 
 Map<String, dynamic> _$$_NftCollectionToJson(_$_NftCollection instance) =>
@@ -36,4 +38,6 @@ Map<String, dynamic> _$$_NftCollectionToJson(_$_NftCollection instance) =>
       'id': instance.id,
       'name': instance.name,
       'description': instance.description,
+      'sImage': instance.sImage,
+      'fImage': instance.fImage,
     };

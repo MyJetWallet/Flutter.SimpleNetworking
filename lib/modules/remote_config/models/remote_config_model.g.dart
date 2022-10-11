@@ -8,6 +8,7 @@ part of 'remote_config_model.dart';
 
 _$_RemoteConfigModel _$$_RemoteConfigModelFromJson(Map<String, dynamic> json) =>
     _$_RemoteConfigModel(
+      nft: RemoteConfigNftModel.fromJson(json['NFT'] as Map<String, dynamic>),
       analytics: RemoteConfigAnalyticsModel.fromJson(
           json['Analytics'] as Map<String, dynamic>),
       appConfig: RemoteConfigAppconfigModel.fromJson(
@@ -31,6 +32,7 @@ _$_RemoteConfigModel _$$_RemoteConfigModelFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$_RemoteConfigModelToJson(
         _$_RemoteConfigModel instance) =>
     <String, dynamic>{
+      'NFT': instance.nft,
       'Analytics': instance.analytics,
       'AppConfig': instance.appConfig,
       'AppsFlyer': instance.appsFlyer,

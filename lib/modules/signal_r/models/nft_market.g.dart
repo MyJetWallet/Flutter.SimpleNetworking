@@ -32,10 +32,11 @@ _$_NftMarket _$$_NftMarketFromJson(Map<String, dynamic> json) => _$_NftMarket(
       collectionId: json['collectionId'] as String?,
       buyPrice: (json['buyPrice'] as num?)?.toDouble(),
       buyAsset: json['buyAsset'] as String?,
-      imageName: json['imageName'] as String?,
       ownerChangedAt: json['ownerChangedAt'] == null
           ? null
           : DateTime.parse(json['ownerChangedAt'] as String),
+      sImage: json['sImage'] as String?,
+      fImage: json['fImage'] as String?,
     );
 
 Map<String, dynamic> _$$_NftMarketToJson(_$_NftMarket instance) =>
@@ -51,6 +52,7 @@ Map<String, dynamic> _$$_NftMarketToJson(_$_NftMarket instance) =>
       'collectionId': instance.collectionId,
       'buyPrice': instance.buyPrice,
       'buyAsset': instance.buyAsset,
-      'imageName': instance.imageName,
       'ownerChangedAt': instance.ownerChangedAt?.toIso8601String(),
+      'sImage': instance.sImage,
+      'fImage': instance.fImage,
     };

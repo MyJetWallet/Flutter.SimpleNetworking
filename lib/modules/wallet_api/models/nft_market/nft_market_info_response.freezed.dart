@@ -412,7 +412,9 @@ class _$_NftMarketInfoResponseModel implements _NftMarketInfoResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NftMarketInfoResponseModelToJson(this);
+    return _$$_NftMarketInfoResponseModelToJson(
+      this,
+    );
   }
 }
 

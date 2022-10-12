@@ -131,7 +131,9 @@ class _$_CampaignResponseModel implements _CampaignResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CampaignResponseModelToJson(this);
+    return _$$_CampaignResponseModelToJson(
+      this,
+    );
   }
 }
 
@@ -430,7 +432,9 @@ class _$_CampaignModel implements _CampaignModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CampaignModelToJson(this);
+    return _$$_CampaignModelToJson(
+      this,
+    );
   }
 }
 
@@ -703,7 +707,9 @@ class _$_CampaignConditionModel implements _CampaignConditionModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CampaignConditionModelToJson(this);
+    return _$$_CampaignConditionModelToJson(
+      this,
+    );
   }
 }
 
@@ -927,7 +933,9 @@ class _$_CampaignConditionParametersModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CampaignConditionParametersModelToJson(this);
+    return _$$_CampaignConditionParametersModelToJson(
+      this,
+    );
   }
 }
 
@@ -1092,7 +1100,9 @@ class _$_RewardModel implements _RewardModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RewardModelToJson(this);
+    return _$$_RewardModelToJson(
+      this,
+    );
   }
 }
 

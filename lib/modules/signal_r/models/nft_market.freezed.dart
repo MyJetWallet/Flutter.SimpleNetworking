@@ -142,7 +142,9 @@ class _$_NFTMarkets implements _NFTMarkets {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NFTMarketsToJson(this);
+    return _$$_NFTMarketsToJson(
+      this,
+    );
   }
 }
 
@@ -515,7 +517,9 @@ class _$_NftMarket implements _NftMarket {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NftMarketToJson(this);
+    return _$$_NftMarketToJson(
+      this,
+    );
   }
 }
 

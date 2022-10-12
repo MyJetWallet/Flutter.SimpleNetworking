@@ -154,7 +154,9 @@ class _$_NftMarketIsValidPromoResponseModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NftMarketIsValidPromoResponseModelToJson(this);
+    return _$$_NftMarketIsValidPromoResponseModelToJson(
+      this,
+    );
   }
 }
 

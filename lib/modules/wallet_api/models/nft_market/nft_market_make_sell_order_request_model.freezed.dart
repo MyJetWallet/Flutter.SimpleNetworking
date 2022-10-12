@@ -170,7 +170,9 @@ class _$_NftMarketMakeSellOrderRequestModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NftMarketMakeSellOrderRequestModelToJson(this);
+    return _$$_NftMarketMakeSellOrderRequestModelToJson(
+      this,
+    );
   }
 }
 

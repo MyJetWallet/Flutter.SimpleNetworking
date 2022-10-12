@@ -168,7 +168,9 @@ class _$_NftMarketBuyOrderRequestModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NftMarketBuyOrderRequestModelToJson(this);
+    return _$$_NftMarketBuyOrderRequestModelToJson(
+      this,
+    );
   }
 }
 

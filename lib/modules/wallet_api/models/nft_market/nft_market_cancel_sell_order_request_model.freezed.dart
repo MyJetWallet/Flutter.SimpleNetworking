@@ -139,7 +139,9 @@ class _$_NftMarketCancelSellOrderRequestModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NftMarketCancelSellOrderRequestModelToJson(this);
+    return _$$_NftMarketCancelSellOrderRequestModelToJson(
+      this,
+    );
   }
 }
 

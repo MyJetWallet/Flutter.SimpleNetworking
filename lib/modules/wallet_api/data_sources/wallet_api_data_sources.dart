@@ -5,6 +5,8 @@ import 'package:simple_networking/helpers/handle_api_responses.dart';
 import 'package:simple_networking/helpers/models/server_reject_exception.dart';
 import 'package:simple_networking/modules/wallet_api/models/add_card/add_card_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/all_cards/all_cards_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/base_asset/get_base_assets_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/base_asset/set_base_assets_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/calculate_earn_offer_apy/calculate_earn_offer_apy_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/calculate_earn_offer_apy/calculate_earn_offer_apy_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/card/card_request_model.dart';
@@ -1474,6 +1476,48 @@ class WalletApiDataSources {
         //final data = handleFullResponse<Map>(responseData);
 
         return DC.data(true);
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  /// Base asset
+  Future<DC<ServerRejectException, void>> setBaseAssetRequest(
+      SetBaseAssetsRequestModel model,
+  ) async {
+    try {
+      final _ = await _apiClient.post(
+        '${_apiClient.options.walletApi}/base-asset/set',
+        data: model,
+      );
+
+      try {
+        return DC.data(null);
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+
+  Future<DC<ServerRejectException, GetBaseAssetsResponseModel>>
+  getBaseAssetsListRequest() async {
+    try {
+      final response = await _apiClient.get(
+        '${_apiClient.options.walletApi}/base-asset/available-list',
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+
+        final data = handleFullResponse<Map>(responseData);
+
+        return DC.data(GetBaseAssetsResponseModel.fromJson(data));
       } catch (e) {
         rethrow;
       }

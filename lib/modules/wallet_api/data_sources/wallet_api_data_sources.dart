@@ -369,6 +369,31 @@ class WalletApiDataSources {
     }
   }
 
+  Future<DC<ServerRejectException, CardCheckResponseModel>> cardStart(
+    CardCheckRequestModel model,
+  ) async {
+    try {
+      final response = await _apiClient.post(
+        '${_apiClient.options.walletApi}/kyc/verification/card_start',
+        data: model.toJson(),
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+
+        final data = handleFullResponse(
+          responseData,
+        );
+
+        return DC.data(CardCheckResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
   Future<DC<ServerRejectException, CardVerificationResponseModel>> cardVerification(
     CardVerificationRequestModel model,
   ) async {

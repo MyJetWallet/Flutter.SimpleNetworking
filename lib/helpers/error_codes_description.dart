@@ -106,7 +106,7 @@ const pinIncorrectFinalEn =
     'Wrong code. Too many attempts. Try again later';
 
 const pinIncorrectEn =
-    'The code you entered is incorrect,';
+    'The code you entered is incorrect';
 
 //const emailPasswordIncorrectRu =
 //'Электронная почта или пароль, которые вы ввели, неверны';

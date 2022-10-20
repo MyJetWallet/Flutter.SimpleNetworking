@@ -497,6 +497,14 @@ class WalletApiRepository {
     );
   }
 
+  Future<DC<ServerRejectException, CardCheckResponseModel>> cardStart(
+    CardCheckRequestModel model,
+  ) async {
+    return _walletApiDataSources.cardStart(
+      model,
+    );
+  }
+
   Future<DC<ServerRejectException, CardVerificationResponseModel>> cardVerification(
     CardVerificationRequestModel model,
   ) async {

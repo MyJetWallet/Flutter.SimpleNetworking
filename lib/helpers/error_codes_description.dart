@@ -42,6 +42,7 @@ final errorCodesDescriptionEn = {
   'InvalidExpYear': 'Invalid expiration year',
   'CardCvvInvalid': 'Invalid CVV code',
   'CardExpired': 'Card is expired',
+  'CardNotHonored': 'Card is not honored',
   'PhoneDuplicate': 'Phone duplicate',
   'InvalidCardNumber': 'Invalid card number',
 };

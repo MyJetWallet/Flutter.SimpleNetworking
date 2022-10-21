@@ -112,6 +112,7 @@ const _$OperationTypeEnumMap = {
   OperationType.unknown: 'unknown',
   OperationType.buy: 'buy',
   OperationType.sell: 'sell',
+  OperationType.nftBuy: 18,
 };
 
 const _$StatusEnumMap = {

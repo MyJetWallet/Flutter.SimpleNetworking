@@ -128,9 +128,7 @@ class _$_BalancesModel implements _BalancesModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BalancesModelToJson(
-      this,
-    );
+    return _$$_BalancesModelToJson(this);
   }
 }
 
@@ -568,9 +566,7 @@ class _$_BalanceModel implements _BalanceModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BalanceModelToJson(
-      this,
-    );
+    return _$$_BalanceModelToJson(this);
   }
 }
 

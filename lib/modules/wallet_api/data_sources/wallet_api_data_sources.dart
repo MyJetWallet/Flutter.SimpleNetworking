@@ -48,6 +48,7 @@ import 'package:simple_networking/modules/wallet_api/models/nft_market/nft_marke
 import 'package:simple_networking/modules/wallet_api/models/nft_market/nft_market_is_valid_promo_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/nft_market/nft_market_make_sell_order_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/nft_market/nft_market_preview_buy_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/nft_market/nft_market_preview_sell_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/notification/register_token_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/operation_history/operation_history_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/operation_history/operation_history_response_model.dart';
@@ -103,6 +104,29 @@ class WalletApiDataSources {
       final response = await _apiClient.post(
         '${_apiClient.options.walletApi}/blockchain/generate-deposit-address',
         data: model.toJson(),
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+
+        final data = handleFullResponse<Map>(
+          responseData,
+        );
+
+        return DC.data(DepositAddressResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, DepositAddressResponseModel>>
+      postDepositNFTAddressRequest() async {
+    try {
+      final response = await _apiClient.get(
+        '${_apiClient.options.walletApi}/blockchain/generate-nft-deposit-address',
       );
 
       try {
@@ -1418,6 +1442,29 @@ class WalletApiDataSources {
     }
   }
 
+  Future<DC<ServerRejectException, NftMarketPreviewSellResponseModel>>
+      getNFTMarketPreviewSellRequest(
+    String symbol,
+  ) async {
+    try {
+      final response = await _apiClient.get(
+        '${_apiClient.options.walletApi}/trading/nft-market/preview-sell/$symbol',
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+
+        final data = handleFullResponse<Map>(responseData);
+
+        return DC.data(NftMarketPreviewSellResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
   Future<DC<ServerRejectException, bool>> postNFTMarketMakeSellOrderRequest(
     NftMarketMakeSellOrderRequestModel model,
   ) async {
@@ -1486,7 +1533,7 @@ class WalletApiDataSources {
 
   /// Base asset
   Future<DC<ServerRejectException, void>> setBaseAssetRequest(
-      SetBaseAssetsRequestModel model,
+    SetBaseAssetsRequestModel model,
   ) async {
     try {
       final _ = await _apiClient.post(
@@ -1504,9 +1551,8 @@ class WalletApiDataSources {
     }
   }
 
-
   Future<DC<ServerRejectException, GetBaseAssetsResponseModel>>
-  getBaseAssetsListRequest() async {
+      getBaseAssetsListRequest() async {
     try {
       final response = await _apiClient.get(
         '${_apiClient.options.walletApi}/base-asset/available-list',

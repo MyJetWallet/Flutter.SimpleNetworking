@@ -132,9 +132,7 @@ class _$_AssetWithdrawalFeeModel implements _AssetWithdrawalFeeModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AssetWithdrawalFeeModelToJson(
-      this,
-    );
+    return _$$_AssetWithdrawalFeeModelToJson(this);
   }
 }
 
@@ -328,9 +326,7 @@ class _$_AssetFeeModel implements _AssetFeeModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AssetFeeModelToJson(
-      this,
-    );
+    return _$$_AssetFeeModelToJson(this);
   }
 }
 

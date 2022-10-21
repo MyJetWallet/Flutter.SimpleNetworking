@@ -142,9 +142,7 @@ class _$_NFTMarkets implements _NFTMarkets {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NFTMarketsToJson(
-      this,
-    );
+    return _$$_NFTMarketsToJson(this);
   }
 }
 
@@ -177,15 +175,25 @@ mixin _$NftMarket {
   int? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get sellAsset => throw _privateConstructorUsedError;
-  double? get sellPrice => throw _privateConstructorUsedError;
+  @DecimalNullSerialiser()
+  Decimal? get sellPrice => throw _privateConstructorUsedError;
   String? get symbol => throw _privateConstructorUsedError;
   String? get tokenId => throw _privateConstructorUsedError;
   String? get collectionId => throw _privateConstructorUsedError;
-  double? get buyPrice => throw _privateConstructorUsedError;
+  @DecimalNullSerialiser()
+  Decimal? get buyPrice => throw _privateConstructorUsedError;
   String? get buyAsset => throw _privateConstructorUsedError;
   DateTime? get ownerChangedAt => throw _privateConstructorUsedError;
   String? get sImage => throw _privateConstructorUsedError;
   String? get fImage => throw _privateConstructorUsedError;
+  String? get tradingAsset => throw _privateConstructorUsedError;
+  @DecimalNullSerialiser()
+  Decimal? get fee => throw _privateConstructorUsedError;
+  DateTime? get mintDate => throw _privateConstructorUsedError;
+  int? get rarityId => throw _privateConstructorUsedError;
+  String? get blockchain => throw _privateConstructorUsedError;
+  int? get tokenStandard => throw _privateConstructorUsedError;
+  bool? get onSell => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -203,15 +211,22 @@ abstract class $NftMarketCopyWith<$Res> {
       int? id,
       String? name,
       String? sellAsset,
-      double? sellPrice,
+      @DecimalNullSerialiser() Decimal? sellPrice,
       String? symbol,
       String? tokenId,
       String? collectionId,
-      double? buyPrice,
+      @DecimalNullSerialiser() Decimal? buyPrice,
       String? buyAsset,
       DateTime? ownerChangedAt,
       String? sImage,
-      String? fImage});
+      String? fImage,
+      String? tradingAsset,
+      @DecimalNullSerialiser() Decimal? fee,
+      DateTime? mintDate,
+      int? rarityId,
+      String? blockchain,
+      int? tokenStandard,
+      bool? onSell});
 }
 
 /// @nodoc
@@ -238,6 +253,13 @@ class _$NftMarketCopyWithImpl<$Res> implements $NftMarketCopyWith<$Res> {
     Object? ownerChangedAt = freezed,
     Object? sImage = freezed,
     Object? fImage = freezed,
+    Object? tradingAsset = freezed,
+    Object? fee = freezed,
+    Object? mintDate = freezed,
+    Object? rarityId = freezed,
+    Object? blockchain = freezed,
+    Object? tokenStandard = freezed,
+    Object? onSell = freezed,
   }) {
     return _then(_value.copyWith(
       clientId: clientId == freezed
@@ -263,7 +285,7 @@ class _$NftMarketCopyWithImpl<$Res> implements $NftMarketCopyWith<$Res> {
       sellPrice: sellPrice == freezed
           ? _value.sellPrice
           : sellPrice // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as Decimal?,
       symbol: symbol == freezed
           ? _value.symbol
           : symbol // ignore: cast_nullable_to_non_nullable
@@ -279,7 +301,7 @@ class _$NftMarketCopyWithImpl<$Res> implements $NftMarketCopyWith<$Res> {
       buyPrice: buyPrice == freezed
           ? _value.buyPrice
           : buyPrice // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as Decimal?,
       buyAsset: buyAsset == freezed
           ? _value.buyAsset
           : buyAsset // ignore: cast_nullable_to_non_nullable
@@ -296,6 +318,34 @@ class _$NftMarketCopyWithImpl<$Res> implements $NftMarketCopyWith<$Res> {
           ? _value.fImage
           : fImage // ignore: cast_nullable_to_non_nullable
               as String?,
+      tradingAsset: tradingAsset == freezed
+          ? _value.tradingAsset
+          : tradingAsset // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fee: fee == freezed
+          ? _value.fee
+          : fee // ignore: cast_nullable_to_non_nullable
+              as Decimal?,
+      mintDate: mintDate == freezed
+          ? _value.mintDate
+          : mintDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      rarityId: rarityId == freezed
+          ? _value.rarityId
+          : rarityId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      blockchain: blockchain == freezed
+          ? _value.blockchain
+          : blockchain // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tokenStandard: tokenStandard == freezed
+          ? _value.tokenStandard
+          : tokenStandard // ignore: cast_nullable_to_non_nullable
+              as int?,
+      onSell: onSell == freezed
+          ? _value.onSell
+          : onSell // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -312,15 +362,22 @@ abstract class _$$_NftMarketCopyWith<$Res> implements $NftMarketCopyWith<$Res> {
       int? id,
       String? name,
       String? sellAsset,
-      double? sellPrice,
+      @DecimalNullSerialiser() Decimal? sellPrice,
       String? symbol,
       String? tokenId,
       String? collectionId,
-      double? buyPrice,
+      @DecimalNullSerialiser() Decimal? buyPrice,
       String? buyAsset,
       DateTime? ownerChangedAt,
       String? sImage,
-      String? fImage});
+      String? fImage,
+      String? tradingAsset,
+      @DecimalNullSerialiser() Decimal? fee,
+      DateTime? mintDate,
+      int? rarityId,
+      String? blockchain,
+      int? tokenStandard,
+      bool? onSell});
 }
 
 /// @nodoc
@@ -349,6 +406,13 @@ class __$$_NftMarketCopyWithImpl<$Res> extends _$NftMarketCopyWithImpl<$Res>
     Object? ownerChangedAt = freezed,
     Object? sImage = freezed,
     Object? fImage = freezed,
+    Object? tradingAsset = freezed,
+    Object? fee = freezed,
+    Object? mintDate = freezed,
+    Object? rarityId = freezed,
+    Object? blockchain = freezed,
+    Object? tokenStandard = freezed,
+    Object? onSell = freezed,
   }) {
     return _then(_$_NftMarket(
       clientId: clientId == freezed
@@ -374,7 +438,7 @@ class __$$_NftMarketCopyWithImpl<$Res> extends _$NftMarketCopyWithImpl<$Res>
       sellPrice: sellPrice == freezed
           ? _value.sellPrice
           : sellPrice // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as Decimal?,
       symbol: symbol == freezed
           ? _value.symbol
           : symbol // ignore: cast_nullable_to_non_nullable
@@ -390,7 +454,7 @@ class __$$_NftMarketCopyWithImpl<$Res> extends _$NftMarketCopyWithImpl<$Res>
       buyPrice: buyPrice == freezed
           ? _value.buyPrice
           : buyPrice // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as Decimal?,
       buyAsset: buyAsset == freezed
           ? _value.buyAsset
           : buyAsset // ignore: cast_nullable_to_non_nullable
@@ -407,6 +471,34 @@ class __$$_NftMarketCopyWithImpl<$Res> extends _$NftMarketCopyWithImpl<$Res>
           ? _value.fImage
           : fImage // ignore: cast_nullable_to_non_nullable
               as String?,
+      tradingAsset: tradingAsset == freezed
+          ? _value.tradingAsset
+          : tradingAsset // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fee: fee == freezed
+          ? _value.fee
+          : fee // ignore: cast_nullable_to_non_nullable
+              as Decimal?,
+      mintDate: mintDate == freezed
+          ? _value.mintDate
+          : mintDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      rarityId: rarityId == freezed
+          ? _value.rarityId
+          : rarityId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      blockchain: blockchain == freezed
+          ? _value.blockchain
+          : blockchain // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tokenStandard: tokenStandard == freezed
+          ? _value.tokenStandard
+          : tokenStandard // ignore: cast_nullable_to_non_nullable
+              as int?,
+      onSell: onSell == freezed
+          ? _value.onSell
+          : onSell // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -420,15 +512,22 @@ class _$_NftMarket implements _NftMarket {
       this.id,
       this.name,
       this.sellAsset,
-      this.sellPrice,
+      @DecimalNullSerialiser() this.sellPrice,
       this.symbol,
       this.tokenId,
       this.collectionId,
-      this.buyPrice,
+      @DecimalNullSerialiser() this.buyPrice,
       this.buyAsset,
       this.ownerChangedAt,
       this.sImage,
-      this.fImage});
+      this.fImage,
+      this.tradingAsset,
+      @DecimalNullSerialiser() this.fee,
+      this.mintDate,
+      this.rarityId,
+      this.blockchain,
+      this.tokenStandard,
+      this.onSell});
 
   factory _$_NftMarket.fromJson(Map<String, dynamic> json) =>
       _$$_NftMarketFromJson(json);
@@ -444,7 +543,8 @@ class _$_NftMarket implements _NftMarket {
   @override
   final String? sellAsset;
   @override
-  final double? sellPrice;
+  @DecimalNullSerialiser()
+  final Decimal? sellPrice;
   @override
   final String? symbol;
   @override
@@ -452,7 +552,8 @@ class _$_NftMarket implements _NftMarket {
   @override
   final String? collectionId;
   @override
-  final double? buyPrice;
+  @DecimalNullSerialiser()
+  final Decimal? buyPrice;
   @override
   final String? buyAsset;
   @override
@@ -461,10 +562,25 @@ class _$_NftMarket implements _NftMarket {
   final String? sImage;
   @override
   final String? fImage;
+  @override
+  final String? tradingAsset;
+  @override
+  @DecimalNullSerialiser()
+  final Decimal? fee;
+  @override
+  final DateTime? mintDate;
+  @override
+  final int? rarityId;
+  @override
+  final String? blockchain;
+  @override
+  final int? tokenStandard;
+  @override
+  final bool? onSell;
 
   @override
   String toString() {
-    return 'NftMarket(clientId: $clientId, contractAddress: $contractAddress, id: $id, name: $name, sellAsset: $sellAsset, sellPrice: $sellPrice, symbol: $symbol, tokenId: $tokenId, collectionId: $collectionId, buyPrice: $buyPrice, buyAsset: $buyAsset, ownerChangedAt: $ownerChangedAt, sImage: $sImage, fImage: $fImage)';
+    return 'NftMarket(clientId: $clientId, contractAddress: $contractAddress, id: $id, name: $name, sellAsset: $sellAsset, sellPrice: $sellPrice, symbol: $symbol, tokenId: $tokenId, collectionId: $collectionId, buyPrice: $buyPrice, buyAsset: $buyAsset, ownerChangedAt: $ownerChangedAt, sImage: $sImage, fImage: $fImage, tradingAsset: $tradingAsset, fee: $fee, mintDate: $mintDate, rarityId: $rarityId, blockchain: $blockchain, tokenStandard: $tokenStandard, onSell: $onSell)';
   }
 
   @override
@@ -488,27 +604,45 @@ class _$_NftMarket implements _NftMarket {
             const DeepCollectionEquality()
                 .equals(other.ownerChangedAt, ownerChangedAt) &&
             const DeepCollectionEquality().equals(other.sImage, sImage) &&
-            const DeepCollectionEquality().equals(other.fImage, fImage));
+            const DeepCollectionEquality().equals(other.fImage, fImage) &&
+            const DeepCollectionEquality()
+                .equals(other.tradingAsset, tradingAsset) &&
+            const DeepCollectionEquality().equals(other.fee, fee) &&
+            const DeepCollectionEquality().equals(other.mintDate, mintDate) &&
+            const DeepCollectionEquality().equals(other.rarityId, rarityId) &&
+            const DeepCollectionEquality()
+                .equals(other.blockchain, blockchain) &&
+            const DeepCollectionEquality()
+                .equals(other.tokenStandard, tokenStandard) &&
+            const DeepCollectionEquality().equals(other.onSell, onSell));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(clientId),
-      const DeepCollectionEquality().hash(contractAddress),
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(sellAsset),
-      const DeepCollectionEquality().hash(sellPrice),
-      const DeepCollectionEquality().hash(symbol),
-      const DeepCollectionEquality().hash(tokenId),
-      const DeepCollectionEquality().hash(collectionId),
-      const DeepCollectionEquality().hash(buyPrice),
-      const DeepCollectionEquality().hash(buyAsset),
-      const DeepCollectionEquality().hash(ownerChangedAt),
-      const DeepCollectionEquality().hash(sImage),
-      const DeepCollectionEquality().hash(fImage));
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        const DeepCollectionEquality().hash(clientId),
+        const DeepCollectionEquality().hash(contractAddress),
+        const DeepCollectionEquality().hash(id),
+        const DeepCollectionEquality().hash(name),
+        const DeepCollectionEquality().hash(sellAsset),
+        const DeepCollectionEquality().hash(sellPrice),
+        const DeepCollectionEquality().hash(symbol),
+        const DeepCollectionEquality().hash(tokenId),
+        const DeepCollectionEquality().hash(collectionId),
+        const DeepCollectionEquality().hash(buyPrice),
+        const DeepCollectionEquality().hash(buyAsset),
+        const DeepCollectionEquality().hash(ownerChangedAt),
+        const DeepCollectionEquality().hash(sImage),
+        const DeepCollectionEquality().hash(fImage),
+        const DeepCollectionEquality().hash(tradingAsset),
+        const DeepCollectionEquality().hash(fee),
+        const DeepCollectionEquality().hash(mintDate),
+        const DeepCollectionEquality().hash(rarityId),
+        const DeepCollectionEquality().hash(blockchain),
+        const DeepCollectionEquality().hash(tokenStandard),
+        const DeepCollectionEquality().hash(onSell)
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -517,9 +651,7 @@ class _$_NftMarket implements _NftMarket {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NftMarketToJson(
-      this,
-    );
+    return _$$_NftMarketToJson(this);
   }
 }
 
@@ -530,15 +662,22 @@ abstract class _NftMarket implements NftMarket {
       final int? id,
       final String? name,
       final String? sellAsset,
-      final double? sellPrice,
+      @DecimalNullSerialiser() final Decimal? sellPrice,
       final String? symbol,
       final String? tokenId,
       final String? collectionId,
-      final double? buyPrice,
+      @DecimalNullSerialiser() final Decimal? buyPrice,
       final String? buyAsset,
       final DateTime? ownerChangedAt,
       final String? sImage,
-      final String? fImage}) = _$_NftMarket;
+      final String? fImage,
+      final String? tradingAsset,
+      @DecimalNullSerialiser() final Decimal? fee,
+      final DateTime? mintDate,
+      final int? rarityId,
+      final String? blockchain,
+      final int? tokenStandard,
+      final bool? onSell}) = _$_NftMarket;
 
   factory _NftMarket.fromJson(Map<String, dynamic> json) =
       _$_NftMarket.fromJson;
@@ -554,7 +693,8 @@ abstract class _NftMarket implements NftMarket {
   @override
   String? get sellAsset;
   @override
-  double? get sellPrice;
+  @DecimalNullSerialiser()
+  Decimal? get sellPrice;
   @override
   String? get symbol;
   @override
@@ -562,7 +702,8 @@ abstract class _NftMarket implements NftMarket {
   @override
   String? get collectionId;
   @override
-  double? get buyPrice;
+  @DecimalNullSerialiser()
+  Decimal? get buyPrice;
   @override
   String? get buyAsset;
   @override
@@ -571,6 +712,21 @@ abstract class _NftMarket implements NftMarket {
   String? get sImage;
   @override
   String? get fImage;
+  @override
+  String? get tradingAsset;
+  @override
+  @DecimalNullSerialiser()
+  Decimal? get fee;
+  @override
+  DateTime? get mintDate;
+  @override
+  int? get rarityId;
+  @override
+  String? get blockchain;
+  @override
+  int? get tokenStandard;
+  @override
+  bool? get onSell;
   @override
   @JsonKey(ignore: true)
   _$$_NftMarketCopyWith<_$_NftMarket> get copyWith =>

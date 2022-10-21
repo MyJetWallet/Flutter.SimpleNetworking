@@ -30,6 +30,7 @@ const cardsMessage = 'cards';
 const cardLimitsMessage = 'cards-limits';
 const nftCollectionsMessage = 'nft-collections';
 const nftMarketMessage = 'nft-market';
+const nftPortfolioMessage = 'nft-portfolio';
 
 // KeyValue
 const watchlistKey = 'watchlist';

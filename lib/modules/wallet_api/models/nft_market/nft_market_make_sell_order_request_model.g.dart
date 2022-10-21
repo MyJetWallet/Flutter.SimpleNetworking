@@ -11,7 +11,7 @@ _$_NftMarketMakeSellOrderRequestModel
         _$_NftMarketMakeSellOrderRequestModel(
           symbol: json['symbol'] as String?,
           sellAsset: json['sellAsset'] as String?,
-          sellPrice: json['sellPrice'] as int?,
+          sellPrice: const DecimalSerialiser().fromJson(json['sellPrice']),
         );
 
 Map<String, dynamic> _$$_NftMarketMakeSellOrderRequestModelToJson(
@@ -19,5 +19,12 @@ Map<String, dynamic> _$$_NftMarketMakeSellOrderRequestModelToJson(
     <String, dynamic>{
       'symbol': instance.symbol,
       'sellAsset': instance.sellAsset,
-      'sellPrice': instance.sellPrice,
+      'sellPrice': _$JsonConverterToJson<dynamic, Decimal>(
+          instance.sellPrice, const DecimalSerialiser().toJson),
     };
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);

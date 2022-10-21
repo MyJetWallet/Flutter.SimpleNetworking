@@ -1,4 +1,6 @@
+import 'package:decimal/decimal.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:simple_networking/helpers/decimal_serialiser.dart';
 
 part 'nft_market.freezed.dart';
 part 'nft_market.g.dart';
@@ -22,15 +24,22 @@ class NftMarket with _$NftMarket {
     final int? id,
     final String? name,
     final String? sellAsset,
-    final double? sellPrice,
+    @DecimalNullSerialiser() Decimal? sellPrice,
     final String? symbol,
     final String? tokenId,
     final String? collectionId,
-    final double? buyPrice,
+    @DecimalNullSerialiser() Decimal? buyPrice,
     final String? buyAsset,
     final DateTime? ownerChangedAt,
     final String? sImage,
     final String? fImage,
+    final String? tradingAsset,
+    @DecimalNullSerialiser() Decimal? fee,
+    final DateTime? mintDate,
+    final int? rarityId,
+    final String? blockchain,
+    final int? tokenStandard,
+    final bool? onSell,
   }) = _NftMarket;
 
   factory NftMarket.fromJson(Map<String, dynamic> json) =>

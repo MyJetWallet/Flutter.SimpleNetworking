@@ -134,9 +134,7 @@ class _$_SetBaseAssetsRequestModel implements _SetBaseAssetsRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SetBaseAssetsRequestModelToJson(
-      this,
-    );
+    return _$$_SetBaseAssetsRequestModelToJson(this);
   }
 }
 

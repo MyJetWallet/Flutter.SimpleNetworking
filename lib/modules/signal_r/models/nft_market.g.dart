@@ -26,17 +26,26 @@ _$_NftMarket _$$_NftMarketFromJson(Map<String, dynamic> json) => _$_NftMarket(
       id: json['id'] as int?,
       name: json['name'] as String?,
       sellAsset: json['sellAsset'] as String?,
-      sellPrice: (json['sellPrice'] as num?)?.toDouble(),
+      sellPrice: const DecimalNullSerialiser().fromJson(json['sellPrice']),
       symbol: json['symbol'] as String?,
       tokenId: json['tokenId'] as String?,
       collectionId: json['collectionId'] as String?,
-      buyPrice: (json['buyPrice'] as num?)?.toDouble(),
+      buyPrice: const DecimalNullSerialiser().fromJson(json['buyPrice']),
       buyAsset: json['buyAsset'] as String?,
       ownerChangedAt: json['ownerChangedAt'] == null
           ? null
           : DateTime.parse(json['ownerChangedAt'] as String),
       sImage: json['sImage'] as String?,
       fImage: json['fImage'] as String?,
+      tradingAsset: json['tradingAsset'] as String?,
+      fee: const DecimalNullSerialiser().fromJson(json['fee']),
+      mintDate: json['mintDate'] == null
+          ? null
+          : DateTime.parse(json['mintDate'] as String),
+      rarityId: json['rarityId'] as int?,
+      blockchain: json['blockchain'] as String?,
+      tokenStandard: json['tokenStandard'] as int?,
+      onSell: json['onSell'] as bool?,
     );
 
 Map<String, dynamic> _$$_NftMarketToJson(_$_NftMarket instance) =>
@@ -46,13 +55,20 @@ Map<String, dynamic> _$$_NftMarketToJson(_$_NftMarket instance) =>
       'id': instance.id,
       'name': instance.name,
       'sellAsset': instance.sellAsset,
-      'sellPrice': instance.sellPrice,
+      'sellPrice': const DecimalNullSerialiser().toJson(instance.sellPrice),
       'symbol': instance.symbol,
       'tokenId': instance.tokenId,
       'collectionId': instance.collectionId,
-      'buyPrice': instance.buyPrice,
+      'buyPrice': const DecimalNullSerialiser().toJson(instance.buyPrice),
       'buyAsset': instance.buyAsset,
       'ownerChangedAt': instance.ownerChangedAt?.toIso8601String(),
       'sImage': instance.sImage,
       'fImage': instance.fImage,
+      'tradingAsset': instance.tradingAsset,
+      'fee': const DecimalNullSerialiser().toJson(instance.fee),
+      'mintDate': instance.mintDate?.toIso8601String(),
+      'rarityId': instance.rarityId,
+      'blockchain': instance.blockchain,
+      'tokenStandard': instance.tokenStandard,
+      'onSell': instance.onSell,
     };

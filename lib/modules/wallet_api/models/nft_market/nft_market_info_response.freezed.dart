@@ -26,16 +26,19 @@ mixin _$NftMarketInfoResponseModel {
   String? get tokenId => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
-  int? get sellPrice => throw _privateConstructorUsedError;
+  @DecimalSerialiser()
+  Decimal? get sellPrice => throw _privateConstructorUsedError;
   String? get sellAsset => throw _privateConstructorUsedError;
   String? get collectionId => throw _privateConstructorUsedError;
   DateTime? get ownerChangedAt => throw _privateConstructorUsedError;
-  int? get buyPrice => throw _privateConstructorUsedError;
+  @DecimalSerialiser()
+  Decimal? get buyPrice => throw _privateConstructorUsedError;
   String? get imageName => throw _privateConstructorUsedError;
   String? get shortUrl => throw _privateConstructorUsedError;
   String? get url => throw _privateConstructorUsedError;
   String? get buyAsset => throw _privateConstructorUsedError;
-  int? get fee => throw _privateConstructorUsedError;
+  @DecimalSerialiser()
+  Decimal? get fee => throw _privateConstructorUsedError;
   String? get shortDescription => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -55,16 +58,16 @@ abstract class $NftMarketInfoResponseModelCopyWith<$Res> {
       String? tokenId,
       String? description,
       String? name,
-      int? sellPrice,
+      @DecimalSerialiser() Decimal? sellPrice,
       String? sellAsset,
       String? collectionId,
       DateTime? ownerChangedAt,
-      int? buyPrice,
+      @DecimalSerialiser() Decimal? buyPrice,
       String? imageName,
       String? shortUrl,
       String? url,
       String? buyAsset,
-      int? fee,
+      @DecimalSerialiser() Decimal? fee,
       String? shortDescription});
 }
 
@@ -120,7 +123,7 @@ class _$NftMarketInfoResponseModelCopyWithImpl<$Res>
       sellPrice: sellPrice == freezed
           ? _value.sellPrice
           : sellPrice // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as Decimal?,
       sellAsset: sellAsset == freezed
           ? _value.sellAsset
           : sellAsset // ignore: cast_nullable_to_non_nullable
@@ -136,7 +139,7 @@ class _$NftMarketInfoResponseModelCopyWithImpl<$Res>
       buyPrice: buyPrice == freezed
           ? _value.buyPrice
           : buyPrice // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as Decimal?,
       imageName: imageName == freezed
           ? _value.imageName
           : imageName // ignore: cast_nullable_to_non_nullable
@@ -156,7 +159,7 @@ class _$NftMarketInfoResponseModelCopyWithImpl<$Res>
       fee: fee == freezed
           ? _value.fee
           : fee // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as Decimal?,
       shortDescription: shortDescription == freezed
           ? _value.shortDescription
           : shortDescription // ignore: cast_nullable_to_non_nullable
@@ -179,16 +182,16 @@ abstract class _$$_NftMarketInfoResponseModelCopyWith<$Res>
       String? tokenId,
       String? description,
       String? name,
-      int? sellPrice,
+      @DecimalSerialiser() Decimal? sellPrice,
       String? sellAsset,
       String? collectionId,
       DateTime? ownerChangedAt,
-      int? buyPrice,
+      @DecimalSerialiser() Decimal? buyPrice,
       String? imageName,
       String? shortUrl,
       String? url,
       String? buyAsset,
-      int? fee,
+      @DecimalSerialiser() Decimal? fee,
       String? shortDescription});
 }
 
@@ -248,7 +251,7 @@ class __$$_NftMarketInfoResponseModelCopyWithImpl<$Res>
       sellPrice: sellPrice == freezed
           ? _value.sellPrice
           : sellPrice // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as Decimal?,
       sellAsset: sellAsset == freezed
           ? _value.sellAsset
           : sellAsset // ignore: cast_nullable_to_non_nullable
@@ -264,7 +267,7 @@ class __$$_NftMarketInfoResponseModelCopyWithImpl<$Res>
       buyPrice: buyPrice == freezed
           ? _value.buyPrice
           : buyPrice // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as Decimal?,
       imageName: imageName == freezed
           ? _value.imageName
           : imageName // ignore: cast_nullable_to_non_nullable
@@ -284,7 +287,7 @@ class __$$_NftMarketInfoResponseModelCopyWithImpl<$Res>
       fee: fee == freezed
           ? _value.fee
           : fee // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as Decimal?,
       shortDescription: shortDescription == freezed
           ? _value.shortDescription
           : shortDescription // ignore: cast_nullable_to_non_nullable
@@ -302,16 +305,16 @@ class _$_NftMarketInfoResponseModel implements _NftMarketInfoResponseModel {
       required this.tokenId,
       required this.description,
       required this.name,
-      required this.sellPrice,
+      @DecimalSerialiser() this.sellPrice,
       required this.sellAsset,
       required this.collectionId,
       required this.ownerChangedAt,
-      required this.buyPrice,
+      @DecimalSerialiser() this.buyPrice,
       required this.imageName,
       required this.shortUrl,
       required this.url,
       required this.buyAsset,
-      required this.fee,
+      @DecimalSerialiser() this.fee,
       required this.shortDescription});
 
   factory _$_NftMarketInfoResponseModel.fromJson(Map<String, dynamic> json) =>
@@ -328,7 +331,8 @@ class _$_NftMarketInfoResponseModel implements _NftMarketInfoResponseModel {
   @override
   final String? name;
   @override
-  final int? sellPrice;
+  @DecimalSerialiser()
+  final Decimal? sellPrice;
   @override
   final String? sellAsset;
   @override
@@ -336,7 +340,8 @@ class _$_NftMarketInfoResponseModel implements _NftMarketInfoResponseModel {
   @override
   final DateTime? ownerChangedAt;
   @override
-  final int? buyPrice;
+  @DecimalSerialiser()
+  final Decimal? buyPrice;
   @override
   final String? imageName;
   @override
@@ -346,7 +351,8 @@ class _$_NftMarketInfoResponseModel implements _NftMarketInfoResponseModel {
   @override
   final String? buyAsset;
   @override
-  final int? fee;
+  @DecimalSerialiser()
+  final Decimal? fee;
   @override
   final String? shortDescription;
 
@@ -412,9 +418,7 @@ class _$_NftMarketInfoResponseModel implements _NftMarketInfoResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NftMarketInfoResponseModelToJson(
-      this,
-    );
+    return _$$_NftMarketInfoResponseModelToJson(this);
   }
 }
 
@@ -426,16 +430,16 @@ abstract class _NftMarketInfoResponseModel
       required final String? tokenId,
       required final String? description,
       required final String? name,
-      required final int? sellPrice,
+      @DecimalSerialiser() final Decimal? sellPrice,
       required final String? sellAsset,
       required final String? collectionId,
       required final DateTime? ownerChangedAt,
-      required final int? buyPrice,
+      @DecimalSerialiser() final Decimal? buyPrice,
       required final String? imageName,
       required final String? shortUrl,
       required final String? url,
       required final String? buyAsset,
-      required final int? fee,
+      @DecimalSerialiser() final Decimal? fee,
       required final String? shortDescription}) = _$_NftMarketInfoResponseModel;
 
   factory _NftMarketInfoResponseModel.fromJson(Map<String, dynamic> json) =
@@ -452,7 +456,8 @@ abstract class _NftMarketInfoResponseModel
   @override
   String? get name;
   @override
-  int? get sellPrice;
+  @DecimalSerialiser()
+  Decimal? get sellPrice;
   @override
   String? get sellAsset;
   @override
@@ -460,7 +465,8 @@ abstract class _NftMarketInfoResponseModel
   @override
   DateTime? get ownerChangedAt;
   @override
-  int? get buyPrice;
+  @DecimalSerialiser()
+  Decimal? get buyPrice;
   @override
   String? get imageName;
   @override
@@ -470,7 +476,8 @@ abstract class _NftMarketInfoResponseModel
   @override
   String? get buyAsset;
   @override
-  int? get fee;
+  @DecimalSerialiser()
+  Decimal? get fee;
   @override
   String? get shortDescription;
   @override

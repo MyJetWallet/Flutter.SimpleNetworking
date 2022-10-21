@@ -27,6 +27,7 @@ import 'package:simple_networking/modules/signal_r/models/market_info_model.dart
 import 'package:simple_networking/modules/signal_r/models/market_references_model.dart';
 import 'package:simple_networking/modules/signal_r/models/nft_collections.dart';
 import 'package:simple_networking/modules/signal_r/models/nft_market.dart';
+import 'package:simple_networking/modules/signal_r/models/nft_portfolio.dart';
 import 'package:simple_networking/modules/signal_r/models/period_prices_model.dart';
 import 'package:simple_networking/modules/signal_r/models/price_accuracies.dart';
 import 'package:simple_networking/modules/signal_r/models/recurring_buys_response_model.dart';
@@ -125,6 +126,8 @@ class SignalRModule {
       StreamController<NftCollections>();
   StreamController<NFTMarkets> _nftMarketController =
       StreamController<NFTMarkets>();
+  StreamController<NftPortfolio> _nftPortfolio =
+      StreamController<NftPortfolio>();
 
   /// This variable is created to track previous snapshot of base prices.
   /// This needed because when signlaR gets update from basePrices it
@@ -163,6 +166,7 @@ class SignalRModule {
 
     _nftCollectionController = StreamController<NftCollections>();
     _nftMarketController = StreamController<NFTMarkets>();
+    _nftPortfolio = StreamController<NftPortfolio>();
   }
 
   Future<void> clearSignalR() async {
@@ -545,6 +549,24 @@ class SignalRModule {
         _logger.log(contract, nftMarketMessage, e);
 
         showEror(e.toString());
+
+        log.e(e.toString());
+      }
+    });
+
+    _connection?.on(nftPortfolioMessage, (data) {
+      try {
+        final nft = NftPortfolio.fromJson(_json(data));
+
+        _nftPortfolio.add(nft);
+
+        log.d(nft);
+      } catch (e) {
+        _logger.log(contract, nftMarketMessage, e);
+
+        showEror(e.toString());
+
+        log.e(e.toString());
       }
     });
 
@@ -633,6 +655,8 @@ class SignalRModule {
   Stream<NftCollections> nftCollections() => _nftCollectionController.stream;
 
   Stream<NFTMarkets> nftMarket() => _nftMarketController.stream;
+
+  Stream<NftPortfolio> nftPortfolio() => _nftPortfolio.stream;
 
   void _startPing() {
     _pingTimer = Timer.periodic(

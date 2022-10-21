@@ -145,9 +145,7 @@ class _$_NftCollections implements _NftCollections {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NftCollectionsToJson(
-      this,
-    );
+    return _$$_NftCollectionsToJson(this);
   }
 }
 
@@ -404,9 +402,7 @@ class _$_NftCollection implements _NftCollection {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NftCollectionToJson(
-      this,
-    );
+    return _$$_NftCollectionToJson(this);
   }
 }
 

@@ -75,6 +75,8 @@ enum OperationType {
   unknown,
   buy,
   sell,
+  @JsonValue(18)
+  nftBuy
 }
 
 enum Status {

@@ -9,10 +9,10 @@ part of 'nft_market_preview_buy_response_model.dart';
 _$_NftMarketPreviewBuyResponseModel
     _$$_NftMarketPreviewBuyResponseModelFromJson(Map<String, dynamic> json) =>
         _$_NftMarketPreviewBuyResponseModel(
-          symbol: json['symbol'] as String?,
-          sellAsset: json['sellAsset'] as String?,
-          fee: json['fee'] as int?,
-          sellPrice: json['sellPrice'] as int?,
+          symbol: json['symbol'] as String,
+          sellAsset: json['sellAsset'] as String,
+          fee: const DecimalSerialiser().fromJson(json['fee']),
+          sellPrice: const DecimalSerialiser().fromJson(json['sellPrice']),
         );
 
 Map<String, dynamic> _$$_NftMarketPreviewBuyResponseModelToJson(
@@ -20,6 +20,6 @@ Map<String, dynamic> _$$_NftMarketPreviewBuyResponseModelToJson(
     <String, dynamic>{
       'symbol': instance.symbol,
       'sellAsset': instance.sellAsset,
-      'fee': instance.fee,
-      'sellPrice': instance.sellPrice,
+      'fee': const DecimalSerialiser().toJson(instance.fee),
+      'sellPrice': const DecimalSerialiser().toJson(instance.sellPrice),
     };

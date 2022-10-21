@@ -10,3 +10,17 @@ class DecimalSerialiser implements JsonConverter<Decimal, dynamic> {
   @override
   dynamic toJson(Decimal decimal) => decimal.toDouble();
 }
+
+class DecimalNullSerialiser implements JsonConverter<Decimal?, dynamic?> {
+  const DecimalNullSerialiser();
+
+  @override
+  Decimal? fromJson(dynamic? json) {
+    return json != null ? Decimal.parse(json.toString()) : null;
+  }
+
+  @override
+  dynamic? toJson(Decimal? decimal) {
+    return decimal?.toDouble();
+  }
+}

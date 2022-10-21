@@ -48,6 +48,7 @@ import 'package:simple_networking/modules/wallet_api/models/nft_market/nft_marke
 import 'package:simple_networking/modules/wallet_api/models/nft_market/nft_market_is_valid_promo_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/nft_market/nft_market_make_sell_order_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/nft_market/nft_market_preview_buy_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/nft_market/nft_market_preview_sell_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/notification/register_token_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/operation_history/operation_history_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/operation_history/operation_history_response_model.dart';
@@ -102,6 +103,11 @@ class WalletApiRepository {
     return _walletApiDataSources.postDepositAddressRequest(
       model,
     );
+  }
+
+  Future<DC<ServerRejectException, DepositAddressResponseModel>>
+      postDepositNFTAddress() async {
+    return _walletApiDataSources.postDepositNFTAddressRequest();
   }
 
   Future<DC<ServerRejectException, ValidateAddressResponseModel>>
@@ -507,6 +513,11 @@ class WalletApiRepository {
     return _walletApiDataSources.getNFTMarketPreviewBuyRequest(symbol);
   }
 
+  Future<DC<ServerRejectException, NftMarketPreviewSellResponseModel>>
+      getNFTMarketPreviewSell(String symbol) async {
+    return _walletApiDataSources.getNFTMarketPreviewSellRequest(symbol);
+  }
+
   Future<DC<ServerRejectException, bool>> postNFTMarketMakeSellOrder(
     NftMarketMakeSellOrderRequestModel model,
   ) async {
@@ -528,7 +539,7 @@ class WalletApiRepository {
   /// Base asset
 
   Future<DC<ServerRejectException, GetBaseAssetsResponseModel>>
-  getBaseAssetsList() async {
+      getBaseAssetsList() async {
     return _walletApiDataSources.getBaseAssetsListRequest();
   }
 

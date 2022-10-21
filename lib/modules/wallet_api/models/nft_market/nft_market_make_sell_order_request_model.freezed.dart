@@ -23,7 +23,8 @@ NftMarketMakeSellOrderRequestModel _$NftMarketMakeSellOrderRequestModelFromJson(
 mixin _$NftMarketMakeSellOrderRequestModel {
   String? get symbol => throw _privateConstructorUsedError;
   String? get sellAsset => throw _privateConstructorUsedError;
-  int? get sellPrice => throw _privateConstructorUsedError;
+  @DecimalSerialiser()
+  Decimal? get sellPrice => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,7 +39,10 @@ abstract class $NftMarketMakeSellOrderRequestModelCopyWith<$Res> {
           NftMarketMakeSellOrderRequestModel value,
           $Res Function(NftMarketMakeSellOrderRequestModel) then) =
       _$NftMarketMakeSellOrderRequestModelCopyWithImpl<$Res>;
-  $Res call({String? symbol, String? sellAsset, int? sellPrice});
+  $Res call(
+      {String? symbol,
+      String? sellAsset,
+      @DecimalSerialiser() Decimal? sellPrice});
 }
 
 /// @nodoc
@@ -68,7 +72,7 @@ class _$NftMarketMakeSellOrderRequestModelCopyWithImpl<$Res>
       sellPrice: sellPrice == freezed
           ? _value.sellPrice
           : sellPrice // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as Decimal?,
     ));
   }
 }
@@ -81,7 +85,10 @@ abstract class _$$_NftMarketMakeSellOrderRequestModelCopyWith<$Res>
           $Res Function(_$_NftMarketMakeSellOrderRequestModel) then) =
       __$$_NftMarketMakeSellOrderRequestModelCopyWithImpl<$Res>;
   @override
-  $Res call({String? symbol, String? sellAsset, int? sellPrice});
+  $Res call(
+      {String? symbol,
+      String? sellAsset,
+      @DecimalSerialiser() Decimal? sellPrice});
 }
 
 /// @nodoc
@@ -115,7 +122,7 @@ class __$$_NftMarketMakeSellOrderRequestModelCopyWithImpl<$Res>
       sellPrice: sellPrice == freezed
           ? _value.sellPrice
           : sellPrice // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as Decimal?,
     ));
   }
 }
@@ -125,7 +132,7 @@ class __$$_NftMarketMakeSellOrderRequestModelCopyWithImpl<$Res>
 class _$_NftMarketMakeSellOrderRequestModel
     implements _NftMarketMakeSellOrderRequestModel {
   _$_NftMarketMakeSellOrderRequestModel(
-      {this.symbol, this.sellAsset, this.sellPrice});
+      {this.symbol, this.sellAsset, @DecimalSerialiser() this.sellPrice});
 
   factory _$_NftMarketMakeSellOrderRequestModel.fromJson(
           Map<String, dynamic> json) =>
@@ -136,7 +143,8 @@ class _$_NftMarketMakeSellOrderRequestModel
   @override
   final String? sellAsset;
   @override
-  final int? sellPrice;
+  @DecimalSerialiser()
+  final Decimal? sellPrice;
 
   @override
   String toString() {
@@ -170,18 +178,17 @@ class _$_NftMarketMakeSellOrderRequestModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NftMarketMakeSellOrderRequestModelToJson(
-      this,
-    );
+    return _$$_NftMarketMakeSellOrderRequestModelToJson(this);
   }
 }
 
 abstract class _NftMarketMakeSellOrderRequestModel
     implements NftMarketMakeSellOrderRequestModel {
   factory _NftMarketMakeSellOrderRequestModel(
-      {final String? symbol,
-      final String? sellAsset,
-      final int? sellPrice}) = _$_NftMarketMakeSellOrderRequestModel;
+          {final String? symbol,
+          final String? sellAsset,
+          @DecimalSerialiser() final Decimal? sellPrice}) =
+      _$_NftMarketMakeSellOrderRequestModel;
 
   factory _NftMarketMakeSellOrderRequestModel.fromJson(
           Map<String, dynamic> json) =
@@ -192,7 +199,8 @@ abstract class _NftMarketMakeSellOrderRequestModel
   @override
   String? get sellAsset;
   @override
-  int? get sellPrice;
+  @DecimalSerialiser()
+  Decimal? get sellPrice;
   @override
   @JsonKey(ignore: true)
   _$$_NftMarketMakeSellOrderRequestModelCopyWith<

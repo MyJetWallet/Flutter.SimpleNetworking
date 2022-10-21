@@ -1,4 +1,6 @@
+import 'package:decimal/decimal.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:simple_networking/helpers/decimal_serialiser.dart';
 
 part 'nft_market_info_response.freezed.dart';
 part 'nft_market_info_response.g.dart';
@@ -11,16 +13,16 @@ class NftMarketInfoResponseModel with _$NftMarketInfoResponseModel {
     required String? tokenId,
     required String? description,
     required String? name,
-    required int? sellPrice,
+    @DecimalSerialiser() final Decimal? sellPrice,
     required String? sellAsset,
     required String? collectionId,
     required DateTime? ownerChangedAt,
-    required int? buyPrice,
+    @DecimalSerialiser() final Decimal? buyPrice,
     required String? imageName,
     required String? shortUrl,
     required String? url,
     required String? buyAsset,
-    required int? fee,
+    @DecimalSerialiser() final Decimal? fee,
     required String? shortDescription,
   }) = _NftMarketInfoResponseModel;
 

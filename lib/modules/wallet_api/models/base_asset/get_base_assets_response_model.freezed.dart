@@ -138,9 +138,7 @@ class _$_GetBaseAssetsResponseModel implements _GetBaseAssetsResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GetBaseAssetsResponseModelToJson(
-      this,
-    );
+    return _$$_GetBaseAssetsResponseModelToJson(this);
   }
 }
 

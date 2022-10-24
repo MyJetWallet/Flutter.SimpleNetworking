@@ -180,6 +180,12 @@ mixin _$NftCollection {
   String? get description => throw _privateConstructorUsedError;
   String? get sImage => throw _privateConstructorUsedError;
   String? get fImage => throw _privateConstructorUsedError;
+  @DecimalNullSerialiser()
+  Decimal? get totalVolumeUsd => throw _privateConstructorUsedError;
+  int? get bestOffer => throw _privateConstructorUsedError;
+  String? get bestOfferAsset => throw _privateConstructorUsedError;
+  int? get ownerCount => throw _privateConstructorUsedError;
+  int? get order => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -199,7 +205,12 @@ abstract class $NftCollectionCopyWith<$Res> {
       String? name,
       String? description,
       String? sImage,
-      String? fImage});
+      String? fImage,
+      @DecimalNullSerialiser() Decimal? totalVolumeUsd,
+      int? bestOffer,
+      String? bestOfferAsset,
+      int? ownerCount,
+      int? order});
 }
 
 /// @nodoc
@@ -220,6 +231,11 @@ class _$NftCollectionCopyWithImpl<$Res>
     Object? description = freezed,
     Object? sImage = freezed,
     Object? fImage = freezed,
+    Object? totalVolumeUsd = freezed,
+    Object? bestOffer = freezed,
+    Object? bestOfferAsset = freezed,
+    Object? ownerCount = freezed,
+    Object? order = freezed,
   }) {
     return _then(_value.copyWith(
       tags: tags == freezed
@@ -250,6 +266,26 @@ class _$NftCollectionCopyWithImpl<$Res>
           ? _value.fImage
           : fImage // ignore: cast_nullable_to_non_nullable
               as String?,
+      totalVolumeUsd: totalVolumeUsd == freezed
+          ? _value.totalVolumeUsd
+          : totalVolumeUsd // ignore: cast_nullable_to_non_nullable
+              as Decimal?,
+      bestOffer: bestOffer == freezed
+          ? _value.bestOffer
+          : bestOffer // ignore: cast_nullable_to_non_nullable
+              as int?,
+      bestOfferAsset: bestOfferAsset == freezed
+          ? _value.bestOfferAsset
+          : bestOfferAsset // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ownerCount: ownerCount == freezed
+          ? _value.ownerCount
+          : ownerCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      order: order == freezed
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -268,7 +304,12 @@ abstract class _$$_NftCollectionCopyWith<$Res>
       String? name,
       String? description,
       String? sImage,
-      String? fImage});
+      String? fImage,
+      @DecimalNullSerialiser() Decimal? totalVolumeUsd,
+      int? bestOffer,
+      String? bestOfferAsset,
+      int? ownerCount,
+      int? order});
 }
 
 /// @nodoc
@@ -291,6 +332,11 @@ class __$$_NftCollectionCopyWithImpl<$Res>
     Object? description = freezed,
     Object? sImage = freezed,
     Object? fImage = freezed,
+    Object? totalVolumeUsd = freezed,
+    Object? bestOffer = freezed,
+    Object? bestOfferAsset = freezed,
+    Object? ownerCount = freezed,
+    Object? order = freezed,
   }) {
     return _then(_$_NftCollection(
       tags: tags == freezed
@@ -321,6 +367,26 @@ class __$$_NftCollectionCopyWithImpl<$Res>
           ? _value.fImage
           : fImage // ignore: cast_nullable_to_non_nullable
               as String?,
+      totalVolumeUsd: totalVolumeUsd == freezed
+          ? _value.totalVolumeUsd
+          : totalVolumeUsd // ignore: cast_nullable_to_non_nullable
+              as Decimal?,
+      bestOffer: bestOffer == freezed
+          ? _value.bestOffer
+          : bestOffer // ignore: cast_nullable_to_non_nullable
+              as int?,
+      bestOfferAsset: bestOfferAsset == freezed
+          ? _value.bestOfferAsset
+          : bestOfferAsset // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ownerCount: ownerCount == freezed
+          ? _value.ownerCount
+          : ownerCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      order: order == freezed
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -335,7 +401,12 @@ class _$_NftCollection implements _NftCollection {
       this.name,
       this.description,
       this.sImage,
-      this.fImage})
+      this.fImage,
+      @DecimalNullSerialiser() this.totalVolumeUsd,
+      this.bestOffer,
+      this.bestOfferAsset,
+      this.ownerCount,
+      this.order})
       : _tags = tags;
 
   factory _$_NftCollection.fromJson(Map<String, dynamic> json) =>
@@ -362,10 +433,21 @@ class _$_NftCollection implements _NftCollection {
   final String? sImage;
   @override
   final String? fImage;
+  @override
+  @DecimalNullSerialiser()
+  final Decimal? totalVolumeUsd;
+  @override
+  final int? bestOffer;
+  @override
+  final String? bestOfferAsset;
+  @override
+  final int? ownerCount;
+  @override
+  final int? order;
 
   @override
   String toString() {
-    return 'NftCollection(tags: $tags, category: $category, id: $id, name: $name, description: $description, sImage: $sImage, fImage: $fImage)';
+    return 'NftCollection(tags: $tags, category: $category, id: $id, name: $name, description: $description, sImage: $sImage, fImage: $fImage, totalVolumeUsd: $totalVolumeUsd, bestOffer: $bestOffer, bestOfferAsset: $bestOfferAsset, ownerCount: $ownerCount, order: $order)';
   }
 
   @override
@@ -380,7 +462,15 @@ class _$_NftCollection implements _NftCollection {
             const DeepCollectionEquality()
                 .equals(other.description, description) &&
             const DeepCollectionEquality().equals(other.sImage, sImage) &&
-            const DeepCollectionEquality().equals(other.fImage, fImage));
+            const DeepCollectionEquality().equals(other.fImage, fImage) &&
+            const DeepCollectionEquality()
+                .equals(other.totalVolumeUsd, totalVolumeUsd) &&
+            const DeepCollectionEquality().equals(other.bestOffer, bestOffer) &&
+            const DeepCollectionEquality()
+                .equals(other.bestOfferAsset, bestOfferAsset) &&
+            const DeepCollectionEquality()
+                .equals(other.ownerCount, ownerCount) &&
+            const DeepCollectionEquality().equals(other.order, order));
   }
 
   @JsonKey(ignore: true)
@@ -393,7 +483,12 @@ class _$_NftCollection implements _NftCollection {
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(description),
       const DeepCollectionEquality().hash(sImage),
-      const DeepCollectionEquality().hash(fImage));
+      const DeepCollectionEquality().hash(fImage),
+      const DeepCollectionEquality().hash(totalVolumeUsd),
+      const DeepCollectionEquality().hash(bestOffer),
+      const DeepCollectionEquality().hash(bestOfferAsset),
+      const DeepCollectionEquality().hash(ownerCount),
+      const DeepCollectionEquality().hash(order));
 
   @JsonKey(ignore: true)
   @override
@@ -414,7 +509,12 @@ abstract class _NftCollection implements NftCollection {
       final String? name,
       final String? description,
       final String? sImage,
-      final String? fImage}) = _$_NftCollection;
+      final String? fImage,
+      @DecimalNullSerialiser() final Decimal? totalVolumeUsd,
+      final int? bestOffer,
+      final String? bestOfferAsset,
+      final int? ownerCount,
+      final int? order}) = _$_NftCollection;
 
   factory _NftCollection.fromJson(Map<String, dynamic> json) =
       _$_NftCollection.fromJson;
@@ -433,6 +533,17 @@ abstract class _NftCollection implements NftCollection {
   String? get sImage;
   @override
   String? get fImage;
+  @override
+  @DecimalNullSerialiser()
+  Decimal? get totalVolumeUsd;
+  @override
+  int? get bestOffer;
+  @override
+  String? get bestOfferAsset;
+  @override
+  int? get ownerCount;
+  @override
+  int? get order;
   @override
   @JsonKey(ignore: true)
   _$$_NftCollectionCopyWith<_$_NftCollection> get copyWith =>

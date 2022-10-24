@@ -1,4 +1,6 @@
+import 'package:decimal/decimal.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:simple_networking/helpers/decimal_serialiser.dart';
 
 part 'nft_collections.freezed.dart';
 part 'nft_collections.g.dart';
@@ -24,6 +26,11 @@ class NftCollection with _$NftCollection {
     final String? description,
     final String? sImage,
     final String? fImage,
+    @DecimalNullSerialiser() Decimal? totalVolumeUsd,
+    final int? bestOffer,
+    final String? bestOfferAsset,
+    final int? ownerCount,
+    final int? order,
   }) = _NftCollection;
 
   factory NftCollection.fromJson(Map<String, dynamic> json) =>

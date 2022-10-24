@@ -12,6 +12,10 @@ import 'package:simple_networking/modules/wallet_api/models/calculate_earn_offer
 import 'package:simple_networking/modules/wallet_api/models/card/card_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/card_add/card_add_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/card_add/card_add_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/card_add/card_check_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/card_add/card_check_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/card_add/card_verification_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/card_add/card_verification_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/card_buy_create/card_buy_create_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/card_buy_create/card_buy_create_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/card_buy_execute/card_buy_execute_request_model.dart';
@@ -356,6 +360,81 @@ class WalletApiDataSources {
         );
 
         return DC.data(CardAddResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, CardCheckResponseModel>> cardCheck(
+    CardCheckRequestModel model,
+  ) async {
+    try {
+      final response = await _apiClient.post(
+        '${_apiClient.options.walletApi}/kyc/verification/card_check',
+        data: model.toJson(),
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+
+        final data = handleFullResponse(
+          responseData,
+        );
+
+        return DC.data(CardCheckResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, CardCheckResponseModel>> cardStart(
+    CardCheckRequestModel model,
+  ) async {
+    try {
+      final response = await _apiClient.post(
+        '${_apiClient.options.walletApi}/kyc/verification/card_start',
+        data: model.toJson(),
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+
+        final data = handleFullResponse(
+          responseData,
+        );
+
+        return DC.data(CardCheckResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, CardVerificationResponseModel>> cardVerification(
+    CardVerificationRequestModel model,
+  ) async {
+    try {
+      final response = await _apiClient.post(
+        '${_apiClient.options.walletApi}/kyc/verification/card_verification_check',
+        data: model.toJson(),
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+
+        final data = handleFullResponse(
+          responseData,
+        );
+
+        return DC.data(CardVerificationResponseModel.fromJson(data));
       } catch (e) {
         rethrow;
       }

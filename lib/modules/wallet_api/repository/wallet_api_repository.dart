@@ -12,6 +12,10 @@ import 'package:simple_networking/modules/wallet_api/models/calculate_earn_offer
 import 'package:simple_networking/modules/wallet_api/models/card/card_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/card_add/card_add_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/card_add/card_add_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/card_add/card_check_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/card_add/card_check_response_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/card_add/card_verification_request_model.dart';
+import 'package:simple_networking/modules/wallet_api/models/card_add/card_verification_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/card_buy_create/card_buy_create_request_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/card_buy_create/card_buy_create_response_model.dart';
 import 'package:simple_networking/modules/wallet_api/models/card_buy_execute/card_buy_execute_request_model.dart';
@@ -487,6 +491,30 @@ class WalletApiRepository {
     CardAddRequestModel model,
   ) async {
     return _walletApiDataSources.cardAdd(
+      model,
+    );
+  }
+
+  Future<DC<ServerRejectException, CardCheckResponseModel>> cardCheck(
+    CardCheckRequestModel model,
+  ) async {
+    return _walletApiDataSources.cardCheck(
+      model,
+    );
+  }
+
+  Future<DC<ServerRejectException, CardCheckResponseModel>> cardStart(
+    CardCheckRequestModel model,
+  ) async {
+    return _walletApiDataSources.cardStart(
+      model,
+    );
+  }
+
+  Future<DC<ServerRejectException, CardVerificationResponseModel>> cardVerification(
+    CardVerificationRequestModel model,
+  ) async {
+    return _walletApiDataSources.cardVerification(
       model,
     );
   }

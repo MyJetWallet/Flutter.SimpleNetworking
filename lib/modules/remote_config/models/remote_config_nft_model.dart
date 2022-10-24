@@ -8,6 +8,7 @@ class RemoteConfigNftModel with _$RemoteConfigNftModel {
   factory RemoteConfigNftModel({
     required String shortUrl,
     required String fullUrl,
+    required String shareLink,
   }) = _RemoteConfigNftModel;
 
   factory RemoteConfigNftModel.fromJson(Map<String, dynamic> json) =>

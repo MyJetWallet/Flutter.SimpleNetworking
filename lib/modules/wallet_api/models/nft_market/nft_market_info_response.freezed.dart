@@ -26,18 +26,18 @@ mixin _$NftMarketInfoResponseModel {
   String? get tokenId => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
-  @DecimalSerialiser()
+  @DecimalNullSerialiser()
   Decimal? get sellPrice => throw _privateConstructorUsedError;
   String? get sellAsset => throw _privateConstructorUsedError;
   String? get collectionId => throw _privateConstructorUsedError;
   DateTime? get ownerChangedAt => throw _privateConstructorUsedError;
-  @DecimalSerialiser()
+  @DecimalNullSerialiser()
   Decimal? get buyPrice => throw _privateConstructorUsedError;
   String? get imageName => throw _privateConstructorUsedError;
   String? get shortUrl => throw _privateConstructorUsedError;
   String? get url => throw _privateConstructorUsedError;
   String? get buyAsset => throw _privateConstructorUsedError;
-  @DecimalSerialiser()
+  @DecimalNullSerialiser()
   Decimal? get fee => throw _privateConstructorUsedError;
   String? get shortDescription => throw _privateConstructorUsedError;
 
@@ -58,16 +58,16 @@ abstract class $NftMarketInfoResponseModelCopyWith<$Res> {
       String? tokenId,
       String? description,
       String? name,
-      @DecimalSerialiser() Decimal? sellPrice,
+      @DecimalNullSerialiser() Decimal? sellPrice,
       String? sellAsset,
       String? collectionId,
       DateTime? ownerChangedAt,
-      @DecimalSerialiser() Decimal? buyPrice,
+      @DecimalNullSerialiser() Decimal? buyPrice,
       String? imageName,
       String? shortUrl,
       String? url,
       String? buyAsset,
-      @DecimalSerialiser() Decimal? fee,
+      @DecimalNullSerialiser() Decimal? fee,
       String? shortDescription});
 }
 
@@ -182,16 +182,16 @@ abstract class _$$_NftMarketInfoResponseModelCopyWith<$Res>
       String? tokenId,
       String? description,
       String? name,
-      @DecimalSerialiser() Decimal? sellPrice,
+      @DecimalNullSerialiser() Decimal? sellPrice,
       String? sellAsset,
       String? collectionId,
       DateTime? ownerChangedAt,
-      @DecimalSerialiser() Decimal? buyPrice,
+      @DecimalNullSerialiser() Decimal? buyPrice,
       String? imageName,
       String? shortUrl,
       String? url,
       String? buyAsset,
-      @DecimalSerialiser() Decimal? fee,
+      @DecimalNullSerialiser() Decimal? fee,
       String? shortDescription});
 }
 
@@ -305,16 +305,16 @@ class _$_NftMarketInfoResponseModel implements _NftMarketInfoResponseModel {
       required this.tokenId,
       required this.description,
       required this.name,
-      @DecimalSerialiser() this.sellPrice,
+      @DecimalNullSerialiser() this.sellPrice,
       required this.sellAsset,
       required this.collectionId,
       required this.ownerChangedAt,
-      @DecimalSerialiser() this.buyPrice,
+      @DecimalNullSerialiser() this.buyPrice,
       required this.imageName,
       required this.shortUrl,
       required this.url,
       required this.buyAsset,
-      @DecimalSerialiser() this.fee,
+      @DecimalNullSerialiser() this.fee,
       required this.shortDescription});
 
   factory _$_NftMarketInfoResponseModel.fromJson(Map<String, dynamic> json) =>
@@ -331,7 +331,7 @@ class _$_NftMarketInfoResponseModel implements _NftMarketInfoResponseModel {
   @override
   final String? name;
   @override
-  @DecimalSerialiser()
+  @DecimalNullSerialiser()
   final Decimal? sellPrice;
   @override
   final String? sellAsset;
@@ -340,7 +340,7 @@ class _$_NftMarketInfoResponseModel implements _NftMarketInfoResponseModel {
   @override
   final DateTime? ownerChangedAt;
   @override
-  @DecimalSerialiser()
+  @DecimalNullSerialiser()
   final Decimal? buyPrice;
   @override
   final String? imageName;
@@ -351,7 +351,7 @@ class _$_NftMarketInfoResponseModel implements _NftMarketInfoResponseModel {
   @override
   final String? buyAsset;
   @override
-  @DecimalSerialiser()
+  @DecimalNullSerialiser()
   final Decimal? fee;
   @override
   final String? shortDescription;
@@ -430,16 +430,16 @@ abstract class _NftMarketInfoResponseModel
       required final String? tokenId,
       required final String? description,
       required final String? name,
-      @DecimalSerialiser() final Decimal? sellPrice,
+      @DecimalNullSerialiser() final Decimal? sellPrice,
       required final String? sellAsset,
       required final String? collectionId,
       required final DateTime? ownerChangedAt,
-      @DecimalSerialiser() final Decimal? buyPrice,
+      @DecimalNullSerialiser() final Decimal? buyPrice,
       required final String? imageName,
       required final String? shortUrl,
       required final String? url,
       required final String? buyAsset,
-      @DecimalSerialiser() final Decimal? fee,
+      @DecimalNullSerialiser() final Decimal? fee,
       required final String? shortDescription}) = _$_NftMarketInfoResponseModel;
 
   factory _NftMarketInfoResponseModel.fromJson(Map<String, dynamic> json) =
@@ -456,7 +456,7 @@ abstract class _NftMarketInfoResponseModel
   @override
   String? get name;
   @override
-  @DecimalSerialiser()
+  @DecimalNullSerialiser()
   Decimal? get sellPrice;
   @override
   String? get sellAsset;
@@ -465,7 +465,7 @@ abstract class _NftMarketInfoResponseModel
   @override
   DateTime? get ownerChangedAt;
   @override
-  @DecimalSerialiser()
+  @DecimalNullSerialiser()
   Decimal? get buyPrice;
   @override
   String? get imageName;
@@ -476,7 +476,7 @@ abstract class _NftMarketInfoResponseModel
   @override
   String? get buyAsset;
   @override
-  @DecimalSerialiser()
+  @DecimalNullSerialiser()
   Decimal? get fee;
   @override
   String? get shortDescription;

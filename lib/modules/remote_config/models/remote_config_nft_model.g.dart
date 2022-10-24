@@ -11,6 +11,7 @@ _$_RemoteConfigNftModel _$$_RemoteConfigNftModelFromJson(
     _$_RemoteConfigNftModel(
       shortUrl: json['shortUrl'] as String,
       fullUrl: json['fullUrl'] as String,
+      shareLink: json['shareLink'] as String,
     );
 
 Map<String, dynamic> _$$_RemoteConfigNftModelToJson(
@@ -18,4 +19,5 @@ Map<String, dynamic> _$$_RemoteConfigNftModelToJson(
     <String, dynamic>{
       'shortUrl': instance.shortUrl,
       'fullUrl': instance.fullUrl,
+      'shareLink': instance.shareLink,
     };

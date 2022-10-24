@@ -22,6 +22,7 @@ RemoteConfigNftModel _$RemoteConfigNftModelFromJson(Map<String, dynamic> json) {
 mixin _$RemoteConfigNftModel {
   String get shortUrl => throw _privateConstructorUsedError;
   String get fullUrl => throw _privateConstructorUsedError;
+  String get shareLink => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +35,7 @@ abstract class $RemoteConfigNftModelCopyWith<$Res> {
   factory $RemoteConfigNftModelCopyWith(RemoteConfigNftModel value,
           $Res Function(RemoteConfigNftModel) then) =
       _$RemoteConfigNftModelCopyWithImpl<$Res>;
-  $Res call({String shortUrl, String fullUrl});
+  $Res call({String shortUrl, String fullUrl, String shareLink});
 }
 
 /// @nodoc
@@ -50,6 +51,7 @@ class _$RemoteConfigNftModelCopyWithImpl<$Res>
   $Res call({
     Object? shortUrl = freezed,
     Object? fullUrl = freezed,
+    Object? shareLink = freezed,
   }) {
     return _then(_value.copyWith(
       shortUrl: shortUrl == freezed
@@ -59,6 +61,10 @@ class _$RemoteConfigNftModelCopyWithImpl<$Res>
       fullUrl: fullUrl == freezed
           ? _value.fullUrl
           : fullUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      shareLink: shareLink == freezed
+          ? _value.shareLink
+          : shareLink // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -71,7 +77,7 @@ abstract class _$$_RemoteConfigNftModelCopyWith<$Res>
           $Res Function(_$_RemoteConfigNftModel) then) =
       __$$_RemoteConfigNftModelCopyWithImpl<$Res>;
   @override
-  $Res call({String shortUrl, String fullUrl});
+  $Res call({String shortUrl, String fullUrl, String shareLink});
 }
 
 /// @nodoc
@@ -89,6 +95,7 @@ class __$$_RemoteConfigNftModelCopyWithImpl<$Res>
   $Res call({
     Object? shortUrl = freezed,
     Object? fullUrl = freezed,
+    Object? shareLink = freezed,
   }) {
     return _then(_$_RemoteConfigNftModel(
       shortUrl: shortUrl == freezed
@@ -99,6 +106,10 @@ class __$$_RemoteConfigNftModelCopyWithImpl<$Res>
           ? _value.fullUrl
           : fullUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      shareLink: shareLink == freezed
+          ? _value.shareLink
+          : shareLink // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -106,7 +117,8 @@ class __$$_RemoteConfigNftModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_RemoteConfigNftModel implements _RemoteConfigNftModel {
-  _$_RemoteConfigNftModel({required this.shortUrl, required this.fullUrl});
+  _$_RemoteConfigNftModel(
+      {required this.shortUrl, required this.fullUrl, required this.shareLink});
 
   factory _$_RemoteConfigNftModel.fromJson(Map<String, dynamic> json) =>
       _$$_RemoteConfigNftModelFromJson(json);
@@ -115,10 +127,12 @@ class _$_RemoteConfigNftModel implements _RemoteConfigNftModel {
   final String shortUrl;
   @override
   final String fullUrl;
+  @override
+  final String shareLink;
 
   @override
   String toString() {
-    return 'RemoteConfigNftModel(shortUrl: $shortUrl, fullUrl: $fullUrl)';
+    return 'RemoteConfigNftModel(shortUrl: $shortUrl, fullUrl: $fullUrl, shareLink: $shareLink)';
   }
 
   @override
@@ -127,7 +141,8 @@ class _$_RemoteConfigNftModel implements _RemoteConfigNftModel {
         (other.runtimeType == runtimeType &&
             other is _$_RemoteConfigNftModel &&
             const DeepCollectionEquality().equals(other.shortUrl, shortUrl) &&
-            const DeepCollectionEquality().equals(other.fullUrl, fullUrl));
+            const DeepCollectionEquality().equals(other.fullUrl, fullUrl) &&
+            const DeepCollectionEquality().equals(other.shareLink, shareLink));
   }
 
   @JsonKey(ignore: true)
@@ -135,7 +150,8 @@ class _$_RemoteConfigNftModel implements _RemoteConfigNftModel {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(shortUrl),
-      const DeepCollectionEquality().hash(fullUrl));
+      const DeepCollectionEquality().hash(fullUrl),
+      const DeepCollectionEquality().hash(shareLink));
 
   @JsonKey(ignore: true)
   @override
@@ -152,7 +168,8 @@ class _$_RemoteConfigNftModel implements _RemoteConfigNftModel {
 abstract class _RemoteConfigNftModel implements RemoteConfigNftModel {
   factory _RemoteConfigNftModel(
       {required final String shortUrl,
-      required final String fullUrl}) = _$_RemoteConfigNftModel;
+      required final String fullUrl,
+      required final String shareLink}) = _$_RemoteConfigNftModel;
 
   factory _RemoteConfigNftModel.fromJson(Map<String, dynamic> json) =
       _$_RemoteConfigNftModel.fromJson;
@@ -161,6 +178,8 @@ abstract class _RemoteConfigNftModel implements RemoteConfigNftModel {
   String get shortUrl;
   @override
   String get fullUrl;
+  @override
+  String get shareLink;
   @override
   @JsonKey(ignore: true)
   _$$_RemoteConfigNftModelCopyWith<_$_RemoteConfigNftModel> get copyWith =>

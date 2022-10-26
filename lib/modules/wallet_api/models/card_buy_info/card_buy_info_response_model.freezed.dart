@@ -273,7 +273,9 @@ class _$_CardBuyInfoResponseModel implements _CardBuyInfoResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CardBuyInfoResponseModelToJson(this);
+    return _$$_CardBuyInfoResponseModelToJson(
+      this,
+    );
   }
 }
 
@@ -446,7 +448,9 @@ class _$_ClientActionModel implements _ClientActionModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ClientActionModelToJson(this);
+    return _$$_ClientActionModelToJson(
+      this,
+    );
   }
 }
 
@@ -688,7 +692,9 @@ class _$_PaymentInfoModel implements _PaymentInfoModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PaymentInfoModelToJson(this);
+    return _$$_PaymentInfoModelToJson(
+      this,
+    );
   }
 }
 
@@ -882,7 +888,9 @@ class _$_BuyInfoModel implements _BuyInfoModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BuyInfoModelToJson(this);
+    return _$$_BuyInfoModelToJson(
+      this,
+    );
   }
 }
 

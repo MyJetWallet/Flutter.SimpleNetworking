@@ -302,7 +302,9 @@ class _$_CardBuyExecuteRequestModel implements _CardBuyExecuteRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CardBuyExecuteRequestModelToJson(this);
+    return _$$_CardBuyExecuteRequestModelToJson(
+      this,
+    );
   }
 }
 
@@ -493,7 +495,9 @@ class _$_CirclePaymentDataExecuteModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CirclePaymentDataExecuteModelToJson(this);
+    return _$$_CirclePaymentDataExecuteModelToJson(
+      this,
+    );
   }
 }
 
@@ -642,7 +646,9 @@ class _$_UnlimintPaymentDataExecuteModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UnlimintPaymentDataExecuteModelToJson(this);
+    return _$$_UnlimintPaymentDataExecuteModelToJson(
+      this,
+    );
   }
 }
 
@@ -787,7 +793,9 @@ class _$_UnlimintAltPaymentDataExecuteModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UnlimintAltPaymentDataExecuteModelToJson(this);
+    return _$$_UnlimintAltPaymentDataExecuteModelToJson(
+      this,
+    );
   }
 }
 
@@ -964,7 +972,9 @@ class _$_BankCardPaymentDataExecuteModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BankCardPaymentDataExecuteModelToJson(this);
+    return _$$_BankCardPaymentDataExecuteModelToJson(
+      this,
+    );
   }
 }
 

@@ -133,7 +133,9 @@ class _$_NftPortfolio implements _NftPortfolio {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NftPortfolioToJson(this);
+    return _$$_NftPortfolioToJson(
+      this,
+    );
   }
 }
 

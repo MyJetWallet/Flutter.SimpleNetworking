@@ -214,7 +214,9 @@ class _$_EarnOfferDepositRequestModel implements _EarnOfferDepositRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EarnOfferDepositRequestModelToJson(this);
+    return _$$_EarnOfferDepositRequestModelToJson(
+      this,
+    );
   }
 }
 

@@ -289,7 +289,9 @@ class _$_CircleCard implements _CircleCard {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CircleCardToJson(this);
+    return _$$_CircleCardToJson(
+      this,
+    );
   }
 }
 
@@ -496,7 +498,9 @@ class _$_CircleCardInfoPayment implements _CircleCardInfoPayment {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CircleCardInfoPaymentToJson(this);
+    return _$$_CircleCardInfoPaymentToJson(
+      this,
+    );
   }
 }
 

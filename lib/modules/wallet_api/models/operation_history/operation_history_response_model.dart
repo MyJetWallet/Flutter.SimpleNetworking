@@ -76,7 +76,23 @@ enum OperationType {
   buy,
   sell,
   @JsonValue(18)
-  nftBuy
+  nftSwap,
+  @JsonValue(19)
+  nftReserve,
+  @JsonValue(20)
+  nftRelease,
+  @JsonValue(21)
+  nftBuy,
+  @JsonValue(22)
+  nftBuyOpposite,
+  @JsonValue(23)
+  nftSell,
+  @JsonValue(24)
+  nftSellOpposite,
+  @JsonValue(25)
+  nftDeposit,
+  @JsonValue(26)
+  nftWithdrawal,
 }
 
 enum Status {
@@ -137,7 +153,7 @@ class SwapInfo with _$SwapInfo {
     required bool isSell,
     required String sellAssetId,
     required String buyAssetId,
-    required String feeAsset,
+    @Default('') String feeAsset,
     @DecimalSerialiser() required Decimal sellAmount,
     @DecimalSerialiser() required Decimal buyAmount,
     @DecimalSerialiser() required Decimal baseRate,

@@ -268,7 +268,9 @@ class _$_CardBuyCreateRequestModel implements _CardBuyCreateRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CardBuyCreateRequestModelToJson(this);
+    return _$$_CardBuyCreateRequestModelToJson(
+      this,
+    );
   }
 }
 
@@ -421,7 +423,9 @@ class _$_CirclePaymentDataModel implements _CirclePaymentDataModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CirclePaymentDataModelToJson(this);
+    return _$$_CirclePaymentDataModelToJson(
+      this,
+    );
   }
 }
 

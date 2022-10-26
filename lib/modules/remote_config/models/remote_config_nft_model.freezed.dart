@@ -161,7 +161,9 @@ class _$_RemoteConfigNftModel implements _RemoteConfigNftModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RemoteConfigNftModelToJson(this);
+    return _$$_RemoteConfigNftModelToJson(
+      this,
+    );
   }
 }
 

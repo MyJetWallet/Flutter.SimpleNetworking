@@ -113,6 +113,14 @@ const _$OperationTypeEnumMap = {
   OperationType.buy: 'buy',
   OperationType.sell: 'sell',
   OperationType.nftBuy: 18,
+  OperationType.nftReserve: 19,
+  OperationType.nftRelease: 20,
+  OperationType.nftSwap: 21,
+  OperationType.nftBuyOpposite: 22,
+  OperationType.nftSell: 23,
+  OperationType.nftSellOpposite: 24,
+  OperationType.nftDeposit: 25,
+  OperationType.nftWithdrawal: 26,
 };
 
 const _$StatusEnumMap = {
@@ -182,7 +190,7 @@ _$_SwapInfo _$$_SwapInfoFromJson(Map<String, dynamic> json) => _$_SwapInfo(
       isSell: json['isSell'] as bool,
       sellAssetId: json['sellAssetId'] as String,
       buyAssetId: json['buyAssetId'] as String,
-      feeAsset: json['feeAsset'] as String,
+      feeAsset: json['feeAsset'] as String? ?? '',
       sellAmount: const DecimalSerialiser().fromJson(json['sellAmount']),
       buyAmount: const DecimalSerialiser().fromJson(json['buyAmount']),
       baseRate: const DecimalSerialiser().fromJson(json['baseRate']),

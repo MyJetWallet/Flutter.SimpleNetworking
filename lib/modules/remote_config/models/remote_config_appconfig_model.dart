@@ -13,6 +13,8 @@ class RemoteConfigAppconfigModel with _$RemoteConfigAppconfigModel {
     required String userAgreementLink,
     required String privacyPolicyLink,
     required String referralPolicyLink,
+    @Default('https://nft.simple.app/terms-and-conditions') String nftTermsLink,
+    @Default('https://nft.simple.app/privacy-policy') String nftPolicyLink,
     required String cardLimitsLearnMoreLink,
     required String privacyEarnLink,
     required int paymentDelayDays,

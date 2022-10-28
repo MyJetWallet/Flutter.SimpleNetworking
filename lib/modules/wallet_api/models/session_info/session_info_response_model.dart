@@ -12,6 +12,7 @@ class SessionInfoResponseModel with _$SessionInfoResponseModel {
     // If phone is not verified 2FA requests will fail
     required bool phoneVerified,
     required bool hasHighYieldDisclaimers,
+    required bool hasNftDisclaimers,
     // Shows whether user passed 2FA at the current session or not
     @JsonKey(name: 'twoFactorAuthentication') required bool twoFaPassed,
     @JsonKey(name: 'twoFactorAuthenticationEnabled') required bool twoFaEnabled,

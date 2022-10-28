@@ -26,7 +26,8 @@ mixin _$SessionInfoResponseModel {
   bool get emailVerified =>
       throw _privateConstructorUsedError; // If phone is not verified 2FA requests will fail
   bool get phoneVerified => throw _privateConstructorUsedError;
-  bool get hasHighYieldDisclaimers =>
+  bool get hasHighYieldDisclaimers => throw _privateConstructorUsedError;
+  bool get hasNftDisclaimers =>
       throw _privateConstructorUsedError; // Shows whether user passed 2FA at the current session or not
   @JsonKey(name: 'twoFactorAuthentication')
   bool get twoFaPassed => throw _privateConstructorUsedError;
@@ -50,6 +51,7 @@ abstract class $SessionInfoResponseModelCopyWith<$Res> {
       bool emailVerified,
       bool phoneVerified,
       bool hasHighYieldDisclaimers,
+      bool hasNftDisclaimers,
       @JsonKey(name: 'twoFactorAuthentication') bool twoFaPassed,
       @JsonKey(name: 'twoFactorAuthenticationEnabled') bool twoFaEnabled});
 }
@@ -70,6 +72,7 @@ class _$SessionInfoResponseModelCopyWithImpl<$Res>
     Object? emailVerified = freezed,
     Object? phoneVerified = freezed,
     Object? hasHighYieldDisclaimers = freezed,
+    Object? hasNftDisclaimers = freezed,
     Object? twoFaPassed = freezed,
     Object? twoFaEnabled = freezed,
   }) {
@@ -93,6 +96,10 @@ class _$SessionInfoResponseModelCopyWithImpl<$Res>
       hasHighYieldDisclaimers: hasHighYieldDisclaimers == freezed
           ? _value.hasHighYieldDisclaimers
           : hasHighYieldDisclaimers // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasNftDisclaimers: hasNftDisclaimers == freezed
+          ? _value.hasNftDisclaimers
+          : hasNftDisclaimers // ignore: cast_nullable_to_non_nullable
               as bool,
       twoFaPassed: twoFaPassed == freezed
           ? _value.twoFaPassed
@@ -120,6 +127,7 @@ abstract class _$$_SessionInfoResponseModelCopyWith<$Res>
       bool emailVerified,
       bool phoneVerified,
       bool hasHighYieldDisclaimers,
+      bool hasNftDisclaimers,
       @JsonKey(name: 'twoFactorAuthentication') bool twoFaPassed,
       @JsonKey(name: 'twoFactorAuthenticationEnabled') bool twoFaEnabled});
 }
@@ -143,6 +151,7 @@ class __$$_SessionInfoResponseModelCopyWithImpl<$Res>
     Object? emailVerified = freezed,
     Object? phoneVerified = freezed,
     Object? hasHighYieldDisclaimers = freezed,
+    Object? hasNftDisclaimers = freezed,
     Object? twoFaPassed = freezed,
     Object? twoFaEnabled = freezed,
   }) {
@@ -167,6 +176,10 @@ class __$$_SessionInfoResponseModelCopyWithImpl<$Res>
           ? _value.hasHighYieldDisclaimers
           : hasHighYieldDisclaimers // ignore: cast_nullable_to_non_nullable
               as bool,
+      hasNftDisclaimers: hasNftDisclaimers == freezed
+          ? _value.hasNftDisclaimers
+          : hasNftDisclaimers // ignore: cast_nullable_to_non_nullable
+              as bool,
       twoFaPassed: twoFaPassed == freezed
           ? _value.twoFaPassed
           : twoFaPassed // ignore: cast_nullable_to_non_nullable
@@ -188,6 +201,7 @@ class _$_SessionInfoResponseModel implements _SessionInfoResponseModel {
       required this.emailVerified,
       required this.phoneVerified,
       required this.hasHighYieldDisclaimers,
+      required this.hasNftDisclaimers,
       @JsonKey(name: 'twoFactorAuthentication')
           required this.twoFaPassed,
       @JsonKey(name: 'twoFactorAuthenticationEnabled')
@@ -207,6 +221,8 @@ class _$_SessionInfoResponseModel implements _SessionInfoResponseModel {
   final bool phoneVerified;
   @override
   final bool hasHighYieldDisclaimers;
+  @override
+  final bool hasNftDisclaimers;
 // Shows whether user passed 2FA at the current session or not
   @override
   @JsonKey(name: 'twoFactorAuthentication')
@@ -217,7 +233,7 @@ class _$_SessionInfoResponseModel implements _SessionInfoResponseModel {
 
   @override
   String toString() {
-    return 'SessionInfoResponseModel(tokenLifetimeRemaining: $tokenLifetimeRemaining, hasDisclaimers: $hasDisclaimers, emailVerified: $emailVerified, phoneVerified: $phoneVerified, hasHighYieldDisclaimers: $hasHighYieldDisclaimers, twoFaPassed: $twoFaPassed, twoFaEnabled: $twoFaEnabled)';
+    return 'SessionInfoResponseModel(tokenLifetimeRemaining: $tokenLifetimeRemaining, hasDisclaimers: $hasDisclaimers, emailVerified: $emailVerified, phoneVerified: $phoneVerified, hasHighYieldDisclaimers: $hasHighYieldDisclaimers, hasNftDisclaimers: $hasNftDisclaimers, twoFaPassed: $twoFaPassed, twoFaEnabled: $twoFaEnabled)';
   }
 
   @override
@@ -236,6 +252,8 @@ class _$_SessionInfoResponseModel implements _SessionInfoResponseModel {
             const DeepCollectionEquality().equals(
                 other.hasHighYieldDisclaimers, hasHighYieldDisclaimers) &&
             const DeepCollectionEquality()
+                .equals(other.hasNftDisclaimers, hasNftDisclaimers) &&
+            const DeepCollectionEquality()
                 .equals(other.twoFaPassed, twoFaPassed) &&
             const DeepCollectionEquality()
                 .equals(other.twoFaEnabled, twoFaEnabled));
@@ -250,6 +268,7 @@ class _$_SessionInfoResponseModel implements _SessionInfoResponseModel {
       const DeepCollectionEquality().hash(emailVerified),
       const DeepCollectionEquality().hash(phoneVerified),
       const DeepCollectionEquality().hash(hasHighYieldDisclaimers),
+      const DeepCollectionEquality().hash(hasNftDisclaimers),
       const DeepCollectionEquality().hash(twoFaPassed),
       const DeepCollectionEquality().hash(twoFaEnabled));
 
@@ -261,7 +280,9 @@ class _$_SessionInfoResponseModel implements _SessionInfoResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SessionInfoResponseModelToJson(this);
+    return _$$_SessionInfoResponseModelToJson(
+      this,
+    );
   }
 }
 
@@ -272,6 +293,7 @@ abstract class _SessionInfoResponseModel implements SessionInfoResponseModel {
       required final bool emailVerified,
       required final bool phoneVerified,
       required final bool hasHighYieldDisclaimers,
+      required final bool hasNftDisclaimers,
       @JsonKey(name: 'twoFactorAuthentication')
           required final bool twoFaPassed,
       @JsonKey(name: 'twoFactorAuthenticationEnabled')
@@ -290,6 +312,8 @@ abstract class _SessionInfoResponseModel implements SessionInfoResponseModel {
   bool get phoneVerified;
   @override
   bool get hasHighYieldDisclaimers;
+  @override
+  bool get hasNftDisclaimers;
   @override // Shows whether user passed 2FA at the current session or not
   @JsonKey(name: 'twoFactorAuthentication')
   bool get twoFaPassed;

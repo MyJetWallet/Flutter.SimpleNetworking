@@ -257,6 +257,11 @@ class WalletApiRepository {
   }
 
   Future<DC<ServerRejectException, DisclaimersResponseModel>>
+      getNftDisclaimers() async {
+    return _walletApiDataSources.getNftDisclaimersRequest();
+  }
+
+  Future<DC<ServerRejectException, DisclaimersResponseModel>>
       getHighYieldDisclaimers() async {
     return _walletApiDataSources.getHighYieldDisclaimersRequest();
   }

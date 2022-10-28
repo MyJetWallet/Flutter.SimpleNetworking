@@ -794,6 +794,29 @@ class WalletApiDataSources {
   }
 
   Future<DC<ServerRejectException, DisclaimersResponseModel>>
+      getNftDisclaimersRequest() async {
+    try {
+      final response = await _apiClient.get(
+        '${_apiClient.options.walletApi}/profile/nft-disclaimers',
+      );
+
+      try {
+        final responseData = response.data as Map<String, dynamic>;
+
+        final data = handleFullResponse<Map>(
+          responseData,
+        );
+
+        return DC.data(DisclaimersResponseModel.fromJson(data));
+      } catch (e) {
+        rethrow;
+      }
+    } on ServerRejectException catch (e) {
+      return DC.error(e);
+    }
+  }
+
+  Future<DC<ServerRejectException, DisclaimersResponseModel>>
       getHighYieldDisclaimersRequest() async {
     try {
       final response = await _apiClient.get(

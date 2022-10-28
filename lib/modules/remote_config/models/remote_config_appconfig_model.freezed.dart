@@ -600,9 +600,7 @@ class _$_RemoteConfigAppconfigModel implements _RemoteConfigAppconfigModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RemoteConfigAppconfigModelToJson(
-      this,
-    );
+    return _$$_RemoteConfigAppconfigModelToJson(this);
   }
 }
 

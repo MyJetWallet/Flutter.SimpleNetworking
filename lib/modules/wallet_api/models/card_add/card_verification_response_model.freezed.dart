@@ -150,9 +150,7 @@ class _$_CardVerificationResponseModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CardVerificationResponseModelToJson(
-      this,
-    );
+    return _$$_CardVerificationResponseModelToJson(this);
   }
 }
 
@@ -315,9 +313,7 @@ class _$_CardVerificationResponseDataModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CardVerificationResponseDataModelToJson(
-      this,
-    );
+    return _$$_CardVerificationResponseDataModelToJson(this);
   }
 }
 

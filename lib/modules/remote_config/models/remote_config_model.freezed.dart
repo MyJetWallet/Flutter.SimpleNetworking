@@ -418,9 +418,7 @@ class _$_RemoteConfigModel implements _RemoteConfigModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RemoteConfigModelToJson(
-      this,
-    );
+    return _$$_RemoteConfigModelToJson(this);
   }
 }
 

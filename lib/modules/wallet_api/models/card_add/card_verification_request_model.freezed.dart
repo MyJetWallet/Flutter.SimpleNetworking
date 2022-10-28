@@ -135,9 +135,7 @@ class _$_CardVerificationRequestModel implements _CardVerificationRequestModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CardVerificationRequestModelToJson(
-      this,
-    );
+    return _$$_CardVerificationRequestModelToJson(this);
   }
 }
 

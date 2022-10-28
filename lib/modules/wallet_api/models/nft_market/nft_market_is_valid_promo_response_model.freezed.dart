@@ -22,7 +22,8 @@ NftMarketIsValidPromoResponseModel _$NftMarketIsValidPromoResponseModelFromJson(
 /// @nodoc
 mixin _$NftMarketIsValidPromoResponseModel {
   bool? get isValid => throw _privateConstructorUsedError;
-  int? get discount => throw _privateConstructorUsedError;
+  @DecimalSerialiser()
+  Decimal get discount => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,7 +38,7 @@ abstract class $NftMarketIsValidPromoResponseModelCopyWith<$Res> {
           NftMarketIsValidPromoResponseModel value,
           $Res Function(NftMarketIsValidPromoResponseModel) then) =
       _$NftMarketIsValidPromoResponseModelCopyWithImpl<$Res>;
-  $Res call({bool? isValid, int? discount});
+  $Res call({bool? isValid, @DecimalSerialiser() Decimal discount});
 }
 
 /// @nodoc
@@ -62,7 +63,7 @@ class _$NftMarketIsValidPromoResponseModelCopyWithImpl<$Res>
       discount: discount == freezed
           ? _value.discount
           : discount // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as Decimal,
     ));
   }
 }
@@ -75,7 +76,7 @@ abstract class _$$_NftMarketIsValidPromoResponseModelCopyWith<$Res>
           $Res Function(_$_NftMarketIsValidPromoResponseModel) then) =
       __$$_NftMarketIsValidPromoResponseModelCopyWithImpl<$Res>;
   @override
-  $Res call({bool? isValid, int? discount});
+  $Res call({bool? isValid, @DecimalSerialiser() Decimal discount});
 }
 
 /// @nodoc
@@ -104,7 +105,7 @@ class __$$_NftMarketIsValidPromoResponseModelCopyWithImpl<$Res>
       discount: discount == freezed
           ? _value.discount
           : discount // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as Decimal,
     ));
   }
 }
@@ -113,7 +114,8 @@ class __$$_NftMarketIsValidPromoResponseModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_NftMarketIsValidPromoResponseModel
     implements _NftMarketIsValidPromoResponseModel {
-  _$_NftMarketIsValidPromoResponseModel({this.isValid, this.discount});
+  _$_NftMarketIsValidPromoResponseModel(
+      {this.isValid, @DecimalSerialiser() required this.discount});
 
   factory _$_NftMarketIsValidPromoResponseModel.fromJson(
           Map<String, dynamic> json) =>
@@ -122,7 +124,8 @@ class _$_NftMarketIsValidPromoResponseModel
   @override
   final bool? isValid;
   @override
-  final int? discount;
+  @DecimalSerialiser()
+  final Decimal discount;
 
   @override
   String toString() {
@@ -154,17 +157,16 @@ class _$_NftMarketIsValidPromoResponseModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NftMarketIsValidPromoResponseModelToJson(
-      this,
-    );
+    return _$$_NftMarketIsValidPromoResponseModelToJson(this);
   }
 }
 
 abstract class _NftMarketIsValidPromoResponseModel
     implements NftMarketIsValidPromoResponseModel {
   factory _NftMarketIsValidPromoResponseModel(
-      {final bool? isValid,
-      final int? discount}) = _$_NftMarketIsValidPromoResponseModel;
+          {final bool? isValid,
+          @DecimalSerialiser() required final Decimal discount}) =
+      _$_NftMarketIsValidPromoResponseModel;
 
   factory _NftMarketIsValidPromoResponseModel.fromJson(
           Map<String, dynamic> json) =
@@ -173,7 +175,8 @@ abstract class _NftMarketIsValidPromoResponseModel
   @override
   bool? get isValid;
   @override
-  int? get discount;
+  @DecimalSerialiser()
+  Decimal get discount;
   @override
   @JsonKey(ignore: true)
   _$$_NftMarketIsValidPromoResponseModelCopyWith<

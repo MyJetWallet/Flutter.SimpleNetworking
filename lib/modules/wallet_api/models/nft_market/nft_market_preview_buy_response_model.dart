@@ -10,8 +10,14 @@ class NftMarketPreviewBuyResponseModel with _$NftMarketPreviewBuyResponseModel {
   factory NftMarketPreviewBuyResponseModel({
     required String symbol,
     required String sellAsset,
-    @DecimalSerialiser() required Decimal fee,
+    //@DecimalSerialiser() required Decimal fee,
     @DecimalSerialiser() required Decimal sellPrice,
+    @DecimalSerialiser() required Decimal discountPercentage,
+    @DecimalSerialiser() required Decimal discountAmount,
+    //@DecimalSerialiser() required Decimal feePercentage,
+    //@DecimalSerialiser() required Decimal receiveAmount,
+    //@DecimalSerialiser() required Decimal feeAmount,
+    @DecimalSerialiser() required Decimal paymentAmount,
   }) = _NftMarketPreviewBuyResponseModel;
 
   factory NftMarketPreviewBuyResponseModel.fromJson(

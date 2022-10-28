@@ -418,7 +418,8 @@ class WalletApiDataSources {
     }
   }
 
-  Future<DC<ServerRejectException, CardVerificationResponseModel>> cardVerification(
+  Future<DC<ServerRejectException, CardVerificationResponseModel>>
+      cardVerification(
     CardVerificationRequestModel model,
   ) async {
     try {
@@ -1501,10 +1502,18 @@ class WalletApiDataSources {
   Future<DC<ServerRejectException, NftMarketPreviewBuyResponseModel>>
       getNFTMarketPreviewBuyRequest(
     String symbol,
+    String? promocode,
   ) async {
     try {
+      String link =
+          '${_apiClient.options.walletApi}/trading/nft-market/preview-buy/$symbol';
+
+      if (promocode != null) {
+        link = '$link?promoCode=$promocode';
+      }
+
       final response = await _apiClient.get(
-        '${_apiClient.options.walletApi}/trading/nft-market/preview-buy/$symbol',
+        link,
       );
 
       try {

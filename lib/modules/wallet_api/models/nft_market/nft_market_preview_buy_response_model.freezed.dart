@@ -22,11 +22,19 @@ NftMarketPreviewBuyResponseModel _$NftMarketPreviewBuyResponseModelFromJson(
 /// @nodoc
 mixin _$NftMarketPreviewBuyResponseModel {
   String get symbol => throw _privateConstructorUsedError;
-  String get sellAsset => throw _privateConstructorUsedError;
-  @DecimalSerialiser()
-  Decimal get fee => throw _privateConstructorUsedError;
+  String get sellAsset =>
+      throw _privateConstructorUsedError; //@DecimalSerialiser() required Decimal fee,
   @DecimalSerialiser()
   Decimal get sellPrice => throw _privateConstructorUsedError;
+  @DecimalSerialiser()
+  Decimal get discountPercentage => throw _privateConstructorUsedError;
+  @DecimalSerialiser()
+  Decimal get discountAmount =>
+      throw _privateConstructorUsedError; //@DecimalSerialiser() required Decimal feePercentage,
+//@DecimalSerialiser() required Decimal receiveAmount,
+//@DecimalSerialiser() required Decimal feeAmount,
+  @DecimalSerialiser()
+  Decimal get paymentAmount => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -43,8 +51,10 @@ abstract class $NftMarketPreviewBuyResponseModelCopyWith<$Res> {
   $Res call(
       {String symbol,
       String sellAsset,
-      @DecimalSerialiser() Decimal fee,
-      @DecimalSerialiser() Decimal sellPrice});
+      @DecimalSerialiser() Decimal sellPrice,
+      @DecimalSerialiser() Decimal discountPercentage,
+      @DecimalSerialiser() Decimal discountAmount,
+      @DecimalSerialiser() Decimal paymentAmount});
 }
 
 /// @nodoc
@@ -60,8 +70,10 @@ class _$NftMarketPreviewBuyResponseModelCopyWithImpl<$Res>
   $Res call({
     Object? symbol = freezed,
     Object? sellAsset = freezed,
-    Object? fee = freezed,
     Object? sellPrice = freezed,
+    Object? discountPercentage = freezed,
+    Object? discountAmount = freezed,
+    Object? paymentAmount = freezed,
   }) {
     return _then(_value.copyWith(
       symbol: symbol == freezed
@@ -72,13 +84,21 @@ class _$NftMarketPreviewBuyResponseModelCopyWithImpl<$Res>
           ? _value.sellAsset
           : sellAsset // ignore: cast_nullable_to_non_nullable
               as String,
-      fee: fee == freezed
-          ? _value.fee
-          : fee // ignore: cast_nullable_to_non_nullable
-              as Decimal,
       sellPrice: sellPrice == freezed
           ? _value.sellPrice
           : sellPrice // ignore: cast_nullable_to_non_nullable
+              as Decimal,
+      discountPercentage: discountPercentage == freezed
+          ? _value.discountPercentage
+          : discountPercentage // ignore: cast_nullable_to_non_nullable
+              as Decimal,
+      discountAmount: discountAmount == freezed
+          ? _value.discountAmount
+          : discountAmount // ignore: cast_nullable_to_non_nullable
+              as Decimal,
+      paymentAmount: paymentAmount == freezed
+          ? _value.paymentAmount
+          : paymentAmount // ignore: cast_nullable_to_non_nullable
               as Decimal,
     ));
   }
@@ -95,8 +115,10 @@ abstract class _$$_NftMarketPreviewBuyResponseModelCopyWith<$Res>
   $Res call(
       {String symbol,
       String sellAsset,
-      @DecimalSerialiser() Decimal fee,
-      @DecimalSerialiser() Decimal sellPrice});
+      @DecimalSerialiser() Decimal sellPrice,
+      @DecimalSerialiser() Decimal discountPercentage,
+      @DecimalSerialiser() Decimal discountAmount,
+      @DecimalSerialiser() Decimal paymentAmount});
 }
 
 /// @nodoc
@@ -116,8 +138,10 @@ class __$$_NftMarketPreviewBuyResponseModelCopyWithImpl<$Res>
   $Res call({
     Object? symbol = freezed,
     Object? sellAsset = freezed,
-    Object? fee = freezed,
     Object? sellPrice = freezed,
+    Object? discountPercentage = freezed,
+    Object? discountAmount = freezed,
+    Object? paymentAmount = freezed,
   }) {
     return _then(_$_NftMarketPreviewBuyResponseModel(
       symbol: symbol == freezed
@@ -128,13 +152,21 @@ class __$$_NftMarketPreviewBuyResponseModelCopyWithImpl<$Res>
           ? _value.sellAsset
           : sellAsset // ignore: cast_nullable_to_non_nullable
               as String,
-      fee: fee == freezed
-          ? _value.fee
-          : fee // ignore: cast_nullable_to_non_nullable
-              as Decimal,
       sellPrice: sellPrice == freezed
           ? _value.sellPrice
           : sellPrice // ignore: cast_nullable_to_non_nullable
+              as Decimal,
+      discountPercentage: discountPercentage == freezed
+          ? _value.discountPercentage
+          : discountPercentage // ignore: cast_nullable_to_non_nullable
+              as Decimal,
+      discountAmount: discountAmount == freezed
+          ? _value.discountAmount
+          : discountAmount // ignore: cast_nullable_to_non_nullable
+              as Decimal,
+      paymentAmount: paymentAmount == freezed
+          ? _value.paymentAmount
+          : paymentAmount // ignore: cast_nullable_to_non_nullable
               as Decimal,
     ));
   }
@@ -147,8 +179,10 @@ class _$_NftMarketPreviewBuyResponseModel
   _$_NftMarketPreviewBuyResponseModel(
       {required this.symbol,
       required this.sellAsset,
-      @DecimalSerialiser() required this.fee,
-      @DecimalSerialiser() required this.sellPrice});
+      @DecimalSerialiser() required this.sellPrice,
+      @DecimalSerialiser() required this.discountPercentage,
+      @DecimalSerialiser() required this.discountAmount,
+      @DecimalSerialiser() required this.paymentAmount});
 
   factory _$_NftMarketPreviewBuyResponseModel.fromJson(
           Map<String, dynamic> json) =>
@@ -158,16 +192,26 @@ class _$_NftMarketPreviewBuyResponseModel
   final String symbol;
   @override
   final String sellAsset;
-  @override
-  @DecimalSerialiser()
-  final Decimal fee;
+//@DecimalSerialiser() required Decimal fee,
   @override
   @DecimalSerialiser()
   final Decimal sellPrice;
+  @override
+  @DecimalSerialiser()
+  final Decimal discountPercentage;
+  @override
+  @DecimalSerialiser()
+  final Decimal discountAmount;
+//@DecimalSerialiser() required Decimal feePercentage,
+//@DecimalSerialiser() required Decimal receiveAmount,
+//@DecimalSerialiser() required Decimal feeAmount,
+  @override
+  @DecimalSerialiser()
+  final Decimal paymentAmount;
 
   @override
   String toString() {
-    return 'NftMarketPreviewBuyResponseModel(symbol: $symbol, sellAsset: $sellAsset, fee: $fee, sellPrice: $sellPrice)';
+    return 'NftMarketPreviewBuyResponseModel(symbol: $symbol, sellAsset: $sellAsset, sellPrice: $sellPrice, discountPercentage: $discountPercentage, discountAmount: $discountAmount, paymentAmount: $paymentAmount)';
   }
 
   @override
@@ -177,8 +221,13 @@ class _$_NftMarketPreviewBuyResponseModel
             other is _$_NftMarketPreviewBuyResponseModel &&
             const DeepCollectionEquality().equals(other.symbol, symbol) &&
             const DeepCollectionEquality().equals(other.sellAsset, sellAsset) &&
-            const DeepCollectionEquality().equals(other.fee, fee) &&
-            const DeepCollectionEquality().equals(other.sellPrice, sellPrice));
+            const DeepCollectionEquality().equals(other.sellPrice, sellPrice) &&
+            const DeepCollectionEquality()
+                .equals(other.discountPercentage, discountPercentage) &&
+            const DeepCollectionEquality()
+                .equals(other.discountAmount, discountAmount) &&
+            const DeepCollectionEquality()
+                .equals(other.paymentAmount, paymentAmount));
   }
 
   @JsonKey(ignore: true)
@@ -187,8 +236,10 @@ class _$_NftMarketPreviewBuyResponseModel
       runtimeType,
       const DeepCollectionEquality().hash(symbol),
       const DeepCollectionEquality().hash(sellAsset),
-      const DeepCollectionEquality().hash(fee),
-      const DeepCollectionEquality().hash(sellPrice));
+      const DeepCollectionEquality().hash(sellPrice),
+      const DeepCollectionEquality().hash(discountPercentage),
+      const DeepCollectionEquality().hash(discountAmount),
+      const DeepCollectionEquality().hash(paymentAmount));
 
   @JsonKey(ignore: true)
   @override
@@ -199,9 +250,7 @@ class _$_NftMarketPreviewBuyResponseModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NftMarketPreviewBuyResponseModelToJson(
-      this,
-    );
+    return _$$_NftMarketPreviewBuyResponseModelToJson(this);
   }
 }
 
@@ -210,8 +259,10 @@ abstract class _NftMarketPreviewBuyResponseModel
   factory _NftMarketPreviewBuyResponseModel(
           {required final String symbol,
           required final String sellAsset,
-          @DecimalSerialiser() required final Decimal fee,
-          @DecimalSerialiser() required final Decimal sellPrice}) =
+          @DecimalSerialiser() required final Decimal sellPrice,
+          @DecimalSerialiser() required final Decimal discountPercentage,
+          @DecimalSerialiser() required final Decimal discountAmount,
+          @DecimalSerialiser() required final Decimal paymentAmount}) =
       _$_NftMarketPreviewBuyResponseModel;
 
   factory _NftMarketPreviewBuyResponseModel.fromJson(
@@ -221,12 +272,20 @@ abstract class _NftMarketPreviewBuyResponseModel
   String get symbol;
   @override
   String get sellAsset;
-  @override
-  @DecimalSerialiser()
-  Decimal get fee;
-  @override
+  @override //@DecimalSerialiser() required Decimal fee,
   @DecimalSerialiser()
   Decimal get sellPrice;
+  @override
+  @DecimalSerialiser()
+  Decimal get discountPercentage;
+  @override
+  @DecimalSerialiser()
+  Decimal get discountAmount;
+  @override //@DecimalSerialiser() required Decimal feePercentage,
+//@DecimalSerialiser() required Decimal receiveAmount,
+//@DecimalSerialiser() required Decimal feeAmount,
+  @DecimalSerialiser()
+  Decimal get paymentAmount;
   @override
   @JsonKey(ignore: true)
   _$$_NftMarketPreviewBuyResponseModelCopyWith<

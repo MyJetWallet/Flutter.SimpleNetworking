@@ -10,12 +10,12 @@ _$_NftMarketIsValidPromoResponseModel
     _$$_NftMarketIsValidPromoResponseModelFromJson(Map<String, dynamic> json) =>
         _$_NftMarketIsValidPromoResponseModel(
           isValid: json['isValid'] as bool?,
-          discount: json['discount'] as int?,
+          discount: const DecimalSerialiser().fromJson(json['discount']),
         );
 
 Map<String, dynamic> _$$_NftMarketIsValidPromoResponseModelToJson(
         _$_NftMarketIsValidPromoResponseModel instance) =>
     <String, dynamic>{
       'isValid': instance.isValid,
-      'discount': instance.discount,
+      'discount': const DecimalSerialiser().toJson(instance.discount),
     };

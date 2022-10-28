@@ -11,8 +11,13 @@ _$_NftMarketPreviewBuyResponseModel
         _$_NftMarketPreviewBuyResponseModel(
           symbol: json['symbol'] as String,
           sellAsset: json['sellAsset'] as String,
-          fee: const DecimalSerialiser().fromJson(json['fee']),
           sellPrice: const DecimalSerialiser().fromJson(json['sellPrice']),
+          discountPercentage:
+              const DecimalSerialiser().fromJson(json['discountPercentage']),
+          discountAmount:
+              const DecimalSerialiser().fromJson(json['discountAmount']),
+          paymentAmount:
+              const DecimalSerialiser().fromJson(json['paymentAmount']),
         );
 
 Map<String, dynamic> _$$_NftMarketPreviewBuyResponseModelToJson(
@@ -20,6 +25,10 @@ Map<String, dynamic> _$$_NftMarketPreviewBuyResponseModelToJson(
     <String, dynamic>{
       'symbol': instance.symbol,
       'sellAsset': instance.sellAsset,
-      'fee': const DecimalSerialiser().toJson(instance.fee),
       'sellPrice': const DecimalSerialiser().toJson(instance.sellPrice),
+      'discountPercentage':
+          const DecimalSerialiser().toJson(instance.discountPercentage),
+      'discountAmount':
+          const DecimalSerialiser().toJson(instance.discountAmount),
+      'paymentAmount': const DecimalSerialiser().toJson(instance.paymentAmount),
     };

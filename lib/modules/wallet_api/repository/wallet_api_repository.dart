@@ -511,7 +511,8 @@ class WalletApiRepository {
     );
   }
 
-  Future<DC<ServerRejectException, CardVerificationResponseModel>> cardVerification(
+  Future<DC<ServerRejectException, CardVerificationResponseModel>>
+      cardVerification(
     CardVerificationRequestModel model,
   ) async {
     return _walletApiDataSources.cardVerification(
@@ -537,8 +538,12 @@ class WalletApiRepository {
   }
 
   Future<DC<ServerRejectException, NftMarketPreviewBuyResponseModel>>
-      getNFTMarketPreviewBuy(String symbol) async {
-    return _walletApiDataSources.getNFTMarketPreviewBuyRequest(symbol);
+      getNFTMarketPreviewBuy({
+    required String symbol,
+    String? promocode,
+  }) async {
+    return _walletApiDataSources.getNFTMarketPreviewBuyRequest(
+        symbol, promocode);
   }
 
   Future<DC<ServerRejectException, NftMarketPreviewSellResponseModel>>

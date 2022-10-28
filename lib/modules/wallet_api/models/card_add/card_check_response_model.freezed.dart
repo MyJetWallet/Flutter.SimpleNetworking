@@ -143,9 +143,7 @@ class _$_CardCheckResponseModel implements _CardCheckResponseModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CardCheckResponseModelToJson(
-      this,
-    );
+    return _$$_CardCheckResponseModelToJson(this);
   }
 }
 
@@ -304,9 +302,7 @@ class _$_CardCheckResponseDataModel implements _CardCheckResponseDataModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CardCheckResponseDataModelToJson(
-      this,
-    );
+    return _$$_CardCheckResponseDataModelToJson(this);
   }
 }
 

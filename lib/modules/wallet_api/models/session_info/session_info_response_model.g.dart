@@ -14,6 +14,7 @@ _$_SessionInfoResponseModel _$$_SessionInfoResponseModelFromJson(
       emailVerified: json['emailVerified'] as bool,
       phoneVerified: json['phoneVerified'] as bool,
       hasHighYieldDisclaimers: json['hasHighYieldDisclaimers'] as bool,
+      hasNftDisclaimers: json['hasNftDisclaimers'] as bool,
       twoFaPassed: json['twoFactorAuthentication'] as bool,
       twoFaEnabled: json['twoFactorAuthenticationEnabled'] as bool,
     );
@@ -26,6 +27,7 @@ Map<String, dynamic> _$$_SessionInfoResponseModelToJson(
       'emailVerified': instance.emailVerified,
       'phoneVerified': instance.phoneVerified,
       'hasHighYieldDisclaimers': instance.hasHighYieldDisclaimers,
+      'hasNftDisclaimers': instance.hasNftDisclaimers,
       'twoFactorAuthentication': instance.twoFaPassed,
       'twoFactorAuthenticationEnabled': instance.twoFaEnabled,
     };

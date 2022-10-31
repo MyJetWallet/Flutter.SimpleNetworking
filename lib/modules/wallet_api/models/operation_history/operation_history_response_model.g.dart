@@ -121,7 +121,7 @@ const _$OperationTypeEnumMap = {
   OperationType.nftSellOpposite: 24,
   OperationType.nftDeposit: 25,
   OperationType.nftWithdrawal: 26,
-  OperationType.nftWithdrawalFee: 26,
+  OperationType.nftWithdrawalFee: 27,
 };
 
 const _$StatusEnumMap = {

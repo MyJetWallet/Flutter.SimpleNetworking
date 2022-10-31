@@ -93,6 +93,8 @@ enum OperationType {
   nftDeposit,
   @JsonValue(26)
   nftWithdrawal,
+  @JsonValue(26)
+  nftWithdrawalFee,
 }
 
 enum Status {

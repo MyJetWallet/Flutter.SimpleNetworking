@@ -250,7 +250,9 @@ class _$_NftMarketPreviewBuyResponseModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NftMarketPreviewBuyResponseModelToJson(this);
+    return _$$_NftMarketPreviewBuyResponseModelToJson(
+      this,
+    );
   }
 }
 

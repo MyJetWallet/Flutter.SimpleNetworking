@@ -11,6 +11,7 @@ class ReferralInfoModel with _$ReferralInfoModel {
     required String referralLink,
     required String title,
     required String descriptionLink,
+    String? nftPromoCode,
   }) = _ReferralInfoModel;
 
   factory ReferralInfoModel.fromJson(Map<String, dynamic> json) =>

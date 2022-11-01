@@ -149,9 +149,7 @@ class _$_OperationHistoryResponseModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OperationHistoryResponseModelToJson(
-      this,
-    );
+    return _$$_OperationHistoryResponseModelToJson(this);
   }
 }
 
@@ -764,9 +762,7 @@ class _$_OperationHistoryItem implements _OperationHistoryItem {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OperationHistoryItemToJson(
-      this,
-    );
+    return _$$_OperationHistoryItemToJson(this);
   }
 }
 
@@ -968,9 +964,7 @@ class _$_DepositInfo implements _DepositInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DepositInfoToJson(
-      this,
-    );
+    return _$$_DepositInfoToJson(this);
   }
 }
 
@@ -1226,9 +1220,7 @@ class _$_WithdrawalInfo implements _WithdrawalInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WithdrawalInfoToJson(
-      this,
-    );
+    return _$$_WithdrawalInfoToJson(this);
   }
 }
 
@@ -1497,9 +1489,7 @@ class _$_BuyInfo implements _BuyInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BuyInfoToJson(
-      this,
-    );
+    return _$$_BuyInfoToJson(this);
   }
 }
 
@@ -1833,9 +1823,7 @@ class _$_SwapInfo implements _SwapInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SwapInfoToJson(
-      this,
-    );
+    return _$$_SwapInfoToJson(this);
   }
 }
 
@@ -2027,9 +2015,7 @@ class _$_WithdrawalFeeInfo implements _WithdrawalFeeInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WithdrawalFeeInfoToJson(
-      this,
-    );
+    return _$$_WithdrawalFeeInfoToJson(this);
   }
 }
 
@@ -2247,9 +2233,7 @@ class _$_TransferByPhoneInfo implements _TransferByPhoneInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TransferByPhoneInfoToJson(
-      this,
-    );
+    return _$$_TransferByPhoneInfoToJson(this);
   }
 }
 
@@ -2432,9 +2416,7 @@ class _$_ReceiveByPhoneInfo implements _ReceiveByPhoneInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ReceiveByPhoneInfoToJson(
-      this,
-    );
+    return _$$_ReceiveByPhoneInfoToJson(this);
   }
 }
 
@@ -2758,9 +2740,7 @@ class _$_RecurringBuyInfo implements _RecurringBuyInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RecurringBuyInfoToJson(
-      this,
-    );
+    return _$$_RecurringBuyInfoToJson(this);
   }
 }
 
@@ -3010,9 +2990,7 @@ class _$_EarnInfo implements _EarnInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EarnInfoToJson(
-      this,
-    );
+    return _$$_EarnInfoToJson(this);
   }
 }
 
@@ -3167,9 +3145,7 @@ class _$_OfferInfo implements _OfferInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OfferInfoToJson(
-      this,
-    );
+    return _$$_OfferInfoToJson(this);
   }
 }
 
@@ -3525,9 +3501,7 @@ class _$_CryptoBuyInfo implements _CryptoBuyInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CryptoBuyInfoToJson(
-      this,
-    );
+    return _$$_CryptoBuyInfoToJson(this);
   }
 }
 

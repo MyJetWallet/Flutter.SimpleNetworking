@@ -15,6 +15,7 @@ _$_ReferralInfoModel _$$_ReferralInfoModelFromJson(Map<String, dynamic> json) =>
       referralLink: json['referralLink'] as String,
       title: json['title'] as String,
       descriptionLink: json['descriptionLink'] as String,
+      nftPromoCode: json['nftPromoCode'] as String?,
     );
 
 Map<String, dynamic> _$$_ReferralInfoModelToJson(
@@ -25,4 +26,5 @@ Map<String, dynamic> _$$_ReferralInfoModelToJson(
       'referralLink': instance.referralLink,
       'title': instance.title,
       'descriptionLink': instance.descriptionLink,
+      'nftPromoCode': instance.nftPromoCode,
     };

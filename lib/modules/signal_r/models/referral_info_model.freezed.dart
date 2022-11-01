@@ -25,6 +25,7 @@ mixin _$ReferralInfoModel {
   String get referralLink => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get descriptionLink => throw _privateConstructorUsedError;
+  String? get nftPromoCode => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,7 +43,8 @@ abstract class $ReferralInfoModelCopyWith<$Res> {
       List<String> referralTerms,
       String referralLink,
       String title,
-      String descriptionLink});
+      String descriptionLink,
+      String? nftPromoCode});
 }
 
 /// @nodoc
@@ -61,6 +63,7 @@ class _$ReferralInfoModelCopyWithImpl<$Res>
     Object? referralLink = freezed,
     Object? title = freezed,
     Object? descriptionLink = freezed,
+    Object? nftPromoCode = freezed,
   }) {
     return _then(_value.copyWith(
       referralCode: referralCode == freezed
@@ -83,6 +86,10 @@ class _$ReferralInfoModelCopyWithImpl<$Res>
           ? _value.descriptionLink
           : descriptionLink // ignore: cast_nullable_to_non_nullable
               as String,
+      nftPromoCode: nftPromoCode == freezed
+          ? _value.nftPromoCode
+          : nftPromoCode // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -99,7 +106,8 @@ abstract class _$$_ReferralInfoModelCopyWith<$Res>
       List<String> referralTerms,
       String referralLink,
       String title,
-      String descriptionLink});
+      String descriptionLink,
+      String? nftPromoCode});
 }
 
 /// @nodoc
@@ -120,6 +128,7 @@ class __$$_ReferralInfoModelCopyWithImpl<$Res>
     Object? referralLink = freezed,
     Object? title = freezed,
     Object? descriptionLink = freezed,
+    Object? nftPromoCode = freezed,
   }) {
     return _then(_$_ReferralInfoModel(
       referralCode: referralCode == freezed
@@ -142,6 +151,10 @@ class __$$_ReferralInfoModelCopyWithImpl<$Res>
           ? _value.descriptionLink
           : descriptionLink // ignore: cast_nullable_to_non_nullable
               as String,
+      nftPromoCode: nftPromoCode == freezed
+          ? _value.nftPromoCode
+          : nftPromoCode // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -154,7 +167,8 @@ class _$_ReferralInfoModel implements _ReferralInfoModel {
       required final List<String> referralTerms,
       required this.referralLink,
       required this.title,
-      required this.descriptionLink})
+      required this.descriptionLink,
+      this.nftPromoCode})
       : _referralTerms = referralTerms;
 
   factory _$_ReferralInfoModel.fromJson(Map<String, dynamic> json) =>
@@ -175,10 +189,12 @@ class _$_ReferralInfoModel implements _ReferralInfoModel {
   final String title;
   @override
   final String descriptionLink;
+  @override
+  final String? nftPromoCode;
 
   @override
   String toString() {
-    return 'ReferralInfoModel(referralCode: $referralCode, referralTerms: $referralTerms, referralLink: $referralLink, title: $title, descriptionLink: $descriptionLink)';
+    return 'ReferralInfoModel(referralCode: $referralCode, referralTerms: $referralTerms, referralLink: $referralLink, title: $title, descriptionLink: $descriptionLink, nftPromoCode: $nftPromoCode)';
   }
 
   @override
@@ -194,7 +210,9 @@ class _$_ReferralInfoModel implements _ReferralInfoModel {
                 .equals(other.referralLink, referralLink) &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality()
-                .equals(other.descriptionLink, descriptionLink));
+                .equals(other.descriptionLink, descriptionLink) &&
+            const DeepCollectionEquality()
+                .equals(other.nftPromoCode, nftPromoCode));
   }
 
   @JsonKey(ignore: true)
@@ -205,7 +223,8 @@ class _$_ReferralInfoModel implements _ReferralInfoModel {
       const DeepCollectionEquality().hash(_referralTerms),
       const DeepCollectionEquality().hash(referralLink),
       const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(descriptionLink));
+      const DeepCollectionEquality().hash(descriptionLink),
+      const DeepCollectionEquality().hash(nftPromoCode));
 
   @JsonKey(ignore: true)
   @override
@@ -225,7 +244,8 @@ abstract class _ReferralInfoModel implements ReferralInfoModel {
       required final List<String> referralTerms,
       required final String referralLink,
       required final String title,
-      required final String descriptionLink}) = _$_ReferralInfoModel;
+      required final String descriptionLink,
+      final String? nftPromoCode}) = _$_ReferralInfoModel;
 
   factory _ReferralInfoModel.fromJson(Map<String, dynamic> json) =
       _$_ReferralInfoModel.fromJson;
@@ -240,6 +260,8 @@ abstract class _ReferralInfoModel implements ReferralInfoModel {
   String get title;
   @override
   String get descriptionLink;
+  @override
+  String? get nftPromoCode;
   @override
   @JsonKey(ignore: true)
   _$$_ReferralInfoModelCopyWith<_$_ReferralInfoModel> get copyWith =>

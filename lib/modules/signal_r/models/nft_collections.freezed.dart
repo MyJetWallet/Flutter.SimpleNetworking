@@ -145,9 +145,7 @@ class _$_NftCollections implements _NftCollections {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NftCollectionsToJson(
-      this,
-    );
+    return _$$_NftCollectionsToJson(this);
   }
 }
 
@@ -184,7 +182,8 @@ mixin _$NftCollection {
   String? get fImage => throw _privateConstructorUsedError;
   @DecimalNullSerialiser()
   Decimal? get totalVolumeUsd => throw _privateConstructorUsedError;
-  int? get bestOffer => throw _privateConstructorUsedError;
+  @DecimalNullSerialiser()
+  Decimal? get bestOffer => throw _privateConstructorUsedError;
   String? get bestOfferAsset => throw _privateConstructorUsedError;
   int? get ownerCount => throw _privateConstructorUsedError;
   int? get order => throw _privateConstructorUsedError;
@@ -209,7 +208,7 @@ abstract class $NftCollectionCopyWith<$Res> {
       String? sImage,
       String? fImage,
       @DecimalNullSerialiser() Decimal? totalVolumeUsd,
-      int? bestOffer,
+      @DecimalNullSerialiser() Decimal? bestOffer,
       String? bestOfferAsset,
       int? ownerCount,
       int? order});
@@ -275,7 +274,7 @@ class _$NftCollectionCopyWithImpl<$Res>
       bestOffer: bestOffer == freezed
           ? _value.bestOffer
           : bestOffer // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as Decimal?,
       bestOfferAsset: bestOfferAsset == freezed
           ? _value.bestOfferAsset
           : bestOfferAsset // ignore: cast_nullable_to_non_nullable
@@ -308,7 +307,7 @@ abstract class _$$_NftCollectionCopyWith<$Res>
       String? sImage,
       String? fImage,
       @DecimalNullSerialiser() Decimal? totalVolumeUsd,
-      int? bestOffer,
+      @DecimalNullSerialiser() Decimal? bestOffer,
       String? bestOfferAsset,
       int? ownerCount,
       int? order});
@@ -376,7 +375,7 @@ class __$$_NftCollectionCopyWithImpl<$Res>
       bestOffer: bestOffer == freezed
           ? _value.bestOffer
           : bestOffer // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as Decimal?,
       bestOfferAsset: bestOfferAsset == freezed
           ? _value.bestOfferAsset
           : bestOfferAsset // ignore: cast_nullable_to_non_nullable
@@ -405,7 +404,7 @@ class _$_NftCollection implements _NftCollection {
       this.sImage,
       this.fImage,
       @DecimalNullSerialiser() this.totalVolumeUsd,
-      this.bestOffer,
+      @DecimalNullSerialiser() this.bestOffer,
       this.bestOfferAsset,
       this.ownerCount,
       this.order})
@@ -439,7 +438,8 @@ class _$_NftCollection implements _NftCollection {
   @DecimalNullSerialiser()
   final Decimal? totalVolumeUsd;
   @override
-  final int? bestOffer;
+  @DecimalNullSerialiser()
+  final Decimal? bestOffer;
   @override
   final String? bestOfferAsset;
   @override
@@ -499,9 +499,7 @@ class _$_NftCollection implements _NftCollection {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NftCollectionToJson(
-      this,
-    );
+    return _$$_NftCollectionToJson(this);
   }
 }
 
@@ -515,7 +513,7 @@ abstract class _NftCollection implements NftCollection {
       final String? sImage,
       final String? fImage,
       @DecimalNullSerialiser() final Decimal? totalVolumeUsd,
-      final int? bestOffer,
+      @DecimalNullSerialiser() final Decimal? bestOffer,
       final String? bestOfferAsset,
       final int? ownerCount,
       final int? order}) = _$_NftCollection;
@@ -541,7 +539,8 @@ abstract class _NftCollection implements NftCollection {
   @DecimalNullSerialiser()
   Decimal? get totalVolumeUsd;
   @override
-  int? get bestOffer;
+  @DecimalNullSerialiser()
+  Decimal? get bestOffer;
   @override
   String? get bestOfferAsset;
   @override

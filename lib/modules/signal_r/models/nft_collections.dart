@@ -27,7 +27,7 @@ class NftCollection with _$NftCollection {
     final String? sImage,
     final String? fImage,
     @DecimalNullSerialiser() Decimal? totalVolumeUsd,
-    final int? bestOffer,
+    @DecimalNullSerialiser() Decimal? bestOffer,
     final String? bestOfferAsset,
     final int? ownerCount,
     final int? order,

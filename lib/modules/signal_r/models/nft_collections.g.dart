@@ -31,7 +31,7 @@ _$_NftCollection _$$_NftCollectionFromJson(Map<String, dynamic> json) =>
       fImage: json['fImage'] as String?,
       totalVolumeUsd:
           const DecimalNullSerialiser().fromJson(json['totalVolumeUsd']),
-      bestOffer: json['bestOffer'] as int?,
+      bestOffer: const DecimalNullSerialiser().fromJson(json['bestOffer']),
       bestOfferAsset: json['bestOfferAsset'] as String?,
       ownerCount: json['ownerCount'] as int?,
       order: json['order'] as int?,
@@ -48,7 +48,7 @@ Map<String, dynamic> _$$_NftCollectionToJson(_$_NftCollection instance) =>
       'fImage': instance.fImage,
       'totalVolumeUsd':
           const DecimalNullSerialiser().toJson(instance.totalVolumeUsd),
-      'bestOffer': instance.bestOffer,
+      'bestOffer': const DecimalNullSerialiser().toJson(instance.bestOffer),
       'bestOfferAsset': instance.bestOfferAsset,
       'ownerCount': instance.ownerCount,
       'order': instance.order,

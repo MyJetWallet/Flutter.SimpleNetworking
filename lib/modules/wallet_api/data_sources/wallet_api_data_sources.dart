@@ -1018,15 +1018,12 @@ class WalletApiDataSources {
     int documentType,
   ) async {
     try {
-      final response = await _apiClient.post(
+      final _ = await _apiClient.post(
         '${_apiClient.options.walletApi}/kyc/verification/kyc_documents/$documentType',
         data: formData,
       );
 
       try {
-        final responseData = response.data as Map<String, dynamic>;
-        handleResultResponse(responseData);
-
         return DC.data(null);
       } catch (e) {
         rethrow;

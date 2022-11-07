@@ -234,7 +234,9 @@ class _$_ReferralInfoModel implements _ReferralInfoModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ReferralInfoModelToJson(this);
+    return _$$_ReferralInfoModelToJson(
+      this,
+    );
   }
 }
 

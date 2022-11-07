@@ -19,6 +19,7 @@ import 'package:simple_networking/modules/signal_r/models/cards_model.dart';
 import 'package:simple_networking/modules/signal_r/models/client_detail_model.dart';
 import 'package:simple_networking/modules/signal_r/models/earn_offers_model.dart';
 import 'package:simple_networking/modules/signal_r/models/earn_profile_model.dart';
+import 'package:simple_networking/modules/signal_r/models/fireblock_events_model.dart';
 import 'package:simple_networking/modules/signal_r/models/indices_model.dart';
 import 'package:simple_networking/modules/signal_r/models/instruments_model.dart';
 import 'package:simple_networking/modules/signal_r/models/key_value_model.dart';
@@ -128,6 +129,8 @@ class SignalRModule {
       StreamController<NFTMarkets>();
   StreamController<NftPortfolio> _nftPortfolio =
       StreamController<NftPortfolio>();
+  StreamController<FireblockEventsModel> _fireblockEvents =
+      StreamController<FireblockEventsModel>();
 
   /// This variable is created to track previous snapshot of base prices.
   /// This needed because when signlaR gets update from basePrices it
@@ -167,6 +170,7 @@ class SignalRModule {
     _nftCollectionController = StreamController<NftCollections>();
     _nftMarketController = StreamController<NFTMarkets>();
     _nftPortfolio = StreamController<NftPortfolio>();
+    _fireblockEvents = StreamController<FireblockEventsModel>();
   }
 
   Future<void> clearSignalR() async {
@@ -570,6 +574,22 @@ class SignalRModule {
       }
     });
 
+    _connection?.on(fireblocksMessages, (data) {
+      try {
+        final fireblockEvents = FireblockEventsModel.fromJson(_json(data));
+
+        _fireblockEvents.add(fireblockEvents);
+
+        log.d(fireblockEvents);
+      } catch (e) {
+        _logger.log(contract, fireblocksMessages, e);
+
+        showEror(e.toString());
+
+        log.e(e.toString());
+      }
+    });
+
     try {
       await _connection?.start();
     } catch (e) {
@@ -657,6 +677,8 @@ class SignalRModule {
   Stream<NFTMarkets> nftMarket() => _nftMarketController.stream;
 
   Stream<NftPortfolio> nftPortfolio() => _nftPortfolio.stream;
+
+  Stream<FireblockEventsModel> fireblockEvents() => _fireblockEvents.stream;
 
   void _startPing() {
     _pingTimer = Timer.periodic(

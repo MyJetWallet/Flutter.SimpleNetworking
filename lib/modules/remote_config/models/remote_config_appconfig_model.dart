@@ -15,6 +15,8 @@ class RemoteConfigAppconfigModel with _$RemoteConfigAppconfigModel {
     required String referralPolicyLink,
     @Default('https://nft.simple.app/terms-and-conditions') String nftTermsLink,
     @Default('https://nft.simple.app/privacy-policy') String nftPolicyLink,
+    @Default('Simple Europe UAB') String simpleCompanyName,
+    @Default('Gyneju str. 14-65, Vilnius, Republic of Lithuania, 01109') String simpleCompanyAddress,
     required String cardLimitsLearnMoreLink,
     required String privacyEarnLink,
     required int paymentDelayDays,

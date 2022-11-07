@@ -381,6 +381,14 @@ class WalletApiRepository {
     );
   }
 
+  Future<DC<ServerRejectException, void>> postProfileReport(
+    String messageId,
+  ) async {
+    return _walletApiDataSources.postProfileReportRequest(
+      messageId,
+    );
+  }
+
   Future<DC<ServerRejectException, void>> deleteRemoveRecurringBuy(
     RecurringDeleteRequestModel model,
   ) async {

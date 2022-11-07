@@ -20,6 +20,10 @@ _$_RemoteConfigAppconfigModel _$$_RemoteConfigAppconfigModelFromJson(
           'https://nft.simple.app/terms-and-conditions',
       nftPolicyLink: json['nftPolicyLink'] as String? ??
           'https://nft.simple.app/privacy-policy',
+      simpleCompanyName:
+          json['simpleCompanyName'] as String? ?? 'Simple Europe UAB',
+      simpleCompanyAddress: json['simpleCompanyAddress'] as String? ??
+          'Gyneju str. 14-65, Vilnius, Republic of Lithuania, 01109',
       cardLimitsLearnMoreLink: json['cardLimitsLearnMoreLink'] as String,
       privacyEarnLink: json['privacyEarnLink'] as String,
       paymentDelayDays: json['paymentDelayDays'] as int,
@@ -51,6 +55,8 @@ Map<String, dynamic> _$$_RemoteConfigAppconfigModelToJson(
       'referralPolicyLink': instance.referralPolicyLink,
       'nftTermsLink': instance.nftTermsLink,
       'nftPolicyLink': instance.nftPolicyLink,
+      'simpleCompanyName': instance.simpleCompanyName,
+      'simpleCompanyAddress': instance.simpleCompanyAddress,
       'cardLimitsLearnMoreLink': instance.cardLimitsLearnMoreLink,
       'privacyEarnLink': instance.privacyEarnLink,
       'paymentDelayDays': instance.paymentDelayDays,

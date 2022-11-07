@@ -30,6 +30,8 @@ mixin _$RemoteConfigAppconfigModel {
   String get referralPolicyLink => throw _privateConstructorUsedError;
   String get nftTermsLink => throw _privateConstructorUsedError;
   String get nftPolicyLink => throw _privateConstructorUsedError;
+  String get simpleCompanyName => throw _privateConstructorUsedError;
+  String get simpleCompanyAddress => throw _privateConstructorUsedError;
   String get cardLimitsLearnMoreLink => throw _privateConstructorUsedError;
   String get privacyEarnLink => throw _privateConstructorUsedError;
   int get paymentDelayDays => throw _privateConstructorUsedError;
@@ -68,6 +70,8 @@ abstract class $RemoteConfigAppconfigModelCopyWith<$Res> {
       String referralPolicyLink,
       String nftTermsLink,
       String nftPolicyLink,
+      String simpleCompanyName,
+      String simpleCompanyAddress,
       String cardLimitsLearnMoreLink,
       String privacyEarnLink,
       int paymentDelayDays,
@@ -106,6 +110,8 @@ class _$RemoteConfigAppconfigModelCopyWithImpl<$Res>
     Object? referralPolicyLink = freezed,
     Object? nftTermsLink = freezed,
     Object? nftPolicyLink = freezed,
+    Object? simpleCompanyName = freezed,
+    Object? simpleCompanyAddress = freezed,
     Object? cardLimitsLearnMoreLink = freezed,
     Object? privacyEarnLink = freezed,
     Object? paymentDelayDays = freezed,
@@ -159,6 +165,14 @@ class _$RemoteConfigAppconfigModelCopyWithImpl<$Res>
       nftPolicyLink: nftPolicyLink == freezed
           ? _value.nftPolicyLink
           : nftPolicyLink // ignore: cast_nullable_to_non_nullable
+              as String,
+      simpleCompanyName: simpleCompanyName == freezed
+          ? _value.simpleCompanyName
+          : simpleCompanyName // ignore: cast_nullable_to_non_nullable
+              as String,
+      simpleCompanyAddress: simpleCompanyAddress == freezed
+          ? _value.simpleCompanyAddress
+          : simpleCompanyAddress // ignore: cast_nullable_to_non_nullable
               as String,
       cardLimitsLearnMoreLink: cardLimitsLearnMoreLink == freezed
           ? _value.cardLimitsLearnMoreLink
@@ -246,6 +260,8 @@ abstract class _$$_RemoteConfigAppconfigModelCopyWith<$Res>
       String referralPolicyLink,
       String nftTermsLink,
       String nftPolicyLink,
+      String simpleCompanyName,
+      String simpleCompanyAddress,
       String cardLimitsLearnMoreLink,
       String privacyEarnLink,
       int paymentDelayDays,
@@ -288,6 +304,8 @@ class __$$_RemoteConfigAppconfigModelCopyWithImpl<$Res>
     Object? referralPolicyLink = freezed,
     Object? nftTermsLink = freezed,
     Object? nftPolicyLink = freezed,
+    Object? simpleCompanyName = freezed,
+    Object? simpleCompanyAddress = freezed,
     Object? cardLimitsLearnMoreLink = freezed,
     Object? privacyEarnLink = freezed,
     Object? paymentDelayDays = freezed,
@@ -341,6 +359,14 @@ class __$$_RemoteConfigAppconfigModelCopyWithImpl<$Res>
       nftPolicyLink: nftPolicyLink == freezed
           ? _value.nftPolicyLink
           : nftPolicyLink // ignore: cast_nullable_to_non_nullable
+              as String,
+      simpleCompanyName: simpleCompanyName == freezed
+          ? _value.simpleCompanyName
+          : simpleCompanyName // ignore: cast_nullable_to_non_nullable
+              as String,
+      simpleCompanyAddress: simpleCompanyAddress == freezed
+          ? _value.simpleCompanyAddress
+          : simpleCompanyAddress // ignore: cast_nullable_to_non_nullable
               as String,
       cardLimitsLearnMoreLink: cardLimitsLearnMoreLink == freezed
           ? _value.cardLimitsLearnMoreLink
@@ -423,6 +449,9 @@ class _$_RemoteConfigAppconfigModel implements _RemoteConfigAppconfigModel {
       required this.referralPolicyLink,
       this.nftTermsLink = 'https://nft.simple.app/terms-and-conditions',
       this.nftPolicyLink = 'https://nft.simple.app/privacy-policy',
+      this.simpleCompanyName = 'Simple Europe UAB',
+      this.simpleCompanyAddress =
+          'Gyneju str. 14-65, Vilnius, Republic of Lithuania, 01109',
       required this.cardLimitsLearnMoreLink,
       required this.privacyEarnLink,
       required this.paymentDelayDays,
@@ -464,6 +493,12 @@ class _$_RemoteConfigAppconfigModel implements _RemoteConfigAppconfigModel {
   @JsonKey()
   final String nftPolicyLink;
   @override
+  @JsonKey()
+  final String simpleCompanyName;
+  @override
+  @JsonKey()
+  final String simpleCompanyAddress;
+  @override
   final String cardLimitsLearnMoreLink;
   @override
   final String privacyEarnLink;
@@ -498,7 +533,7 @@ class _$_RemoteConfigAppconfigModel implements _RemoteConfigAppconfigModel {
 
   @override
   String toString() {
-    return 'RemoteConfigAppconfigModel(amlKycPolicyLink: $amlKycPolicyLink, refundPolicyLink: $refundPolicyLink, emailVerificationCodeLength: $emailVerificationCodeLength, phoneVerificationCodeLength: $phoneVerificationCodeLength, userAgreementLink: $userAgreementLink, privacyPolicyLink: $privacyPolicyLink, referralPolicyLink: $referralPolicyLink, nftTermsLink: $nftTermsLink, nftPolicyLink: $nftPolicyLink, cardLimitsLearnMoreLink: $cardLimitsLearnMoreLink, privacyEarnLink: $privacyEarnLink, paymentDelayDays: $paymentDelayDays, minAmountOfCharsInPassword: $minAmountOfCharsInPassword, infoRewardsLink: $infoRewardsLink, infoEarnLink: $infoEarnLink, maxAmountOfCharsInPassword: $maxAmountOfCharsInPassword, quoteRetryInterval: $quoteRetryInterval, defaultAssetIcon: $defaultAssetIcon, emailResendCountdown: $emailResendCountdown, withdrawConfirmResendCountdown: $withdrawConfirmResendCountdown, localPinLength: $localPinLength, maxPinAttempts: $maxPinAttempts, forgotPasswordLockHours: $forgotPasswordLockHours, changePasswordLockHours: $changePasswordLockHours, changePhoneLockHours: $changePhoneLockHours)';
+    return 'RemoteConfigAppconfigModel(amlKycPolicyLink: $amlKycPolicyLink, refundPolicyLink: $refundPolicyLink, emailVerificationCodeLength: $emailVerificationCodeLength, phoneVerificationCodeLength: $phoneVerificationCodeLength, userAgreementLink: $userAgreementLink, privacyPolicyLink: $privacyPolicyLink, referralPolicyLink: $referralPolicyLink, nftTermsLink: $nftTermsLink, nftPolicyLink: $nftPolicyLink, simpleCompanyName: $simpleCompanyName, simpleCompanyAddress: $simpleCompanyAddress, cardLimitsLearnMoreLink: $cardLimitsLearnMoreLink, privacyEarnLink: $privacyEarnLink, paymentDelayDays: $paymentDelayDays, minAmountOfCharsInPassword: $minAmountOfCharsInPassword, infoRewardsLink: $infoRewardsLink, infoEarnLink: $infoEarnLink, maxAmountOfCharsInPassword: $maxAmountOfCharsInPassword, quoteRetryInterval: $quoteRetryInterval, defaultAssetIcon: $defaultAssetIcon, emailResendCountdown: $emailResendCountdown, withdrawConfirmResendCountdown: $withdrawConfirmResendCountdown, localPinLength: $localPinLength, maxPinAttempts: $maxPinAttempts, forgotPasswordLockHours: $forgotPasswordLockHours, changePasswordLockHours: $changePasswordLockHours, changePhoneLockHours: $changePhoneLockHours)';
   }
 
   @override
@@ -526,6 +561,10 @@ class _$_RemoteConfigAppconfigModel implements _RemoteConfigAppconfigModel {
                 .equals(other.nftTermsLink, nftTermsLink) &&
             const DeepCollectionEquality()
                 .equals(other.nftPolicyLink, nftPolicyLink) &&
+            const DeepCollectionEquality()
+                .equals(other.simpleCompanyName, simpleCompanyName) &&
+            const DeepCollectionEquality()
+                .equals(other.simpleCompanyAddress, simpleCompanyAddress) &&
             const DeepCollectionEquality().equals(
                 other.cardLimitsLearnMoreLink, cardLimitsLearnMoreLink) &&
             const DeepCollectionEquality()
@@ -574,6 +613,8 @@ class _$_RemoteConfigAppconfigModel implements _RemoteConfigAppconfigModel {
         const DeepCollectionEquality().hash(referralPolicyLink),
         const DeepCollectionEquality().hash(nftTermsLink),
         const DeepCollectionEquality().hash(nftPolicyLink),
+        const DeepCollectionEquality().hash(simpleCompanyName),
+        const DeepCollectionEquality().hash(simpleCompanyAddress),
         const DeepCollectionEquality().hash(cardLimitsLearnMoreLink),
         const DeepCollectionEquality().hash(privacyEarnLink),
         const DeepCollectionEquality().hash(paymentDelayDays),
@@ -600,7 +641,9 @@ class _$_RemoteConfigAppconfigModel implements _RemoteConfigAppconfigModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RemoteConfigAppconfigModelToJson(this);
+    return _$$_RemoteConfigAppconfigModelToJson(
+      this,
+    );
   }
 }
 
@@ -616,6 +659,8 @@ abstract class _RemoteConfigAppconfigModel
       required final String referralPolicyLink,
       final String nftTermsLink,
       final String nftPolicyLink,
+      final String simpleCompanyName,
+      final String simpleCompanyAddress,
       required final String cardLimitsLearnMoreLink,
       required final String privacyEarnLink,
       required final int paymentDelayDays,
@@ -654,6 +699,10 @@ abstract class _RemoteConfigAppconfigModel
   String get nftTermsLink;
   @override
   String get nftPolicyLink;
+  @override
+  String get simpleCompanyName;
+  @override
+  String get simpleCompanyAddress;
   @override
   String get cardLimitsLearnMoreLink;
   @override

@@ -20,7 +20,7 @@ FireblockEventsModel _$FireblockEventsModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$FireblockEventsModel {
-  List<FireblocksMessageModel>? get messages =>
+  List<FireblocksMessageModel>? get events =>
       throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -34,7 +34,7 @@ abstract class $FireblockEventsModelCopyWith<$Res> {
   factory $FireblockEventsModelCopyWith(FireblockEventsModel value,
           $Res Function(FireblockEventsModel) then) =
       _$FireblockEventsModelCopyWithImpl<$Res>;
-  $Res call({List<FireblocksMessageModel>? messages});
+  $Res call({List<FireblocksMessageModel>? events});
 }
 
 /// @nodoc
@@ -48,12 +48,12 @@ class _$FireblockEventsModelCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? messages = freezed,
+    Object? events = freezed,
   }) {
     return _then(_value.copyWith(
-      messages: messages == freezed
-          ? _value.messages
-          : messages // ignore: cast_nullable_to_non_nullable
+      events: events == freezed
+          ? _value.events
+          : events // ignore: cast_nullable_to_non_nullable
               as List<FireblocksMessageModel>?,
     ));
   }
@@ -66,7 +66,7 @@ abstract class _$$_FireblockEventsModelCopyWith<$Res>
           $Res Function(_$_FireblockEventsModel) then) =
       __$$_FireblockEventsModelCopyWithImpl<$Res>;
   @override
-  $Res call({List<FireblocksMessageModel>? messages});
+  $Res call({List<FireblocksMessageModel>? events});
 }
 
 /// @nodoc
@@ -82,12 +82,12 @@ class __$$_FireblockEventsModelCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? messages = freezed,
+    Object? events = freezed,
   }) {
     return _then(_$_FireblockEventsModel(
-      messages: messages == freezed
-          ? _value._messages
-          : messages // ignore: cast_nullable_to_non_nullable
+      events: events == freezed
+          ? _value._events
+          : events // ignore: cast_nullable_to_non_nullable
               as List<FireblocksMessageModel>?,
     ));
   }
@@ -96,16 +96,16 @@ class __$$_FireblockEventsModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_FireblockEventsModel implements _FireblockEventsModel {
-  _$_FireblockEventsModel({final List<FireblocksMessageModel>? messages})
-      : _messages = messages;
+  _$_FireblockEventsModel({final List<FireblocksMessageModel>? events})
+      : _events = events;
 
   factory _$_FireblockEventsModel.fromJson(Map<String, dynamic> json) =>
       _$$_FireblockEventsModelFromJson(json);
 
-  final List<FireblocksMessageModel>? _messages;
+  final List<FireblocksMessageModel>? _events;
   @override
-  List<FireblocksMessageModel>? get messages {
-    final value = _messages;
+  List<FireblocksMessageModel>? get events {
+    final value = _events;
     if (value == null) return null;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
@@ -113,7 +113,7 @@ class _$_FireblockEventsModel implements _FireblockEventsModel {
 
   @override
   String toString() {
-    return 'FireblockEventsModel(messages: $messages)';
+    return 'FireblockEventsModel(events: $events)';
   }
 
   @override
@@ -121,13 +121,13 @@ class _$_FireblockEventsModel implements _FireblockEventsModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_FireblockEventsModel &&
-            const DeepCollectionEquality().equals(other._messages, _messages));
+            const DeepCollectionEquality().equals(other._events, _events));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_messages));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_events));
 
   @JsonKey(ignore: true)
   @override
@@ -144,14 +144,14 @@ class _$_FireblockEventsModel implements _FireblockEventsModel {
 }
 
 abstract class _FireblockEventsModel implements FireblockEventsModel {
-  factory _FireblockEventsModel(
-      {final List<FireblocksMessageModel>? messages}) = _$_FireblockEventsModel;
+  factory _FireblockEventsModel({final List<FireblocksMessageModel>? events}) =
+      _$_FireblockEventsModel;
 
   factory _FireblockEventsModel.fromJson(Map<String, dynamic> json) =
       _$_FireblockEventsModel.fromJson;
 
   @override
-  List<FireblocksMessageModel>? get messages;
+  List<FireblocksMessageModel>? get events;
   @override
   @JsonKey(ignore: true)
   _$$_FireblockEventsModelCopyWith<_$_FireblockEventsModel> get copyWith =>

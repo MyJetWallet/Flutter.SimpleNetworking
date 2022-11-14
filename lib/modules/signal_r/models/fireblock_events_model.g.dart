@@ -9,7 +9,7 @@ part of 'fireblock_events_model.dart';
 _$_FireblockEventsModel _$$_FireblockEventsModelFromJson(
         Map<String, dynamic> json) =>
     _$_FireblockEventsModel(
-      messages: (json['messages'] as List<dynamic>?)
+      events: (json['events'] as List<dynamic>?)
           ?.map(
               (e) => FireblocksMessageModel.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -18,7 +18,7 @@ _$_FireblockEventsModel _$$_FireblockEventsModelFromJson(
 Map<String, dynamic> _$$_FireblockEventsModelToJson(
         _$_FireblockEventsModel instance) =>
     <String, dynamic>{
-      'messages': instance.messages,
+      'events': instance.events,
     };
 
 _$_FireblocksMessageModel _$$_FireblocksMessageModelFromJson(

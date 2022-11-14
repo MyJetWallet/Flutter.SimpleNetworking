@@ -133,12 +133,14 @@ const _$StatusEnumMap = {
 _$_DepositInfo _$$_DepositInfoFromJson(Map<String, dynamic> json) =>
     _$_DepositInfo(
       txId: json['txId'] as String?,
+      network: json['network'] as String?,
       depositAmount: (json['depositAmount'] as num).toDouble(),
     );
 
 Map<String, dynamic> _$$_DepositInfoToJson(_$_DepositInfo instance) =>
     <String, dynamic>{
       'txId': instance.txId,
+      'network': instance.network,
       'depositAmount': instance.depositAmount,
     };
 
@@ -147,6 +149,7 @@ _$_WithdrawalInfo _$$_WithdrawalInfoFromJson(Map<String, dynamic> json) =>
       txId: json['txId'] as String?,
       toAddress: json['toAddress'] as String?,
       feeAssetId: json['feeAssetId'] as String?,
+      network: json['network'] as String?,
       withdrawalAssetId: json['withdrawalAssetId'] as String,
       withdrawalAmount:
           const DecimalSerialiser().fromJson(json['withdrawalAmount']),
@@ -159,6 +162,7 @@ Map<String, dynamic> _$$_WithdrawalInfoToJson(_$_WithdrawalInfo instance) =>
       'txId': instance.txId,
       'toAddress': instance.toAddress,
       'feeAssetId': instance.feeAssetId,
+      'network': instance.network,
       'withdrawalAssetId': instance.withdrawalAssetId,
       'withdrawalAmount':
           const DecimalSerialiser().toJson(instance.withdrawalAmount),
@@ -169,6 +173,7 @@ Map<String, dynamic> _$$_WithdrawalInfoToJson(_$_WithdrawalInfo instance) =>
 _$_BuyInfo _$$_BuyInfoFromJson(Map<String, dynamic> json) => _$_BuyInfo(
       txId: json['txId'] as String?,
       feeAssetId: json['feeAssetId'] as String?,
+      network: json['network'] as String?,
       sellAssetId: json['sellAssetId'] as String,
       buyAssetId: json['buyAssetId'] as String,
       sellAmount: const DecimalSerialiser().fromJson(json['sellAmount']),
@@ -180,6 +185,7 @@ Map<String, dynamic> _$$_BuyInfoToJson(_$_BuyInfo instance) =>
     <String, dynamic>{
       'txId': instance.txId,
       'feeAssetId': instance.feeAssetId,
+      'network': instance.network,
       'sellAssetId': instance.sellAssetId,
       'buyAssetId': instance.buyAssetId,
       'sellAmount': const DecimalSerialiser().toJson(instance.sellAmount),

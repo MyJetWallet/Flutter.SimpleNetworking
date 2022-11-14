@@ -149,7 +149,9 @@ class _$_OperationHistoryResponseModel
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OperationHistoryResponseModelToJson(this);
+    return _$$_OperationHistoryResponseModelToJson(
+      this,
+    );
   }
 }
 
@@ -762,7 +764,9 @@ class _$_OperationHistoryItem implements _OperationHistoryItem {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OperationHistoryItemToJson(this);
+    return _$$_OperationHistoryItemToJson(
+      this,
+    );
   }
 }
 
@@ -842,6 +846,7 @@ DepositInfo _$DepositInfoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$DepositInfo {
   String? get txId => throw _privateConstructorUsedError;
+  String? get network => throw _privateConstructorUsedError;
   double get depositAmount => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -855,7 +860,7 @@ abstract class $DepositInfoCopyWith<$Res> {
   factory $DepositInfoCopyWith(
           DepositInfo value, $Res Function(DepositInfo) then) =
       _$DepositInfoCopyWithImpl<$Res>;
-  $Res call({String? txId, double depositAmount});
+  $Res call({String? txId, String? network, double depositAmount});
 }
 
 /// @nodoc
@@ -869,12 +874,17 @@ class _$DepositInfoCopyWithImpl<$Res> implements $DepositInfoCopyWith<$Res> {
   @override
   $Res call({
     Object? txId = freezed,
+    Object? network = freezed,
     Object? depositAmount = freezed,
   }) {
     return _then(_value.copyWith(
       txId: txId == freezed
           ? _value.txId
           : txId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      network: network == freezed
+          ? _value.network
+          : network // ignore: cast_nullable_to_non_nullable
               as String?,
       depositAmount: depositAmount == freezed
           ? _value.depositAmount
@@ -891,7 +901,7 @@ abstract class _$$_DepositInfoCopyWith<$Res>
           _$_DepositInfo value, $Res Function(_$_DepositInfo) then) =
       __$$_DepositInfoCopyWithImpl<$Res>;
   @override
-  $Res call({String? txId, double depositAmount});
+  $Res call({String? txId, String? network, double depositAmount});
 }
 
 /// @nodoc
@@ -907,12 +917,17 @@ class __$$_DepositInfoCopyWithImpl<$Res> extends _$DepositInfoCopyWithImpl<$Res>
   @override
   $Res call({
     Object? txId = freezed,
+    Object? network = freezed,
     Object? depositAmount = freezed,
   }) {
     return _then(_$_DepositInfo(
       txId: txId == freezed
           ? _value.txId
           : txId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      network: network == freezed
+          ? _value.network
+          : network // ignore: cast_nullable_to_non_nullable
               as String?,
       depositAmount: depositAmount == freezed
           ? _value.depositAmount
@@ -925,7 +940,7 @@ class __$$_DepositInfoCopyWithImpl<$Res> extends _$DepositInfoCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_DepositInfo implements _DepositInfo {
-  const _$_DepositInfo({this.txId, required this.depositAmount});
+  const _$_DepositInfo({this.txId, this.network, required this.depositAmount});
 
   factory _$_DepositInfo.fromJson(Map<String, dynamic> json) =>
       _$$_DepositInfoFromJson(json);
@@ -933,11 +948,13 @@ class _$_DepositInfo implements _DepositInfo {
   @override
   final String? txId;
   @override
+  final String? network;
+  @override
   final double depositAmount;
 
   @override
   String toString() {
-    return 'DepositInfo(txId: $txId, depositAmount: $depositAmount)';
+    return 'DepositInfo(txId: $txId, network: $network, depositAmount: $depositAmount)';
   }
 
   @override
@@ -946,6 +963,7 @@ class _$_DepositInfo implements _DepositInfo {
         (other.runtimeType == runtimeType &&
             other is _$_DepositInfo &&
             const DeepCollectionEquality().equals(other.txId, txId) &&
+            const DeepCollectionEquality().equals(other.network, network) &&
             const DeepCollectionEquality()
                 .equals(other.depositAmount, depositAmount));
   }
@@ -955,6 +973,7 @@ class _$_DepositInfo implements _DepositInfo {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(txId),
+      const DeepCollectionEquality().hash(network),
       const DeepCollectionEquality().hash(depositAmount));
 
   @JsonKey(ignore: true)
@@ -964,13 +983,16 @@ class _$_DepositInfo implements _DepositInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DepositInfoToJson(this);
+    return _$$_DepositInfoToJson(
+      this,
+    );
   }
 }
 
 abstract class _DepositInfo implements DepositInfo {
   const factory _DepositInfo(
       {final String? txId,
+      final String? network,
       required final double depositAmount}) = _$_DepositInfo;
 
   factory _DepositInfo.fromJson(Map<String, dynamic> json) =
@@ -978,6 +1000,8 @@ abstract class _DepositInfo implements DepositInfo {
 
   @override
   String? get txId;
+  @override
+  String? get network;
   @override
   double get depositAmount;
   @override
@@ -995,6 +1019,7 @@ mixin _$WithdrawalInfo {
   String? get txId => throw _privateConstructorUsedError;
   String? get toAddress => throw _privateConstructorUsedError;
   String? get feeAssetId => throw _privateConstructorUsedError;
+  String? get network => throw _privateConstructorUsedError;
   String get withdrawalAssetId => throw _privateConstructorUsedError;
   @DecimalSerialiser()
   Decimal get withdrawalAmount => throw _privateConstructorUsedError;
@@ -1017,6 +1042,7 @@ abstract class $WithdrawalInfoCopyWith<$Res> {
       {String? txId,
       String? toAddress,
       String? feeAssetId,
+      String? network,
       String withdrawalAssetId,
       @DecimalSerialiser() Decimal withdrawalAmount,
       @DecimalSerialiser() Decimal feeAmount,
@@ -1037,6 +1063,7 @@ class _$WithdrawalInfoCopyWithImpl<$Res>
     Object? txId = freezed,
     Object? toAddress = freezed,
     Object? feeAssetId = freezed,
+    Object? network = freezed,
     Object? withdrawalAssetId = freezed,
     Object? withdrawalAmount = freezed,
     Object? feeAmount = freezed,
@@ -1054,6 +1081,10 @@ class _$WithdrawalInfoCopyWithImpl<$Res>
       feeAssetId: feeAssetId == freezed
           ? _value.feeAssetId
           : feeAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      network: network == freezed
+          ? _value.network
+          : network // ignore: cast_nullable_to_non_nullable
               as String?,
       withdrawalAssetId: withdrawalAssetId == freezed
           ? _value.withdrawalAssetId
@@ -1086,6 +1117,7 @@ abstract class _$$_WithdrawalInfoCopyWith<$Res>
       {String? txId,
       String? toAddress,
       String? feeAssetId,
+      String? network,
       String withdrawalAssetId,
       @DecimalSerialiser() Decimal withdrawalAmount,
       @DecimalSerialiser() Decimal feeAmount,
@@ -1108,6 +1140,7 @@ class __$$_WithdrawalInfoCopyWithImpl<$Res>
     Object? txId = freezed,
     Object? toAddress = freezed,
     Object? feeAssetId = freezed,
+    Object? network = freezed,
     Object? withdrawalAssetId = freezed,
     Object? withdrawalAmount = freezed,
     Object? feeAmount = freezed,
@@ -1125,6 +1158,10 @@ class __$$_WithdrawalInfoCopyWithImpl<$Res>
       feeAssetId: feeAssetId == freezed
           ? _value.feeAssetId
           : feeAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      network: network == freezed
+          ? _value.network
+          : network // ignore: cast_nullable_to_non_nullable
               as String?,
       withdrawalAssetId: withdrawalAssetId == freezed
           ? _value.withdrawalAssetId
@@ -1153,6 +1190,7 @@ class _$_WithdrawalInfo implements _WithdrawalInfo {
       {this.txId,
       this.toAddress,
       this.feeAssetId,
+      this.network,
       required this.withdrawalAssetId,
       @DecimalSerialiser() required this.withdrawalAmount,
       @DecimalSerialiser() required this.feeAmount,
@@ -1168,6 +1206,8 @@ class _$_WithdrawalInfo implements _WithdrawalInfo {
   @override
   final String? feeAssetId;
   @override
+  final String? network;
+  @override
   final String withdrawalAssetId;
   @override
   @DecimalSerialiser()
@@ -1180,7 +1220,7 @@ class _$_WithdrawalInfo implements _WithdrawalInfo {
 
   @override
   String toString() {
-    return 'WithdrawalInfo(txId: $txId, toAddress: $toAddress, feeAssetId: $feeAssetId, withdrawalAssetId: $withdrawalAssetId, withdrawalAmount: $withdrawalAmount, feeAmount: $feeAmount, isInternal: $isInternal)';
+    return 'WithdrawalInfo(txId: $txId, toAddress: $toAddress, feeAssetId: $feeAssetId, network: $network, withdrawalAssetId: $withdrawalAssetId, withdrawalAmount: $withdrawalAmount, feeAmount: $feeAmount, isInternal: $isInternal)';
   }
 
   @override
@@ -1192,6 +1232,7 @@ class _$_WithdrawalInfo implements _WithdrawalInfo {
             const DeepCollectionEquality().equals(other.toAddress, toAddress) &&
             const DeepCollectionEquality()
                 .equals(other.feeAssetId, feeAssetId) &&
+            const DeepCollectionEquality().equals(other.network, network) &&
             const DeepCollectionEquality()
                 .equals(other.withdrawalAssetId, withdrawalAssetId) &&
             const DeepCollectionEquality()
@@ -1208,6 +1249,7 @@ class _$_WithdrawalInfo implements _WithdrawalInfo {
       const DeepCollectionEquality().hash(txId),
       const DeepCollectionEquality().hash(toAddress),
       const DeepCollectionEquality().hash(feeAssetId),
+      const DeepCollectionEquality().hash(network),
       const DeepCollectionEquality().hash(withdrawalAssetId),
       const DeepCollectionEquality().hash(withdrawalAmount),
       const DeepCollectionEquality().hash(feeAmount),
@@ -1220,7 +1262,9 @@ class _$_WithdrawalInfo implements _WithdrawalInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WithdrawalInfoToJson(this);
+    return _$$_WithdrawalInfoToJson(
+      this,
+    );
   }
 }
 
@@ -1229,6 +1273,7 @@ abstract class _WithdrawalInfo implements WithdrawalInfo {
       {final String? txId,
       final String? toAddress,
       final String? feeAssetId,
+      final String? network,
       required final String withdrawalAssetId,
       @DecimalSerialiser() required final Decimal withdrawalAmount,
       @DecimalSerialiser() required final Decimal feeAmount,
@@ -1243,6 +1288,8 @@ abstract class _WithdrawalInfo implements WithdrawalInfo {
   String? get toAddress;
   @override
   String? get feeAssetId;
+  @override
+  String? get network;
   @override
   String get withdrawalAssetId;
   @override
@@ -1267,6 +1314,7 @@ BuyInfo _$BuyInfoFromJson(Map<String, dynamic> json) {
 mixin _$BuyInfo {
   String? get txId => throw _privateConstructorUsedError;
   String? get feeAssetId => throw _privateConstructorUsedError;
+  String? get network => throw _privateConstructorUsedError;
   String get sellAssetId => throw _privateConstructorUsedError;
   String get buyAssetId => throw _privateConstructorUsedError;
   @DecimalSerialiser()
@@ -1288,6 +1336,7 @@ abstract class $BuyInfoCopyWith<$Res> {
   $Res call(
       {String? txId,
       String? feeAssetId,
+      String? network,
       String sellAssetId,
       String buyAssetId,
       @DecimalSerialiser() Decimal sellAmount,
@@ -1307,6 +1356,7 @@ class _$BuyInfoCopyWithImpl<$Res> implements $BuyInfoCopyWith<$Res> {
   $Res call({
     Object? txId = freezed,
     Object? feeAssetId = freezed,
+    Object? network = freezed,
     Object? sellAssetId = freezed,
     Object? buyAssetId = freezed,
     Object? sellAmount = freezed,
@@ -1321,6 +1371,10 @@ class _$BuyInfoCopyWithImpl<$Res> implements $BuyInfoCopyWith<$Res> {
       feeAssetId: feeAssetId == freezed
           ? _value.feeAssetId
           : feeAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      network: network == freezed
+          ? _value.network
+          : network // ignore: cast_nullable_to_non_nullable
               as String?,
       sellAssetId: sellAssetId == freezed
           ? _value.sellAssetId
@@ -1355,6 +1409,7 @@ abstract class _$$_BuyInfoCopyWith<$Res> implements $BuyInfoCopyWith<$Res> {
   $Res call(
       {String? txId,
       String? feeAssetId,
+      String? network,
       String sellAssetId,
       String buyAssetId,
       @DecimalSerialiser() Decimal sellAmount,
@@ -1375,6 +1430,7 @@ class __$$_BuyInfoCopyWithImpl<$Res> extends _$BuyInfoCopyWithImpl<$Res>
   $Res call({
     Object? txId = freezed,
     Object? feeAssetId = freezed,
+    Object? network = freezed,
     Object? sellAssetId = freezed,
     Object? buyAssetId = freezed,
     Object? sellAmount = freezed,
@@ -1389,6 +1445,10 @@ class __$$_BuyInfoCopyWithImpl<$Res> extends _$BuyInfoCopyWithImpl<$Res>
       feeAssetId: feeAssetId == freezed
           ? _value.feeAssetId
           : feeAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      network: network == freezed
+          ? _value.network
+          : network // ignore: cast_nullable_to_non_nullable
               as String?,
       sellAssetId: sellAssetId == freezed
           ? _value.sellAssetId
@@ -1420,6 +1480,7 @@ class _$_BuyInfo implements _BuyInfo {
   const _$_BuyInfo(
       {this.txId,
       this.feeAssetId,
+      this.network,
       required this.sellAssetId,
       required this.buyAssetId,
       @DecimalSerialiser() required this.sellAmount,
@@ -1433,6 +1494,8 @@ class _$_BuyInfo implements _BuyInfo {
   final String? txId;
   @override
   final String? feeAssetId;
+  @override
+  final String? network;
   @override
   final String sellAssetId;
   @override
@@ -1449,7 +1512,7 @@ class _$_BuyInfo implements _BuyInfo {
 
   @override
   String toString() {
-    return 'BuyInfo(txId: $txId, feeAssetId: $feeAssetId, sellAssetId: $sellAssetId, buyAssetId: $buyAssetId, sellAmount: $sellAmount, buyAmount: $buyAmount, feeAmount: $feeAmount)';
+    return 'BuyInfo(txId: $txId, feeAssetId: $feeAssetId, network: $network, sellAssetId: $sellAssetId, buyAssetId: $buyAssetId, sellAmount: $sellAmount, buyAmount: $buyAmount, feeAmount: $feeAmount)';
   }
 
   @override
@@ -1460,6 +1523,7 @@ class _$_BuyInfo implements _BuyInfo {
             const DeepCollectionEquality().equals(other.txId, txId) &&
             const DeepCollectionEquality()
                 .equals(other.feeAssetId, feeAssetId) &&
+            const DeepCollectionEquality().equals(other.network, network) &&
             const DeepCollectionEquality()
                 .equals(other.sellAssetId, sellAssetId) &&
             const DeepCollectionEquality()
@@ -1476,6 +1540,7 @@ class _$_BuyInfo implements _BuyInfo {
       runtimeType,
       const DeepCollectionEquality().hash(txId),
       const DeepCollectionEquality().hash(feeAssetId),
+      const DeepCollectionEquality().hash(network),
       const DeepCollectionEquality().hash(sellAssetId),
       const DeepCollectionEquality().hash(buyAssetId),
       const DeepCollectionEquality().hash(sellAmount),
@@ -1489,7 +1554,9 @@ class _$_BuyInfo implements _BuyInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BuyInfoToJson(this);
+    return _$$_BuyInfoToJson(
+      this,
+    );
   }
 }
 
@@ -1497,6 +1564,7 @@ abstract class _BuyInfo implements BuyInfo {
   const factory _BuyInfo(
       {final String? txId,
       final String? feeAssetId,
+      final String? network,
       required final String sellAssetId,
       required final String buyAssetId,
       @DecimalSerialiser() required final Decimal sellAmount,
@@ -1509,6 +1577,8 @@ abstract class _BuyInfo implements BuyInfo {
   String? get txId;
   @override
   String? get feeAssetId;
+  @override
+  String? get network;
   @override
   String get sellAssetId;
   @override
@@ -1823,7 +1893,9 @@ class _$_SwapInfo implements _SwapInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SwapInfoToJson(this);
+    return _$$_SwapInfoToJson(
+      this,
+    );
   }
 }
 
@@ -2015,7 +2087,9 @@ class _$_WithdrawalFeeInfo implements _WithdrawalFeeInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WithdrawalFeeInfoToJson(this);
+    return _$$_WithdrawalFeeInfoToJson(
+      this,
+    );
   }
 }
 
@@ -2233,7 +2307,9 @@ class _$_TransferByPhoneInfo implements _TransferByPhoneInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TransferByPhoneInfoToJson(this);
+    return _$$_TransferByPhoneInfoToJson(
+      this,
+    );
   }
 }
 
@@ -2416,7 +2492,9 @@ class _$_ReceiveByPhoneInfo implements _ReceiveByPhoneInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ReceiveByPhoneInfoToJson(this);
+    return _$$_ReceiveByPhoneInfoToJson(
+      this,
+    );
   }
 }
 
@@ -2740,7 +2818,9 @@ class _$_RecurringBuyInfo implements _RecurringBuyInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RecurringBuyInfoToJson(this);
+    return _$$_RecurringBuyInfoToJson(
+      this,
+    );
   }
 }
 
@@ -2990,7 +3070,9 @@ class _$_EarnInfo implements _EarnInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EarnInfoToJson(this);
+    return _$$_EarnInfoToJson(
+      this,
+    );
   }
 }
 
@@ -3145,7 +3227,9 @@ class _$_OfferInfo implements _OfferInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OfferInfoToJson(this);
+    return _$$_OfferInfoToJson(
+      this,
+    );
   }
 }
 
@@ -3501,7 +3585,9 @@ class _$_CryptoBuyInfo implements _CryptoBuyInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CryptoBuyInfoToJson(this);
+    return _$$_CryptoBuyInfoToJson(
+      this,
+    );
   }
 }
 
